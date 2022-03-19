@@ -1,9 +1,9 @@
 from time import sleep
 
-import EmikoRobot.modules.sql.global_bans_sql as gban_sql
-import EmikoRobot.modules.sql.users_sql as user_sql
-from EmikoRobot import DEV_USERS, OWNER_ID, dispatcher
-from EmikoRobot.modules.helper_funcs.chat_status import dev_plus
+import horisan.modules.sql.global_bans_sql as gban_sql
+import horisan.modules.sql.users_sql as user_sql
+from horisan import DEV_USERS, OWNER_ID, dispatcher
+from horisan.modules.helper_funcs.chat_status import dev_plus
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 from telegram.error import BadRequest, Unauthorized
 from telegram.ext import (
