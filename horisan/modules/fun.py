@@ -2,11 +2,11 @@ import html
 import random
 import time
 
-import EmikoRobot.modules.fun_strings as fun_strings
-from EmikoRobot import dispatcher
-from EmikoRobot.modules.disable import DisableAbleCommandHandler
-from EmikoRobot.modules.helper_funcs.chat_status import is_user_admin
-from EmikoRobot.modules.helper_funcs.extraction import extract_user
+import horisan.modules.fun_strings as fun_strings
+from horisan import dispatcher
+from horisan.modules.disable import DisableAbleCommandHandler
+from horisan.modules.helper_funcs.chat_status import is_user_admin
+from horisan.modules.helper_funcs.extraction import extract_user
 from telegram import ChatPermissions, ParseMode, Update
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext
