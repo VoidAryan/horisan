@@ -6,10 +6,10 @@ import aiohttp
 from googletrans import Translator as google_translator
 from pyrogram import filters
 from aiohttp import ClientSession
-from EmikoRobot import BOT_USERNAME as bu
-from EmikoRobot import BOT_ID, pbot, arq
-from EmikoRobot.ex_plugins.chatbot import add_chat, get_session, remove_chat
-from EmikoRobot.utils.pluginhelper import admins_only, edit_or_reply
+from horisan import BOT_USERNAME as bu
+from horisan import BOT_ID, pbot, arq
+from horisan.ex_plugins.chatbot import add_chat, get_session, remove_chat
+from horisan.utils.pluginhelper import admins_only, edit_or_reply
 
 url = "https://acobot-brainshop-ai-v1.p.rapidapi.com/get"
 
@@ -49,25 +49,25 @@ en_chats = []
 async def hmm(_, message):
     global ewe_chats
     if len(message.command) != 2:
-        await message.reply_text("I only recognize /chatbot on and /chatbot off only")
+        await message.reply_text("hori san only recognize /chatbot on and /chatbot off only")
         message.continue_propagation()
     status = message.text.split(None, 1)[1]
     chat_id = message.chat.id
     if status == "ON" or status == "on" or status == "On":
-        lel = await edit_or_reply(message, "`Processing...`")
+        lel = await edit_or_reply(message, "`waitoo...`")
         lol = add_chat(int(message.chat.id))
         if not lol:
-            await lel.edit("Emiko AI Already Activated In This Chat")
+            await lel.edit("hori AI Already Activated In This Chat")
             return
-        await lel.edit(f"Emiko AI Actived by {message.from_user.mention()} for users in {message.chat.title}")
+        await lel.edit(f"hori AI Actived by {message.from_user.mention()} for users in {message.chat.title}")
 
     elif status == "OFF" or status == "off" or status == "Off":
         lel = await edit_or_reply(message, "`Processing...`")
         Escobar = remove_chat(int(message.chat.id))
         if not Escobar:
-            await lel.edit("Emiko AI Was Not Activated In This Chat")
+            await lel.edit("hori AI Was Not Activated In This Chat")
             return
-        await lel.edit(f"Emiko AI Deactivated by {message.from_user.mention()} for users in {message.chat.title}")
+        await lel.edit(f"hori AI Deactivated by {message.from_user.mention()} for users in {message.chat.title}")
 
     elif status == "EN" or status == "en" or status == "english":
         if not chat_id in en_chats:
