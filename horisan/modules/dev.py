@@ -5,10 +5,10 @@ import sys
 from contextlib import suppress
 from time import sleep
 
-import EmikoRobot
+import horisan
 
-from EmikoRobot import dispatcher
-from EmikoRobot.modules.helper_funcs.chat_status import dev_plus
+from horisan import dispatcher
+from horisan.modules.helper_funcs.chat_status import dev_plus
 from telegram import TelegramError, Update
 from telegram.error import Unauthorized
 from telegram.ext import CallbackContext, CommandHandler
@@ -22,9 +22,9 @@ def allow_groups(update: Update, context: CallbackContext):
         update.effective_message.reply_text(f"Current state: {state}")
         return
     if args[0].lower() in ["off", "no"]:
-        EmikoRobot.ALLOW_CHATS = True
+        horisan.ALLOW_CHATS = True
     elif args[0].lower() in ["yes", "on"]:
-        EmikoRobot.ALLOW_CHATS = False
+        horisan.ALLOW_CHATS = False
     else:
         update.effective_message.reply_text("Format: /lockdown Yes/No or Off/On")
         return
