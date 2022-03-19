@@ -5,10 +5,10 @@ from telegram import ParseMode, InlineKeyboardMarkup, InlineKeyboardButton, Upda
 from telegram.error import BadRequest, Unauthorized
 from telegram.ext import CommandHandler, CallbackQueryHandler
 
-import EmikoRobot.modules.sql.connection_sql as sql
-from EmikoRobot import dispatcher, DRAGONS, DEV_USERS
-from EmikoRobot.modules.helper_funcs import chat_status
-from EmikoRobot.modules.helper_funcs.alternate import send_message, typing_action
+import horisan.modules.sql.connection_sql as sql
+from horisan import dispatcher, DRAGONS, DEV_USERS
+from horisan.modules.helper_funcs import chat_status
+from horisan.modules.helper_funcs.alternate import send_message, typing_action
 
 user_admin = chat_status.user_admin
 
