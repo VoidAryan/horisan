@@ -20,10 +20,10 @@ from telegram.utils.helpers import mention_html
 from typing import Optional, List
 from telegram import TelegramError
 
-import EmikoRobot.modules.sql.users_sql as sql
-from EmikoRobot.modules.disable import DisableAbleCommandHandler
-from EmikoRobot.modules.helper_funcs.filters import CustomFilters
-from EmikoRobot import (
+import horisan.modules.sql.users_sql as sql
+from horisan.modules.disable import DisableAbleCommandHandler
+from horisan.modules.helper_funcs.filters import CustomFilters
+from horisan import (
     DEV_USERS,
     LOGGER,
     OWNER_ID,
@@ -33,7 +33,7 @@ from EmikoRobot import (
     WOLVES,
     dispatcher,
 )
-from EmikoRobot.modules.helper_funcs.chat_status import (
+from horisan.modules.helper_funcs.chat_status import (
     user_admin_no_reply,
     bot_admin,
     can_restrict,
@@ -46,9 +46,9 @@ from EmikoRobot.modules.helper_funcs.chat_status import (
     can_delete,
     dev_plus,
 )
-from EmikoRobot.modules.helper_funcs.extraction import extract_user_and_text
-from EmikoRobot.modules.helper_funcs.string_handling import extract_time
-from EmikoRobot.modules.log_channel import gloggable, loggable
+from horisan.modules.helper_funcs.extraction import extract_user_and_text
+from horisan.modules.helper_funcs.string_handling import extract_time
+from horisan.modules.log_channel import gloggable, loggable
 
 
 @connection_status
