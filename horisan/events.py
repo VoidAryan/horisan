@@ -7,8 +7,8 @@ from pathlib import Path
 from telethon import events
 
 from pymongo import MongoClient
-from EmikoRobot import MONGO_DB_URI
-from EmikoRobot import telethn
+from horisan import MONGO_DB_URI
+from horisan import telethn
 
 client = MongoClient()
 client = MongoClient(MONGO_DB_URI)
@@ -146,7 +146,7 @@ def bot(**args):
     return decorator
 
 
-def EmikoRobot(**args):
+def horisan(**args):
     pattern = args.get("pattern", None)
     disable_edited = args.get("disable_edited", False)
     ignore_unsafe = args.get("ignore_unsafe", False)
