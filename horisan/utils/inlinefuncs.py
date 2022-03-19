@@ -30,19 +30,19 @@ from EmikoRobot import (
     BOT_USERNAME,
     ubot2,
 )
-from EmikoRobot import pbot as app
-from EmikoRobot import arq
-from EmikoRobot.services.keyboard import Ikb
-from EmikoRobot.utils.pluginhelper import (
+from horisan import pbot as app
+from horisan import arq
+from horisan.services.keyboard import Ikb
+from horisan.utils.pluginhelper import (
     convert_seconds_to_minutes as time_convert,
     fetch,
 )
-from EmikoRobot.services.tasks import _get_tasks_text, all_tasks, rm_task
-from EmikoRobot.services.types import InlineQueryResultCachedDocument
-from EmikoRobot.modules.info import get_chat_info, get_user_info
-from EmikoRobot.modules.music import download_youtube_audio
-from EmikoRobot.utils.functions import test_speedtest
-from EmikoRobot.utils.pastebin import paste
+from horisan.services.tasks import _get_tasks_text, all_tasks, rm_task
+from horisan.services.types import InlineQueryResultCachedDocument
+from horisan.modules.info import get_chat_info, get_user_info
+from horisan.modules.music import download_youtube_audio
+from horisan.utils.functions import test_speedtest
+from horisan.utils.pastebin import paste
 
 MESSAGE_DUMP_CHAT = EVENT_LOGS
 
@@ -108,7 +108,7 @@ async def inline_help_func(__HELP__):
             input_message_content=InputTextMessageContent(
                 "**__Click A Button To Get Started.__**"
             ),
-            thumb_url="https://telegra.ph/file/1b8f08dba704a5eb2bb09.jpg",
+            thumb_url="https://telegra.ph/file/b832cfaae26c47bcdf263.jpg",
             reply_markup=buttons,
         ),
     ]
@@ -121,12 +121,12 @@ async def alive_function(answers):
     bot_state = "Dead" if not await app.get_me() else "Alive"
     ubot_state = "Dead" if not await ubot2.get_me() else "Alive"
     buttons.add(
-        InlineKeyboardButton("Main bot", url="https://t.me/EmiexRobot"),
+        InlineKeyboardButton("Owner Sama", url="https://t.me/voidxtoxic"),
         InlineKeyboardButton("Go Inline!", switch_inline_query_current_chat=""),
     )
 
     msg = f"""
-**[Emiko Robot ❤️](https://t.me/emikosupport):**
+**[Hori San](https://t.me/HoriXsupport):**
 **MainBot:** `{bot_state}`
 **UserBot:** `{ubot_state}`
 **Python:** `{pyver.split()[0]}`
@@ -139,7 +139,7 @@ async def alive_function(answers):
         InlineQueryResultArticle(
             title="Alive",
             description="Check Bot's Stats",
-            thumb_url="https://telegra.ph/file/1b8f08dba704a5eb2bb09.jpg",
+            thumb_url="https://telegra.ph/file/b832cfaae26c47bcdf263.jpg",
             input_message_content=InputTextMessageContent(
                 msg, disable_web_page_preview=True
             ),
@@ -431,8 +431,8 @@ async def tg_search_func(answers, text, user_id):
 
 
 async def music_inline_func(answers, query):
-    chat_id = -1001445180719
-    group_invite = "https://t.me/joinchat/vSDE2DuGK4Y4Nzll"
+    chat_id = -1001633814912
+    group_invite = "https://t.me/HoriXSupport"
     try:
         messages = [
             m
