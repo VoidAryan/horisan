@@ -6,12 +6,12 @@ import time
 import re
 import sys
 import traceback
-import EmikoRobot.modules.sql.users_sql as sql
+import horisan.modules.sql.users_sql as sql
 from sys import argv
 from typing import Optional
 from telegram import __version__ as peler
 from platform import python_version as memek
-from EmikoRobot import (
+from horisan import (
     ALLOW_EXCL,
     CERT_PATH,
     DONATION_LINK,
@@ -33,9 +33,9 @@ from EmikoRobot import (
 
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
-from EmikoRobot.modules import ALL_MODULES
-from EmikoRobot.modules.helper_funcs.chat_status import is_user_admin
-from EmikoRobot.modules.helper_funcs.misc import paginate_modules
+from horisan.modules import ALL_MODULES
+from horisan.modules.helper_funcs.chat_status import is_user_admin
+from horisan.modules.helper_funcs.misc import paginate_modules
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.error import (
     BadRequest,
@@ -391,7 +391,7 @@ def help_button(update, context):
 
 def emiko_about_callback(update, context):
     query = update.callback_query
-    if query.data == "emiko_":
+    if query.data == "hori_":
         query.message.edit_text(
             text="๏ I'm *Hori San*, hehe my master made me to help you manage group chats."
             "\n• I can restrict users."
@@ -408,33 +408,33 @@ def emiko_about_callback(update, context):
                 [
                     [
                         InlineKeyboardButton(
-                            text="Admins", callback_data="emiko_admin"
+                            text="Admins", callback_data="hori_admin"
                         ),
-                        InlineKeyboardButton(text="Notes", callback_data="emiko_notes"),
+                        InlineKeyboardButton(text="Notes", callback_data="hori_notes"),
                     ],
                     [
                         InlineKeyboardButton(
-                            text="Support", callback_data="emiko_support"
+                            text="Support", callback_data="hori_support"
                         ),
                         InlineKeyboardButton(
-                            text="Credits", callback_data="emiko_credit"
+                            text="Credits", callback_data="hori_credit"
                         ),
                     ],
                     [
                         InlineKeyboardButton(
                             text="Source Code",
-                            url="https://github.com/kennedy-ex/EmikoRobot",
+                            url="https://github.com/voidxtoxic",
                         ),
                     ],
                     [
                         InlineKeyboardButton(
-                            text="Go Back", callback_data="emiko_back"
+                            text="Go Back", callback_data="hori_back"
                         ),
                     ],
                 ]
             ),
         )
-    elif query.data == "emiko_back":
+    elif query.data == "hori_back":
         first_name = update.effective_user.first_name
         uptime = get_readable_time((time.time() - StartTime))
         query.message.edit_text(
@@ -450,7 +450,7 @@ def emiko_about_callback(update, context):
             disable_web_page_preview=False,
         )
 
-    elif query.data == "emiko_admin":
+    elif query.data == "hori_admin":
         query.message.edit_text(
             text=f"*๏ Let's make your group bit effective now*"
             "\nCongragulations, bot now ready to manage your group."
@@ -467,7 +467,7 @@ def emiko_about_callback(update, context):
             ),
         )
 
-    elif query.data == "emiko_notes":
+    elif query.data == "hori_notes":
         query.message.edit_text(
             text=f"<b>๏ Setting up notes</b>"
             f"\nYou can save message/media/audio or anything as notes"
@@ -478,7 +478,7 @@ def emiko_about_callback(update, context):
                 [[InlineKeyboardButton(text="【Back】", callback_data="emiko_")]]
             ),
         )
-    elif query.data == "emiko_support":
+    elif query.data == "hori_support":
         query.message.edit_text(
             text="*๏ Hori san support chats*"
             "\nJoin My Support Group/Channel for see or report a problem on Emiko.",
@@ -486,67 +486,35 @@ def emiko_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="Support", url="t.me/bot_projectx"),
+                        InlineKeyboardButton(text="Support", url="t.me/HorixSupport"),
                         InlineKeyboardButton(
-                            text="Updates", url="https://t.me/void_network"
+                            text="Updates", url="https://t.me/kyouko_updates"
                         ),
                     ],
                     [
-                        InlineKeyboardButton(text="【Back】", callback_data="emiko_"),
+                        InlineKeyboardButton(text="【Back】", callback_data="hori_"),
                     ],
                 ]
             ),
         )
 
-    elif query.data == "emiko_credit":
+    elif query.data == "hori_credit":
         query.message.edit_text(
-            text=f"๏ Credis for Emiko\n"
-            "\nHere Developers Making And Give Inspiration For Made The EmikoRobot",
+            text=f"๏ Credis for Hori\n"
+            "\nHere Developers Making And Give Inspiration For Made The HoriRobot",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            text="sena-ex", url="https://github.com/kennedy-ex"
+                            text="VOID", url="https://github.com/voidxtoxic"
                         ),
                         InlineKeyboardButton(
-                            text="TheHamkerCat", url="https://github.com/TheHamkerCat"
+                            text="Void (telegram)", url="https://t.me/voidxtoxic"
                         ),
                     ],
                     [
-                        InlineKeyboardButton(
-                            text="Feri", url="https://github.com/FeriEXP"
-                        ),
-                        InlineKeyboardButton(
-                            text="riz-ex", url="https://github.com/riz-ex"
-                        ),
-                    ],
-                    [
-                        InlineKeyboardButton(
-                            text="Anime Kaizoku", url="https://github.com/animekaizoku"
-                        ),
-                        InlineKeyboardButton(
-                            text="TheGhost Hunter", url="https://github.com/HuntingBots"
-                        ),
-                    ],
-                    [
-                        InlineKeyboardButton(
-                            text="Inuka Asith", url="https://github.com/inukaasith"
-                        ),
-                        InlineKeyboardButton(
-                            text="Noob-Kittu", url="https://github.com/noob-kittu"
-                        ),
-                    ],
-                    [
-                        InlineKeyboardButton(
-                            text="Queen Arzoo", url="https://github.com/QueenArzoo"
-                        ),
-                        InlineKeyboardButton(
-                            text="Paul Larsen", url="https://github.com/PaulSonOfLars"
-                        ),
-                    ],
-                    [
-                        InlineKeyboardButton(text="【Back】", callback_data="emiko_"),
+                        InlineKeyboardButton(text="【Back】", callback_data="hori_"),
                     ],
                 ]
             ),
@@ -571,7 +539,7 @@ def Source_about_callback(update, context):
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="【Back】", callback_data="emiko_")]]
+                [[InlineKeyboardButton(text="【Back】", callback_data="hori_")]]
             ),
         )
     elif query.data == "source_back":
@@ -886,7 +854,7 @@ def main():
     )
 
     about_callback_handler = CallbackQueryHandler(
-        emiko_about_callback, pattern=r"emiko_", run_async=True
+        emiko_about_callback, pattern=r"hori_", run_async=True
     )
 
     source_callback_handler = CallbackQueryHandler(
