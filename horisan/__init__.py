@@ -24,12 +24,12 @@ StartTime = time.time()
 
 
 def get_user_list(__init__, key):
-    with open("{}/EmikoRobot/{}".format(os.getcwd(), __init__), "r") as json_file:
+    with open("{}/horisan/{}".format(os.getcwd(), __init__), "r") as json_file:
         return json.load(json_file)[key]
 
 
 # enable logging
-FORMAT = "[EmikoRobot] %(message)s"
+FORMAT = "[horisan] %(message)s"
 logging.basicConfig(
     handlers=[logging.FileHandler("log.txt"), logging.StreamHandler()],
     level=logging.INFO,
@@ -41,10 +41,10 @@ logging.getLogger("ptbcontrib.postgres_persistence.postgrespersistence").setLeve
     logging.WARNING
 )
 
-LOGGER = logging.getLogger("[EmikoRobot]")
-LOGGER.info("Emiko is starting. | An Kennedy Project Parts. | Licensed under GPLv3.")
+LOGGER = logging.getLogger("[horisan]")
+LOGGER.info("horisan is starting. | An VOID Project Parts. | Licensed under GPLv3.")
 LOGGER.info("Not affiliated to other anime or Villain in any way whatsoever.")
-LOGGER.info("Project maintained by: github.com/kennedy-ex (t.me/excrybaby)")
+LOGGER.info("Project maintained by: github.com/voidxtoxic (t.me/voidxtoxic)")
 
 # if version < 3.9, stop bot.
 if sys.version_info[0] < 3 or sys.version_info[1] < 9:
@@ -138,7 +138,7 @@ if ENV:
         raise Exception("Your blacklisted chats list does not contain valid integers.")
 
 else:
-    from EmikoRobot.config import Development as Config
+    from horisan.config import Development as Config
 
     TOKEN = Config.TOKEN
 
@@ -233,7 +233,7 @@ else:
         sw = None
         LOGGER.warning("Can't connect to SpamWatch!")
 
-from EmikoRobot.modules.sql import SESSION
+from horisan.modules.sql import SESSION
 
 defaults = tg.Defaults(run_async=True)
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
@@ -304,7 +304,7 @@ DEMONS = list(DEMONS)
 TIGERS = list(TIGERS)
 
 # Load at end to ensure all prev variables have been set
-from EmikoRobot.modules.helper_funcs.handlers import (
+from horisan.modules.helper_funcs.handlers import (
     CustomCommandHandler,
     CustomMessageHandler,
     CustomRegexHandler,
