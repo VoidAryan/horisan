@@ -6,8 +6,8 @@ import textwrap
 import traceback
 from contextlib import redirect_stdout
 
-from EmikoRobot import LOGGER, dispatcher
-from EmikoRobot.modules.helper_funcs.chat_status import dev_plus
+from horisan import LOGGER, dispatcher
+from horisan.modules.helper_funcs.chat_status import dev_plus
 from telegram import ParseMode, Update
 from telegram.ext import CallbackContext, CommandHandler, run_async
 
