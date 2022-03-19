@@ -4,9 +4,9 @@ import html
 import random
 import time
 
-from EmikoRobot import dispatcher
-from EmikoRobot.modules.disable import DisableAbleCommandHandler
-from EmikoRobot.modules.helper_funcs.chat_status import is_user_admin
+from horisan import dispatcher
+from horisan.modules.disable import DisableAbleCommandHandler
+from horisan.modules.helper_funcs.chat_status import is_user_admin
 from telegram.ext import (
     CallbackContext,
     CommandHandler,
