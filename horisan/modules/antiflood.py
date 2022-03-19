@@ -4,15 +4,15 @@ import re
 
 from telegram import Message, Chat, Update, User, ChatPermissions
 
-from EmikoRobot import TIGERS, WOLVES, dispatcher
-from EmikoRobot.modules.helper_funcs.chat_status import (
+from horisan import TIGERS, WOLVES, dispatcher
+from horisan.modules.helper_funcs.chat_status import (
     bot_admin,
     is_user_admin,
     user_admin,
     user_admin_no_reply,
 )
-from EmikoRobot.modules.log_channel import loggable
-from EmikoRobot.modules.sql import antiflood_sql as sql
+from horisan.modules.log_channel import loggable
+from horisan.modules.sql import antiflood_sql as sql
 from telegram.error import BadRequest
 from telegram.ext import (
     CallbackContext,
@@ -22,10 +22,10 @@ from telegram.ext import (
     MessageHandler,
 )
 from telegram.utils.helpers import mention_html
-from EmikoRobot.modules.helper_funcs.string_handling import extract_time
-from EmikoRobot.modules.connection import connected
-from EmikoRobot.modules.helper_funcs.alternate import send_message
-from EmikoRobot.modules.sql.approve_sql import is_approved
+from horisan.modules.helper_funcs.string_handling import extract_time
+from horisan.modules.connection import connected
+from horisan.modules.helper_funcs.alternate import send_message
+from horisan.modules.sql.approve_sql import is_approved
 
 FLOOD_GROUP = 3
 
