@@ -9,9 +9,9 @@ from telegram import (
     InlineKeyboardMarkup,
     InlineKeyboardButton,
 )
-from EmikoRobot import dispatcher, pbot
+from horisan import dispatcher, pbot
 from pyrogram import filters
-from EmikoRobot.modules.disable import DisableAbleCommandHandler
+from horisan.modules.disable import DisableAbleCommandHandler
 
 
 __help__ = """ 
