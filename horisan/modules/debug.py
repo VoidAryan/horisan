@@ -5,8 +5,8 @@ from telethon import events
 from telegram import Update
 from telegram.ext import CallbackContext, CommandHandler
 
-from EmikoRobot import telethn, dispatcher
-from EmikoRobot.modules.helper_funcs.chat_status import dev_plus
+from horisan import telethn, dispatcher
+from horisan.modules.helper_funcs.chat_status import dev_plus
 
 DEBUG_MODE = False
 
