@@ -48,7 +48,7 @@ import urllib
 import asyncio
 import os
 from pyrogram import filters
-from EmikoRobot import TEMP_DOWNLOAD_DIRECTORY, pbot
+from horisan import TEMP_DOWNLOAD_DIRECTORY, pbot
 
 
 @pbot.on_message(filters.command("boobs"))
