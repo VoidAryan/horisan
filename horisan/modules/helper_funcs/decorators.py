@@ -9,7 +9,7 @@ from telegram.ext import (
     InlineQueryHandler,
 )
 from telegram.ext.filters import MessageFilter
-from EmikoRobot import dispatcher as d, LOGGER
+from horisan import dispatcher as d, LOGGER
 from typing import Optional, Union, List
 
 
