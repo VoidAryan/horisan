@@ -174,5 +174,5 @@ class horiHandler:
 
 emikocmd = horiHandler(d).command
 emikomsg = horiHandler(d).message
-emikocallback = EmikoHandler(d).callbackquery
+emikocallback = horiHandler(d).callbackquery
 emikoinline = horiHandler(d).inlinequery
