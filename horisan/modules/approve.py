@@ -4,7 +4,7 @@ from horisan import dispatcher, DRAGONS
 from horisan.modules.helper_funcs.extraction import extract_user
 from telegram.ext import CallbackContext, CallbackQueryHandler
 import horisan.modules.sql.approve_sql as sql
-from EmikoRobot.modules.helper_funcs.chat_status import user_admin
+from horisan.modules.helper_funcs.chat_status import user_admin
 from horisan.modules.log_channel import loggable
 from telegram import ParseMode, InlineKeyboardMarkup, InlineKeyboardButton, Update
 from telegram.utils.helpers import mention_html
