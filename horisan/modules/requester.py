@@ -1,8 +1,8 @@
 from telethon.tl.types import ChannelParticipantsAdmins
 from telethon.utils import get_display_name
 from telethon import *
-from ErzaScarlet import API_ID, API_HASH, TOKEN, OWNER , telethn as tbot
-from ErzaScarlet.events import register
+from horisan import API_ID, API_HASH, TOKEN, OWNER , telethn as tbot
+from horisan.events import register
 import logging
 logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
                     level=logging.WARNING)
