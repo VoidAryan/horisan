@@ -1,8 +1,8 @@
 # This file is part of YuiGBot (Telegram Bot)
 # I give credit for this module to YuiGBot.
 
-from EmikoRobot.events import register
-from EmikoRobot import telethn
+from horisan.events import register
+from horisan import telethn
 
 TMP_DOWNLOAD_DIRECTORY = "./"
 from telethon import events
@@ -11,7 +11,7 @@ from PIL import Image
 from datetime import datetime
 from telegraph import Telegraph, upload_file, exceptions
 
-wibu = "EmikoRobot"
+wibu = "horisan"
 telegraph = Telegraph()
 r = telegraph.create_account(short_name=wibu)
 auth_url = r["auth_url"]
@@ -50,7 +50,7 @@ async def _(event):
                 ms_two = (end - start).seconds
                 os.remove(downloaded_file_name)
                 await h.edit(
-                    "HuihuiBaka Uploaded to https://telegra.ph{}".format(
+                    "Here you go! Your hori Uploaded it to telegraph :  https://telegra.ph{}".format(
                         media_urls[0], (ms + ms_two)
                     ),
                     link_preview=True,
