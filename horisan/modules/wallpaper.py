@@ -1,8 +1,8 @@
 from random import randint
 
 import requests as r
-from EmikoRobot import SUPPORT_CHAT, WALL_API, dispatcher
-from EmikoRobot.modules.disable import DisableAbleCommandHandler
+from horisan import SUPPORT_CHAT, WALL_API, dispatcher
+from horisan.modules.disable import DisableAbleCommandHandler
 from telegram import Update
 from telegram.ext import CallbackContext
 
