@@ -2,8 +2,8 @@ import html
 import re
 from typing import Optional
 
-from EmikoRobot import LOGGER, TIGERS, dispatcher
-from EmikoRobot.modules.helper_funcs.chat_status import (
+from horisan import LOGGER, TIGERS, dispatcher
+from horisan.modules.helper_funcs.chat_status import (
     bot_admin,
     can_restrict,
     connection_status,
@@ -11,12 +11,12 @@ from EmikoRobot.modules.helper_funcs.chat_status import (
     user_admin,
     user_admin_no_reply,
 )
-from EmikoRobot.modules.helper_funcs.extraction import (
+from horisan.modules.helper_funcs.extraction import (
     extract_user,
     extract_user_and_text,
 )
-from EmikoRobot.modules.helper_funcs.string_handling import extract_time
-from EmikoRobot.modules.log_channel import loggable
+from horisan.modules.helper_funcs.string_handling import extract_time
+from horisan.modules.log_channel import loggable
 from telegram import (
     Bot,
     Chat,
