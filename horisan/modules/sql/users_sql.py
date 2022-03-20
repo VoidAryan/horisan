@@ -1,7 +1,7 @@
 import threading
 
-from EmikoRobot import dispatcher
-from EmikoRobot.modules.sql import BASE, SESSION
+from horisan import dispatcher
+from horisan.modules.sql import BASE, SESSION
 from sqlalchemy import (
     Column,
     ForeignKey,
@@ -13,8 +13,8 @@ from sqlalchemy import (
 )
 from sqlalchemy.sql.sqltypes import BigInteger
 
-from EmikoRobot import dispatcher
-from EmikoRobot.modules.sql import BASE, SESSION
+from horisan import dispatcher
+from horisan.modules.sql import BASE, SESSION
 
 
 class Users(BASE):
