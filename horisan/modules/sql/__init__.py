@@ -2,7 +2,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import scoped_session, sessionmaker
 
-from EmikoRobot import DB_URL
+from horisan import DB_URL
 
 
 def start() -> scoped_session:
