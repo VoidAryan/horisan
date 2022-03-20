@@ -149,3 +149,14 @@ RESET_RULES_HANDLER = CommandHandler(
 dispatcher.add_handler(GET_RULES_HANDLER)
 dispatcher.add_handler(SET_RULES_HANDLER)
 dispatcher.add_handler(RESET_RULES_HANDLER)
+
+__help__ = """
+/rules - Show current rules in group chat! set by hori san
+
+/setrules(reply or type after command) - Sets the group rules by given text/media/gif etc.
+
+/clearrules - Removes the current rules! making group lawless
+"""
+
+__mod_name__ = "【 Rules 】"
+
