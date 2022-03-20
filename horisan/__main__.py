@@ -854,7 +854,7 @@ def main():
     )
 
     about_callback_handler = CallbackQueryHandler(
-        emiko_about_callback, pattern=r"hori_", run_async=True
+        hori_about_callback, pattern=r"hori_", run_async=True
     )
 
     source_callback_handler = CallbackQueryHandler(
