@@ -14,8 +14,8 @@ from tswift import Song
 from yt_dlp import YoutubeDL
 from youtube_search import YoutubeSearch
 from youtubesearchpython import SearchVideos
-from EmikoRobot.utils.pluginhelper import get_text, progress
-from EmikoRobot import pbot, arq
+from horisan.utils.pluginhelper import get_text, progress
+from horisan import pbot, arq
 
 
 async def lyrics_func(answers, text):
