@@ -26,7 +26,7 @@ from telegram.ext.dispatcher import run_async
 from telegram.error import BadRequest
 from telegram.utils.helpers import escape_markdown, mention_html
 
-from EmikoRobot import (
+from horisan import (
     DEV_USERS,
     OWNER_ID,
     DRAGONS,
@@ -39,16 +39,16 @@ from EmikoRobot import (
     StartTime,
     SUPPORT_CHAT,
 )
-from EmikoRobot.__main__ import STATS, TOKEN, USER_INFO
-from EmikoRobot.modules.sql import SESSION
-import EmikoRobot.modules.sql.userinfo_sql as sql
-from EmikoRobot.modules.disable import DisableAbleCommandHandler
-from EmikoRobot.modules.sql.global_bans_sql import is_user_gbanned
-from EmikoRobot.modules.sql.afk_sql import is_afk, set_afk
-from EmikoRobot.modules.sql.users_sql import get_user_num_chats
-from EmikoRobot.modules.helper_funcs.chat_status import sudo_plus
-from EmikoRobot.modules.helper_funcs.extraction import extract_user
-from EmikoRobot import telethn
+from horisan.__main__ import STATS, TOKEN, USER_INFO
+from horisan.modules.sql import SESSION
+import horisan.modules.sql.userinfo_sql as sql
+from horisan.modules.disable import DisableAbleCommandHandler
+from horisan.modules.sql.global_bans_sql import is_user_gbanned
+from horisan.modules.sql.afk_sql import is_afk, set_afk
+from horisan.modules.sql.users_sql import get_user_num_chats
+from horisan.modules.helper_funcs.chat_status import sudo_plus
+from horisan.modules.helper_funcs.extraction import extract_user
+from horisan import telethn
 
 
 def no_by_per(totalhp, percentage):
