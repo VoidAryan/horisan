@@ -87,8 +87,8 @@ PM_START_TEXT = """
 *Konichiwa {}!*
 ۞ I'm Hori San An Anime-Theme Bot! [✨](https://telegra.ph/file/c458924bf40c213062dd2.mp4)
 ───────────────────────
-▪ *Alive Since:* {}
-▪ {} *Weebs, Across* {} *Chats*
+× *Alive Since:* {}
+× {} *Weebs, Across* {} *Chats*
 ───────────────────────
 ۞ Im here to manage your GC more efficiently!
 """
@@ -108,7 +108,7 @@ buttons = [
 
 
 HELP_STRINGS = """
-Click on the buttons bellow to get description of hori's commands![ ](https://telegra.ph/file/fc764a3ffbaf06ec93560.jpg)"""
+[Click on the buttons bellow to get description of hori's commands!](https://telegra.ph/file/3a9c28e8c71ba56aeb587.jpg)"""
 
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
