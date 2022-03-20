@@ -1,7 +1,7 @@
 from telethon.tl.types import ChannelParticipantsAdmins
 from telethon.utils import get_display_name
 from telethon import *
-from horisan import API_ID, API_HASH, TOKEN, OWNER , telethn as tbot
+from horisan import API_ID, API_HASH, TOKEN, telethn as tbot
 from horisan.events import register
 import logging
 logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
