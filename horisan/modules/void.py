@@ -9,19 +9,17 @@ from horisan.events import register
 from horisan import telethn as tbot
 
 
-PHOTO = "https://telegra.ph/file/c458924bf40c213062dd2.mp4"
+PHOTO = "https://telegra.ph/file/7423dc037cb86e76c426d.jpg"
 
 
 @register(pattern=("/void"))
 async def awake(event):
-    TEXT = f"**Hey There Weebs!![{event.sender.first_name}](tg://user?id={event.sender.id})** \n\n"
-    TEXT += f"**I Am Hori San!**\n\n"
-    TEXT += f"**Meet My izumi kun hehe - [VOID](https://t.me/voidxtoxic)**** \n\n"
-    TEXT += "**◈ I will love to be in your groupchat ◈"
+    TEXT = f"**Welcome to [【V๏ɪ፝֟𝔡】Network](https://t.me/void_network)** \n\n"
+    TEXT += "**◈ Void is an anime based Community with a motive to spread love and peace around telegram. Go through the channel and join the Community if it draws your attention. ◈"
     BUTTON = [
         [
-            Button.url("【Support】", "https://t.me/HoriXSupport"),
-            Button.url("【Updates】", "https://t.me/kyouko_updates"),
+            Button.url("【Usertag】", "https://t.me/void_network/103"),
+            Button.url("【Owner Sama】", "https://t.me/voidxtoxic"),
         ]
     ]
     await tbot.send_file(event.chat_id, PHOTO, caption=TEXT, buttons=BUTTON)
