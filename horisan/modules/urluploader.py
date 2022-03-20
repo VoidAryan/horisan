@@ -3,7 +3,7 @@ import time
 
 import aiohttp
 
-from EmikoRobot.utils.uputils import humanbytes, time_formatter
+from horisan.utils.uputils import humanbytes, time_formatter
 
 
 async def download_file(url, file_name, message, start_time, bot):
