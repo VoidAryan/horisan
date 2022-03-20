@@ -4,9 +4,9 @@ from traceback import format_exc
 from pyrogram import filters
 from pyrogram.types import Message
 
-from EmikoRobot import arq
-from EmikoRobot.utils.errors import capture_err
-from EmikoRobot import pbot as app
+from horisan import arq
+from horisan.utils.errors import capture_err
+from horisan import pbot as app
 
 
 async def quotify(messages: list):
@@ -33,7 +33,7 @@ def isArgInt(message: Message) -> bool:
         return [False, 0]
 
 
-@app.on_message(filters.command("q"))
+@app.on_message(filters.command("qt"))
 @capture_err
 async def quotly_func(client, message: Message):
     if not message.reply_to_message:
