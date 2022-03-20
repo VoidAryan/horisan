@@ -27,7 +27,7 @@ async def _(event):
         lan, text = input_str.split("|")
     else:
         await event.reply(
-            "Invalid Syntax\nFormat `/tts lang | text`\nFor eg: `/tts en | hello`"
+            "Invalid Syntax\nFormat `/tts lang | text`\nFor eg: `/tts en | hello` See Thats How Its Done Baka"
         )
         return
     text = text.strip()
