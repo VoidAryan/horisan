@@ -1,4 +1,4 @@
-from EmikoRobot.modules.disable import (
+from horisan.modules.disable import (
     DisableAbleCommandHandler,
     DisableAbleMessageHandler,
 )
