@@ -11,7 +11,6 @@ IN_GRP = -1001415010098
 bot = asst = tbot
 REQ_GO =  -1001509437008
 on = tbot.on
-auth = OWNER 
 
 
 @tbot.on(events.NewMessage(chats=IN_GRP))
