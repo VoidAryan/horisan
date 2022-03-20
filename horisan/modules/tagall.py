@@ -6,7 +6,7 @@ from telethon.tl.functions.channels import GetParticipantRequest
 from telethon.tl.types import ChannelParticipantAdmin
 from telethon.tl.types import ChannelParticipantCreator
 
-from EmikoRobot import telethn as client
+from horisan import telethn as client
 
 spam_chats = []
 
@@ -33,7 +33,7 @@ async def mentionall(event):
         return await event.reply("__Only admins can mention all!__")
 
     if event.pattern_match.group(1) and event.is_reply:
-        return await event.reply("__Give me one argument!__")
+        return await event.reply("__Give me one argument! or reply to something baka__")
     elif event.pattern_match.group(1):
         mode = "text_on_cmd"
         msg = event.pattern_match.group(1)
