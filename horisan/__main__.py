@@ -190,7 +190,7 @@ def start(update: Update, context: CallbackContext):
             if args[0].lower() == "help":
                 send_help(update.effective_chat.id, HELP_STRINGS)
             elif args[0].lower().startswith("ghelp_"):
-                mod = args[0].lower().split("_", 1)[1]
+                mod = args[0].lower().split("_", 2)[2]
                 if not HELPABLE.get(mod, False):
                     return
                 send_help(
