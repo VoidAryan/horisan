@@ -16,7 +16,7 @@ from telethon.tl.types import (
 )
 from telethon.utils import is_image, is_video
 
-from EmikoRobot.events import register as tomori
+from horisan.events import register as tomori
 
 
 @tomori(pattern="^/whatanime(.*)")
