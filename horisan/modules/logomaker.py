@@ -3,8 +3,8 @@ import random
 import glob
 from PIL import Image, ImageDraw, ImageFont
 from telethon.tl.types import InputMessagesFilterPhotos
-from EmikoRobot.events import register
-from EmikoRobot import telethn as tbot, ubot2
+from horisan.events import register
+from horisan import telethn as tbot, ubot2
 
 
 def mediainfo(media):
@@ -63,23 +63,23 @@ async def logo_gen(event):
     else:
         pics = []
         async for i in ubot2.iter_messages(
-            "@KenLogopack", filter=InputMessagesFilterPhotos
+            "@voidxtoxic", filter=InputMessagesFilterPhotos
         ):
             pics.append(i)
         id_ = random.choice(pics)
         bg_ = await id_.download_media()
-        fpath_ = glob.glob("./EmikoRobot/resources/fonts/*")
+        fpath_ = glob.glob("./horisan/resources/fonts/*")
         font_ = random.choice(fpath_)
     if not bg_:
         pics = []
         async for i in ubot2.iter_messages(
-            "@KenLogopack", filter=InputMessagesFilterPhotos
+            "@voidxtoxic", filter=InputMessagesFilterPhotos
         ):
             pics.append(i)
         id_ = random.choice(pics)
         bg_ = await id_.download_media()
     if not font_:
-        fpath_ = glob.glob("./EmikoRobot/resources/fonts/*")
+        fpath_ = glob.glob("./horisan/resources/fonts/*")
         font_ = random.choice(fpath_)
     if len(name) <= 8:
         fnt_size = 120
@@ -114,7 +114,7 @@ async def logo_gen(event):
         await tbot.send_file(
             event.chat_id,
             file=flnme,
-            caption="Logo by [Emiko Robot](https://t.me/EmiexRobot)",
+            caption="Logo by [VOID](https://t.me/voidxtoxic)",
             force_document=False,
         )
         os.remove(flnme)
@@ -122,7 +122,7 @@ async def logo_gen(event):
     if os.path.exists(bg_):
         os.remove(bg_)
     if os.path.exists(font_):
-        if not font_.startswith("./EmikoRobot/resources/fonts"):
+        if not font_.startswith("./horisan/resources/fonts"):
             os.remove(font_)
 
 
@@ -147,23 +147,23 @@ async def logo_(event):
     else:
         pics = []
         async for i in ubot2.iter_messages(
-            "@kenlogopack", filter=InputMessagesFilterPhotos
+            "@voidxtoxic", filter=InputMessagesFilterPhotos
         ):
             pics.append(i)
         id_ = random.choice(pics)
         bg_ = await id_.download_media()
-        fpath_ = glob.glob("./EmikoRobot/resources/fonts/*")
+        fpath_ = glob.glob("./horisan/resources/fonts/*")
         font_ = random.choice(fpath_)
     if not bg_:
         pics = []
         async for i in ubot2.iter_messages(
-            "@kenlogopack", filter=InputMessagesFilterPhotos
+            "@voidxtoxic", filter=InputMessagesFilterPhotos
         ):
             pics.append(i)
         id_ = random.choice(pics)
         bg_ = await id_.download_media()
     if not font_:
-        fpath_ = glob.glob("./EmikoRobot/resources/fonts/*")
+        fpath_ = glob.glob("./horisan/resources/fonts/*")
         font_ = random.choice(fpath_)
     if len(name) <= 8:
         fnt_size = 105
@@ -198,7 +198,7 @@ async def logo_(event):
         await tbot.send_file(
             event.chat_id,
             file=flnme,
-            caption="Logo by [Emiko Robot](https://t.me/EmiexRobot)",
+            caption="Logo by [horisan](https://t.me/kyoukohori_robot)",
             force_document=False,
         )
         os.remove(flnme)
@@ -206,7 +206,7 @@ async def logo_(event):
     if os.path.exists(bg_):
         os.remove(bg_)
     if os.path.exists(font_):
-        if not font_.startswith("./EmikoRobot/resources/fonts"):
+        if not font_.startswith("./horisan/resources/fonts"):
             os.remove(font_)
 
 
