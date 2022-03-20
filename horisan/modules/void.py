@@ -27,6 +27,6 @@ async def awake(event):
 __help__ = """
  ──「Void Network」──                         
  
-❂ /void: returns information about the anime."""
+❂ /void: Get information about our community! using it in groups may create promotion so we don't support using it in groups."""
    
 __mod_name__ = "【VOID】"
