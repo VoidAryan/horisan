@@ -2,9 +2,9 @@ import sre_constants
 
 import regex
 import telegram
-from EmikoRobot import LOGGER, dispatcher
-from EmikoRobot.modules.disable import DisableAbleMessageHandler
-from EmikoRobot.modules.helper_funcs.regex_helper import infinite_loop_check
+from horisan import LOGGER, dispatcher
+from horisan.modules.disable import DisableAbleMessageHandler
+from horisan.modules.helper_funcs.regex_helper import infinite_loop_check
 from telegram import Update
 from telegram.ext import CallbackContext, Filters, run_async
 
