@@ -2,7 +2,7 @@ import threading
 
 from sqlalchemy import Boolean, Column, UnicodeText
 
-from EmikoRobot.modules.sql import BASE, SESSION
+from horisan.modules.sql import BASE, SESSION
 
 
 class CleanerBlueTextChatSettings(BASE):
