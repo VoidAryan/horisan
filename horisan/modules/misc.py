@@ -4,9 +4,9 @@ import re
 import codecs
 from typing import List
 from random import randint
-from EmikoRobot.modules.helper_funcs.chat_status import user_admin
-from EmikoRobot.modules.disable import DisableAbleCommandHandler
-from EmikoRobot import (
+from horisan.modules.helper_funcs.chat_status import user_admin
+from horisan.modules.disable import DisableAbleCommandHandler
+from horisan import (
     dispatcher,
     WALL_API,
 )
@@ -27,9 +27,9 @@ from telegram import (
 from telegram.error import BadRequest
 from telegram.ext.dispatcher import run_async
 from telegram.ext import CallbackContext, Filters, CommandHandler
-from EmikoRobot import StartTime
-from EmikoRobot.modules.helper_funcs.chat_status import sudo_plus
-from EmikoRobot.modules.helper_funcs.alternate import send_action, typing_action
+from horisan import StartTime
+from horisan.modules.helper_funcs.chat_status import sudo_plus
+from horisan.modules.helper_funcs.alternate import send_action, typing_action
 
 MARKDOWN_HELP = f"""
 Markdown is a very powerful formatting tool supported by telegram. {dispatcher.bot.first_name} has some enhancements, to make sure that \
