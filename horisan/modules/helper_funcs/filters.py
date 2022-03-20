@@ -1,4 +1,4 @@
-from EmikoRobot import DEV_USERS, DRAGONS, DEMONS
+from horisan import DEV_USERS, DRAGONS, DEMONS
 from telegram import Message
 from telegram.ext import MessageFilter
 
