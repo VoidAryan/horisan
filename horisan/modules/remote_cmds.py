@@ -1,12 +1,12 @@
-from EmikoRobot import dispatcher, LOGGER
-from EmikoRobot.modules.helper_funcs.chat_status import (
+from horisan import dispatcher, LOGGER
+from horisan.modules.helper_funcs.chat_status import (
     bot_admin,
     is_bot_admin,
     is_user_ban_protected,
     is_user_in_chat,
 )
-from EmikoRobot.modules.helper_funcs.extraction import extract_user_and_text
-from EmikoRobot.modules.helper_funcs.filters import CustomFilters
+from horisan.modules.helper_funcs.extraction import extract_user_and_text
+from horisan.modules.helper_funcs.filters import CustomFilters
 from telegram import Update, ChatPermissions
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler
