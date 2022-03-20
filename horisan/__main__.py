@@ -389,7 +389,7 @@ def help_button(update, context):
         pass
 
 
-def emiko_about_callback(update, context):
+def hori_about_callback(update, context):
     query = update.callback_query
     if query.data == "hori_":
         query.message.edit_text(
@@ -475,7 +475,7 @@ def emiko_about_callback(update, context):
             f"\n\nYou can also set buttons for notes and filters (refer help menu)",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="【Back】", callback_data="emiko_")]]
+                [[InlineKeyboardButton(text="【Back】", callback_data="hori_")]]
             ),
         )
     elif query.data == "hori_support":
