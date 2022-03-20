@@ -1,6 +1,6 @@
 import requests
-from EmikoRobot.events import register
-from EmikoRobot import telethn as tbot
+from horisan.events import register
+from horisan import telethn as tbot
 
 
 @register(pattern="^/ptl ?(.*)")
