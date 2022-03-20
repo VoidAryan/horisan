@@ -11,8 +11,8 @@ from google_trans_new import google_translator
 from Python_ARQ import ARQ
 from search_engine_parser import GoogleSearch
 
-from EmikoRobot import BOT_ID, OWNER_ID, ARQ_API_URL, ARQ_API_KEY
-from EmikoRobot import pbot
+from horisan import BOT_ID, OWNER_ID, ARQ_API_URL, ARQ_API_KEY
+from horisan import pbot
 
 ARQ_API = "WZQUBA-PFAZQJ-OMIINH-MIVHYM-ARQ"
 ARQ_API_KEY = "WZQUBA-PFAZQJ-OMIINH-MIVHYM-ARQ"
