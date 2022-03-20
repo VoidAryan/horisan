@@ -1,5 +1,5 @@
 from sqlalchemy import Column, String, Numeric, Boolean
-from EmikoRobot.modules.sql import BASE, SESSION
+from horisan.modules.sql import BASE, SESSION
 
 
 class forceSubscribe(BASE):
