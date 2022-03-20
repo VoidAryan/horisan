@@ -3,7 +3,7 @@ import re
 import os
 import html
 import requests
-import EmikoRobot.modules.sql.chatbot_sql as sql
+import horisan.modules.sql.chatbot_sql as sql
 
 from time import sleep
 from telegram import ParseMode
@@ -30,10 +30,10 @@ from telegram.ext import (
 from telegram.error import BadRequest, RetryAfter, Unauthorized
 from telegram.utils.helpers import mention_html, mention_markdown, escape_markdown
 
-from EmikoRobot.modules.helper_funcs.filters import CustomFilters
-from EmikoRobot.modules.helper_funcs.chat_status import user_admin, user_admin_no_reply
-from EmikoRobot import dispatcher, updater, SUPPORT_CHAT
-from EmikoRobot.modules.log_channel import gloggable
+from horisan.modules.helper_funcs.filters import CustomFilters
+from horisan.modules.helper_funcs.chat_status import user_admin, user_admin_no_reply
+from horisan import dispatcher, updater, SUPPORT_CHAT
+from horisan.modules.log_channel import gloggable
 
 
 @user_admin_no_reply
@@ -97,11 +97,11 @@ def kukiadd(update: Update, context: CallbackContext) -> str:
 def kuki(update: Update, context: CallbackContext):
     user = update.effective_user
     message = update.effective_message
-    msg = "Choose an option"
+    msg = "Choose Any One Baka"
     keyboard = InlineKeyboardMarkup(
         [
-            [InlineKeyboardButton(text="on", callback_data="add_chat({})")],
-            [InlineKeyboardButton(text="off", callback_data="rm_chat({})")],
+            [InlineKeyboardButton(text="Turn On", callback_data="add_chat({})")],
+            [InlineKeyboardButton(text="Turn Off", callback_data="rm_chat({})")],
         ]
     )
     message.reply_text(
