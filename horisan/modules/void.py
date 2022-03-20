@@ -23,3 +23,5 @@ async def awake(event):
         ]
     ]
     await tbot.send_file(event.chat_id, PHOTO, caption=TEXT, buttons=BUTTON)
+
+    __mod_name__ = "【VOID】"
