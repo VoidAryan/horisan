@@ -463,7 +463,7 @@ def hori_about_callback(update, context):
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="【Back】", callback_data="emiko_")]]
+                [[InlineKeyboardButton(text="【Back】", callback_data="hori_")]]
             ),
         )
 
@@ -481,7 +481,7 @@ def hori_about_callback(update, context):
     elif query.data == "hori_support":
         query.message.edit_text(
             text="*๏ Hori san support chats*"
-            "\nJoin My Support Group/Channel for see or report a problem on Emiko.",
+            "\nJoin My Support Group/Channel for see or report a problem on Hori.",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
