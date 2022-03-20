@@ -1,7 +1,7 @@
 import threading
 from typing import Union
 
-from EmikoRobot.modules.sql import BASE, SESSION
+from horisan.modules.sql import BASE, SESSION
 from sqlalchemy import Boolean, Column, String
 from sqlalchemy.sql.sqltypes import BigInteger
 
