@@ -172,7 +172,7 @@ class horiHandler:
         return _inlinequery
 
 
-emikocmd = horiHandler(d).command
-emikomsg = horiHandler(d).message
-emikocallback = horiHandler(d).callbackquery
-emikoinline = horiHandler(d).inlinequery
+horicmd = horiHandler(d).command
+horimsg = horiHandler(d).message
+horicallback = horiHandler(d).callbackquery
+horiinline = horiHandler(d).inlinequery
