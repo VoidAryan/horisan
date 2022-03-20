@@ -1,6 +1,6 @@
-from EmikoRobot import pbot as app
-from EmikoRobot.utils.errors import capture_err
-from EmikoRobot.ex_plugins.dbfunctions import get_couple, save_couple
+from horisan import pbot as app
+from horisan.utils.errors import capture_err
+from horisan.ex_plugins.dbfunctions import get_couple, save_couple
 from pyrogram import filters
 import random
 from datetime import datetime
@@ -29,7 +29,7 @@ today = str(dt()[0])
 tomorrow = str(dt_tom())
 
 
-@app.on_message(filters.command("couples") & ~filters.edited)
+@app.on_message(filters.command("shipping") & ~filters.edited)
 @capture_err
 async def couple(_, message):
     if message.chat.type == "private":
@@ -55,8 +55,8 @@ async def couple(_, message):
 
             couple_selection_message = f"""**Couple of the day:**
 
-{c1_mention} + {c2_mention} = ❤️
-__New couple of the day may be chosen at 12AM {tomorrow}__"""
+{c1_mention} + {c2_mention} = hehe! good luck from hori san ❤️
+__New couple of the day may be chosen one eternity later{tomorrow}__"""
             await app.send_message(message.chat.id, text=couple_selection_message)
             couple = {"c1_id": c1_id, "c2_id": c2_id}
             await save_couple(chat_id, today, couple)
@@ -66,7 +66,7 @@ __New couple of the day may be chosen at 12AM {tomorrow}__"""
             c2_id = int(is_selected["c2_id"])
             c1_name = (await app.get_users(c1_id)).first_name
             c2_name = (await app.get_users(c2_id)).first_name
-            couple_selection_message = f"""**Couple of the day:**
+            couple_selection_message = f"""**Couple of the day hehe ///:**
 
 [{c1_name}](tg://openmessage?user_id={c1_id}) + [{c2_name}](tg://openmessage?user_id={c2_id}) = ❤️
 __New couple of the day may be chosen at 12AM {tomorrow}__"""
