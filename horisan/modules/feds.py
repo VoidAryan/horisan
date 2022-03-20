@@ -8,7 +8,7 @@ import uuid
 from io import BytesIO
 
 import horisan.modules.sql.feds_sql as sql
-from EmikoRobot import (
+from horisan import (
     EVENT_LOGS,
     LOGGER,
     SUPPORT_CHAT,
