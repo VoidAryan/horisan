@@ -1,8 +1,8 @@
 import os
 import cv2
 from PIL import Image
-from EmikoRobot.events import register
-from EmikoRobot import telethn as tbot
+from horisan.events import register
+from horisan import telethn as tbot
 
 
 @register(pattern="^/tiny ?(.*)")
@@ -11,9 +11,9 @@ async def _(event):
     if not (reply and (reply.media)):
         await event.reply("`Please reply to a sticker`")
         return
-    kontol = await event.reply("`Processing tiny...`")
+    kontol = await event.reply("`Making your sticker tiny hehe...`")
     ik = await tbot.download_media(reply)
-    im1 = Image.open("EmikoRobot/resources/ken.png")
+    im1 = Image.open("horisan/resources/ken.png")
     if ik.endswith(".tgs"):
         await tbot.download_media(reply, "ken.tgs")
         os.system("lottie_convert.py ken.tgs json.json")
