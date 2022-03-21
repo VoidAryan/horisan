@@ -373,7 +373,14 @@ def help_button(update, context):
                 reply_markup=InlineKeyboardMarkup(
                     paginate_modules(0, HELPABLE, "help")
                 ),
-            )    
+            )   
+            
+        # ensure no spinny white circle
+        context.bot.answer_callback_query(query.id)
+        # query.message.delete()
+
+    except BadRequest:
+        pass
 
 def hori_about_callback(update, context):
     query = update.callback_query
