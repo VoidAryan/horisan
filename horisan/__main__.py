@@ -181,6 +181,43 @@ def test(update: Update, context: CallbackContext):
     update.effective_message.reply_text("This person edited a message")
     print(update.effective_message)
 
+def send_help(chat_id, text, keyboard=None):
+    if not keyboard:
+        keyboard = InlineKeyboardMarkup(paginate_modules(0, HELPABLE, "help"))
+    dispatcher.bot.send_message(
+        chat_id=chat_id,
+        text=text,
+        parse_mode=ParseMode.MARKDOWN,
+        disable_web_page_preview=True,
+        reply_markup=keyboard,
+    )
+
+
+def test(update: Update, context: CallbackContext):
+    # pprint(eval(str(update)))
+    # update.effective_message.reply_text("Hola tester! _I_ *have* `markdown`", parse_mode=ParseMode.MARKDOWN)
+    update.effective_message.reply_text("This person edited a message")
+    print(update.effective_message)
+
+
+def start(update: Update, context: CallbackContext):
+    args = context.args
+    uptime = get_readable_time((time.time() - StartTime))
+    if update.effective_chat.type == "private":
+        if len(args) >= 1:
+            if args[0].lower() == "help":
+                send_help(update.effective_chat.id, HELP_STRINGS)
+            elif args[0].lower().startswith("ghelp_"):
+                mod = args[0].lower().split("_", 1)[1]
+                if not HELPABLE.get(mod, False):
+                    return
+                send_help(
+                    update.effective_chat.id,
+                    HELPABLE[mod].__help__,
+                    InlineKeyboardMarkup(
+                        [[InlineKeyboardButton(text="Go Back", callback_data="help_back")]]
+                    ),
+                )
 
 
 @app.on_callback_query(filters.regex(r"help_(.*?)"))
@@ -321,14 +358,6 @@ def error_callback(update: Update, context: CallbackContext):
     except TelegramError:
         print(error)
         # handle all other telegram related errors
-
-
-def help_button(update, context):
-    query = update.callback_query
-    mod_match = re.match(r"help_module\((.+?)\)", query.data)
-    prev_match = re.match(r"help_prev\((.+?)\)", query.data)
-    next_match = re.match(r"help_next\((.+?)\)", query.data)
-    back_match = re.match(r"help_back", query.data)
 
     print(query.message.chat.id)
 
