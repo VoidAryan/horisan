@@ -375,7 +375,7 @@ def help_button(update, context):
                 ),
             )    
 
-def _about_callback(update, context):
+def hori_about_callback(update, context):
     query = update.callback_query
     if query.data == "hori_":
         query.message.edit_text(
