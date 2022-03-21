@@ -220,23 +220,6 @@ def start(update: Update, context: CallbackContext):
                 )
 
 
-@app.on_callback_query(filters.regex(r"help_(.*?)"))
-async def help_button(client, query):
-    home_match = re.match(r"help_home\((.+?)\)", query.data)
-    mod_match = re.match(r"help_module\((.+?)\)", query.data)
-    prev_match = re.match(r"help_prev\((.+?)\)", query.data)
-    next_match = re.match(r"help_next\((.+?)\)", query.data)
-    back_match = re.match(r"help_back", query.data)
-    create_match = re.match(r"help_create", query.data)
-        if mod_match:
-        module = (mod_match.group(1)).replace(" ", "_")
-        text = (
-            "{} **{}**:\n".format(
-                "Here is the help for", HELPABLE[module].__module__
-            )
-            + HELPABLE[module].__help__
-        )
-
         await query.message.edit(
             text=text,
             reply_markup=InlineKeyboardMarkup(
