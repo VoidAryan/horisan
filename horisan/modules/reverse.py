@@ -79,7 +79,7 @@ def reverse(update: Update, context:CallbackContext):
             msg.reply_text(f"{VE}\nPlease try again using http or https protocol.")
             return
     else:
-        msg.reply_markdown("Please reply to a sticker, or an image to search it!\nDo you know that you can search an image with a link too? /grs [picturelink] <amount>.")
+        msg.reply_markdown("Baka reply to a sticker/photo...!")
         return
 
     try:
@@ -89,7 +89,7 @@ def reverse(update: Update, context:CallbackContext):
         location = response.headers.get("Location")
 
         if response != 400:
-            xx = bot.send_message(chat_id, "Finding your waifu/husbando...")                          
+            xx = bot.send_message(chat_id, "Finding your waifu/husbando...", reply_to_message_id=rtmid)                          
         else:
             xx = bot.send_message(chat_id, "Sorry I was not able to find this! Try again.", reply_to_message_id=rtmid)
             return
@@ -103,7 +103,7 @@ def reverse(update: Update, context:CallbackContext):
             imgspage = match['similar_images']
 
         if guess and imgspage:
-            xx.edit_text(f"[{guess}]({location})\nPlease Finding your waifu/husbando....", parse_mode='Markdown', disable_web_page_preview=True)
+            xx.edit_text(f"[{guess}]({location})\n\n[Similar Images]({imgspage})", parse_mode='Markdown', disable_web_page_preview=True)
         else:
             xx.edit_text("Can't Find this unidentified thing...")
             return
