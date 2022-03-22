@@ -5,7 +5,6 @@ from telegram import Update, message, ParseMode
 from telegram.ext import CallbackContext
 
 from horisan.modules.helper_funcs.decorators import horicmd, horimsg
-from horisan.modules.helper_funcs.admin_rights import user_admin, AdminPerms
 from horisan.modules.sql.antichannel_sql import antichannel_status, disable_antichannel, enable_antichannel
 from horisan.modules.language import gs
 
