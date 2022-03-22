@@ -20,6 +20,8 @@ opener = urllib.request.build_opener()
 useragent = 'Mozilla/5.0 (Linux; Android 6.0.1; SM-G920V Build/MMB29K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.98 Mobile Safari/537.36'
 opener.addheaders = [('User-agent', useragent)]
 
+@register(pattern="^/r(.*)")
+
 @run_async
 def reverse(update: Update, context:CallbackContext):
     msg = update.effective_message
@@ -89,10 +91,9 @@ def reverse(update: Update, context:CallbackContext):
         location = response.headers.get("Location")
 
         if response != 400:
-            xx = bot.send_message(chat_id, "Finding your waifu/husbando..."
-                                  "\nPlease wait.", reply_to_message_id=rtmid)
+            xx = bot.send_message(chat_id, "Finding your waifu/husbando...)                          
         else:
-            xx = bot.send_message(chat_id, "Sorry I was not able to find this please reply the image with /grs again so that I can try again.", reply_to_message_id=rtmid)
+            xx = bot.send_message(chat_id, "Sorry I was not able to find this! Try again.", reply_to_message_id=rtmid)
             return
 
         os.remove(imagename)
@@ -111,8 +112,8 @@ def reverse(update: Update, context:CallbackContext):
 
         images = scam(imgspage, lim)
         if len(images) == 0:
-            xx.edit_text(f"[{guess}]({location})\n[Visually similar images]({imgspage})"
-                          "\nCouldn't fetch any images.", parse_mode='Markdown', disable_web_page_preview=True)
+            xx.edit_text(f"[{guess}]({location})\n({imgspage})"
+                          , parse_mode='Markdown', disable_web_page_preview=True)
             return
 
         imglinks = []
