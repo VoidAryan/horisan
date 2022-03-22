@@ -183,7 +183,7 @@ Do you know that you can search an image with a link too? /reverse picturelink <
 __mod_name__ = "Reverse"
 
 REVERSE_HANDLER = DisableAbleCommandHandler(
-    ["pp", "grs" , "p","reverse"], reverse, pass_args=True, admin_ok=True
+    ["pp", "grs" , "p","r","reverse"], reverse, pass_args=True, admin_ok=True
 )
 
 dispatcher.add_handler(REVERSE_HANDLER)
