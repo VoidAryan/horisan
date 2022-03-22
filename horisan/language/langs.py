@@ -19,11 +19,11 @@ class Language:
             return en_string
 
     def reload_strings(self) -> None:
-        for filename in os.listdir(r"./EnmuBot/language"):
+        for filename in os.listdir(r"./horisan/language"):
             if filename.endswith(".yaml"):
                 language_name = filename[:-5]
                 self.languages[language_name] = yaml.safe_load(
-                    open(r"./EnmuBot/language/" + filename, encoding="utf8")
+                    open(r"./horisan/language/" + filename, encoding="utf8")
                 )
 
     def get_languages(self) -> Dict:
