@@ -91,7 +91,7 @@ def reverse(update: Update, context:CallbackContext):
         location = response.headers.get("Location")
 
         if response != 400:
-            xx = bot.send_message(chat_id, "Finding your waifu/husbando...)                          
+            xx = bot.send_message(chat_id, "Finding your waifu/husbando...")                          
         else:
             xx = bot.send_message(chat_id, "Sorry I was not able to find this! Try again.", reply_to_message_id=rtmid)
             return
