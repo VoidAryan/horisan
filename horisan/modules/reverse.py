@@ -89,7 +89,7 @@ def reverse(update: Update, context:CallbackContext):
         location = response.headers.get("Location")
 
         if response != 400:
-            xx = bot.send_message(chat_id, "Finding your waifu/husbando.", reply_to_message_id=rtmid)
+            xx = bot.send_message(chat_id, "Finding your waifu/husbando....", reply_to_message_id=rtmid)
         else:
             xx = bot.send_message(chat_id, "Sorry I was not able to find this! try again.", reply_to_message_id=rtmid)
             return
@@ -110,8 +110,8 @@ def reverse(update: Update, context:CallbackContext):
 
         images = scam(imgspage, lim)
         if len(images) == 0:
-            xx.edit_text(f"[{guess}]({location})\n\n[similar images]({imgspage})"
-                          "\nhere you go...👀.", parse_mode='Markdown', disable_web_page_preview=True)
+            xx.edit_text(f"[{guess}]({location})\n\n[similar images....!]({imgspage})"
+                          , parse_mode='Markdown', disable_web_page_preview=True)
             return
 
         imglinks = []
