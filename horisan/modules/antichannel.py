@@ -4,7 +4,7 @@ from telegram.ext.filters import Filters
 from telegram import Update, message, ParseMode
 from telegram.ext import CallbackContext
 
-from horisan.modules.helper_funcs.decorators import enmucmd, enmumsg
+from horisan.modules.helper_funcs.decorators import horicmd, horimsg
 from horisan.modules.helper_funcs.channel_mode import user_admin, AdminPerms
 from horisan.modules.sql.antichannel_sql import antichannel_status, disable_antichannel, enable_antichannel
 from horisan.modules.language import gs
@@ -29,7 +29,7 @@ def set_antichannel(update: Update, context: CallbackContext):
     message.reply_html(
         text=gs(chat.id, "status_antichannel").format(antichannel_status(chat.id), html.escape(chat.title)))
 
-@enmumsg(Filters.chat_type.groups, group=110)
+@horimsg(Filters.chat_type.groups, group=110)
 def eliminate_channel(update: Update, context: CallbackContext):
     message = update.effective_message
     chat = update.effective_chat
