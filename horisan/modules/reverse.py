@@ -103,7 +103,7 @@ def reverse(update: Update, context:CallbackContext):
             imgspage = match['similar_images']
 
         if guess and imgspage:
-            xx.edit_text(f"[{guess}]({location})\n\n[Similar Images]({imgspage})", parse_mode='Markdown', disable_web_page_preview=True)
+            xx.edit_text(f"[{guess}]({location})\n[Similar Images]({imgspage})", parse_mode='Markdown', disable_web_page_preview=True)
         else:
             xx.edit_text("Can't Find this unidentified thing...")
             return
