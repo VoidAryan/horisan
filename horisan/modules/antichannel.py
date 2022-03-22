@@ -4,12 +4,12 @@ from telegram.ext.filters import Filters
 from telegram import Update, message, ParseMode
 from telegram.ext import CallbackContext
 
-from EnmuBot.modules.helper_funcs.decorators import enmucmd, enmumsg
-from EnmuBot.modules.helper_funcs.channel_mode import user_admin, AdminPerms
-from EnmuBot.modules.sql.antichannel_sql import antichannel_status, disable_antichannel, enable_antichannel
-from EnmuBot.modules.language import gs
+from horisan.modules.helper_funcs.decorators import enmucmd, enmumsg
+from horisan.modules.helper_funcs.channel_mode import user_admin, AdminPerms
+from horisan.modules.sql.antichannel_sql import antichannel_status, disable_antichannel, enable_antichannel
+from horisan.modules.language import gs
 
-@enmucmd(command="antichannelmode", group=100)
+@horicmd(command="antichannel", group=100)
 @user_admin(AdminPerms.CAN_RESTRICT_MEMBERS)
 def set_antichannel(update: Update, context: CallbackContext):
     message = update.effective_message
@@ -43,5 +43,9 @@ def eliminate_channel(update: Update, context: CallbackContext):
         
 def helps(chat):
     return gs(chat, "antichannel_help")
+
+__help__ = """
+/antichannel : Restrict Users Texting From Channel Trying to break rules without getting caught!
+"""
 
 __mod_name__ = "Anti-Channel"
