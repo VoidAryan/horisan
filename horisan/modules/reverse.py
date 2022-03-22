@@ -20,8 +20,6 @@ opener = urllib.request.build_opener()
 useragent = 'Mozilla/5.0 (Linux; Android 6.0.1; SM-G920V Build/MMB29K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.98 Mobile Safari/537.36'
 opener.addheaders = [('User-agent', useragent)]
 
-@register(pattern="^/r(.*)")
-
 @run_async
 def reverse(update: Update, context:CallbackContext):
     msg = update.effective_message
@@ -194,7 +192,7 @@ Do you know that you can search an image with a link too? /reverse picturelink <
 __mod_name__ = "【Reverse】"
 
 REVERSE_HANDLER = DisableAbleCommandHandler(
-    ["pp","r", "grs", "p"], reverse, pass_args=True, admin_ok=True
+    ["pp","r", "grs", "p","reverse"], reverse, pass_args=True, admin_ok=True
 )
 
 dispatcher.add_handler(REVERSE_HANDLER)
