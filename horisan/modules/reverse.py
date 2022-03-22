@@ -11,10 +11,10 @@ from telegram import InputMediaPhoto, TelegramError
 from telegram import Update
 from telegram.ext import CallbackContext, run_async
 
-from EnmuBot import dispatcher
+from horisan import dispatcher
 
-from EnmuBot.modules.disable import DisableAbleCommandHandler
-from EnmuBot.modules.helper_funcs.alternate import typing_action
+from horisan.modules.disable import DisableAbleCommandHandler
+from horisan.modules.helper_funcs.alternate import typing_action
 
 opener = urllib.request.build_opener()
 useragent = 'Mozilla/5.0 (Linux; Android 6.0.1; SM-G920V Build/MMB29K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.98 Mobile Safari/537.36'
@@ -37,7 +37,7 @@ def reverse(update: Update, context:CallbackContext):
         elif reply.document:
             file_id = reply.document.file_id
         else:
-            msg.reply_text("Reply to an image or sticker to lookup.")
+            msg.reply_text("Reply to an image/sticker! Baka.")
             return
         image_file = bot.get_file(file_id)
         image_file.download(imagename)
@@ -89,10 +89,10 @@ def reverse(update: Update, context:CallbackContext):
         location = response.headers.get("Location")
 
         if response != 400:
-            xx = bot.send_message(chat_id, "Please wait this process may take time."
+            xx = bot.send_message(chat_id, "Finding your waifu/husbando..."
                                   "\nPlease wait.", reply_to_message_id=rtmid)
         else:
-            xx = bot.send_message(chat_id, "Sorry I was not able to find this please reply the image with /grs again so that I cam try again.", reply_to_message_id=rtmid)
+            xx = bot.send_message(chat_id, "Sorry I was not able to find this please reply the image with /grs again so that I can try again.", reply_to_message_id=rtmid)
             return
 
         os.remove(imagename)
@@ -104,9 +104,9 @@ def reverse(update: Update, context:CallbackContext):
             imgspage = match['similar_images']
 
         if guess and imgspage:
-            xx.edit_text(f"[{guess}]({location})\nPlease wait this process may take time....", parse_mode='Markdown', disable_web_page_preview=True)
+            xx.edit_text(f"[{guess}]({location})\nPlease Finding your waifu/husbando....", parse_mode='Markdown', disable_web_page_preview=True)
         else:
-            xx.edit_text("Can't Find this piece of shit.")
+            xx.edit_text("Can't Find this unidentified thing...")
             return
 
         images = scam(imgspage, lim)
@@ -178,13 +178,22 @@ def scam(imgspage, lim):
     return imglinks
 
 __help__ = """
-   /reverse :- reply to a sticker, or an image to search it!
+--[Reverse X Grs]--
+
+Reply to sticker or image to search it on google! commonly used for waifu/husbando..!
+
+   /reverse :- Get info about your Waifu/Husbando 
+   /grs :- Get info about your Waifu/Husbando 
+   /pp :- Get info about your Waifu/Husbando 
+   /p :- Get info about your Waifu/Husbando 
+   /r :- Get info about your Waifu/Husbando 
+   
 Do you know that you can search an image with a link too? /reverse picturelink <amount>.
 """
-__mod_name__ = "Reverse"
+__mod_name__ = "【Reverse】"
 
 REVERSE_HANDLER = DisableAbleCommandHandler(
-    ["pp", "grs" , "p"], reverse, pass_args=True, admin_ok=True
+    ["pp","r", "grs", "p"], reverse, pass_args=True, admin_ok=True
 )
 
 dispatcher.add_handler(REVERSE_HANDLER)
