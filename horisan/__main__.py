@@ -108,7 +108,7 @@ buttons = [
 
 
 HELP_STRINGS = """
-[Click on the buttons bellow to get description of hori's commands!](https://telegra.ph/file/0ab1296edb8d2bc8b6f37.jpg)"""
+[Click on the buttons bellow to get description of hori's commands!](https://telegra.ph/file/ca72d36b282c1f1313be3.mp4)"""
 
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
