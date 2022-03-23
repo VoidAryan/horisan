@@ -81,7 +81,7 @@ def ping(update: Update, context: CallbackContext):
     message.edit_animation(
         "<b>PONG</b> ✨\n"
         "<b>Time Taken:</b> <code>{}</code>\n"
-        "<b>Service Uptime:</b> <code>{}</code>"[ ]("https://telegra.ph/file/ca72d36b282c1f1313be3.mp4").format(telegram_ping, uptime),
+        "<b>Service Uptime:</b> <code>{}</code>").format(telegram_ping, uptime),
         parse_mode=ParseMode.HTML,
     )
 
