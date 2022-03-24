@@ -83,13 +83,13 @@ def gban(update: Update, context: CallbackContext):
 
     if not user_id:
         message.reply_text(
-            "You don't seem to be referring to a user or the ID specified is incorrect..",
+            "Ig that's not an user! or id is invalid!",
         )
         return
 
     if int(user_id) in DEV_USERS:
         message.reply_text(
-            "That user is part of the Association\nI can't act against our own.",
+            "That user is part of the Association\nI can't act against VOID...",
         )
         return
 
@@ -114,7 +114,7 @@ def gban(update: Update, context: CallbackContext):
         return
 
     if user_id == bot.id:
-        message.reply_text("You uhh...want me to punch myself?")
+        message.reply_text("You uhh...want me to gban love of void?\nYoure in trouble...")
         return
 
     if user_id in [777000, 1087968824]:
@@ -125,19 +125,19 @@ def gban(update: Update, context: CallbackContext):
         user_chat = bot.get_chat(user_id)
     except BadRequest as excp:
         if excp.message == "User not found":
-            message.reply_text("I can't seem to find this user.")
+            message.reply_text("Hori! Couldn't find this user")
             return ""
         return
 
     if user_chat.type != "private":
-        message.reply_text("That's not a user!")
+        message.reply_text("That's not a user! uff")
         return
 
     if sql.is_user_gbanned(user_id):
 
         if not reason:
             message.reply_text(
-                "This user is already gbanned; I'd change the reason, but you haven't given me one...",
+                "This jerk is already gbanned; I'd change the reason, but you haven't given me one...",
             )
             return
 
@@ -148,9 +148,9 @@ def gban(update: Update, context: CallbackContext):
         )
         if old_reason:
             message.reply_text(
-                "This user is already gbanned, for the following reason:\n"
+                "This dummy is already gbanned, for the following reason:\n"
                 "<code>{}</code>\n"
-                "I've gone and updated it with your new reason!".format(
+                "I've gone and updated it with your new reason! waito..".format(
                     html.escape(old_reason),
                 ),
                 parse_mode=ParseMode.HTML,
@@ -158,7 +158,7 @@ def gban(update: Update, context: CallbackContext):
 
         else:
             message.reply_text(
-                "This user is already gbanned, but had no reason set; I've gone and updated it!",
+                "This jerk is already gbanned, but had no reason set; I've gone and updated it!",
             )
 
         return
@@ -178,8 +178,8 @@ def gban(update: Update, context: CallbackContext):
         f"#GBANNED\n"
         f"<b>Originated from:</b> <code>{chat_origin}</code>\n"
         f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
-        f"<b>Banned User:</b> {mention_html(user_chat.id, user_chat.first_name)}\n"
-        f"<b>Banned User ID:</b> <code>{user_chat.id}</code>\n"
+        f"<b>Banned Jerk:</b> {mention_html(user_chat.id, user_chat.first_name)}\n"
+        f"<b>Banned Jerk ID:</b> <code>{user_chat.id}</code>\n"
         f"<b>Event Stamp:</b> <code>{current_time}</code>"
     )
 
@@ -258,15 +258,15 @@ def gban(update: Update, context: CallbackContext):
 
     if gban_time > 60:
         gban_time = round((gban_time / 60), 2)
-        message.reply_text("Done! Gbanned.", parse_mode=ParseMode.HTML)
+        message.reply_text("Done! Hori San will keep him/her Away! from your chats.", parse_mode=ParseMode.HTML)
     else:
-        message.reply_text("Done! Gbanned.", parse_mode=ParseMode.HTML)
+        message.reply_text("Done! Hori San will kick his/her ass wherever i see this user! MUAHAHAHAHA", parse_mode=ParseMode.HTML)
 
     try:
         bot.send_message(
             user_id,
             "#EVENT"
-            "You have been marked as Malicious and as such have been banned from any future groups we manage."
+            "Sorry youre Gbanned from our bot! if its an mistake then appeal us at support chat."
             f"\n<b>Reason:</b> <code>{html.escape(user.reason)}</code>"
             f"</b>Appeal Chat:</b> @{SUPPORT_CHAT}",
             parse_mode=ParseMode.HTML,
@@ -427,8 +427,8 @@ def check_and_ban(update, user_id, should_message=True):
         update.effective_chat.ban_member(user_id)
         if should_message:
             update.effective_message.reply_text(
-                f"<b>Alert</b>: this user is globally banned.\n"
-                f"<code>*bans them from here*</code>.\n"
+                f"<b>Alert</b>: this user may become harmful for your GC.\n"
+                f"<code>*Removing from here*</code>.\n"
                 f"<b>Appeal chat</b>: {SPAMWATCH_SUPPORT_CHAT}\n"
                 f"<b>User ID</b>: <code>{sw_ban.id}</code>\n"
                 f"<b>Ban Reason</b>: <code>{html.escape(sw_ban.reason)}</code>",
@@ -440,8 +440,8 @@ def check_and_ban(update, user_id, should_message=True):
         update.effective_chat.ban_member(user_id)
         if should_message:
             text = (
-                f"<b>Alert</b>: this user is globally banned.\n"
-                f"<code>*bans them from here*</code>.\n"
+                f"<b>Alert</b>: this user is globally banned by VOID\n"
+                f"<code>*kicking them from here*</code>.\n"
                 f"<b>Appeal chat</b>: @{SUPPORT_CHAT}\n"
                 f"<b>User ID</b>: <code>{user_id}</code>"
             )
