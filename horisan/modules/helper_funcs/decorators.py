@@ -54,7 +54,7 @@ class horiHandler:
                         group,
                     )
                 LOGGER.debug(
-                    f"[EMIKOCMD] Loaded handler {command} for function {func.__name__} in group {group}"
+                    f"[horicmd] Loaded handler {command} for function {func.__name__} in group {group}"
                 )
             except TypeError:
                 if can_disable:
@@ -81,7 +81,7 @@ class horiHandler:
                         )
                     )
                 LOGGER.debug(
-                    f"[EMIKOCMD] Loaded handler {command} for function {func.__name__}"
+                    f"[horicmd] Loaded handler {command} for function {func.__name__}"
                 )
 
             return func
@@ -110,7 +110,7 @@ class horiHandler:
                         MessageHandler(pattern, func, run_async=run_async), group
                     )
                 LOGGER.debug(
-                    f"[EMIKOMSG] Loaded filter pattern {pattern} for function {func.__name__} in group {group}"
+                    f"[horimsg] Loaded filter pattern {pattern} for function {func.__name__} in group {group}"
                 )
             except TypeError:
                 if can_disable:
@@ -124,7 +124,7 @@ class horiHandler:
                         MessageHandler(pattern, func, run_async=run_async)
                     )
                 LOGGER.debug(
-                    f"[EMIKOMSG] Loaded filter pattern {pattern} for function {func.__name__}"
+                    f"[horimsg] Loaded filter pattern {pattern} for function {func.__name__}"
                 )
 
             return func
@@ -139,7 +139,7 @@ class horiHandler:
                 )
             )
             LOGGER.debug(
-                f"[EMIKOCALLBACK] Loaded callbackquery handler with pattern {pattern} for function {func.__name__}"
+                f"[horicallback] Loaded callbackquery handler with pattern {pattern} for function {func.__name__}"
             )
             return func
 
