@@ -1,5 +1,5 @@
 from telegram.ext.filters import Filters
-from horisan.modules.helper_funcs.decorators import metacmd, metamsg
+from horisan.modules.helper_funcs.decorators import horicmd, horiamsg
 from telegram import Update, message
 from telegram.ext import CallbackContext
 from ..modules.helper_funcs.anonymous import user_admin, AdminPerms
