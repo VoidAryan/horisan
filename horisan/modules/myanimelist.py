@@ -187,6 +187,13 @@ def manga(update: Update, context: CallbackContext):
             rep, parse_mode=ParseMode.HTML, reply_markup=InlineKeyboardMarkup(keyb)
         )
 
+__help__ = """
+Get information about anime and manga with the help of this module! All data is fetched from [MyAnimeList](https://myanimelist.net).
+*Available commands:*
+ - /anime <anime>: returns information about the anime.
+ - /manga <manga>: returns information about the manga.
+ """
+
 
 __mod_name__ = "MyAnimeList"
 
