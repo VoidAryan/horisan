@@ -1,13 +1,13 @@
 from telegram.ext.filters import Filters
-from MetaButler.modules.helper_funcs.decorators import metacmd, metamsg
+from horisan.modules.helper_funcs.decorators import horicmd, horimsg
 from telegram import Update, message
 from telegram.ext import CallbackContext
-from ..modules.helper_funcs.anonymous import user_admin, AdminPerms
+from horisan.modules.helper_funcs.anonymous import user_admin, AdminPerms
 import html
-from ..modules.sql.antichannel_sql import antichannel_status, disable_antichannel, enable_antichannel
+from horisan.modules.sql.antichannel_sql import antichannel_status, disable_antichannel, enable_antichannel
 
 
-@metacmd(command="antichannel", group=100)
+@horicmd(command="antichannel", group=100)
 @user_admin(AdminPerms.CAN_RESTRICT_MEMBERS)
 def set_antichannel(update: Update, context: CallbackContext):
     message = update.effective_message
@@ -28,7 +28,7 @@ def set_antichannel(update: Update, context: CallbackContext):
         "Antichannel setting is currently {} in {}".format(antichannel_status(chat.id), html.escape(chat.title)))
 
 
-@metamsg(Filters.chat_type.groups, group=110)
+@horimsg(Filters.chat_type.groups, group=110)
 def eliminate_channel(update: Update, context: CallbackContext):
     message = update.effective_message
     chat = update.effective_chat
