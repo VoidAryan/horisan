@@ -33,7 +33,7 @@ def isArgInt(message: Message) -> bool:
         return [False, 0]
 
 
-@app.on_message(filters.command("qt"))
+@app.on_message(filters.command("q"))
 @capture_err
 async def quotly_func(client, message: Message):
     if not message.reply_to_message:
