@@ -9,10 +9,10 @@ from telegram import (InlineKeyboardButton, InlineKeyboardMarkup, ParseMode,
                       TelegramError, Update)
 from telegram.ext import CallbackContext
 from telegram.utils.helpers import mention_html
-from MetaButler.modules.helper_funcs.decorators import metacmd
+from horisan.modules.helper_funcs.decorators import horicmd
 
 
-@metacmd(command='stickerid')
+@horicmd(command='stickerid')
 def stickerid(update: Update, context: CallbackContext):
     msg = update.effective_message
     if msg.reply_to_message and msg.reply_to_message.sticker:
@@ -33,7 +33,7 @@ def stickerid(update: Update, context: CallbackContext):
         )
 
 
-@metacmd(command='getsticker')
+@horicmd(command='getsticker')
 def getsticker(update: Update, context: CallbackContext):
     bot = context.bot
     msg = update.effective_message
@@ -65,7 +65,7 @@ def getsticker(update: Update, context: CallbackContext):
         )
 
 
-@metacmd(command=["steal", "kang"])
+@horicmd(command=["steal", "kang"])
 def kang(update: Update, context: CallbackContext):
     msg = update.effective_message
     user = update.effective_user
