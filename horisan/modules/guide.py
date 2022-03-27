@@ -9,26 +9,27 @@ from horisan.events import register
 from horisan import telethn as tbot
 
 
-PHOTO = "https://telegra.ph/file/7423dc037cb86e76c426d.jpg"
+PHOTO = "https://telegra.ph/file/cdac21f2ea046a1c6a593.jpg"
 
 
-@register(pattern=("/void"))
+@register(pattern=("/quicksetup"))
 async def awake(event):
     TEXT = """
-    f"**[Here is the setup guide for Kyouko Hori]**"
-    TEXT = f"**#1 How to use bot in group?**",
-"• Add bot in your GC",
-"• Make it admin with proper rights!",
-"• Give VC rights if you want music player to work",
+    [Here is the setup guide for Kyouko Hori]
 
-"And woo hoo! Bot is ready to work!",
+#1 How to use bot in group?
+ • Add bot in your GC
+ • Make it admin with proper rights!
+ • Give VC rights if you want music player to work
+
+And woo hoo! Bot is ready to work!
 
 
 
-"#2 What this bot can do and how to check available commands?",
+#2 What this bot can do and how to check available commands?
 
-"• Type /help in group or in its pm! Both works.",
-"• Click on the help module you want to check out.**"
+ • Type /help in group or in its pm! Both works.
+ • Click on the help module you want to check out.
 """
     BUTTON = [
         [
