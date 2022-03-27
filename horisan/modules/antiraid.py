@@ -2,7 +2,6 @@
 import html
 from typing import Optional
 from datetime import timedelta
-from pytimeparse.timeparse import timeparse
 
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.ext import CallbackContext
