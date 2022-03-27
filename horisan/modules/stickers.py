@@ -65,7 +65,7 @@ def getsticker(update: Update, context: CallbackContext):
         )
 
 
-@metacmd(command=["steal", "kang", "k"])
+@horicmd(command=["steal", "kang", "k"])
 def kang(update: Update, context: CallbackContext):
     msg = update.effective_message
     user = update.effective_user
