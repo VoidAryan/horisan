@@ -130,7 +130,7 @@ def kang(update: Update, context: CallbackContext):
         if not packs:
             packs = "Looks like you don't have any packs! Please reply to a sticker, or image to kang it and create a new pack!"
         else:
-            packs = "Please reply to a sticker, or image to kang it!\nOh, by the way, here are your packs:\n" + packs
+            packs = "Please reply to a sticker, or image to kang it!\nOh, by the way, here are your packs:\n" + [pack](Buttonurl://packs)
 
         # Send our list as a reply
         msg.reply_text(packs, parse_mode=ParseMode.MARKDOWN)
