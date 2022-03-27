@@ -1,9 +1,9 @@
 from typing import Optional
 
-import DarlingRobot.modules.sql.rules_sql as sql
-from DarlingRobot import dispatcher
-from DarlingRobot.modules.helper_funcs.chat_status import user_admin
-from DarlingRobot.modules.helper_funcs.string_handling import markdown_parser
+import horisan.modules.sql.rules_sql as sql
+from horisan import dispatcher
+from horisan.modules.helper_funcs.chat_status import user_admin
+from horisan.modules.helper_funcs.string_handling import markdown_parser
 from telegram import (
     InlineKeyboardButton,
     InlineKeyboardMarkup,
@@ -52,17 +52,16 @@ def send_rules(update, chat_id, from_pm=False):
     elif from_pm:
         bot.send_message(
             user.id,
-            "The group admins haven't set any rules for this chat yet. "
-            "This probably doesn't mean it's lawless though...!",
+            "Rules Not Set By Me Yet...!",
         )
     elif rules and reply_msg:
         reply_msg.reply_text(
-            "Please click the button below to see the rules.",
+            "Check Out Group's Rules.",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            text="Rules",
+                            text="【ʀᴜʟᴇꜱ & ʀᴇɢᴜʟᴀᴛɪᴏɴꜱ】",
                             url=f"t.me/{bot.username}?start={chat_id}",
                         ),
                     ],
@@ -71,12 +70,12 @@ def send_rules(update, chat_id, from_pm=False):
         )
     elif rules:
         update.effective_message.reply_text(
-            "Please click the button below to see the rules.",
+            "Check Out Group's Rules!",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            text="Rules",
+                            text="【ʀᴜʟᴇꜱ & ʀᴇɢᴜʟᴀᴛɪᴏɴꜱ】",
                             url=f"t.me/{bot.username}?start={chat_id}",
                         ),
                     ],
@@ -85,8 +84,7 @@ def send_rules(update, chat_id, from_pm=False):
         )
     else:
         update.effective_message.reply_text(
-            "The group admins haven't set any rules for this chat yet. "
-            "This probably doesn't mean it's lawless though...!",
+            "【ʀᴜʟᴇꜱ & ʀᴇɢᴜʟᴀᴛɪᴏɴꜱ ɴᴏᴛ ꜱᴇᴛ ʙʏ ᴍᴇ..】",
         )
 
 
@@ -106,7 +104,7 @@ def set_rules(update: Update, context: CallbackContext):
         )
 
         sql.set_rules(chat_id, markdown_rules)
-        update.effective_message.reply_text("Successfully set rules for this group.")
+        update.effective_message.reply_text("Done ✅.\p rules have been set..")
 
 
 @user_admin
