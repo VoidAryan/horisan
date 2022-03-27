@@ -9,10 +9,10 @@ from telegram import (InlineKeyboardButton, InlineKeyboardMarkup, ParseMode,
                       TelegramError, Update)
 from telegram.ext import CallbackContext
 from telegram.utils.helpers import mention_html
-from MetaButler.modules.helper_funcs.decorators import metacmd
+from horisan.modules.helper_funcs.decorators import horicmd
 
 
-@metacmd(command='stickerid')
+@horicmd(command='stickerid')
 def stickerid(update: Update, context: CallbackContext):
     msg = update.effective_message
     if msg.reply_to_message and msg.reply_to_message.sticker:
@@ -33,7 +33,7 @@ def stickerid(update: Update, context: CallbackContext):
         )
 
 
-@metacmd(command='getsticker')
+@horicmd(command='getsticker')
 def getsticker(update: Update, context: CallbackContext):
     bot = context.bot
     msg = update.effective_message
@@ -65,7 +65,7 @@ def getsticker(update: Update, context: CallbackContext):
         )
 
 
-@metacmd(command=["steal", "kang"])
+@metacmd(command=["steal", "kang", "k"])
 def kang(update: Update, context: CallbackContext):
     msg = update.effective_message
     user = update.effective_user
@@ -130,7 +130,7 @@ def kang(update: Update, context: CallbackContext):
         if not packs:
             packs = "Looks like you don't have any packs! Please reply to a sticker, or image to kang it and create a new pack!"
         else:
-            packs = "Please reply to a sticker, or image to kang it!\nOh, by the way, here are your packs:\n" + packs
+            packs = "Please reply to a sticker, or image to kang it!\n\nOh, by the way, here are your packs:\n" + packs
 
         # Send our list as a reply
         msg.reply_text(packs, parse_mode=ParseMode.MARKDOWN)
@@ -176,7 +176,7 @@ def kang(update: Update, context: CallbackContext):
             # check the mime-type first, you can't kang a .html file.
             mime = resp.getheader('Content-Type')
             if mime not in ['image/jpeg', 'image/jpg', 'image/png', 'image/webp', 'application/x-tgsticker']:
-                msg.reply_text("I can only kang images m8.")
+                msg.reply_text("reply to an image or sticker..!")
                 return
 
             # check if it's an animated sticker type
@@ -254,7 +254,7 @@ def kang(update: Update, context: CallbackContext):
             # seek to start of the image data
             sticker_data.seek(0)
         except OSError as e:
-            msg.reply_text("I can only steal images m8.")
+            msg.reply_text("Reply to an image or sticker baka!")
             return
 
     # actually add the damn sticker to the pack, animated or not.
@@ -272,7 +272,7 @@ def kang(update: Update, context: CallbackContext):
             emojis=sticker_emoji,
         )
         msg.reply_text(
-            f"Sticker successfully added to [pack](t.me/addstickers/{packname})"
+            f"Successfully added to [【ꜱᴛɪᴄᴋᴇʀ ᴘᴀᴄᴋ】](buttonurl://t.me/addstickers/{packname})"
             + f"\nEmoji is: {sticker_emoji}",
             parse_mode=ParseMode.MARKDOWN,
         )
@@ -292,12 +292,12 @@ def kang(update: Update, context: CallbackContext):
                 png_sticker=sticker_data if not is_animated else None,
             )
         elif e.message == "Stickers_too_much":
-            msg.reply_text("Max packsize reached. Press F to pay respecc.")
+            msg.reply_text("Max packsize reached. Press F to pay respect.")
         elif e.message == "Invalid sticker emojis":
             msg.reply_text("I can't kang with that emoji!")
         elif e.message == "Internal Server Error: sticker set not found (500)":
             msg.reply_text(
-                f"Sticker successfully added to [pack](t.me/addstickers/{packname})\n"
+                f"Successfully added to [【ꜱᴛɪᴄᴋᴇʀ ᴘᴀᴄᴋ】](buttonurl://t.me/addstickers/{packname})\n"
                 + f"Emoji is: {sticker_emoji}", parse_mode=ParseMode.MARKDOWN
             )
         else:
