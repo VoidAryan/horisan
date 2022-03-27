@@ -104,7 +104,7 @@ def set_rules(update: Update, context: CallbackContext):
         )
 
         sql.set_rules(chat_id, markdown_rules)
-        update.effective_message.reply_text("Done ✅.p\ rules have been set..")
+        update.effective_message.reply_text("Done ✅.\n\nrules have been set..")
 
 
 @user_admin
