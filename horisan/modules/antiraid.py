@@ -11,10 +11,10 @@ from telegram.utils.helpers import mention_html
 from .log_channel import loggable
 from .helper_funcs.anonymous import user_admin, AdminPerms
 from .helper_funcs.chat_status import bot_admin, connection_status, user_admin_no_reply
-from .helper_funcs.decorators import metacmd, metacallback
+from .helper_funcs.decorators import horicmd, HORIcallback
 from .. import log, updater
 
-import MetaButler.modules.sql.welcome_sql as sql
+import horisan.modules.sql.welcome_sql as sql
 
 j = updater.job_queue
 
@@ -36,7 +36,7 @@ def get_readable_time(time: int) -> str:
     return "{} hour(s)".format(t[0]) if time >= 3600 else "{} minutes".format(t[1])
 
 
-@metacmd(command="antiraid", pass_args=True)
+@horicmd(command="antiraid", pass_args=True)
 @bot_admin
 @connection_status
 @loggable
@@ -100,7 +100,7 @@ def setAntiRaid(update: Update, context: CallbackContext) -> Optional[str]:
             msg.reply_text("Unknown time given, give me something like 5m or 1h", parse_mode=ParseMode.HTML)
 
 
-@metacallback(pattern="enable_antiraid=")
+@HORIcallback(pattern="enable_antiraid=")
 @connection_status
 @user_admin_no_reply
 @loggable
@@ -137,7 +137,7 @@ def enable_antiraid_cb(update: Update, ctx: CallbackContext) -> Optional[str]:
     )
 
 
-@metacallback(pattern="disable_antiraid=")
+@HORIcallback(pattern="disable_antiraid=")
 @connection_status
 @user_admin_no_reply
 @loggable
@@ -163,7 +163,7 @@ def disable_antiraid_cb(update: Update, _: CallbackContext) -> Optional[str]:
     return logmsg
 
 
-@metacallback(pattern="cancel_antiraid=")
+@HORIcallback(pattern="cancel_antiraid=")
 @connection_status
 @user_admin_no_reply
 def disable_antiraid_cb(update: Update, _: CallbackContext):
@@ -174,7 +174,7 @@ def disable_antiraid_cb(update: Update, _: CallbackContext):
         parse_mode=ParseMode.HTML)
 
 
-@metacmd(command="antiraidtime")
+@horicmd(command="antiraidtime")
 @connection_status
 @loggable
 @user_admin(AdminPerms.CAN_CHANGE_INFO)
@@ -208,7 +208,7 @@ def antiraidtime(update: Update, context: CallbackContext) -> Optional[str]:
         msg.reply_text("Unknown time given, give me something like 5m or 1h", parse_mode=ParseMode.HTML)
 
 
-@metacmd(command="antiraidactiontime", pass_args=True)
+@horicmd(command="antiraidactiontime", pass_args=True)
 @connection_status
 @user_admin(AdminPerms.CAN_CHANGE_INFO)
 @loggable
