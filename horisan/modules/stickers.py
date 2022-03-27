@@ -272,9 +272,8 @@ def kang(update: Update, context: CallbackContext):
             emojis=sticker_emoji,
         )
         msg.reply_text(
-            f"Successfully added to [【ꜱᴛɪᴄᴋᴇʀ ᴘᴀᴄᴋ】](buttonurl://t.me/addstickers/{packname})"
-            + f"\nEmoji is: {sticker_emoji}",
-            parse_mode=ParseMode.MARKDOWN,
+            f"×Sticker Pack:[【ꜱᴛɪᴄᴋᴇʀ ᴘᴀᴄᴋ】](t.me/addstickers/{packname})\n\n"
+                + f"×Emoji for sticker: {sticker_emoji}", parse_mode=ParseMode.MARKDOWN,
         )
     except TelegramError as e:
         if e.message == "Stickerset_invalid":
@@ -297,8 +296,8 @@ def kang(update: Update, context: CallbackContext):
             msg.reply_text("I can't kang with that emoji!")
         elif e.message == "Internal Server Error: sticker set not found (500)":
             msg.reply_text(
-                f"Successfully added to [【ꜱᴛɪᴄᴋᴇʀ ᴘᴀᴄᴋ】](buttonurl://t.me/addstickers/{packname})\n"
-                + f"Emoji is: {sticker_emoji}", parse_mode=ParseMode.MARKDOWN
+                f"×Sticker Pack:[【ꜱᴛɪᴄᴋᴇʀ ᴘᴀᴄᴋ】](t.me/addstickers/{packname})\n\n"
+                + f"×Emoji for sticker: {sticker_emoji}", parse_mode=ParseMode.MARKDOWN
             )
         else:
             msg.reply_text(f"Oops! looks like something happened that shouldn't happen! ({e.message})")
@@ -339,14 +338,14 @@ def makepack_internal(
             )
 
             return
-        elif e.message in ('Peer_id_invalid', 'bot was blocked by the user'):
+        elif e.message in ('Peer_id_invalid', 'Start bot in pm first..!'):
             msg.reply_text(
-                'Contact me in PM first.',
+                'Start Hori San',
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
                             InlineKeyboardButton(
-                                text='Start',
+                                text='【ꜱᴛᴀʀᴛ】',
                                 url=f't.me/{context.bot.username}',
                             )
                         ]
@@ -364,8 +363,23 @@ def makepack_internal(
             success = False
     if success:
         msg.reply_text(
-            f"Sticker pack successfully created. Get it [here](t.me/addstickers/{packname})",
+            f"Done ✅ \n\n[【ꜱᴛɪᴄᴋᴇʀ ᴘᴀᴄᴋ】](t.me/addstickers/{packname})",
             parse_mode=ParseMode.MARKDOWN,
         )
     else:
         msg.reply_text("Failed to create sticker pack. Possibly due to blek mejik.")
+        
+__mod_name__ = "【ꜱᴛɪᴄᴋᴇʀ】"
+
+__help__ = """
+*Help menu for stickers tools*
+
+❂ /stickerid*:* reply to a sticker to me to tell you its file ID.
+❂ /getsticker*:* reply to a sticker to me to upload its raw PNG file.
+❂ /kang*:* reply to a sticker to add it to your pack.
+❂ /delsticker*:* Reply to your anime exist sticker to your pack to delete it.
+❂ /stickers*:* Find stickers for given term on combot sticker catalogue
+❂ /tiny*:* To make small sticker
+❂ /kamuii <1-8> *:* To deepefying stiker
+❂ /mmf <reply with text>*:* To draw a text for sticker or pohots
+"""
