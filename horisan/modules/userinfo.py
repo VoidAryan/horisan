@@ -268,7 +268,7 @@ def info(update: Update, context: CallbackContext):
     rep = message.reply_text("<code>Intel About This User...</code>", parse_mode=ParseMode.HTML)
 
     text = (
-        f"「<b> 【ɪɴꜰᴏ ᴏꜰ ᴛʜɪꜱ ᴜꜱᴇʀ】</b> 」\n\n"
+        f"「<b> 【ɪɴꜰᴏ ᴏꜰ ᴛʜɪꜱ ᴜꜱᴇʀ】</b> 」\n"
         f"───────────────────────\n"
         f"× ID: <code>{user.id}</code>\n"
         f"× First Name: {html.escape(user.first_name)}"
@@ -284,7 +284,7 @@ def info(update: Update, context: CallbackContext):
 
     if chat.type != "private" and user_id != bot.id:
         _stext = "\n× State In This Chat: <code>{}</code>"
-        f"───────────────────────\n"
+        text += f"\n───────────────────────"
 
         afk_st = is_afk(user.id)
         if afk_st:
@@ -314,7 +314,7 @@ def info(update: Update, context: CallbackContext):
     disaster_level_present = False
 
     if user.id == OWNER_ID:
-        text += "\n\n۞ The Disaster level of this person is 'President'."
+        text += "\n\n۞ The Disaster level of this person is : [President](https://t.me/kyouko_updates/6)."
         disaster_level_present = True
     elif user.id in DEV_USERS:
         text += "\n\n۞ The Disaster level of this person is 'Vice President'."
@@ -457,7 +457,7 @@ def set_about_me(update: Update, context: CallbackContext):
 
 @sudo_plus
 def stats(update: Update, context: CallbackContext):
-    stats = "<b>【Hori San's Statistics】</b>\n" + "\n\n".join(
+    stats = "<b>【Hori San's Statistics】</b>\n\n" + "\n".join(
         [mod.__stats__() for mod in STATS]
     )
     result = re.sub(r"(\d+)", r"<code>\1</code>", stats)
