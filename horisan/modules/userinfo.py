@@ -265,24 +265,26 @@ def info(update: Update, context: CallbackContext):
     else:
         return
 
-    rep = message.reply_text("<code>Getting info...</code>", parse_mode=ParseMode.HTML)
+    rep = message.reply_text("<code>Intel About This User...</code>", parse_mode=ParseMode.HTML)
 
     text = (
-        f"╔═━「<b> Appraisal results:</b> 」\n"
-        f"✪ ID: <code>{user.id}</code>\n"
-        f"✪ First Name: {html.escape(user.first_name)}"
+        f"「<b> 【ɪɴꜰᴏ ᴏꜰ ᴛʜɪꜱ ᴜꜱᴇʀ】</b> 」\n\n"
+        f"───────────────────────\n"
+        f"× ID: <code>{user.id}</code>\n"
+        f"× First Name: {html.escape(user.first_name)}"
     )
 
     if user.last_name:
-        text += f"\n✪ Last Name: {html.escape(user.last_name)}"
+        text += f"\n× Last Name: {html.escape(user.last_name)}"
 
     if user.username:
-        text += f"\n✪ Username: @{html.escape(user.username)}"
+        text += f"\n× Username: @{html.escape(user.username)}"
 
-    text += f"\n✪ Userlink: {mention_html(user.id, 'link')}"
+    text += f"\n× Userlink: {mention_html(user.id, 'link')}"
 
     if chat.type != "private" and user_id != bot.id:
-        _stext = "\n✪ Presence: <code>{}</code>"
+        _stext = "\n× State In This Chat: <code>{}</code>"
+        f"───────────────────────\n"
 
         afk_st = is_afk(user.id)
         if afk_st:
@@ -305,23 +307,23 @@ def info(update: Update, context: CallbackContext):
         if spamwtc:
             text += "\n\n<b>This person is Spamwatched!</b>"
             text += f"\nReason: <pre>{spamwtc.reason}</pre>"
-            text += "\nAppeal at @SpamWatchSupport"
+            text += "\nAppeal at @HorixSupport"
     except:
         pass  # don't crash if api is down somehow...
 
     disaster_level_present = False
 
     if user.id == OWNER_ID:
-        text += "\n\n✪✪The Disaster level of this person is 'President'.✪✪"
+        text += "\n\n۞ The Disaster level of this person is 'President'."
         disaster_level_present = True
     elif user.id in DEV_USERS:
-        text += "\n\n✪This user is member of 'Vice President'."
+        text += "\n\n۞ The Disaster level of this person is 'Vice President'."
         disaster_level_present = True
     elif user.id in DRAGONS:
-        text += "\n\n✪The Disaster level of this person is 'Advisor'."
+        text += "\n\n۞ The Disaster level of this person is 'Advisor'."
         disaster_level_present = True
     elif user.id in DEMONS:
-        text += "\n\nThe Disaster level of this person is 'Secretary'."
+        text += "\n\n۞ The Disaster level of this person is 'Secretary'."
 
     disaster_level_present = True
 
@@ -358,10 +360,10 @@ def info(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                "Health", url="https://t.me/kyouko_updates/11"
+                                "【Health】", url="https://t.me/kyouko_updates/11"
                             ),
                             InlineKeyboardButton(
-                                "Disaster", url="https://t.me/kyouko_updates/6"
+                                "【Disaster】", url="https://t.me/kyouko_updates/6"
                             ),
                         ],
                     ]
@@ -377,10 +379,10 @@ def info(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                "Health", url="https://t.me/kyouko_updates/11"
+                                "【Health】", url="https://t.me/kyouko_updates/11"
                             ),
                             InlineKeyboardButton(
-                                "Disaster", url="https://t.me/kyouko_updates/6"
+                                "【Disaster】", url="https://t.me/kyouko_updates/6"
                             ),
                         ],
                     ]
@@ -455,11 +457,11 @@ def set_about_me(update: Update, context: CallbackContext):
 
 @sudo_plus
 def stats(update: Update, context: CallbackContext):
-    stats = "<b>╔═━「 Hori San Statistics 」</b>\n" + "\n".join(
+    stats = "<b>【Hori San's Statistics】</b>\n" + "\n\n".join(
         [mod.__stats__() for mod in STATS]
     )
     result = re.sub(r"(\d+)", r"<code>\1</code>", stats)
-    result += "\n<b>╘═━「 Powered By Void 」</b>"
+    result += "\n\n<b>【ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴠᴏɪᴅ】</b>"
     update.effective_message.reply_text(
         result, parse_mode=ParseMode.HTML, disable_web_page_preview=True
     )
