@@ -284,7 +284,7 @@ def info(update: Update, context: CallbackContext):
 
     if chat.type != "private" and user_id != bot.id:
         _stext = "\n× State In This Chat: <code>{}</code>"
-        text += f"\n───────────────────────"
+        
 
         afk_st = is_afk(user.id)
         if afk_st:
@@ -300,6 +300,7 @@ def info(update: Update, context: CallbackContext):
                     text += _stext.format("Admin")
     if user_id not in [bot.id, 777000, 1087968824]:
         userhp = hpmanager(user)
+        text += f"\n───────────────────────"
         text += f"\n\n<b>Health:</b> <code>{userhp['earnedhp']}/{userhp['totalhp']}</code>\n[<i>{make_bar(int(userhp['percentage']))} </i>{userhp['percentage']}%]"
 
     try:
@@ -314,7 +315,7 @@ def info(update: Update, context: CallbackContext):
     disaster_level_present = False
 
     if user.id == OWNER_ID:
-        text += "\n\n۞ The Disaster level of this person is : [President](https://t.me/kyouko_updates/6)."
+        text += "\n\n۞ The Disaster level of this person is : President 👑"
         disaster_level_present = True
     elif user.id in DEV_USERS:
         text += "\n\n۞ The Disaster level of this person is 'Vice President'."
@@ -457,11 +458,11 @@ def set_about_me(update: Update, context: CallbackContext):
 
 @sudo_plus
 def stats(update: Update, context: CallbackContext):
-    stats = "<b>【Hori San's Statistics】</b>\n\n" + "\n".join(
+    stats = "<b>--【Hori San's Statistics】--</b>\n\n" + "\n".join(
         [mod.__stats__() for mod in STATS]
     )
     result = re.sub(r"(\d+)", r"<code>\1</code>", stats)
-    result += "\n\n<b>【ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴠᴏɪᴅ】</b>"
+    result += "\n\n<b>--【POWERED BY VOID】--</b>"
     update.effective_message.reply_text(
         result, parse_mode=ParseMode.HTML, disable_web_page_preview=True
     )
