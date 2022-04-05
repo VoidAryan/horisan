@@ -85,7 +85,7 @@ GROUP_START_IMG = "https://telegra.ph/file/c458924bf40c213062dd2.mp4"
 
 PM_START_TEXT = """
 *Konichiwa {}!*
-۞ I'm Hori San An Anime-Theme Bot! [✨](https://telegra.ph/file/c458924bf40c213062dd2.mp4)
+۞ I'm Hori San An Anime-Theme Bot! [✨](https://telegra.ph/file/010b1f6beace55978c1cc.mp4)
 ───────────────────────
 × *Alive Since:* {}
 × {} *Weebs, Across* {} *Chats*
@@ -108,7 +108,7 @@ buttons = [
 
 
 HELP_STRINGS = """
-[Click on the buttons bellow to get description of hori's commands!](https://telegra.ph/file/ca72d36b282c1f1313be3.mp4)"""
+[Click on the buttons bellow to get description of hori's commands!](https://telegra.ph/file/db05a50ddf9b005a55769.mp4)"""
 
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
