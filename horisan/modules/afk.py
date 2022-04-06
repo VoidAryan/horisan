@@ -156,11 +156,14 @@ dispatcher.add_handler(NO_AFK_HANDLER, AFK_GROUP)
 dispatcher.add_handler(AFK_REPLY_HANDLER, AFK_REPLY_GROUP)
 
 __help__ = """
-• /afk - Is used when going offline or away from group chat.
-• can be used by "brb" without slash aswell.
-"""
+【𝘼𝙒𝘼𝙔 𝙁𝙍𝙊𝙈 𝙆𝙀𝙔𝘽𝙊𝘼𝙍𝘿】
 
-__mod_name__ = "【Afk】"
+× try afk whenever going offline or away from group chat! 
+× person tagging you will get notified that you are unavailable 
+
+× command can be used as : /afk or brb"""
+
+__mod_name__ = "【ᴀꜰᴋ】"
 __command_list__ = ["afk"]
 __handlers__ = [
     (AFK_HANDLER, AFK_GROUP),
