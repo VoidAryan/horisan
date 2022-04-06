@@ -36,7 +36,7 @@ sm,sn,so,sq,sr,st,su,sv,sw,ta,te,tg,th,tl,tr,uk,ur,uz,
 vi,xh,yi,yo,zh,zh_CN,zh_TW,zu`
 """
 
-__mod_name__ = "【Translator】"
+__mod_name__ = "【ᴛʀᴀɴꜱʟᴀᴛᴇ】"
 
 
 trans = Translator()
