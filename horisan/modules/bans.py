@@ -601,7 +601,7 @@ __help__ = """
 """
 
 
-__mod_name__ = "【Bans x Mutes】"
+__mod_name__ = "【ʙᴀɴꜱ/ᴍᴜᴛᴇꜱ】"
 
 BAN_HANDLER = CommandHandler(["ban", "sban"], ban, run_async=True)
 TEMPBAN_HANDLER = CommandHandler(["tban"], temp_ban, run_async=True)
