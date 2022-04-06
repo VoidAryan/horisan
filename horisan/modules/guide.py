@@ -44,4 +44,4 @@ __help__ = """
  
 ❂ /quicksetup: An small setup guide to show how bot funtions etc."""
    
-__mod_name__ = "【Setup】"
+__mod_name__ = "【ꜱᴇᴛᴜᴘ】"
