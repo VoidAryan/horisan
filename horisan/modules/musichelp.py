@@ -1,4 +1,4 @@
-__mod_name__ = "【VC Player】"
+__mod_name__ = "【ᴠᴄ ᴘʟᴀʏ】"
 
 __help__ = """
 ──「 Music stream 」──              
