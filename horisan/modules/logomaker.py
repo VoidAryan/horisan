@@ -210,7 +210,7 @@ async def logo_(event):
             os.remove(font_)
 
 
-__mod_name__ = "【Logo Creator】"
+__mod_name__ = "【ʟᴏɢᴏ】"
 
 __help__ = """ This is help menu for logomaker
 
