@@ -1,6 +1,6 @@
-from KURUMIBOT.modules.helper_funcs.chat_status import user_admin
-from KURUMIBOT.modules.disable import DisableAbleCommandHandler
-from KURUMIBOT import dispatcher
+from horisan.modules.helper_funcs.chat_status import user_admin
+from horisan.modules.disable import DisableAbleCommandHandler
+from horisan import dispatcher
 
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from telegram import ParseMode, Update
