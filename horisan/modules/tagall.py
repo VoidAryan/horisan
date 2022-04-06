@@ -11,7 +11,7 @@ from horisan import telethn as client
 spam_chats = []
 
 
-@client.on(events.NewMessage(pattern="^/tagall|@all|/all|/mentionall ?(.*)"))
+@client.on(events.NewMessage(pattern="^/tagall|@all|/all|/mentionall|#all ?(.*)"))
 async def mentionall(event):
     chat_id = event.chat_id
     if event.is_private:
@@ -96,7 +96,7 @@ async def cancel_spam(event):
         return await event.respond("__Stopped Mention.__")
 
 
-__mod_name__ = "【Mention 】"
+__mod_name__ = "【ᴛᴀɢᴀʟʟ】"
 __help__ = """
 ──「 Mention all func 」──
 
