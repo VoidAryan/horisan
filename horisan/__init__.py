@@ -234,16 +234,6 @@ else:
         sw = None
         LOGGER.warning("Can't connect to SpamWatch!")
         
-try:
-    REDIS.ping()
-    LOGGER.info("Your redis server is now alive!")
-except BaseException:
-    raise Exception("Your redis server is not alive, please check again.")
-    
-finally:
-   REDIS.ping()
-   LOGGER.info("Your redis server is now alive!")
-
 
 from horisan.modules.sql import SESSION
 
