@@ -1,4 +1,4 @@
-from Senku import REDIS
+from horisan import REDIS
 
 # AFK
 def is_user_afk(userid):
