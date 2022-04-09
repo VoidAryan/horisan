@@ -5,9 +5,9 @@ import requests
 from telegram import ParseMode, Update
 from telegram.ext import CallbackContext, run_async
 
-from EmikoRobot import StartTime, dispatcher
-from EmikoRobot.modules.helper_funcs.chat_status import sudo_plus
-from EmikoRobot.modules.disable import DisableAbleCommandHandler
+from horisan import StartTime, dispatcher
+from horisan.modules.helper_funcs.chat_status import sudo_plus
+from horisan.modules.disable import DisableAbleCommandHandler
 
 sites_list = {
     "Telegram": "https://api.telegram.org",
@@ -16,6 +16,7 @@ sites_list = {
     "Jikan": "https://api.jikan.moe/v3",
 }
 
+PHOTO = "https://telegra.ph/file/a47e242c23b0832b34253.jpg"
 
 def get_readable_time(seconds: int) -> str:
     count = 0
@@ -77,7 +78,7 @@ def ping(update: Update, context: CallbackContext):
     end_time = time.time()
     telegram_ping = str(round((end_time - start_time) * 1000, 3)) + " ms"
     uptime = get_readable_time((time.time() - StartTime))
-
+    
     message.edit_text(
         "<b>PONG</b> ✨\n"
         "<b>Time Taken:</b> <code>{}</code>\n"
@@ -93,7 +94,7 @@ def pingall(update: Update, context: CallbackContext):
     pinged_list = ping_func(to_ping)
     pinged_list.insert(2, "")
     uptime = get_readable_time((time.time() - StartTime))
-
+    
     reply_msg = "⏱Ping results are:\n"
     reply_msg += "\n".join(pinged_list)
     reply_msg += "\n<b>Service uptime:</b> <code>{}</code>".format(uptime)
