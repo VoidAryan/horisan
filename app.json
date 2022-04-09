@@ -9,7 +9,7 @@
          "naorobot"
       ],
     
-   "logo":    "https://telegra.ph/file/35e56ba7eace7332356ad.jpg",  
+   "logo":    "https://telegra.ph/file/37e84031abb05321fac2a.jpg",  
    "repository": "https://github.com/voidxtoxic/https://github.com/voidxtoxic/horisan",
    "addons": [
           {
@@ -48,16 +48,6 @@
          "required": true,
          "value": "2119580786"
      },
-
-      "STRING_SESSION": {
-         "description": "Fill with telethon string session.",
-         "required": true,
-         "value": "" 
-      },
-      "HEROKU_API_KEY": {
-        "description": "Your Heroku API key, get it from 'https://dashboard.heroku.com/account'",
-        "value": ""
-      },
       "HEROKU_APP_NAME": {
         "description": "Enter the Heroku app name here (Must an exact same name with your input above).",
         "required": false
@@ -202,6 +192,11 @@
          "description": "Optional: link where you would like to receive donations. If you are a noob, better leave it linking to paul",
          "required": false,
          "value": "https://t.me/voidxtoxic"
+      },
+      "DATABASE_URL": {
+         "description": "database daal bc",
+         "required": false,
+         "value": "database daloo"
       },
       "DEL_CMDS": {
          "description": "Set this to True if you want to delete command messages from users who don't have the perms to run that command.",
