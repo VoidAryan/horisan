@@ -3,7 +3,7 @@ from traceback import format_exc
 from pyrogram import filters
 from pyrogram.types import Message
 
-from horisan import pgram, arq
+from horisan import arq
 from horisan.utils.errors import capture_err
 
 
