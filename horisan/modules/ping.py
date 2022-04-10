@@ -79,7 +79,7 @@ def ping(update: Update, context: CallbackContext):
     telegram_ping = str(round((end_time - start_time) * 1000, 3)) + " ms"
     uptime = get_readable_time((time.time() - StartTime))
     
-    update.effective_message.reply_photo(photo="Photo url", caption="text")
+    
     message.edit_text(
         "<b>PONG</b> ✨\n"
         "<b>Time Taken:</b> <code>{}</code>\n"
