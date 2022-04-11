@@ -45,7 +45,7 @@ def afk(update: Update, context: CallbackContext):
     sql.set_afk(update.effective_user.id, reason)
     fname = update.effective_user.first_name
     try:
-        update.effective_message.reply_text("{} See Yaa Soon!{}".format(fname, notice))
+        update.effective_message.reply_text("ᴄʏᴀ 👋: {} {}".format(fname, notice))
     except BadRequest:
          pass
 
