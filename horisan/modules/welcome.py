@@ -199,7 +199,7 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
             # Give the owner a special welcome
             if new_mem.id == OWNER_ID:
                 update.effective_message.reply_text(
-                    f"""ɢᴜᴇꜱꜱ ᴡʜᴏ ᴊᴏɪɴᴇᴅ ʏᴏᴜʀ ᴄᴏᴍᴘᴀɴʏ! \n ɪᴛꜱ ᴍʏ ᴏᴡɴᴇʀ ᴏꜰ ʜᴏʀɪ ꜱᴀɴ! ᴋɪɴɢ :. [🍁]("https://telegra.ph/file/8926ff46e0797eac4e8eb.jpg")""",
+                    f"""[ɢᴜᴇꜱꜱ ᴡʜᴏ ᴊᴏɪɴᴇᴅ ʏᴏᴜʀ ᴄᴏᴍᴘᴀɴʏ! \n ɪᴛꜱ ᴍʏ ᴏᴡɴᴇʀ ᴏꜰ ʜᴏʀɪ ꜱᴀɴ! ᴋɪɴɢ VOID]("https://telegra.ph/file/8926ff46e0797eac4e8eb.jpg")""",
                     reply_to_message_id=reply,
                 )
                 welcome_log = (
