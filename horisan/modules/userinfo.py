@@ -465,7 +465,7 @@ def stats(update: Update, context: CallbackContext):
     result = re.sub(r"(\d+)", r"<code>\1</code>", stats)
     result += "\n\n<b>--【POWERED BY VOID】--</b>"
     update.effective_message.reply_photo(
-        HORI_IMG, result, parse_mode=ParseMode.HTML, disable_web_page_preview=True
+        HORI_IMG, result, parse_mode=ParseMode.HTML
     )
 
 
