@@ -50,6 +50,7 @@ from horisan.modules.helper_funcs.chat_status import sudo_plus
 from horisan.modules.helper_funcs.extraction import extract_user
 from horisan import telethn
 
+HORI_IMG = "https://telegra.ph/file/d0a6b5065c3ac804b49f3.jpg"
 
 def no_by_per(totalhp, percentage):
     """
@@ -463,8 +464,8 @@ def stats(update: Update, context: CallbackContext):
     )
     result = re.sub(r"(\d+)", r"<code>\1</code>", stats)
     result += "\n\n<b>--【POWERED BY VOID】--</b>"
-    update.effective_message.reply_text(
-        result, parse_mode=ParseMode.HTML, disable_web_page_preview=True
+    update.effective_message.reply_photo(
+        HORI_IMG, result, parse_mode=ParseMode.HTML, disable_web_page_preview=True
     )
 
 
