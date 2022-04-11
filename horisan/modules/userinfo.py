@@ -458,7 +458,7 @@ def set_about_me(update: Update, context: CallbackContext):
 
 @sudo_plus
 def stats(update: Update, context: CallbackContext):
-    stats = "<b>[--【Hori San's Statistics】--](https://telegra.ph/file/d0a6b5065c3ac804b49f3.jpg)</b>\n\n" + "\n".join(
+    stats = "<b>--【Hori San's Statistics】--</b>\n\n" + "\n".join(
         [mod.__stats__() for mod in STATS]
     )
     result = re.sub(r"(\d+)", r"<code>\1</code>", stats)
