@@ -812,7 +812,7 @@ def main():
         try:
             dispatcher.bot.sendMessage(
                 f"@{SUPPORT_CHAT}",
-                "[👋 Hi, hori is back alive](https://telegra.ph/file/c458924bf40c213062dd2.mp4).",
+                "[👋](https://telegra.ph/file/c458924bf40c213062dd2.mp4) Hi, hori is back alive.",
                 parse_mode=ParseMode.MARKDOWN,
             )
         except Unauthorized:
