@@ -6,19 +6,17 @@ import urllib.request
 import urllib.parse
 from urllib.error import URLError, HTTPError
 from bs4 import BeautifulSoup
-import time
+
 from telegram import InputMediaPhoto, TelegramError
 from telegram import Update
 from telegram.ext import CallbackContext, run_async
 
 from horisan import dispatcher
-
 from horisan.modules.disable import DisableAbleCommandHandler
-from horisan.modules.helper_funcs.alternate import typing_action
 
 opener = urllib.request.build_opener()
-useragent = 'Mozilla/5.0 (Linux; Android 6.0.1; SM-G920V Build/MMB29K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.98 Mobile Safari/537.36'
-opener.addheaders = [('User-agent', useragent)]
+useragent = "Mozilla/5.0 (Linux; Android 6.0.1; SM-G920V Build/MMB29K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.98 Mobile Safari/537.36"
+opener.addheaders = [("User-agent", useragent)]
 
 @run_async
 def reverse(update: Update, context:CallbackContext):
