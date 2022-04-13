@@ -1,4 +1,5 @@
 import math
+import cloudscraper
 import urllib.request as urllib
 from html import escape
 from io import BytesIO
