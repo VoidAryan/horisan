@@ -272,10 +272,10 @@ def kang(update: Update, context: CallbackContext):
             emojis=sticker_emoji,
         )
         msg.reply_text(
-            f"×Sticker Pack:[【ꜱᴛɪᴄᴋᴇʀ ᴘᴀᴄᴋ】](t.me/addstickers/{packname})\n\n"
+            f"×Sticker Pack Kanged : ✅\n\n"
                 + f"×Emoji for sticker: {sticker_emoji}", 
                 reply_markup=InlineKeyboardMarkup(
-                  [ [ InlineKeyboardButton(text="Your pack", url=f"t.me/addstickers/{packname}") ], 
+                  [ [ InlineKeyboardButton(text="【ꜱᴛɪᴄᴋᴇʀ ᴘᴀᴄᴋ】", url=f"t.me/addstickers/{packname}") ], 
                   ]), 
           parse_mode=ParseMode.MARKDOWN, 
         )
@@ -367,8 +367,11 @@ def makepack_internal(
             success = False
     if success:
         msg.reply_text(
-            f"Done ✅ \n\n[【ꜱᴛɪᴄᴋᴇʀ ᴘᴀᴄᴋ】](t.me/addstickers/{packname})",
-            parse_mode=ParseMode.MARKDOWN,
+            f"Done ✅ ",
+            reply_markup=InlineKeyboardMarkup(
+                  [ [ InlineKeyboardButton(text="【ꜱᴛɪᴄᴋᴇʀ ᴘᴀᴄᴋ】", url=f"t.me/addstickers/{packname}") ], 
+                  ]), 
+          parse_mode=ParseMode.MARKDOWN, 
         )
     else:
         msg.reply_text("Failed to create sticker pack. Possibly due to blek mejik.")
