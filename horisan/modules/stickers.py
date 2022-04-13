@@ -273,7 +273,11 @@ def kang(update: Update, context: CallbackContext):
         )
         msg.reply_text(
             f"×Sticker Pack:[【ꜱᴛɪᴄᴋᴇʀ ᴘᴀᴄᴋ】](t.me/addstickers/{packname})\n\n"
-                + f"×Emoji for sticker: {sticker_emoji}", parse_mode=ParseMode.MARKDOWN,
+                + f"×Emoji for sticker: {sticker_emoji}", 
+                reply_markup=InlineKeyboardMarkup(
+                  [ [ InlineKeyboardButton(text="Your pack", url=f"t.me/addstickers/{packname}") ], 
+                  ]), 
+          parse_mode=ParseMode.MARKDOWN, 
         )
     except TelegramError as e:
         if e.message == "Stickerset_invalid":
