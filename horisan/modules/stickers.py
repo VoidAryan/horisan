@@ -11,6 +11,9 @@ from telegram.ext import CallbackContext
 from telegram.utils.helpers import mention_html
 from horisan.modules.helper_funcs.decorators import horicmd
 
+from horisan import dispatcher
+from horisan.modules.disable import DisableAbleCommandHandler
+
 
 @horicmd(command='stickerid')
 def stickerid(update: Update, context: CallbackContext):
