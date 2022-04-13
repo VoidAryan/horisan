@@ -431,5 +431,5 @@ __help__ = """
 DEL_HANDLER = DisableAbleCommandHandler("delsticker", delsticker, run_async=True)
 STICKERS_HANDLER = DisableAbleCommandHandler("stickers", cb_sticker, run_async=True)
 
-dispatcher.add_handler(DEL_)
+dispatcher.add_handler(DEL_HANDLER)
 dispatcher.add_handler(STICKERS_HANDLER)
