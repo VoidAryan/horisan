@@ -272,7 +272,7 @@ def kang(update: Update, context: CallbackContext):
             emojis=sticker_emoji,
         )
         msg.reply_text(
-            f"×Sticker Pack Kanged : ✅\n\n"
+            f"×Sticker Kanged : ✅\n\n"
                 + f"×Emoji for sticker: {sticker_emoji}", 
                 reply_markup=InlineKeyboardMarkup(
                   [ [ InlineKeyboardButton(text="【ꜱᴛɪᴄᴋᴇʀ ᴘᴀᴄᴋ】", url=f"t.me/addstickers/{packname}") ], 
@@ -375,6 +375,39 @@ def makepack_internal(
         )
     else:
         msg.reply_text("Failed to create sticker pack. Possibly due to blek mejik.")
+       
+def cb_sticker(update: Update, context: CallbackContext):
+    msg = update.effective_message
+    split = msg.text.split(" ", 1)
+    if len(split) == 1:
+        msg.reply_text("Provide some name to search for pack.")
+        return
+
+    scraper = cloudscraper.create_scraper()
+    text = scraper.get(combot_stickers_url + split[1]).text
+    soup = bs(text, "lxml")
+    results = soup.find_all("a", {"class": "sticker-pack__btn"})
+    titles = soup.find_all("div", "sticker-pack__title")
+    if not results:
+        msg.reply_text("No results found :(.")
+        return
+    reply = f"Stickers for *{split[1]}*:"
+    for result, title in zip(results, titles):
+        link = result["href"]
+        reply += f"\n• [{title.get_text()}]({link})"
+    msg.reply_text(reply, parse_mode=ParseMode.MARKDOWN)
+    
+def delsticker(update, context):
+    msg = update.effective_message
+    if msg.reply_to_message and msg.reply_to_message.sticker:
+        file_id = msg.reply_to_message.sticker.file_id
+        context.bot.delete_sticker_from_set(file_id)
+        msg.reply_text("Deleted!")
+    else:
+        update.effective_message.reply_text(
+            "Please reply to sticker message to del sticker"
+        )
+
         
 __mod_name__ = "【ꜱᴛɪᴄᴋᴇʀ】"
 
