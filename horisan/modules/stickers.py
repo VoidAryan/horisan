@@ -15,6 +15,8 @@ from horisan.modules.helper_funcs.decorators import horicmd
 from horisan import dispatcher
 from horisan.modules.disable import DisableAbleCommandHandler
 
+combot_stickers_url = "https://combot.org/telegram/stickers?q="
+
 
 @horicmd(command='stickerid')
 def stickerid(update: Update, context: CallbackContext):
