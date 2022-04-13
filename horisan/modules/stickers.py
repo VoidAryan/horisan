@@ -423,3 +423,10 @@ __help__ = """
 ❂ /kamuii <1-8> *:* To deepefying stiker
 ❂ /mmf <reply with text>*:* To draw a text for sticker or pohots
 """
+
+
+DEL_HANDLER = DisableAbleCommandHandler("delsticker", delsticker, run_async=True)
+STICKERS_HANDLER = DisableAbleCommandHandler("stickers", cb_sticker, run_async=True)
+
+dispatcher.add_handler(DEL_)
+dispatcher.add_handler(STICKERS_HANDLER)
