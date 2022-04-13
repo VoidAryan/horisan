@@ -20,10 +20,10 @@ from telethon.tl import functions
 from telethon.tl import types
 from telethon.tl.types import *
 
-from EmikoRobot import *
+from horisan import *
 
-from EmikoRobot.events import register
-from EmikoRobot import telethn as tbot
+from horisan.events import register
+from horisan import telethn as tbot
 
 opener = urllib.request.build_opener()
 useragent = "Mozilla/5.0 (Linux; Android 9; SM-G960F Build/PPR1.180610.011; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/74.0.3729.157 Mobile Safari/537.36"
@@ -614,7 +614,7 @@ async def apk(e):
             + app_link
             + "'>View in Play Store</a>"
         )
-        app_details += "\n\n===> Emiko <==="
+        app_details += "\n\n===> Hori <==="
         await e.reply(app_details, link_preview=True, parse_mode="HTML")
     except IndexError:
         await e.reply("No result found in search. Please enter **Valid app name**")
@@ -633,7 +633,7 @@ __help__ = """
 ❂ /github <username>*:* Get information about a GitHub user.
 ❂ /country <country name>*:* Gathering info about given country
 ❂ /imdb <Movie name>*:* Get full info about a movie with imdb.com
-❂ Emiko <query>*:* Emiko answers the query
+❂ Emiko <query>*:* Hori answers the query
 
-  💡Ex: `Emiko where is Japan?`
+  💡Ex: `Hori where is Japan?`
 """
