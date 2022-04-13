@@ -4,6 +4,7 @@ import urllib.request as urllib
 from html import escape
 from io import BytesIO
 from urllib.error import HTTPError
+from bs4 import BeautifulSoup as bs
 
 from PIL import Image
 from telegram import (InlineKeyboardButton, InlineKeyboardMarkup, ParseMode,
