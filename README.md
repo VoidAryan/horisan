@@ -9,3 +9,6 @@
 
 ### Support & Developer 🎑
 <a href="https://telegram.me/bot_projectx_"><img src="https://img.shields.io/badge/Join-Support%20Group-blue.svg?style=for-the-badge&logo=Telegram"></a> <a href="https://telegram.me/voidxtoxic"><img src="https://img.shields.io/badge/%20Developer-blue.svg?style=for-the-badge&logo=Telegram"></a>
+
+### Deploy
+ [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/voidxtoxic/horisan)
