@@ -149,6 +149,6 @@ __help__ = """
 /ping: Hori Pong
 """
 
-__mod_name__ = "ping⚡"
+__mod_name__ = "【ᴘɪɴɢ】"
 __command_list__ = ["ping", "pingall"]
 __handlers__ = [PING_HANDLER, PINGALL_HANDLER]
