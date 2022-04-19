@@ -29,7 +29,7 @@ SOFTWARE.
 from gogoanimeapi import gogoanime as anime
 from telethon import Button, events
 
-from Cutiepii_Robot import telethn
+from horisan import telethn
 
 
 @telethn.on(events.NewMessage(pattern="^/gogo ?(.*)"))
