@@ -6,8 +6,8 @@ from telegram.ext import CallbackContext
 from telegram.inline.inlinekeyboardbutton import InlineKeyboardButton
 from telegram.inline.inlinekeyboardmarkup import InlineKeyboardMarkup
 
-from MikuXProBot import DEV_USERS, DRAGONS, dispatcher
-from MikuXProBot.modules.helper_funcs.decorators import mikucallback
+from horisan import DEV_USERS, DRAGONS, dispatcher
+from horisan.modules.helper_funcs.decorators import horicallback
 
 
 class AdminPerms(Enum):
