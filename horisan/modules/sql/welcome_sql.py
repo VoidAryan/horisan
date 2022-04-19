@@ -2,11 +2,11 @@ import random
 import threading
 from typing import Union
 
-from MikuXProBot.modules.helper_funcs.msg_types import Types
-from MikuXProBot.modules.sql import BASE, SESSION
+from horisan.modules.helper_funcs.msg_types import Types
+from horisan.modules.sql import BASE, SESSION
 from sqlalchemy import BigInteger, Boolean, Column, Integer, String, UnicodeText
 
-DEFAULT_WELCOME = "Hey {first}, how are you?"
+DEFAULT_WELCOME = "Hey {first}, Welcome to my lovely chat!"
 DEFAULT_GOODBYE = "Nice knowing ya!"
 
 DEFAULT_WELCOME_MESSAGES = [
