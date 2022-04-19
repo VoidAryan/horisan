@@ -49,4 +49,4 @@ __help__ = """
 × usage = /pokedex  (Pokemon name)
 """
 
-__mod_name__ = '【ᴘᴏᴋᴇᴅᴇx】"
+__mod_name__ = "【ᴘᴏᴋᴇᴅᴇx】"
