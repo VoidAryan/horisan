@@ -1,7 +1,7 @@
 import threading
 
 from sqlalchemy import Column, String, UnicodeText
-from MikuXProBot.modules.sql import SESSION, BASE
+from horisan.modules.sql import SESSION, BASE
 
 
 class ChatLangs(BASE):
