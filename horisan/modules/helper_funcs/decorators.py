@@ -54,7 +54,7 @@ class horiHandler:
                         group,
                     )
                 LOGGER.debug(
-                    f"[horicmd] Loaded handler {command} for function {func.__name__} in group {group}"
+                    f"[HORICMD] Loaded handler {command} for function {func.__name__} in group {group}"
                 )
             except TypeError:
                 if can_disable:
@@ -81,7 +81,7 @@ class horiHandler:
                         )
                     )
                 LOGGER.debug(
-                    f"[horicmd] Loaded handler {command} for function {func.__name__}"
+                    f"[HORICMD] Loaded handler {command} for function {func.__name__}"
                 )
 
             return func
@@ -110,7 +110,7 @@ class horiHandler:
                         MessageHandler(pattern, func, run_async=run_async), group
                     )
                 LOGGER.debug(
-                    f"[horimsg] Loaded filter pattern {pattern} for function {func.__name__} in group {group}"
+                    f"[HORIMSG] Loaded filter pattern {pattern} for function {func.__name__} in group {group}"
                 )
             except TypeError:
                 if can_disable:
@@ -124,7 +124,7 @@ class horiHandler:
                         MessageHandler(pattern, func, run_async=run_async)
                     )
                 LOGGER.debug(
-                    f"[horimsg] Loaded filter pattern {pattern} for function {func.__name__}"
+                    f"[HORIMSG] Loaded filter pattern {pattern} for function {func.__name__}"
                 )
 
             return func
@@ -139,7 +139,7 @@ class horiHandler:
                 )
             )
             LOGGER.debug(
-                f"[horicallback] Loaded callbackquery handler with pattern {pattern} for function {func.__name__}"
+                f"[HORICALLBACK] Loaded callbackquery handler with pattern {pattern} for function {func.__name__}"
             )
             return func
 
