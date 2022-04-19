@@ -10,7 +10,7 @@ from pyrogram import Client , filters
 from pyrogram.types import Message
 import horisan.modules.sql.welcome_sql as sql
 from horisan import (DEV_USERS, LOGGER, OWNER_ID, DRAGONS, DEMONS, TIGERS,
-                          WOLVES, sw, dispatcher, JOIN_LOGGER, pgram)
+                          WOLVES, sw, dispatcher, JOIN_LOGGER)
 from horisan.modules.helper_funcs.chat_status import (
     is_user_ban_protected,
     user_admin,
