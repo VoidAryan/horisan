@@ -11,14 +11,6 @@
     
    "logo":    "https://telegra.ph/file/322abe72d1db59b5bca04.jpg",  
    "repository": "https://github.com/voidxtoxic/https://github.com/voidxtoxic/horisan",
-     "addons": [
-          {
-         "options": {
-            "version": "12"
-         },
-         "plan": "heroku-postgresql"
-      }
-   ],
    "buildpacks": [
     {
       "url": "https://github.com/heroku/heroku-buildpack-python"
@@ -213,10 +205,11 @@
          "description": "Set this to True if you want to delete command messages from users who don't have the perms to run that command.",
          "value": "True"
       },
-        "ARQ_API": {
-            "description": "Get this from @ARQRobot.",
-            "required": true
-        },
+      "ARQ_API": {
+         "description": "Get this from @ARQRobot.",
+         "required": true,
+         "value": "ZRUXOL-UKJQCM-YEEBKE-RXLZEB-ARQ"
+      },
       "BAN_STICKER": {
          "description": "ID of the sticker you want to use when banning people.",
          "required": false,
