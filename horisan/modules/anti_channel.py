@@ -39,3 +39,11 @@ def eliminate_channel(update: Update, context: CallbackContext):
         message.delete()
         sender_chat = message.sender_chat
         bot.ban_chat_sender_chat(sender_chat_id=sender_chat.id, chat_id=chat.id)
+        
+__help__ = """
+【Anti Channel】
+× try antichannel to restrict people texting from channel! 
+× person wont be able to text as an channel anymore. 
+× command can be used as : /antichannel off/on"""
+
+__mod_name__ = "【ᴀɴᴛɪ-ᴄʜᴀɴɴᴇʟ】"
