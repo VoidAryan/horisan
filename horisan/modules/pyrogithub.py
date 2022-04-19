@@ -3,8 +3,12 @@ from pyrogram import filters
 from horisan import pbot, BOT_USERNAME
 from horisan.utils.errors import capture_err
 
+__help__ = """
+× you can search github accounts through this module
+× usage : /git (github username)
+"""
 
-__mod_name__ = "Github"
+__mod_name__ = "【ɢɪᴛʜᴜʙ】"
 
 
 @pbot.on_message(filters.command(["github", "git", f"git@{BOT_USERNAME}"]))
