@@ -43,3 +43,10 @@ async def PokeDex(_, message):
                 print(str(e))
                 pass
     await message.reply_photo(photo=poke_img, caption=caption)
+
+__help__ = """
+× this module will help you to find or search your pokemon through this.
+× usage = /pokedex  (Pokemon name)
+"""
+
+__mod_name__ = '【ᴘᴏᴋᴇᴅᴇx】"
