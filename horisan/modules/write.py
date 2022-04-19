@@ -1,4 +1,4 @@
-from ichigochan import pbot
+from horisan import pbot
 from pyrogram import filters
 @pbot.on_message(filters.command("write"))
 
@@ -11,9 +11,9 @@ async def handwriting(_, message):
     hand = "https://apis.xditya.me/write?text=" + name
     await m.edit("📤 Uploading ...")
     await pbot.send_chat_action(message.chat.id, "upload_photo")
-    await message.reply_photo(hand, caption = "Made by @IchigoXprobot")
+    await message.reply_photo(hand, caption = "Made by @kyoukohori_robot")
 
-__mod_name__ = "HandWrite"
+__mod_name__ = "【ʜᴀɴᴅᴡʀɪᴛᴇ】"
 __help__ = """
 •`/write [text / reply to text]`
 """
