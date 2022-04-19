@@ -32,9 +32,9 @@ from traceback import format_exc
 from pyrogram import filters
 from pyrogram.types import Message
 
-from Cutiepii_Robot import arq
-from Cutiepii_Robot.utils.errors import capture_err
-from Cutiepii_Robot import pgram, BOT_USERNAME
+from horisan import arq
+from horisan.utils.errors import capture_err
+from horisan import pgram, BOT_USERNAME
 
 
 
