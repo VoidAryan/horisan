@@ -122,6 +122,11 @@ async def close_send_photo(_, CallbackQuery):
         )
     else:
         await CallbackQuery.message.delete()
-        
+            
+__help__ = """
+× You can now report any bugs related to hori through /bug (your bug)
+× we will check and solve your bug after checking 
+× usage : /bug (bug you have or reply to the bug)
+"""
 
 __mod_name__ = "【ʙᴜɢ】"
