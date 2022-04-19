@@ -6,17 +6,18 @@
          "advance",
          "group",
          "manager",
-         "horirobot"
+         "naorobot"
       ],
     
    "logo":    "https://telegra.ph/file/322abe72d1db59b5bca04.jpg",  
    "repository": "https://github.com/voidxtoxic/https://github.com/voidxtoxic/horisan",
-   "addons": [
+     "addons": [
           {
          "options": {
             "version": "12"
          },
-        }
+         "plan": "heroku-postgresql"
+      }
    ],
    "buildpacks": [
     {
