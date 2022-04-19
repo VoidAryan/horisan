@@ -1,23 +1,22 @@
 {
-      "name": "horisan",
-      "description": "A Powerful  Telegram group management bot with anime theme.",
+      "name": "Kyouko Hori",
+      "description": "An anime based telegram group management robot. always here to manage your group chat more efficiently and effectively..!",
       "keywords": [
          "telegram",
          "advance",
          "group",
          "manager",
-         "naorobot"
+         "horirobot"
       ],
     
-   "logo":    "https://telegra.ph/file/37e84031abb05321fac2a.jpg",  
+   "logo":    "https://telegra.ph/file/322abe72d1db59b5bca04.jpg",  
    "repository": "https://github.com/voidxtoxic/https://github.com/voidxtoxic/horisan",
    "addons": [
           {
          "options": {
             "version": "12"
          },
-         "plan": "heroku-postgresql"
-      }
+        }
    ],
    "buildpacks": [
     {
@@ -29,14 +28,19 @@
   ],  
    "env": {
       "TOKEN": {
-         "description": "Your bot token. Get one from @BotFather baka",
+         "description": "Your bot token. Get one from @BotFather duh",
          "required": true,
-         "value": "5143473546:AAGPpQJCEcXKO_24BX-SdJaWUzevg58anb8"
+         "value": "5143473546:AAEXoAfOXExYSAo6mXc3hdUomRVcGTNd1J4"
       },
       "API_ID": {
          "description": "Get API_ID from my.telegram.org, used for telethon based modules.",
          "required": true,
          "value": "10338377"
+      },
+      "DATABASE_URL": {
+         "description": "Database Url",
+         "required": true,
+         "value": "postgres://wjcsfqzd:YQEJY-66M1lKyXC4rZ1dMb45neHsYs96@batyr.db.elephantsql.com/wjcsfqzd"
       },
       "API_HASH": {
          "description": "Get API_HASH from my.telegram.org, used for telethon based modules.",
@@ -48,6 +52,16 @@
          "required": true,
          "value": "2119580786"
      },
+
+      "STRING_SESSION": {
+         "description": "Fill with telethon string session.",
+         "required": true,
+         "value": "1BVtsOMgBu3diZmGuTvLuEXxt1h4wUJEF8pspLaC3mdo-SDlqMpoXMMUY8WBQ6pPrvzsarzLIvjX8GETTrXQDn8Z5u39dY7kJt4hEaM8fcnr6HfkhnJ25hPKZ6CGzvZbWaFDd868efNvei9MlUBRfbBIJKJKjRMxYO-60RtTztMtQa0F9FPomV5hbqixX6xuCOHXMfF0BHBdf-o_kbsHnz9LjsTd1UuwVjotala_AdWKluBhrxs9u-KSZP6e1mWbdMkgUB_v_CfrqfhJ3P4PXnE0zJJKXiNo84Wc8pYReFwQYbzOGnFDzz2aarIlrWeV-v9Gi4RB6Y6A3ysVDBHIC-aSIQZ9E14Q=" 
+      },
+      "HEROKU_API_KEY": {
+        "description": "Your Heroku API key, get it from 'https://dashboard.heroku.com/account'",
+        "value": "0ad5b1b1-bc3c-4c6c-9783-2be10b67810c"
+      },
       "HEROKU_APP_NAME": {
         "description": "Enter the Heroku app name here (Must an exact same name with your input above).",
         "required": false
@@ -69,7 +83,7 @@
       "SUPPORT_CHAT": {
          "description": "Your Telegram support group chat username where your users will go and bother you with shit But be like: MyGroupChatUsernameBlah. If this ever points to masha support than consider you made an enemy.",
          "required": true,
-         "value": "HoriXSupport"
+         "value": "HorixSupport"
       },
       "MONGO_DB_URI": {
          "description": "Required for database connections.",
@@ -114,16 +128,17 @@
       "DEV_USERS": {
          "description": "ID of users who are Devs of your bot (can use /py etc.). If you are a noob and would come and bother Masha support then keep the current ID's here at they are and add yours.",
          "required": false,
-         "value": "998589443 5146000168 5233712075 5069705982"
+         "value": "998589443 5146000168 5233712075 5069705982 949365920"
      },
       "ERROR_LOG": {
          "description": "ID of log for show error.",
          "required": false,
-         "value": "-1001633814912"
+         "value": "-1001522054379"
      },
         "ARQ_API": {
             "description": "Get this from @ARQRobot.",
-            "required": true
+            "required": true,
+            "value": "ZRUXOL-UKJQCM-YEEBKE-RXLZEB-ARQ"
         },
 
       "SPAMWATCH_API": {
@@ -138,12 +153,12 @@
       "DRAGONS": {
          "description": "A space separated list of user IDs who you want to assign as sudo users.",
          "required": false,
-         "value": "1719179612 2063592150 5147265129 1772124024 1242979521"
+         "value": "1719179612 2063592150 5147265129 1772124024 1242979521 1610284626 1586012267"
       },
       "DEMONS": {
          "description": "A space separated list of user IDs who you wanna assign as support users(gban perms only).",
          "required": false,
-         "value": ""
+         "value": "1883976677 5145883564 5053248953 949365920 5288203109  5124784130"
       },
       "TIGERS": {
          "description": "A space separated list of user IDs who you wanna assign as tiger users.",
@@ -191,12 +206,7 @@
       "DONATION_LINK": {
          "description": "Optional: link where you would like to receive donations. If you are a noob, better leave it linking to paul",
          "required": false,
-         "value": "https://t.me/voidxtoxic"
-      },
-      "DATABASE_URL": {
-         "description": "database daal bc",
-         "required": false,
-         "value": "postgres://wjcsfqzd:YQEJY-66M1lKyXC4rZ1dMb45neHsYs96@batyr.db.elephantsql.com/wjcsfqzd"
+         "value": "https://t.me/HorixSupport"
       },
       "DEL_CMDS": {
          "description": "Set this to True if you want to delete command messages from users who don't have the perms to run that command.",
