@@ -71,7 +71,7 @@ __help__ = """
 /plet : I'll creates a sticker with your Sending message
 """
 
-__mod_name__ = "plet🌈"
+__mod_name__ = "【ᴘʟᴇᴛ】"
 __command_list__ = [
     "plet"
 ]
