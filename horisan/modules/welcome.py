@@ -8,21 +8,21 @@ import importlib
 from functools import partial
 from pyrogram import Client , filters
 from pyrogram.types import Message
-import MikuXProBot.modules.sql.welcome_sql as sql
-from MikuXProBot import (DEV_USERS, LOGGER, OWNER_ID, DRAGONS, DEMONS, TIGERS,
+import horisan.modules.sql.welcome_sql as sql
+from horisan import (DEV_USERS, LOGGER, OWNER_ID, DRAGONS, DEMONS, TIGERS,
                           WOLVES, sw, dispatcher, JOIN_LOGGER, pgram)
-from MikuXProBot.modules.helper_funcs.chat_status import (
+from horisan.modules.helper_funcs.chat_status import (
     is_user_ban_protected,
     user_admin,
 )
-from MikuXProBot.modules.helper_funcs.misc import build_keyboard, revert_buttons
-from MikuXProBot.modules.helper_funcs.msg_types import get_welcome_type
-from MikuXProBot.modules.helper_funcs.string_handling import (
+from horisan.modules.helper_funcs.misc import build_keyboard, revert_buttons
+from horisan.modules.helper_funcs.msg_types import get_welcome_type
+from horisan.modules.helper_funcs.string_handling import (
     escape_invalid_curly_brackets,
     markdown_parser,
 )
-from MikuXProBot.modules.log_channel import loggable
-from MikuXProBot.modules.sql.global_bans_sql import is_user_gbanned
+from horisan.modules.log_channel import loggable
+from horisan.modules.sql.global_bans_sql import is_user_gbanned
 from telegram import (
     ChatPermissions,
     InlineKeyboardButton,
@@ -40,8 +40,8 @@ from telegram.ext import (
     run_async,
 )
 from telegram.utils.helpers import escape_markdown, mention_html, mention_markdown
-from MikuXProBot.modules.helper_funcs.misc import paginate_modules
-from MikuXProBot.modules import ALL_MODULES
+from horisan.modules.helper_funcs.misc import paginate_modules
+from horisan.modules import ALL_MODULES
 
 VALID_WELCOME_FORMATTERS = [
     "first",
@@ -67,10 +67,10 @@ ENUM_FUNC_MAP = {
 
 VERIFIED_USER_WAITLIST = {}
 
-MIKU_IMG = "https://telegra.ph/file/be3430b7151fd64706679.mp4"
-MIKU = "https://telegra.ph/file/25442c7b0b61372df7ce9.jpg"
-MIKU_VID = "https://telegra.ph/file/e997d98975496adc09fe7.mp4"
-WAIFUS_IMG = "https://telegra.ph/file/a6c91884e06744ad48fb7.jpg"
+HORI_IMG = "https://telegra.ph/file/e1d5abc07950e9c752943.jpg"
+HORI = "https://telegra.ph/file/77228b977b2841410835d.jpg"
+HORI_VID = "https://telegra.ph/file/db05a50ddf9b005a55769.mp4"
+WAIFUS_IMG = "https://telegra.ph/file/322abe72d1db59b5bca04.jpg"
 
 
 # do not async
@@ -196,7 +196,7 @@ def new_member(update: Update, context: CallbackContext):
             # Give the owner a special welcome
             if new_mem.id == OWNER_ID:
                 update.effective_message.reply_video(
-                MIKU_IMG, caption= "Oh, Genos? Let's get this moving.",
+                HORI_IMG, caption= "My Izumi Kun is here! uwu.",
                     reply_to_message_id=reply)
                 welcome_log = (f"{html.escape(chat.title)}\n"
                                f"#USER_JOINED\n"
@@ -206,7 +206,7 @@ def new_member(update: Update, context: CallbackContext):
             # Welcome Devs
             elif new_mem.id in DEV_USERS:
                 update.effective_message.reply_text(
-                    "Whoa! S Rank Hunter just joined!",
+                    "Whoa! Dev of hori san just entered!",
                     reply_to_message_id=reply,
                 )
                 continue
@@ -214,7 +214,7 @@ def new_member(update: Update, context: CallbackContext):
             # Welcome Sudos
             elif new_mem.id in DRAGONS:
                 update.effective_message.reply_photo(
-                MIKU, caption= "Huh! A Rank Hunter just joined! Stay Alert!",
+                MIKU, caption= "Huh! My Advisor Just Came!",
                     reply_to_message_id=reply,
                 )
                 continue
@@ -222,7 +222,7 @@ def new_member(update: Update, context: CallbackContext):
             # Welcome Support
             elif new_mem.id in DEMONS:
                 update.effective_message.reply_photo(
-                MIKU, caption= "Huh! Someone with a B Rank Hunter level just joined!",
+                MIKU, caption= "Huh! my demon is here uwu!",
                     reply_to_message_id=reply,
                 )
                 continue
@@ -256,17 +256,12 @@ def new_member(update: Update, context: CallbackContext):
                 [
                   [                  
                        InlineKeyboardButton(
-                             text="Support🚑",
-                             url=f"https://t.me/MikuXSupport"),
+                             text="【ꜱᴜᴘᴘᴏʀᴛ】",
+                             url=f"https://t.me/horixsupport"),
                        InlineKeyboardButton(
-                             text="Updates🛰️",
-                             url="https://t.me/MikuXUpdates")
+                             text="【ᴜᴘᴅᴀᴛᴇꜱ】",
+                             url="https://t.me/kyouko_Updates")
                      ],
-                     [                  
-                       InlineKeyboardButton(
-                             text="Help 💡",
-                             callback_data="help_back"),
-                ] 
             ]
         ),
     )
@@ -513,7 +508,7 @@ def left_member(update: Update, context: CallbackContext):
             # Give the owner a special goodbye
             if left_mem.id == OWNER_ID:
                 update.effective_message.reply_video(
-                MIKU_VID, caption= "Oi! Genos! He left..", reply_to_message_id=reply)
+                HORI_VID, caption= "Oi! Genos! He left..", reply_to_message_id=reply)
                 return
 
             # Give the devs a special goodbye
