@@ -86,3 +86,4 @@ img2pdf
 multicolorcaptcha
 git+https://github.com/python-telegram-bot/ptbcontrib.git
 pytimeparse
+PyYAML>=5.3.1
