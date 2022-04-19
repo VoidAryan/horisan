@@ -10,7 +10,7 @@ DEFAULT_WELCOME = "Hey {mention}, Welcome to our group chat!"
 DEFAULT_GOODBYE = "Nice knowing ya!"
 
 DEFAULT_WELCOME_MESSAGES = [
-    "{mention} welcome to our group chat
+    "{mention} welcome to our group chat ♡",
 ]
 DEFAULT_GOODBYE_MESSAGES = [
     "{first} will be missed.",
