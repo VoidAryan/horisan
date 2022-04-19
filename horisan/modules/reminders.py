@@ -33,8 +33,8 @@ from telegram.ext.callbackcontext import CallbackContext
 from telegram.ext.filters import Filters
 from telegram.parsemode import ParseMode
 
-from Cutiepii_Robot import OWNER_ID, updater, dispatcher
-from Cutiepii_Robot.modules.disable import DisableAbleCommandHandler
+from horisan import OWNER_ID, updater, dispatcher
+from horisan.modules.disable import DisableAbleCommandHandler
 
 
 job_queue = updater.job_queue
@@ -219,7 +219,7 @@ def clear_all_my_reminders(update: Update, context: CallbackContext):
         parse_mode = ParseMode.HTML
     )
 
-__mod_name__ = "Reminders"
+__mod_name__ = "【ʀᴇᴍɪɴᴅᴇʀ】"
 __help__ = """
   ➢ `/reminders`*:* get a list of *TimeStamps* of your reminders. 
   ➢ `/setreminder <time> <remind message>`*:* Set a reminder after the mentioned time.
