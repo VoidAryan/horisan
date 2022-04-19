@@ -7,7 +7,12 @@ from horisan.utils.errors import capture_err
 from horisan.utils.permissions import adminsOnly
 from horisan.ex_plugins.dbfunctions import is_nsfw_on, nsfw_off, nsfw_on
 
-__mod_name__ = "Anti-NSFW​"
+__help__ = """ 【ᴀɴᴛɪ-ɴꜱꜰᴡ】
+× will auto delete gifs / images from group chat which are detected to be as NSFW
+× commands can be used as /antinsfw off/on. 
+"""
+
+__mod_name__ = "【ᴀɴᴛɪ-ɴꜱꜰᴡ】"
 
 
 async def get_file_id_from_message(message):
