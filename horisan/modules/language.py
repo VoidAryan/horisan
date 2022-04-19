@@ -7,7 +7,7 @@ from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
 from horisan import dispatcher
 import horisan.modules.sql.language_sql as sql
 from horisan.modules.helper_funcs.chat_status import user_admin, user_admin_no_reply
-from horisan.langs import get_string, get_languages, get_language
+from horisan.language import get_string, get_languages, get_language
 
 
 
