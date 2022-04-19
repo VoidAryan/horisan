@@ -39,9 +39,9 @@ from io import BytesIO
 from requests import get
 from telethon.tl.types import InputMessagesFilterPhotos
 
-from Cutiepii_Robot import OWNER_ID, BOT_USERNAME, SUPPORT_CHAT
-from Cutiepii_Robot.events import register
-from Cutiepii_Robot import telethn
+from horisan import OWNER_ID, BOT_USERNAME, SUPPORT_CHAT
+from horisan.events import register
+from horisan import telethn
 from PIL import Image, ImageDraw, ImageFont
 
 
@@ -296,7 +296,7 @@ async def lego(event):
     pointsize = 500
     fillcolor = "black"
     shadowcolor = "blue"
-    fnt = glob.glob("./Cutiepii_Robot/utils/Logo/*")
+    fnt = glob.glob("./horisan/utils/Logo/*")
     randf = random.choice(fnt)
     font = ImageFont.truetype(randf, 120)
     w, h = draw.textsize(text, font=font)
@@ -306,9 +306,9 @@ async def lego(event):
     x = (image_widthz-w)/2
     y = ((image_heightz-h)/2+6)
     draw.text((x, y), text, font=font, fill="white", stroke_width=1, stroke_fill="black")
-    fname = "Cutiepii.png"
+    fname = "horisan.png"
     img.save(fname, "png")
-    await telethn.send_file(event.chat_id, file=fname, caption = f"Made by @{BOT_USERNAME}")         
+    await telethn.send_file(event.chat_id, file=fname, caption = f"Made by @kyoukohori_robot")         
     await pesan.delete()
     if os.path.exists(fname):
             os.remove(fname)
