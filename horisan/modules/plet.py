@@ -7,9 +7,9 @@ from PIL import Image
 from telegram import Update
 from telegram.ext import CallbackContext, run_async
 
-from MikuXProBot import dispatcher
-from MikuXProBot.modules.disable import DisableAbleCommandHandler
-from MikuXProBot.modules.thonkify_dict import thonkifydict
+from horisan import dispatcher
+from horisan.modules.disable import DisableAbleCommandHandler
+from horisan.modules.thonkify_dict import thonkifydict
 
 
 @run_async
