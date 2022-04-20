@@ -4,8 +4,8 @@ import re
 import time
 from functools import partial
 from io import BytesIO
-import EmikoRobot.modules.sql.welcome_sql as sql
-from EmikoRobot import (
+import horisa.modules.sql.welcome_sql as sql
+from horisan import (
     DEV_USERS,
     OWNER_ID,
     DRAGONS,
@@ -15,19 +15,19 @@ from EmikoRobot import (
     LOGGER,
     dispatcher,
 )
-from EmikoRobot.modules.helper_funcs.chat_status import (
+from horisan.modules.helper_funcs.chat_status import (
     is_user_ban_protected,
     user_admin,
 )
-from EmikoRobot.modules.helper_funcs.misc import build_keyboard, revert_buttons
-from EmikoRobot.modules.helper_funcs.msg_types import get_welcome_type
-from EmikoRobot.modules.helper_funcs.handlers import MessageHandlerChecker
-from EmikoRobot.modules.helper_funcs.string_handling import (
+from horisan.modules.helper_funcs.misc import build_keyboard, revert_buttons
+from horisan.modules.helper_funcs.msg_types import get_welcome_type
+from horisan.modules.helper_funcs.handlers import MessageHandlerChecker
+from horisan.modules.helper_funcs.string_handling import (
     escape_invalid_curly_brackets,
     markdown_parser,
 )
-from EmikoRobot.modules.log_channel import loggable
-from EmikoRobot.modules.sql.global_bans_sql import is_user_gbanned
+from horisan.modules.log_channel import loggable
+from horisan.modules.sql.global_bans_sql import is_user_gbanned
 from telegram import (
     ChatPermissions,
     InlineKeyboardButton,
@@ -70,6 +70,8 @@ ENUM_FUNC_MAP = {
 VERIFIED_USER_WAITLIST = {}
 CAPTCHA_ANS_DICT = {}
 
+HORI_IMG = "https://telegra.ph/file/3326d5300d8627c2dbd23.jpg"
+WAIFUS_IMG = "https://telegra.ph/file/9dc7d8788c1a94a685df5.jpg"
 from multicolorcaptcha import CaptchaGenerator
 
 # do not async
@@ -196,15 +198,13 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
         if should_welc:
 
             # Give the owner a special welcome
-            if new_mem.id == OWNER_ID:
-                update.effective_message.reply_text(
-                    f"Welcome to {html.escape(chat.title)} my king.", reply_to_message_id=reply
-                )
-                welcome_log = (
-                    f"{html.escape(chat.title)}\n"
-                    f"#USER_JOINED\n"
-                    f"My King just joined the chat"
-                )
+                if new_mem.id == OWNER_ID:
+                update.effective_message.reply_video(
+                HORI_IMG, caption= "My Izumi Kun is here! uwu.",
+                    reply_to_message_id=reply)
+                welcome_log = (f"{html.escape(chat.title)}\n"
+                               f"#USER_JOINED\n"
+                               f"Bot Owner just joined the chat")
                 continue
 
             # Welcome Devs
@@ -236,6 +236,31 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
                 update.effective_message.reply_text(
                     "Oof! A Soldier Users just joined!", reply_to_message_id=reply
                 )
+                continue
+            
+            if new_mem.id == bot_id:
+                update.effective_message.reply_photo(
+                    WAIFUS_IMG, caption= "Hey {}, I'm {}! Thank you for adding me to {}\n"
+                    "Join support and channel update with clicking button below!".format(
+                        user.first_name, context.bot.first_name, chat.title
+                    ),
+            
+            
+                    reply_to_message_id=reply,
+                parse_mode=ParseMode.MARKDOWN,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                  [                  
+                       InlineKeyboardButton(
+                             text="Support",
+                             url=f"https://t.me/horixsupport"),
+                       InlineKeyboardButton(
+                             text="Updates",
+                             url="https://t.me/kyouko_updates")
+                     ],
+            ]
+        ),
+    )
                 continue
 
             buttons = sql.get_welc_buttons(chat.id)
