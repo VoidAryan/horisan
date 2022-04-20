@@ -408,10 +408,10 @@ def hori_about_callback(update, context):
                     InlineKeyboardButton(text="Credits", callback_data="hori_credit"),
                  ],
                  [
-                    InlineKeyboardButton(text="Source Code", url="https://github.com/kennedy-ex/EmikoRobot"),
+                    InlineKeyboardButton(text="Source Code", url="https://github.com/voidxtoxic/horisan"),
                  ],
                  [
-                    InlineKeyboardButton(text="Go Back", callback_data="emiko_back"),
+                    InlineKeyboardButton(text="Go Back", callback_data="hori_back"),
                  ]
                 ]
             ),
