@@ -5,7 +5,7 @@ import os
 import heroku3
 import requests
 
-from horisan import telethn as borg, HEROKU_APP_NAME, HEROKU_API_KEY, OWNER_ID
+from horisan import telethn as borg, HEROKU_API_KEY, OWNER_ID
 from horisan.events import register
 
 heroku_api = "https://api.heroku.com"
@@ -24,79 +24,6 @@ async def variable(var):
     Manage most of ConfigVars setting, set new var, get current var,
     or delete var...
     """
-    if HEROKU_APP_NAME is not None:
-        app = Heroku.app(HEROKU_APP_NAME)
-    else:
-        return await var.reply("`[HEROKU]:" "\nPlease setup your` **HEROKU_APP_NAME**")
-    exe = var.pattern_match.group(1)
-    heroku_var = app.config()
-    if exe == "see":
-        k = await var.reply("`Getting information...`")
-        await asyncio.sleep(1.5)
-        try:
-            variable = var.pattern_match.group(2).split()[0]
-            if variable in heroku_var:
-                return await k.edit(
-                    "**ConfigVars**:" f"\n\n`{variable} = {heroku_var[variable]}`\n"
-                )
-            else:
-                return await k.edit(
-                    "**ConfigVars**:" f"\n\n`Error:\n-> {variable} don't exists`"
-                )
-        except IndexError:
-            configs = prettyjson(heroku_var.to_dict(), indent=2)
-            with open("configs.json", "w") as fp:
-                fp.write(configs)
-            with open("configs.json", "r") as fp:
-                result = fp.read()
-                if len(result) >= 4096:
-                    await var.client.send_file(
-                        var.chat_id,
-                        "configs.json",
-                        reply_to=var.id,
-                        caption="`Output too large, sending it as a file`",
-                    )
-                else:
-                    await k.edit(
-                        "`[HEROKU]` ConfigVars:\n\n"
-                        "================================"
-                        f"\n```{result}```\n"
-                        "================================"
-                    )
-            os.remove("configs.json")
-            return
-    elif exe == "set":
-        s = await var.reply("`Setting information...weit ser`")
-        variable = var.pattern_match.group(2)
-        if not variable:
-            return await s.edit(">`.set var <ConfigVars-name> <value>`")
-        value = var.pattern_match.group(3)
-        if not value:
-            variable = variable.split()[0]
-            try:
-                value = var.pattern_match.group(2).split()[1]
-            except IndexError:
-                return await s.edit(">`/set var <ConfigVars-name> <value>`")
-        await asyncio.sleep(1.5)
-        if variable in heroku_var:
-            await s.edit(f"**{variable}**  `successfully changed to`  ->  **{value}**")
-        else:
-            await s.edit(
-                f"**{variable}**  `successfully added with value`  ->  **{value}**"
-            )
-        heroku_var[variable] = value
-    elif exe == "del":
-        m = await var.reply("`Getting information to deleting variable...`")
-        try:
-            variable = var.pattern_match.group(2).split()[0]
-        except IndexError:
-            return await m.edit("`Please specify ConfigVars you want to delete`")
-        await asyncio.sleep(1.5)
-        if variable in heroku_var:
-            await m.edit(f"**{variable}**  `successfully deleted`")
-            del heroku_var[variable]
-        else:
-            return await m.edit(f"**{variable}**  `is not exists`")
 
 
 @register(pattern="^/usage(?: |$)")
@@ -173,8 +100,7 @@ async def _(dyno):
     else:
         return
     try:
-        Heroku = heroku3.from_key(HEROKU_API_KEY)
-        app = Heroku.app(HEROKU_APP_NAME)
+        Heroku = heroku3.from_key(HEROKU_API_KEY) 
     except:
         return await dyno.reply(
             " Please make sure your Heroku API Key, Your App name are configured correctly in the heroku"
