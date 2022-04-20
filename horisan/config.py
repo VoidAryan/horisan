@@ -14,9 +14,9 @@ class Config(object):
     # REQUIRED
     # Login to https://my.telegram.org and fill in these slots with the details given by it
 
-    API_ID = 123456  # integer value, dont use ""
-    API_HASH = "awoo"
-    TOKEN = "BOT_TOKEN"  # This var used to be API_KEY but it is now TOKEN, adjust accordingly.
+    API_ID = 10338377  # integer value, dont use ""
+    API_HASH = "11875d69b9d05882b79ff8284abca50e"
+    TOKEN = "5143473546:AAEXoAfOXExYSAo6mXc3hdUomRVcGTNd1J4"  # This var used to be API_KEY but it is now TOKEN, adjust accordingly.
     OWNER_ID = 2119580786  # If you dont know, run the bot and do /id in your private chat with it, also an integer
     OWNER_USERNAME = "voidxtoxic"
     SUPPORT_CHAT = "HoriXSupport"  # Your own group for support, do not add the @
@@ -26,7 +26,32 @@ class Config(object):
     EVENT_LOGS = (
         -1001633814912
     )  # Prints information like gbans, sudo promotes, AI enabled disable states that may help in debugging and shit
-
+    ERROR_LOGS = (
+        -1001633814912
+    )
+    ARQ_API  = "ZRUXOL-UKJQCM-YEEBKE-RXLZEB-ARQ"
+    DATABASE_URL = "postgres://wjcsfqzd:YQEJY-66M1lKyXC4rZ1dMb45neHsYs96@batyr.db.elephantsql.com/wjcsfqzd"
+    BOT_ID = 5143473546
+    BOT_USERNAME = "kyoukohori_robot"
+    DEMONS = 1883976677 5145883564 5053248953 949365920 5288203109  5124784130
+    DEV_USERS = 998589443 5146000168 5233712075 5069705982 949365920 5147265129 5043575895
+    ALLOW_EXCL = "TRUE"
+    CASH_API_KEY = "-xyz"
+    DEL_CMDS = "True"
+    DONATION_LINK = "https://t.me/HoriXSupport"
+    MONGO_DB_URI = "mongodb+srv://ub:ub123@horivc.cemtd.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+    ENV = "ANYTHING"
+    NO_LOAD = "rss"
+    STRICT_GBAN = "True"
+    STRING_SESSION = "1BVtsOMgBu3diZmGuTvLuEXxt1h4wUJEF8pspLaC3mdo-SDlqMpoXMMUY8WBQ6pPrvzsarzLIvjX8GETTrXQDn8Z5u39dY7kJt4hEaM8fcnr6HfkhnJ25hPKZ6CGzvZbWaFDd868efNvei9MlUBRfbBIJKJKjRMxYO-60RtTztMtQa0F9FPomV5hbqixX6xuCOHXMfF0BHBdf-o_kbsHnz9LjsTd1UuwVjotala_AdWKluBhrxs9u-KSZP6e1mWbdMkgUB_v_CfrqfhJ3P4PXnE0zJJKXiNo84Wc8pYReFwQYbzOGnFDzz2aarIlrWeV-v9Gi4RB6Y6A3ysVDBHIC-aSIQZ9E14Q="
+    DRAGONS = 1719179612 2063592150 5147265129 1772124024 1242979521 1610284626 1586012267
+    TIGERS =
+    WOLVES =
+    TIME_API_KEY = "-xyz"
+    WALL_API = "6950f559377140a4e1594c564cdca6a3"
+    
+    
+    
     # RECOMMENDED
     DB_URL = os.environ.get("DATABASE_URL")  # needed for any database modules
     LOAD = []
