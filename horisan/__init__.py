@@ -102,8 +102,6 @@ if ENV:
     ARQ_API = os.environ.get("ARQ_API", None)
     DONATION_LINK = os.environ.get("DONATION_LINK")
     LOAD = os.environ.get("LOAD", "").split()
-    HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
-    HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
     TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TEMP_DOWNLOAD_DIRECTORY", "./")
     OPENWEATHERMAP_ID = os.environ.get("OPENWEATHERMAP_ID", None)
     VIRUS_API_KEY = os.environ.get("VIRUS_API_KEY", None)
@@ -185,8 +183,6 @@ else:
     OPENWEATHERMAP_ID = Config.OPENWEATHERMAP_ID
     NO_LOAD = Config.NO_LOAD
     ERROR_LOG = Config.ERROR_LOG
-    HEROKU_API_KEY = Config.HEROKU_API_KEY
-    HEROKU_APP_NAME = Config.HEROKU_APP_NAME
     DEL_CMDS = Config.DEL_CMDS
     STRICT_GBAN = Config.STRICT_GBAN
     WORKERS = Config.WORKERS
