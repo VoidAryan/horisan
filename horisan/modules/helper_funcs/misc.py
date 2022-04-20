@@ -37,6 +37,8 @@ def split_message(msg: str) -> List[str]:
     return result
 
 
+
+
 def paginate_modules(page_n: int, module_dict: Dict, prefix, chat=None) -> List:
     if not chat:
         modules = sorted(
@@ -57,7 +59,7 @@ def paginate_modules(page_n: int, module_dict: Dict, prefix, chat=None) -> List:
     calc = len(modules) - round(round_num)
     if calc == 1:
         pairs.append((modules[-1], ))
-    elif calc == 3:
+    elif calc == 2:
         pairs.append((modules[-1], ))
 
     max_num_pages = ceil(len(pairs) / 10)
@@ -74,7 +76,7 @@ def paginate_modules(page_n: int, module_dict: Dict, prefix, chat=None) -> List:
         pairs += [[EqInlineKeyboardButton("🔸BACK🔸", callback_data="hori_back")]]
 
     return pairs
-
+  pairs
 
 def send_to_list(
     bot: Bot, send_to: list, message: str, markdown=False, html=False
