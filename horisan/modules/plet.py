@@ -67,9 +67,6 @@ PLET_HANDLER = DisableAbleCommandHandler("plet", plet)
 
 dispatcher.add_handler(PLET_HANDLER)
 
-__help__ = """
-/plet : I'll creates a sticker with your Sending message
-"""
 
 __mod_name__ = "【ᴘʟᴇᴛ】"
 __command_list__ = [
