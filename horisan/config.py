@@ -36,6 +36,7 @@ class Config(object):
     DEMONS = get_user_list("elevated_users.json", "demons")
     DEV_USERS = get_user_list("elevated_users.json", "devs")
     ALLOW_EXCL = "TRUE"
+    ALLOW_CHATS = "TRUE"
     CASH_API_KEY = "-xyz"
     DEL_CMDS = "True"
     DONATION_LINK = "https://t.me/HoriXSupport"
