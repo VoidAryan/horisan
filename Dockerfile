@@ -61,4 +61,4 @@ COPY . .
 
 RUN python3 -m pip install -U -r requirements.txt
 
-CMD ["python3", "-m", "RobotName"]
+CMD ["python3", "-m", "horisan"]
