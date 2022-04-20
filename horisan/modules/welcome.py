@@ -236,30 +236,6 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
                 update.effective_message.reply_text(
                     "Oof! A Soldier Users just joined!", reply_to_message_id=reply
                 )
-                continue
-            
-            if new_mem.id == bot_id:
-                update.effective_message.reply_photo(
-                    WAIFUS_IMG, caption= "Hey {}, I'm {}! Thank you for adding me to {}\n"
-                    "Join support and channel update with clicking button below!".format(
-                        user.first_name, context.bot.first_name, chat.title
-                    ),
-            
-            
-                    reply_to_message_id=reply,
-                parse_mode=ParseMode.MARKDOWN,
-            reply_markup=InlineKeyboardMarkup(
-                [
-                  [                  
-                       InlineKeyboardButton(
-                             text="Support",
-                             url=f"https://t.me/horixsupport"),
-                       InlineKeyboardButton(
-                             text="Updates",
-                             url="https://t.me/kyouko_updates")
-                     ],
-            ]
-        ),
     )
                 continue
 
