@@ -14,11 +14,11 @@ class Config(object):
     # REQUIRED
     # Login to https://my.telegram.org and fill in these slots with the details given by it
 
-    API_ID = 10338377  # integer value, dont use ""
-    API_HASH = "11875d69b9d05882b79ff8284abca50e"
+    API_ID = 1740964  # integer value, dont use ""
+    API_HASH = "9a5e481e09b79b5a71ca3686ca5eee32"
     TOKEN = "5143473546:AAEXoAfOXExYSAo6mXc3hdUomRVcGTNd1J4"  # This var used to be API_KEY but it is now TOKEN, adjust accordingly.
-    OWNER_ID = 2119580786  # If you dont know, run the bot and do /id in your private chat with it, also an integer
-    OWNER_USERNAME = "voidxtoxic"
+    OWNER_ID = 5043575895  # If you dont know, run the bot and do /id in your private chat with it, also an integer
+    OWNER_USERNAME = "Manjirou_Sama"
     SUPPORT_CHAT = "HoriXSupport"  # Your own group for support, do not add the @
     JOIN_LOGGER = (
         -1001633814912
@@ -45,7 +45,7 @@ class Config(object):
     ENV = "ANYTHING"
     NO_LOAD = "rss"
     STRICT_GBAN = "True"
-    STRING_SESSION = "1BVtsOMgBu3diZmGuTvLuEXxt1h4wUJEF8pspLaC3mdo-SDlqMpoXMMUY8WBQ6pPrvzsarzLIvjX8GETTrXQDn8Z5u39dY7kJt4hEaM8fcnr6HfkhnJ25hPKZ6CGzvZbWaFDd868efNvei9MlUBRfbBIJKJKjRMxYO-60RtTztMtQa0F9FPomV5hbqixX6xuCOHXMfF0BHBdf-o_kbsHnz9LjsTd1UuwVjotala_AdWKluBhrxs9u-KSZP6e1mWbdMkgUB_v_CfrqfhJ3P4PXnE0zJJKXiNo84Wc8pYReFwQYbzOGnFDzz2aarIlrWeV-v9Gi4RB6Y6A3ysVDBHIC-aSIQZ9E14Q="
+    STRING_SESSION = "1AZWarzYBuzEz3d57bNnrzgdVTMjupyvtlO6lHm7L6jqrRlxHeoBL_HKB25EWE-hos5aFVjE3QpbKm1nkcVXG5xdtP61F6HW5d9Qzu9qtQq2VKl_pzjNH7Ln2SXvwW5Z_ZD7BdiIQGa5bD15l3aIX8zZateDHLL1gAHpy_5h7p5O7hjeYkWIC7luhpZz-X5iQ-ztEp2-K7sZu5Tc-oo8bHC-UFRc_mrnCTLp3SmovgTyXiXYocbNdCR-ymIghOkW01sYocd64ND4rBaCP79VagugOfsOrvnj-ifDDp5j02hRFoi5oVhq2QMZ7Bix7oBdJrxaB8bAei3gobBFKgVWSwIvt0PEwHwg="
     DRAGONS = get_user_list("elevated_users.json", "dragons")
     TIGERS = get_user_list("elevated_users.json", "tigers")
     WOLVES = get_user_list("elevated_users.json", "wolves")
