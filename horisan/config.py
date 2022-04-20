@@ -33,8 +33,8 @@ class Config(object):
     DATABASE_URL = "postgres://wjcsfqzd:YQEJY-66M1lKyXC4rZ1dMb45neHsYs96@batyr.db.elephantsql.com/wjcsfqzd"
     BOT_ID = 5143473546
     BOT_USERNAME = "kyoukohori_robot"
-    DEMONS = 1883976677 5145883564 5053248953 949365920 5288203109  5124784130
-    DEV_USERS = 998589443 5146000168 5233712075 5069705982 949365920 5147265129 5043575895
+    DEMONS = get_user_list("elevated_users.json", "demons")
+    DEV_USERS = get_user_list("elevated_users.json", "devs")
     ALLOW_EXCL = "TRUE"
     CASH_API_KEY = "-xyz"
     DEL_CMDS = "True"
@@ -44,9 +44,9 @@ class Config(object):
     NO_LOAD = "rss"
     STRICT_GBAN = "True"
     STRING_SESSION = "1BVtsOMgBu3diZmGuTvLuEXxt1h4wUJEF8pspLaC3mdo-SDlqMpoXMMUY8WBQ6pPrvzsarzLIvjX8GETTrXQDn8Z5u39dY7kJt4hEaM8fcnr6HfkhnJ25hPKZ6CGzvZbWaFDd868efNvei9MlUBRfbBIJKJKjRMxYO-60RtTztMtQa0F9FPomV5hbqixX6xuCOHXMfF0BHBdf-o_kbsHnz9LjsTd1UuwVjotala_AdWKluBhrxs9u-KSZP6e1mWbdMkgUB_v_CfrqfhJ3P4PXnE0zJJKXiNo84Wc8pYReFwQYbzOGnFDzz2aarIlrWeV-v9Gi4RB6Y6A3ysVDBHIC-aSIQZ9E14Q="
-    DRAGONS = 1719179612 2063592150 5147265129 1772124024 1242979521 1610284626 1586012267
-    TIGERS =
-    WOLVES =
+    DRAGONS = get_user_list("elevated_users.json", "dragons")
+    TIGERS = get_user_list("elevated_users.json", "tigers")
+    WOLVES = get_user_list("elevated_users.json", "wolves")
     TIME_API_KEY = "-xyz"
     WALL_API = "6950f559377140a4e1594c564cdca6a3"
     
