@@ -2,8 +2,8 @@ import random
 import threading
 from typing import Union
 
-from EmikoRobot.modules.helper_funcs.msg_types import Types
-from EmikoRobot.modules.sql import BASE, SESSION
+from horisan.modules.helper_funcs.msg_types import Types
+from horisan.modules.sql import BASE, SESSION
 from sqlalchemy import Boolean, Column, String, UnicodeText, Integer
 from sqlalchemy.sql.sqltypes import BigInteger
 
