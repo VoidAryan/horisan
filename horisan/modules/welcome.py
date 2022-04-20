@@ -199,7 +199,7 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
 
             # Give the owner a special welcome
                 if new_mem.id == OWNER_ID:
-                update.effective_message.reply_video(
+                update.effective_message.reply_photo(
                 HORI_IMG, caption= "My Izumi Kun is here! uwu.",
                     reply_to_message_id=reply)
                 welcome_log = (f"{html.escape(chat.title)}\n"
