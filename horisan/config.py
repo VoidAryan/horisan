@@ -30,6 +30,7 @@ class Config(object):
         -1001633814912
     )
     ARQ_API_KEY  = "ZRUXOL-UKJQCM-YEEBKE-RXLZEB-ARQ"
+    ARQ_API_URL  = "ZRUXOL-UKJQCM-YEEBKE-RXLZEB-ARQ"
     DATABASE_URL = "postgres://wjcsfqzd:YQEJY-66M1lKyXC4rZ1dMb45neHsYs96@batyr.db.elephantsql.com/wjcsfqzd"
     BOT_ID = 5143473546
     BOT_USERNAME = "kyoukohori_robot"
