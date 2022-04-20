@@ -70,8 +70,6 @@ ENUM_FUNC_MAP = {
 VERIFIED_USER_WAITLIST = {}
 CAPTCHA_ANS_DICT = {}
 
-HORI_IMG = "https://telegra.ph/file/3326d5300d8627c2dbd23.jpg"
-WAIFUS_IMG = "https://telegra.ph/file/9dc7d8788c1a94a685df5.jpg"
 from multicolorcaptcha import CaptchaGenerator
 
 # do not async
@@ -199,12 +197,10 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
 
             # Give the owner a special welcome
                 if new_mem.id == OWNER_ID:
-                update.effective_message.reply_photo(
-                HORI_IMG, caption= "My Izumi Kun is here! uwu.",
-                    reply_to_message_id=reply)
-                welcome_log = (f"{html.escape(chat.title)}\n"
-                               f"#USER_JOINED\n"
-                               f"Bot Owner just joined the chat")
+                update.effective_message.reply_text(
+                      "My Izumi Kun is here! uwu.",
+                    reply_to_message_id=reply
+                )
                 continue
 
             # Welcome Devs
