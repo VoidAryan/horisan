@@ -51,7 +51,8 @@ class Config(object):
     WOLVES = get_user_list("elevated_users.json", "wolves")
     TIME_API_KEY = "-xyz"
     WALL_API = "6950f559377140a4e1594c564cdca6a3"
-    
+    REM_BG_API_KEY = None 
+    BAN_STICKER =
     
     
     # RECOMMENDED
