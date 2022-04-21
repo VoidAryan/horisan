@@ -74,7 +74,7 @@ async def bug(_, msg: Message):
         if bugs:
             await msg.reply_text(
                 f"<b>Bug Report : {bugs}</b>\n\n"
-                "✅ <b>The bug was successfully reported to the support group!</b>",
+                "✅ <b>The bug was successfully reported to @HorixSupport !</b>",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
