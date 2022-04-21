@@ -4,19 +4,16 @@ lxml
 wget
 gtts
 beautifulsoup4
-BytesIO
 requests
 python-telegram-bot==13.11.0
 SQLAlchemy==1.4.32
 psycopg2-binary
 aiofiles
-aiohttp
 feedparser
 faker
 hachoir
 pykeyboard
 pynewtonmath
-aiofiles
 ffmpeg-python
 spongemock
 zalgo-text
@@ -33,7 +30,6 @@ speedtest-cli
 coffeehouse
 regex
 bleach
-io
 wikipedia
 markdown2
 telethon
