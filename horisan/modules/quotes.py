@@ -1,4 +1,4 @@
-from io import BytesIO
+ from io import BytesIO
 from traceback import format_exc
 
 from pyrogram import filters
@@ -33,14 +33,14 @@ def isArgInt(message: Message) -> bool:
         return [False, 0]
 
 
-@app.on_message(filters.command("q") & ~filters.forwarded & ~filters.bot & ~filters.edited)
+@app.on_message(filters.command("q"))
 @capture_err
 async def quotly_func(client, message: Message):
     if not message.reply_to_message:
         return await message.reply_text("Reply to a message to quote it.")
     if not message.reply_to_message.text:
         return await message.reply_text("Replied message has no text, can't quote it.")
-    m = await message.reply_text("Quoting Messages Please waitoo....")
+    m = await message.reply_text("Quoting Messages Please wait....")
     if len(message.command) < 2:
         messages = [message.reply_to_message]
 
@@ -94,4 +94,4 @@ async def quotly_func(client, message: Message):
         print(e)
 
 
-__mod_name__ = "Quotly"
+__mod_name__ = "Quotly"       
