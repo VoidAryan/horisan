@@ -9,6 +9,8 @@ requests
 python-telegram-bot==13.11.0
 SQLAlchemy==1.4.32
 psycopg2-binary
+aiofiles
+aiohttp
 feedparser
 faker
 hachoir
