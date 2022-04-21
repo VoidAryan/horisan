@@ -4,9 +4,9 @@ from traceback import format_exc
 from pyrogram import filters
 from pyrogram.types import Message
 
-from EnmuBot import arq
-from EnmuBot.utils.errors import capture_err
-from EnmuBot import pbot as app
+from horisan import arq
+from horisan.utils.errors import capture_err
+from horisan import pbot as app
 
 
 async def quotify(messages: list):
@@ -40,7 +40,7 @@ async def quotly_func(client, message: Message):
         return await message.reply_text("Reply to a message to quote it.")
     if not message.reply_to_message.text:
         return await message.reply_text("Replied message has no text, can't quote it.")
-    m = await message.reply_text("Quoting Messages Please wait....")
+    m = await message.reply_text("Quoting Messages Please waitoo....")
     if len(message.command) < 2:
         messages = [message.reply_to_message]
 
