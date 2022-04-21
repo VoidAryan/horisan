@@ -138,7 +138,7 @@ def check_afk(update, context, user_id, fst_name, userc_id):
             res = "{} Currently : AFK".format(fst_name)
             update.effective_message.reply_text(res)
         else:
-            res = "{} is afk.\nReason of going: <code>{}</code>".format(
+            res = "{} is afk.\nReason of going: {}".format(
                 html.escape(fst_name), html.escape(user.reason)
             )
             update.effective_message.reply_text(res, parse_mode="html")
