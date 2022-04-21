@@ -1,4 +1,4 @@
- from io import BytesIO
+from io import BytesIO
 from traceback import format_exc
 
 from pyrogram import filters
