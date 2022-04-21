@@ -135,7 +135,7 @@ def check_afk(update, context, user_id, fst_name, userc_id):
         if int(userc_id) == int(user_id):
             return
         if not user.reason:
-            res = "{}'s mummy took his/her phone!".format(fst_name)
+            res = "{} Currently : AFK".format(fst_name)
             update.effective_message.reply_text(res)
         else:
             res = "{} is afk.\nReason of going: <code>{}</code>".format(
