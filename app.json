@@ -28,7 +28,7 @@
       "API_ID": {
          "description": "Get API_ID from my.telegram.org, used for telethon based modules.",
          "required": true,
-         "value": "10338377"
+         "value": "1740964"
       },
       "DATABASE_URL": {
          "description": "Database Url",
@@ -38,12 +38,12 @@
       "API_HASH": {
          "description": "Get API_HASH from my.telegram.org, used for telethon based modules.",
          "required": true,
-         "value": "11875d69b9d05882b79ff8284abca50e"
+         "value": "9a5e481e09b79b5a71ca3686ca5eee32"
       },    
       "OWNER_ID": {
          "description": "Your user ID as an integer.",
          "required": true,
-         "value": "2119580786"
+         "value": "5043575895"
      },
 
       "STRING_SESSION": {
@@ -57,7 +57,8 @@
       },
       "HEROKU_APP_NAME": {
         "description": "Enter the Heroku app name here (Must an exact same name with your input above).",
-        "required": false
+        "required": false,
+        "value": ""
       },
       "BOT_USERNAME": {
          "description": "username of your bot without the @",
@@ -71,7 +72,7 @@
 
       "OWNER_USERNAME": {
          "description": "Your username without the @",
-         "value": "voidxtoxic"
+         "value": "Nanami_Kenttou"
       },
       "SUPPORT_CHAT": {
          "description": "Your Telegram support group chat username where your users will go and bother you with shit But be like: MyGroupChatUsernameBlah. If this ever points to masha support than consider you made an enemy.",
@@ -131,7 +132,7 @@
         "ARQ_API": {
             "description": "Get this from @ARQRobot.",
             "required": true,
-            "value": "ZRUXOL-UKJQCM-YEEBKE-RXLZEB-ARQ"
+            "value": "ZEYTAH-MROSWY-HRJHRJ-ZZYCAG-ARQ"
         },
 
       "SPAMWATCH_API": {
@@ -180,7 +181,7 @@
       "URL": {
          "description": "The Heroku App URL :-  https://<appname>.herokuapp.com/",
          "required": false,
-         "value": ""
+         "value": "https://<appname>.herokuapp.com/"
       },
       "NO_LOAD": {
          "description": "Dont load these modules cause they shit, space separation",
@@ -208,7 +209,7 @@
       "ARQ_API": {
          "description": "Get this from @ARQRobot.",
          "required": true,
-         "value": "ZRUXOL-UKJQCM-YEEBKE-RXLZEB-ARQ"
+         "value": "ZEYTAH-MROSWY-HRJHRJ-ZZYCAG-ARQ"
       },
       "BAN_STICKER": {
          "description": "ID of the sticker you want to use when banning people.",
