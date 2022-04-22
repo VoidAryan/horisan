@@ -84,19 +84,19 @@ def get_readable_time(seconds: int) -> str:
 GROUP_START_IMG = "https://telegra.ph/file/c458924bf40c213062dd2.mp4"
 
 PM_START_TEXT = """
-*Konichiwa {}!*
-۞ I'm Hori San An Anime-Theme Bot! [✨](https://telegra.ph/file/010b1f6beace55978c1cc.mp4)
+*ᴋᴏɴɪᴄʜɪᴡᴀ! {}!*
+۞ ɪᴍ ᴋʏᴏᴜᴋᴏ ʜᴏʀɪ ᴀɴ ᴀɴɪᴍᴇ ʙᴀꜱᴇᴅ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ᴡɪᴛʜ ɪɴʙᴜɪʟᴛ ᴠᴄ ᴘʟᴀʏᴇʀ. [👋](https://telegra.ph/file/010b1f6beace55978c1cc.mp4)
 ───────────────────────
-× *Alive Since:* {}
-× {} *Weebs, Across* {} *Chats*
+× *Aʟɪᴠᴇ Sɪɴᴄᴇ:* {}
+× {} *Wᴇᴇʙꜱ, Aᴄʀᴏꜱꜱ* {} *Chats*
 ───────────────────────
-۞ Im here to manage your GC more efficiently!
+۞ ɪᴍ ʜᴇʀᴇ ᴛᴏ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ɢᴄ ᴍᴏʀᴇ ᴇꜰꜰɪᴄɪᴇɴᴛʟʏ!
 """
 
 buttons = [
     [
         InlineKeyboardButton(
-            text="【Add Hori San To Your GC】",
+            text="【Aᴅᴅ Kʏᴏᴜᴋᴏ Tᴏ Yᴏᴜʀ GC】",
             url="https://t.me/kyoukohori_robot?startgroup=new",
         ),
     ],
@@ -238,18 +238,7 @@ def start(update: Update, context: CallbackContext):
                 [
                     [
                         InlineKeyboardButton(
-                            text="【Add Hori San To Other GC】",
-                            url="t.me/kyoukohori_robot?startgroup=true".format(
-                                context.bot.username
-                            ),
-                        )
-                    ],
-                    [
-                        InlineKeyboardButton(
                             text="【Support】", url="https://t.me/HorixSupport"
-                        ),
-                        InlineKeyboardButton(
-                            text="【Network】", url="https://t.me/void_network"
                         ),
                     ],
                     [
