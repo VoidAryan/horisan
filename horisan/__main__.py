@@ -81,14 +81,14 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 
-GROUP_START_IMG = "https://telegra.ph/file/c458924bf40c213062dd2.mp4"
+GROUP_START_IMG = "https://telegra.ph/file/77876ca2a0ae64da1651e.mp4"
 
 PM_START_TEXT = """
 *ᴋᴏɴɪᴄʜɪᴡᴀ! {}!*
 ۞ ɪᴍ ᴋʏᴏᴜᴋᴏ ʜᴏʀɪ ᴀɴ ᴀɴɪᴍᴇ ʙᴀꜱᴇᴅ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ᴡɪᴛʜ ɪɴʙᴜɪʟᴛ ᴠᴄ ᴘʟᴀʏᴇʀ. [👋](https://telegra.ph/file/010b1f6beace55978c1cc.mp4)
 ───────────────────────
 × *Aʟɪᴠᴇ Sɪɴᴄᴇ:* {}
-× {} *Wᴇᴇʙꜱ, Aᴄʀᴏꜱꜱ* {} *Chats*
+× {} *Wᴇᴇʙꜱ, Aᴄʀᴏꜱꜱ* {} *Cʜᴀᴛꜱ*
 ───────────────────────
 ۞ ɪᴍ ʜᴇʀᴇ ᴛᴏ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ɢᴄ ᴍᴏʀᴇ ᴇꜰꜰɪᴄɪᴇɴᴛʟʏ!
 """
@@ -230,7 +230,7 @@ def start(update: Update, context: CallbackContext):
     else:
         update.effective_message.reply_animation(
             GROUP_START_IMG,
-            caption="<code> Hey there weeebs! Im Kyouko Hori \n\nI am with you Since</code>: <code>{}</code>".format(
+            caption="<code> Hey there weeebs! Im Kyouko Hori \nI am with you Since</code>: <code>{}</code>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
@@ -240,11 +240,6 @@ def start(update: Update, context: CallbackContext):
                         InlineKeyboardButton(
                             text="【Support】", url="https://t.me/HorixSupport"
                         ),
-                    ],
-                    [
-                        InlineKeyboardButton(
-                            text="【Help】", url="t.me/kyoukohori_robot?start=help"
-                        )
                     ],
                 ]
             ),
@@ -331,7 +326,7 @@ def help_button(update, context):
                 parse_mode=ParseMode.MARKDOWN,
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
-                    [[InlineKeyboardButton(text="Go Back", callback_data="help_back")]]
+                    [[InlineKeyboardButton(text="【Hᴇʟᴘ Mᴇɴᴜ】", callback_data="help_back")]]
                 ),
             )
 
@@ -801,7 +796,7 @@ def main():
         try:
             dispatcher.bot.sendMessage(
                 f"@{SUPPORT_CHAT}",
-                "[👋](https://telegra.ph/file/c458924bf40c213062dd2.mp4) Hi, hori is back alive.",
+                "[👋](https://telegra.ph/file/c458924bf40c213062dd2.mp4) Hi weebs, hori is back alive.",
                 parse_mode=ParseMode.MARKDOWN,
             )
         except Unauthorized:
