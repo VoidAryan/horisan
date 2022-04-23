@@ -21,7 +21,7 @@ async def awake(event):
     BUTTON = [
         [
             Button.url("【Support】", "https://t.me/HoriXSupport"),
-            Button.url("【Updates】", "https://t.me/kyouko_updates"),
+            Button.url("【Updates】", "https://t.me/kyouko_update"),
         ]
     ]
     await tbot.send_file(event.chat_id, PHOTO, caption=TEXT, buttons=BUTTON)
