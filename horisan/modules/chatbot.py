@@ -1,4 +1,4 @@
-# AI Chat (C) 2020-2021 by @InukaAsith
+# AI Chat (C) 2020-2021 by @voidxtoxic
 
 import emoji
 import re
@@ -440,4 +440,4 @@ __help__ = """
 ❂ /chatbot EN : Enables English only chatbot.
 """
 
-__mod_name__ = "Chatbot"
+__mod_name__ = "【ᴄʜᴀᴛʙᴏᴛ】"
