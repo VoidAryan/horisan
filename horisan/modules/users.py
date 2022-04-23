@@ -2,13 +2,8 @@ from io import BytesIO
 from time import sleep
 
 from telegram import TelegramError, Update
+from telegram.ext import CallbackContext, CommandHandler, Filters, MessageHandler, run_async
 from telegram.error import BadRequest, Unauthorized
-from telegram.ext import (
-    CallbackContext,
-    CommandHandler,
-    Filters,
-    MessageHandler,
-)
 
 import horisan.modules.sql.users_sql as sql
 from horisan import DEV_USERS, LOGGER, OWNER_ID, dispatcher
