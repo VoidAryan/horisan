@@ -16,9 +16,9 @@ url = "https://Xhatebot-brainshop-ai-v1.p.rapidapi.com/get"
 translator = google_translator()
 
 
-async def voidxtoxic Query(query: str, user_id: int):
-    voidxtoxic  = await arq.voidxtoxic (query, user_id)
-    return voidxtoxic .result
+async def lunaQuery(query: str, user_id: int):
+    luna = await arq.luna (query, user_id)
+    return luna.result
 
 
 def extract_emojis(s):
