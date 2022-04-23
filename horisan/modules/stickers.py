@@ -169,7 +169,7 @@ def kang(update, context):
             file_id = msg.reply_to_message.animation.file_id
             is_gif = True
         else:
-            msg.reply_text("Yea, I can't kang that.")
+            msg.reply_text("Sorry seems like hori is unable to kang it  :(")
         kang_file = context.bot.get_file(file_id)
         if not is_animated and not (is_video or is_gif):
             kang_file.download("kangsticker.png")
@@ -190,7 +190,7 @@ def kang(update, context):
             sticker_emoji = "🙂"
 
         adding_process = msg.reply_text(
-            "<b>Please wait...For a Moment   Note if you are kanging for first time please type /kang to get your sticker pack</b>",
+            "<b>ᴘʟᴇᴀꜱᴇ ᴡᴀɪᴛ ᴋᴀɴɢɪɴɢ ᴍᴇᴅɪᴀ... ɪꜰ ɪᴛꜱ ʏᴏᴜʀ ꜰɪʀꜱᴛ ᴛɪᴍᴇ ᴋᴀɴɢɪɴɢ ᴛʜᴇɴ ᴜꜱᴇ /kang ᴀɢᴀɪɴ.</b>",
             parse_mode=ParseMode.HTML,
         )
 
@@ -227,14 +227,14 @@ def kang(update, context):
                     [
                         [
                             InlineKeyboardButton(
-                                text="View Pack", url=f"t.me/addstickers/{packname}"
+                                text="【ꜱᴛɪᴄᴋᴇʀ ᴘᴀᴄᴋ】", url=f"t.me/addstickers/{packname}"
                             )
                         ]
                     ]
                 )
                 adding_process.edit_text(
-                    f"<b>Your sticker has been added!</b>"
-                    f"\nEmoji Is : {sticker_emoji}",
+                    f"<b>Kanged this as sticker ✅</b>"
+                    f"\ᴇᴍᴏᴊɪ : {sticker_emoji}",
                     reply_markup=edited_keyboard,
                     parse_mode=ParseMode.HTML,
                 )
@@ -260,7 +260,7 @@ def kang(update, context):
                 elif e.message == "Sticker_png_dimensions":
                     im.save(kangsticker, "PNG")
                     adding_process = msg.reply_text(
-                        "<b>Please wait...For a Moment</b>",
+                        "<b>ᴘʟᴇᴀꜱᴇ ᴡᴀɪᴛᴏ....!</b>",
                         parse_mode=ParseMode.HTML,
                     )
                     context.bot.add_sticker_to_set(
@@ -273,14 +273,14 @@ def kang(update, context):
                         [
                             [
                                 InlineKeyboardButton(
-                                    text="View Pack", url=f"t.me/addstickers/{packname}"
+                                    text="【ꜱᴛɪᴄᴋᴇʀ ᴘᴀᴄᴋ】", url=f"t.me/addstickers/{packname}"
                                 )
                             ]
                         ]
                     )
                     adding_process.edit_text(
-                        f"<b>Your sticker has been added!</b>"
-                        f"\nEmoji Is : {sticker_emoji}",
+                        f"<b>ꜱᴛɪᴄᴋᴇʀ ᴀᴅᴅᴇᴅ ✅</b>"
+                        f"\nᴇᴍᴏᴊɪ : {sticker_emoji}",
                         reply_markup=edited_keyboard,
                         parse_mode=ParseMode.HTML,
                     )
@@ -293,14 +293,14 @@ def kang(update, context):
                         [
                             [
                                 InlineKeyboardButton(
-                                    text="View Pack", url=f"t.me/addstickers/{packname}"
+                                    text="【ꜱᴛɪᴄᴋᴇʀ ᴘᴀᴄᴋ】", url=f"t.me/addstickers/{packname}"
                                 )
                             ]
                         ]
                     )
                     msg.reply_text(
-                        f"<b>Your sticker has been added!</b>"
-                        f"\nEmoji Is : {sticker_emoji}",
+                        f"<b>ᴋᴀɴɢᴇᴅ ᴛʜɪꜱ ᴀꜱ ꜱᴛɪᴄᴋᴇʀ ✅</b>"
+                        f"\nᴇᴍᴏᴊɪ : {sticker_emoji}",
                         reply_markup=edited_keyboard,
                         parse_mode=ParseMode.HTML,
                     )
@@ -339,14 +339,14 @@ def kang(update, context):
                     [
                         [
                             InlineKeyboardButton(
-                                text="View Pack", url=f"t.me/addstickers/{packname}"
+                                text="【ꜱᴛɪᴄᴋᴇʀ ᴘᴀᴄᴋ】", url=f"t.me/addstickers/{packname}"
                             )
                         ]
                     ]
                 )
                 adding_process.edit_text(
-                    f"<b>Your sticker has been added!</b>"
-                    f"\nEmoji Is : {sticker_emoji}",
+                    f"<b>ᴋᴀɴɢᴇᴅ ᴛʜɪꜱ ᴀꜱ ꜱᴛɪᴄᴋᴇʀ ✅</b>"
+                    f"\nᴇᴍᴏᴊɪ : {sticker_emoji}",
                     reply_markup=edited_keyboard,
                     parse_mode=ParseMode.HTML,
                 )
@@ -370,14 +370,14 @@ def kang(update, context):
                         [
                             [
                                 InlineKeyboardButton(
-                                    text="View Pack", url=f"t.me/addstickers/{packname}"
+                                    text="【ꜱᴛɪᴄᴋᴇʀ ᴘᴀᴄᴋ】", url=f"t.me/addstickers/{packname}"
                                 )
                             ]
                         ]
                     )
                     adding_process.edit_text(
-                        f"<b>Your sticker has been added!</b>"
-                        f"\nEmoji Is : {sticker_emoji}",
+                        f"<b>ᴋᴀɴɢᴇᴅ ᴛʜɪꜱ ᴀꜱ ꜱᴛɪᴄᴋᴇʀ ✅</b>"
+                        f"\nᴇᴍᴏᴊɪ : {sticker_emoji}",
                         reply_markup=edited_keyboard,
                         parse_mode=ParseMode.HTML,
                     )
@@ -416,14 +416,14 @@ def kang(update, context):
                     [
                         [
                             InlineKeyboardButton(
-                                text="View Pack", url=f"t.me/addstickers/{packname}"
+                                text="【ꜱᴛɪᴄᴋᴇʀ ᴘᴀᴄᴋ】", url=f"t.me/addstickers/{packname}"
                             )
                         ]
                     ]
                 )
                 adding_process.edit_text(
-                    f"<b>Your sticker has been added!</b>"
-                    f"\nEmoji Is : {sticker_emoji}",
+                    f"<b>ᴋᴀɴɢᴇᴅ ᴛʜɪꜱ ᴀꜱ ꜱᴛɪᴄᴋᴇʀ ✅/b>"
+                    f"\nᴇᴍᴏᴊɪ : {sticker_emoji}",
                     reply_markup=edited_keyboard,
                     parse_mode=ParseMode.HTML,
                 )
@@ -447,14 +447,14 @@ def kang(update, context):
                         [
                             [
                                 InlineKeyboardButton(
-                                    text="View Pack", url=f"t.me/addstickers/{packname}"
+                                    text="【ꜱᴛɪᴄᴋᴇʀ ᴘᴀᴄᴋ】", url=f"t.me/addstickers/{packname}"
                                 )
                             ]
                         ]
                     )
                     adding_process.edit_text(
-                        f"<b>Your sticker has been added!</b>"
-                        f"\nEmoji Is : {sticker_emoji}",
+                        f"<b>ᴋᴀɴɢᴇᴅ ᴛʜɪꜱ ᴀꜱ ꜱᴛɪᴄᴋᴇʀ ✅</b>"
+                        f"\nᴇᴍᴏᴊɪ : {sticker_emoji}",
                         reply_markup=edited_keyboard,
                         parse_mode=ParseMode.HTML,
                     )
@@ -500,18 +500,18 @@ def kang(update, context):
                 [
                     [
                         InlineKeyboardButton(
-                            text="View Pack", url=f"t.me/addstickers/{packname}"
+                            text="【ꜱᴛɪᴄᴋᴇʀ ᴘᴀᴄᴋ】", url=f"t.me/addstickers/{packname}"
                         )
                     ]
                 ]
             )
             adding_process.edit_text(
-                f"<b>Your sticker has been added!</b>" f"\nEmoji Is : {sticker_emoji}",
+                f"<b>ᴋᴀɴɢᴇᴅ ᴛʜɪꜱ ᴀꜱ ꜱᴛɪᴄᴋᴇʀ ✅</b>" f"\nᴇᴍᴏᴊɪ : {sticker_emoji}",
                 reply_markup=edited_keyboard,
                 parse_mode=ParseMode.HTML,
             )
         except OSError as e:
-            msg.reply_text("I can only kang images m8.")
+            msg.reply_text("ɪᴍ ɴᴏᴛ ꜱᴜᴘᴘᴏꜱᴇᴅ ᴛᴏ ᴋᴀɴɢ ᴛʜɪꜱ.")
             print(e)
             return
         except TelegramError as e:
@@ -539,14 +539,14 @@ def kang(update, context):
                     [
                         [
                             InlineKeyboardButton(
-                                text="View Pack", url=f"t.me/addstickers/{packname}"
+                                text="【ꜱᴛɪᴄᴋᴇʀ ᴘᴀᴄᴋ】", url=f"t.me/addstickers/{packname}"
                             )
                         ]
                     ]
                 )
                 adding_process.edit_text(
-                    f"<b>Your sticker has been added!</b>"
-                    f"\nEmoji Is : {sticker_emoji}",
+                    f"<b>ᴋᴀɴɢᴇᴅ ᴛʜɪꜱ ᴀꜱ ꜱᴛɪᴄᴋᴇʀ ✅</b>"
+                    f"\ᴇᴍᴏᴊɪ : {sticker_emoji}",
                     reply_markup=edited_keyboard,
                     parse_mode=ParseMode.HTML,
                 )
@@ -556,8 +556,8 @@ def kang(update, context):
                 msg.reply_text("Max packsize reached. Press F to pay respect.")
             elif e.message == "Internal Server Error: sticker set not found (500)":
                 msg.reply_text(
-                    f"<b>Your sticker has been added!</b>"
-                    f"\nEmoji Is : {sticker_emoji}",
+                    f"<b>ᴋᴀɴɢᴇᴅ ᴛʜɪꜱ ᴀꜱ ꜱᴛɪᴄᴋᴇʀ ✅</b>"
+                    f"\ᴇᴍᴏᴊɪ: {sticker_emoji}",
                     reply_markup=edited_keyboard,
                     parse_mode=ParseMode.HTML,
                 )
@@ -566,7 +566,7 @@ def kang(update, context):
     
     
     else:
-        packs_text = "*Please reply to a sticker, or image to kang it!*\n"
+        packs_text = "*ᴘʟᴇᴀꜱᴇ ʀᴇᴘʟʏ ᴛᴏ ᴀɴʏ : ɢɪꜰ/ꜱᴛɪᴄᴋᴇʀ/ᴘʜᴏᴛᴏ/ᴀɴɪᴍᴀᴛᴇᴅ ꜱᴛɪᴄᴋᴇʀ. ᴛᴏ ᴋᴀɴɢ ɪᴛ!*\n"
         if packnum > 0:        
             firstpackname = "a" + str(user.id) + "_by_" + context.bot.username
             for i in range(0, packnum + 1):
@@ -581,13 +581,13 @@ def kang(update, context):
             [
              [
               InlineKeyboardButton(
-               text="sᴛɪᴄᴋᴇʀ ᴘᴀᴄᴋ", url=f"{packs}"),
+               text="【ꜱᴛɪᴄᴋᴇʀ ᴘᴀᴄᴋ】", url=f"{packs}"),
              ],
              [
               InlineKeyboardButton(
-               text="ᴠɪᴅᴇᴏ ᴘᴀᴄᴋ", url=f"https://t.me/addstickers/video{user.id}_by_{context.bot.username}"),
+               text="【ᴠɪᴅᴇᴏ ᴘᴀᴄᴋ】", url=f"https://t.me/addstickers/video{user.id}_by_{context.bot.username}"),
               InlineKeyboardButton(
-               text="ᴀɴɪᴍᴀᴛᴇᴅ ᴘᴀᴄᴋ", url=f"https://t.me/addstickers/animated{user.id}_by_{context.bot.username}"),
+               text="【ᴀɴɪᴍᴀᴛᴇᴅ ᴘᴀᴄᴋ】", url=f"https://t.me/addstickers/animated{user.id}_by_{context.bot.username}"),
              ],
             ]
         )
@@ -622,7 +622,7 @@ def makepack_internal(
     name = user.first_name
     name = name[:50]
     keyboard = InlineKeyboardMarkup(
-        [[InlineKeyboardButton(text="View Pack", url=f"{packname}")]]
+        [[InlineKeyboardButton(text="【ꜱᴛɪᴄᴋᴇʀ ᴘᴀᴄᴋ】", url=f"{packname}")]]
     )
     try:
         extra_version = ""
@@ -674,12 +674,12 @@ def makepack_internal(
             )
         elif e.message == "Peer_id_invalid" or "bot was blocked by the user":
             msg.reply_text(
-                f"{context.bot.first_name} was blocked by you.",
+                f"ꜱᴛᴀʀᴛ ᴛʜᴇ ʙᴏᴛ ꜰɪʀꜱᴛ! 👋",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
                             InlineKeyboardButton(
-                                text="Unblock", url=f"t.me/{context.bot.username}"
+                                text="【ꜱᴛᴀʀᴛ】", url=f"t.me/{context.bot.username}"
                             )
                         ]
                     ]
@@ -776,7 +776,7 @@ __help__ = """
 Please Use 512/512 size Sticker to kang else it will cause internal problem.
 And sometimes video sticker might not kang because of more Size than 512/512.
 """
-__mod_name__ = "Stickers" 
+__mod_name__ = "【ꜱᴛɪᴄᴋᴇʀꜱ】" 
 STICKERID_HANDLER = DisableAbleCommandHandler("stickerid", stickerid, run_async=True)
 GETSTICKER_HANDLER = DisableAbleCommandHandler("getsticker", getsticker, run_async=True)
 GETVIDSTICKER_HANDLER = DisableAbleCommandHandler("getvidsticker", getvidsticker, run_async=True)
