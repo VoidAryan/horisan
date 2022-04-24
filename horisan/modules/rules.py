@@ -47,7 +47,7 @@ def send_rules(update, chat_id, from_pm=False):
             user.id,
             text,
             parse_mode=ParseMode.MARKDOWN,
-            disable_web_page_preview=True,
+            disable_web_page_preview=False,
         )
     elif from_pm:
         bot.send_message(
@@ -56,7 +56,7 @@ def send_rules(update, chat_id, from_pm=False):
         )
     elif rules and reply_msg:
         reply_msg.reply_text(
-            "Check Out Group's Rules.",
+            "Check Out Group's Rules! [👋](https://telegra.ph/file/21f7c063b733288b42ae8.jpg)",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
@@ -70,7 +70,7 @@ def send_rules(update, chat_id, from_pm=False):
         )
     elif rules:
         update.effective_message.reply_text(
-            "Check Out Group's Rules!",
+            "Check Out Group's Rules! [👋](https://telegra.ph/file/21f7c063b733288b42ae8.jpg)",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
