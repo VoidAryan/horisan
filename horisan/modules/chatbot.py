@@ -122,7 +122,7 @@ async def hmm(client, message):
         test = test.replace(
             "Hi, My name is Hori Kyouko. Nice to meet you.",
             "Hi, my friend, what can I do for you today?")
-        response = await voidxtoxic Query(
+        response = await lunaQuery(
             test, message.from_user.id if message.from_user else 0
         )
         response = response.replace("Xhate","Hori Kyouko")
@@ -209,7 +209,7 @@ async def hmm(client, message):
         test = test.replace(
             "Hi, My name is Hori Kyouko Nice to meet you.",
             "Hi, my friend, what can I do for you today?")
-        response = await voidxtoxic Query(
+        response = await lunaQuery(
             test, message.from_user.id if message.from_user else 0
         )
         response = response.replace("Xhate", "Hori Kyouko")
@@ -305,7 +305,7 @@ async def inuka(client, message):
         "Hi, My name is Hori Kyouko. Nice to meet you.",
         "Hi, my friend, what can I do for you today?")
 
-    response = await voidxtoxic Query(test, message.from_user.id if message.from_user else 0)
+    response = await lunaQuery(test, message.from_user.id if message.from_user else 0)
     response = response.replace("Voidxtoxic", "Hori Kyouko")
     response = response.replace("Xhate", "Hori Kyouko")
     response = response.replace("Voidxtoxic", "Hori Kyouko")
@@ -399,7 +399,7 @@ async def inuka(client, message):
     test = test.replace(
         "Hi, My name is Hori Kyouko Nice to meet you.",
         "Hi, my friend, what can I do for you today?")
-    response = await voidxtoxic Query(test, message.from_user.id if message.from_user else 0)
+    response = await lunaQuery(test, message.from_user.id if message.from_user else 0)
     response = response.replace("Xhate", "Hori Kyouko")
     response = response.replace("Xhate", "Hori Kyouko")
     response = response.replace("voidxtoxic ", "Hori Kyouko")
