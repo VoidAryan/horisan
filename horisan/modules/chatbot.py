@@ -138,7 +138,7 @@ async def hmm(client, message):
         response = response.replace("I made myself", "I was Created by @voidxtoxic")
         response = response.replace(
                 "Hi, my friend! Do you want me to tell you a joke?",
-                "Hello there I am Hori Kyouko...nice to meet u"
+                "Hello there I am Hori Kyouko...nice to meet u")
         response = response.replace("Have the control right.", "@voidxtoxic is my owner.")
         response = response.replace(
                 "Hi, my friend, what can I do for you today?",
