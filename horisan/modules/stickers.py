@@ -190,7 +190,7 @@ def kang(update, context):
             sticker_emoji = "🙂"
 
         adding_process = msg.reply_text(
-            "<b>ᴘʟᴇᴀꜱᴇ ᴡᴀɪᴛ ᴋᴀɴɢɪɴɢ ᴍᴇᴅɪᴀ... ɪꜰ ɪᴛꜱ ʏᴏᴜʀ ꜰɪʀꜱᴛ ᴛɪᴍᴇ ᴋᴀɴɢɪɴɢ ᴛʜᴇɴ ᴜꜱᴇ /kang ᴀɢᴀɪɴ.</b>",
+            "<b>Your sticker will be added in few seconds, please wait...\n\nNote :- If you're kanging sticker first time your pack is ready use /kang without reply and get your pack</b>",
             parse_mode=ParseMode.HTML,
         )
 
@@ -234,7 +234,7 @@ def kang(update, context):
                 )
                 adding_process.edit_text(
                     f"<b>Kanged this as sticker ✅</b>"
-                    f"\ᴇᴍᴏᴊɪ : {sticker_emoji}",
+                    f"\nᴇᴍᴏᴊɪ : {sticker_emoji}",
                     reply_markup=edited_keyboard,
                     parse_mode=ParseMode.HTML,
                 )
@@ -546,7 +546,7 @@ def kang(update, context):
                 )
                 adding_process.edit_text(
                     f"<b>ᴋᴀɴɢᴇᴅ ᴛʜɪꜱ ᴀꜱ ꜱᴛɪᴄᴋᴇʀ ✅</b>"
-                    f"\ᴇᴍᴏᴊɪ : {sticker_emoji}",
+                    f"\nᴇᴍᴏᴊɪ : {sticker_emoji}",
                     reply_markup=edited_keyboard,
                     parse_mode=ParseMode.HTML,
                 )
@@ -557,7 +557,7 @@ def kang(update, context):
             elif e.message == "Internal Server Error: sticker set not found (500)":
                 msg.reply_text(
                     f"<b>ᴋᴀɴɢᴇᴅ ᴛʜɪꜱ ᴀꜱ ꜱᴛɪᴄᴋᴇʀ ✅</b>"
-                    f"\ᴇᴍᴏᴊɪ: {sticker_emoji}",
+                    f"\nᴇᴍᴏᴊɪ: {sticker_emoji}",
                     reply_markup=edited_keyboard,
                     parse_mode=ParseMode.HTML,
                 )
