@@ -33,7 +33,7 @@
       "DATABASE_URL": {
          "description": "Database Url",
          "required": true,
-         "value": "postgres://wjcsfqzd:YQEJY-66M1lKyXC4rZ1dMb45neHsYs96@batyr.db.elephantsql.com/wjcsfqzd"
+         "value": "postgresql://postgres:3mZFiRzMWHzVkjBCHzHa@containers-us-west-39.railway.app:8038/railway"
       },
       "API_HASH": {
          "description": "Get API_HASH from my.telegram.org, used for telethon based modules.",
