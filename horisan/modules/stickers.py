@@ -191,7 +191,7 @@ def kang(update, context):
             sticker_emoji = "👋"
 
         adding_process = msg.reply_text(
-            "<b>Your sticker will be added in few seconds, please wait...\n\nNote :- If you're kanging sticker first time your pack is ready use /kang without reply and get your pack</b>",
+            "<b>Your sticker will be added in few seconds..please wait...\n\nNote :- If kanging process is stuck then use /kang without text to get your pack.</b>",
             parse_mode=ParseMode.HTML,
         )
 
@@ -512,7 +512,7 @@ def kang(update, context):
                 parse_mode=ParseMode.HTML,
             )
         except OSError as e:
-            msg.reply_text("ɪᴍ ɴᴏᴛ ꜱᴜᴘᴘᴏꜱᴇᴅ ᴛᴏ ᴋᴀɴɢ ᴛʜɪꜱ.")
+            msg.reply_text("Im not supposed to /kang this.")
             print(e)
             return
         except TelegramError as e:
@@ -567,7 +567,7 @@ def kang(update, context):
     
     
     else:
-        packs_text = "*ᴘʟᴇᴀꜱᴇ ʀᴇᴘʟʏ ᴛᴏ ᴀɴʏ : ɢɪꜰ/ꜱᴛɪᴄᴋᴇʀ/ᴘʜᴏᴛᴏ/ᴀɴɪᴍᴀᴛᴇᴅ ꜱᴛɪᴄᴋᴇʀ. ᴛᴏ ᴋᴀɴɢ ɪᴛ!*\n"
+        packs_text = "*Reply to any : gif/sticker/photo/animated sticker to kang it.*\n"
         if packnum > 0:        
             firstpackname = "a" + str(user.id) + "_by_" + context.bot.username
             for i in range(0, packnum + 1):
@@ -675,7 +675,7 @@ def makepack_internal(
             )
         elif e.message == "Peer_id_invalid" or "bot was blocked by the user":
             msg.reply_text(
-                f"ꜱᴛᴀʀᴛ ᴛʜᴇ ʙᴏᴛ ꜰɪʀꜱᴛ! 👋",
+                f"Start Hori San First! 👋",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
