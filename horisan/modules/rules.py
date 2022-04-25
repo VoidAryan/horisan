@@ -13,7 +13,7 @@ from telegram import (
     User,
 )
 from telegram.error import BadRequest
-from telegram.ext import CallbackContext, CommandHandler, Filters
+from telegram.ext import CallbackContext, CommandHandler, Filters, run_async
 from telegram.utils.helpers import escape_markdown
 
 
@@ -22,7 +22,7 @@ def get_rules(update: Update, context: CallbackContext):
     send_rules(update, chat_id)
 
 
-# Do not async - not from a handler
+@run_async
 def send_rules(update, chat_id, from_pm=False):
     bot = dispatcher.bot
     user = update.effective_user  # type: Optional[User]
