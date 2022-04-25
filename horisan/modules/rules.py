@@ -48,6 +48,7 @@ def send_rules(update, chat_id, from_pm=False):
             text,
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=False,
+            reply_markup=InlineKeyboardMarkup
         )
     elif from_pm:
         bot.send_message(
