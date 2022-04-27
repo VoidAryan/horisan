@@ -81,11 +81,11 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 
-GROUP_START_IMG = "https://telegra.ph/file/77876ca2a0ae64da1651e.mp4"
+GROUP_START_IMG = "https://telegra.ph/file/ace3cc2757f843ff71330.jpg"
 
 PM_START_TEXT = """
 *ᴋᴏɴɪᴄʜɪᴡᴀ! {}!*
-۞ ɪᴍ ᴋʏᴏᴜᴋᴏ ʜᴏʀɪ ᴀɴ ᴀɴɪᴍᴇ ʙᴀꜱᴇᴅ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ᴡɪᴛʜ ɪɴʙᴜɪʟᴛ ᴠᴄ ᴘʟᴀʏᴇʀ. [👋](https://telegra.ph/file/010b1f6beace55978c1cc.mp4)
+۞ ɪᴍ ᴋʏᴏᴜᴋᴏ ʜᴏʀɪ ᴀɴ ᴀɴɪᴍᴇ ʙᴀꜱᴇᴅ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ᴡɪᴛʜ ɪɴʙᴜɪʟᴛ ᴠᴄ ᴘʟᴀʏᴇʀ. [👋](https://telegra.ph/file/ace3cc2757f843ff71330.jpg)
 ───────────────────────
 × *Aʟɪᴠᴇ Sɪɴᴄᴇ:* {}
 × {} *Wᴇᴇʙꜱ, Aᴄʀᴏꜱꜱ* {} *Cʜᴀᴛꜱ*
@@ -97,7 +97,7 @@ buttons = [
     [
         InlineKeyboardButton(
             text="【Aᴅᴅ Kʏᴏᴜᴋᴏ Tᴏ Yᴏᴜʀ GC】",
-            url="https://t.me/kyoukohori_robot?startgroup=new",
+            url="https://t.me/horixrobot?startgroup=new",
         ),
     ],
     [
@@ -108,7 +108,7 @@ buttons = [
 
 
 HELP_STRINGS = """
-[Click on the buttons bellow to get description of hori's commands!](https://telegra.ph/file/db05a50ddf9b005a55769.mp4)"""
+[Click on the buttons bellow to get description of hori's commands!](https://telegra.ph/file/d42a65f5391b9ca926375.mp4)"""
 
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
@@ -230,7 +230,7 @@ def start(update: Update, context: CallbackContext):
     else:
         update.effective_message.reply_animation(
             GROUP_START_IMG,
-            caption="<code> Hey there weeebs! Im Kyouko Hori \nI am with you Since</code>: <code>{}</code>".format(
+            caption="<code> Hey there I am with you Since</code>: <code>{}</code>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
@@ -454,7 +454,7 @@ def hori_about_callback(update, context):
                     [
                         InlineKeyboardButton(text="Support", url="t.me/HorixSupport"),
                         InlineKeyboardButton(
-                            text="Updates", url="https://t.me/kyouko_updates"
+                            text="Updates", url="https://t.me/kyouko_update"
                         ),
                     ],
                     [
@@ -796,7 +796,7 @@ def main():
         try:
             dispatcher.bot.sendMessage(
                 f"@{SUPPORT_CHAT}",
-                "[👋](https://telegra.ph/file/c458924bf40c213062dd2.mp4) Hi weebs, hori is back alive.",
+                "[👋](https://telegra.ph/file/c458924bf40c213062dd2.mp4) Hi weebs, [HoriSan](t.me/horixrobot) is back alive.",
                 parse_mode=ParseMode.MARKDOWN,
             )
         except Unauthorized:
