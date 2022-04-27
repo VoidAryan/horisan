@@ -33,7 +33,7 @@ And woo hoo! Bot is ready to work!
 """
     BUTTON = [
         [
-            Button.url("【Support】", "https://t.me/kyoukohori_robot"),
+            Button.url("【Support】", "https://t.me/HoriXSupport"),
             Button.url("【Owner Sama】", "https://t.me/voidxtoxic"),
         ]
     ]
