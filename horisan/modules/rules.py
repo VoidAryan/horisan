@@ -46,7 +46,7 @@ def send_rules(update, chat_id, from_pm=False):
         bot.send_message(
             user.id,
             text,
-            parse_mode=ParseMode.MARKDOWN,
+            parse_mode=ParseMode.HTML,
             disable_web_page_preview=False,
             reply_markup=InlineKeyboardMarkup
         )
@@ -68,7 +68,7 @@ def send_rules(update, chat_id, from_pm=False):
                     ],
                 ],
             ),
-        parse_mode=ParseMode.MARKDOWN,
+        parse_mode=ParseMode.HTML,
         disable_web_page_preview=False,
         )
     elif rules:
@@ -84,7 +84,7 @@ def send_rules(update, chat_id, from_pm=False):
                     ],
                 ],
             ),
-        parse_mode=ParseMode.MARKDOWN,
+        parse_mode=ParseMode.HTML,
         disable_web_page_preview=False,
         )
     else:
