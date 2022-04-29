@@ -45,6 +45,11 @@
          "required": true,
          "value": "5043575895"
      },
+     "STRING_SESSION": {
+         "description": "Your user ID as an integer.",
+         "required": false,
+         "value": "bhak"
+     },
      "HEROKU_API_KEY": {
         "description": "Your Heroku API key, get it from 'https://dashboard.heroku.com/account'",
         "value": "0ad5b1b1-bc3c-4c6c-9783-2be10b67810c"
