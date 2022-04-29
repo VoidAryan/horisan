@@ -12,7 +12,6 @@ from inspect import getfullargspec
 from aiohttp import ClientSession
 from Python_ARQ import ARQ
 from telethon import TelegramClient
-from telethon.sessions import StringSession
 from telethon.sessions import MemorySession
 from pyrogram.types import Message
 from pyrogram import Client, errors
@@ -38,9 +37,9 @@ logging.getLogger("pyrogram").setLevel(logging.INFO)
 logging.getLogger('ptbcontrib.postgres_persistence.postgrespersistence').setLevel(logging.WARNING)
 
 LOGGER = logging.getLogger('[horisan]')
-LOGGER.info("horisan is starting. | An Kennedy Project Parts. | Licensed under GPLv3.")
+LOGGER.info("horisan is starting. | An Void Project. | Licensed under GPLv3.")
 LOGGER.info("Not affiliated to other anime or Villain in any way whatsoever.")
-LOGGER.info("Project maintained by: github.com/kennedy-ex (t.me/excrybaby)")
+LOGGER.info("Project maintained by: github.com/voidxtoxic (t.me/voidxtoxic)")
 
 # if version < 3.9, stop bot.
 if sys.version_info[0] < 3 or sys.version_info[1] < 9:
@@ -94,7 +93,6 @@ if ENV:
     ERROR_LOG = os.environ.get("ERROR_LOG", None)
     API_HASH = os.environ.get("API_HASH", None)
     SESSION_STRING = os.environ.get("SESSION_STRING", None)
-    STRING_SESSION = os.environ.get("STRING_SESSION", None)
     DB_URL = os.environ.get("DATABASE_URL")
     DB_URL = DB_URL.replace("postgres://", "postgresql://", 1)
     REM_BG_API_KEY = os.environ.get("REM_BG_API_KEY", None)
@@ -134,7 +132,7 @@ if ENV:
         raise Exception("Your blacklisted chats list does not contain valid integers.")
 
 else:
-    from EmikoRobot.config import Development as Config
+    from horisan.config import Development as Config
 
     TOKEN = Config.TOKEN
 
@@ -202,7 +200,6 @@ else:
     SESSION_STRING = Config.SESSION_STRING
     INFOPIC = Config.INFOPIC
     BOT_USERNAME = Config.BOT_USERNAME
-    STRING_SESSION = Config.STRING_SESSION
     LASTFM_API_KEY = Config.LASTFM_API_KEY
     CF_API_KEY = Config.CF_API_KEY
 
@@ -241,12 +238,6 @@ aiohttpsession = ClientSession()
 print("[INFO]: INITIALIZING ARQ CLIENT")
 arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
 
-ubot2 = TelegramClient(StringSession(STRING_SESSION), API_ID, API_HASH)
-try:
-    ubot2.start()
-except BaseException:
-    print("Userbot Error! Have you added a STRING_SESSION in deploying??")
-    sys.exit(1)
 
 pbot = Client(
     ":memory:",
