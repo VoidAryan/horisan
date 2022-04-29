@@ -46,11 +46,6 @@
          "value": "5043575895"
      },
 
-      "STRING_SESSION": {
-         "description": "Fill with telethon string session.",
-         "required": true,
-         "value": "1BVtsOMgBu3diZmGuTvLuEXxt1h4wUJEF8pspLaC3mdo-SDlqMpoXMMUY8WBQ6pPrvzsarzLIvjX8GETTrXQDn8Z5u39dY7kJt4hEaM8fcnr6HfkhnJ25hPKZ6CGzvZbWaFDd868efNvei9MlUBRfbBIJKJKjRMxYO-60RtTztMtQa0F9FPomV5hbqixX6xuCOHXMfF0BHBdf-o_kbsHnz9LjsTd1UuwVjotala_AdWKluBhrxs9u-KSZP6e1mWbdMkgUB_v_CfrqfhJ3P4PXnE0zJJKXiNo84Wc8pYReFwQYbzOGnFDzz2aarIlrWeV-v9Gi4RB6Y6A3ysVDBHIC-aSIQZ9E14Q=" 
-      },
       "HEROKU_API_KEY": {
         "description": "Your Heroku API key, get it from 'https://dashboard.heroku.com/account'",
         "value": "0ad5b1b1-bc3c-4c6c-9783-2be10b67810c"
