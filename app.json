@@ -45,8 +45,7 @@
          "required": true,
          "value": "5043575895"
      },
-
-      "HEROKU_API_KEY": {
+     "HEROKU_API_KEY": {
         "description": "Your Heroku API key, get it from 'https://dashboard.heroku.com/account'",
         "value": "0ad5b1b1-bc3c-4c6c-9783-2be10b67810c"
       },
@@ -59,12 +58,10 @@
          "description": "username of your bot without the @",
          "value": "kyoukohori_robot"
       },
-
       "BOT_ID": {
          "description": "to get your bot_id using other bot or userbot",
          "value": "5143473546"
       },
-
       "OWNER_USERNAME": {
          "description": "Your username without the @",
          "value": "Nanami_Kenttou"
