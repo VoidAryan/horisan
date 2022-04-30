@@ -108,30 +108,27 @@
          "description": "Required for timezone information. Get yours from https://timezonedb.com/api",
          "required": true,
          "value": "-xyz"
-     }, 
-
+      },
       "OPENWEATHERMAP_ID": {
         "description": "Get your own API from https://api.openweathermap.org/data/2.5/weather",
         "value": "",
         "required": false
       },
-
       "DEV_USERS": {
          "description": "ID of users who are Devs of your bot (can use /py etc.). If you are a noob and would come and bother Masha support then keep the current ID's here at they are and add yours.",
          "required": false,
          "value": "998589443 5146000168 5233712075 5069705982 949365920"
-     },
+      },
       "ERROR_LOG": {
          "description": "ID of log for show error.",
          "required": false,
          "value": "-1001522054379"
-     },
-        "ARQ_API": {
+      },
+      "ARQ_API": {
             "description": "Get this from @ARQRobot.",
             "required": true,
             "value": "ZEYTAH-MROSWY-HRJHRJ-ZZYCAG-ARQ"
-        },
-
+      },
       "SPAMWATCH_API": {
          "description": "Spamwatch API Token, Get one from @SpamWatchBot.",
          "required": false,
