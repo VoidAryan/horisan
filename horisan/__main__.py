@@ -796,7 +796,7 @@ def main():
         try:
             dispatcher.bot.sendMessage(
                 f"@{SUPPORT_CHAT}",
-                "[👋](https://telegra.ph/file/c458924bf40c213062dd2.mp4) Hi weebs, [HoriSan](t.me/horixrobot) is back alive.",
+                "[👋](https://telegra.ph/file/c458924bf40c213062dd2.mp4) Hi weebs, [HoriSan](t.me/kyoukohori_robot) is back alive.",
                 parse_mode=ParseMode.MARKDOWN,
             )
         except Unauthorized:
