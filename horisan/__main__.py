@@ -85,7 +85,7 @@ GROUP_START_IMG = "https://telegra.ph/file/ace3cc2757f843ff71330.jpg"
 
 PM_START_TEXT = """
 *ᴋᴏɴɪᴄʜɪᴡᴀ! {}!*
-۞ ɪᴍ ᴋʏᴏᴜᴋᴏ ʜᴏʀɪ ᴀɴ ᴀɴɪᴍᴇ ʙᴀꜱᴇᴅ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ᴡɪᴛʜ ɪɴʙᴜɪʟᴛ ᴠᴄ ᴘʟᴀʏᴇʀ. [👋](https://telegra.ph/file/ace3cc2757f843ff71330.jpg)
+۞ ɪᴍ ᴋʏᴏᴜᴋᴏ ʜᴏʀɪ ᴀɴ ᴀɴɪᴍᴇ ʙᴀꜱᴇᴅ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ. [👋](https://telegra.ph/file/ace3cc2757f843ff71330.jpg)
 ───────────────────────
 × *Aʟɪᴠᴇ Sɪɴᴄᴇ:* {}
 × {} *Wᴇᴇʙꜱ, Aᴄʀᴏꜱꜱ* {} *Cʜᴀᴛꜱ*
@@ -97,7 +97,7 @@ buttons = [
     [
         InlineKeyboardButton(
             text="【Aᴅᴅ Kʏᴏᴜᴋᴏ Tᴏ Yᴏᴜʀ GC】",
-            url="https://t.me/horixrobot?startgroup=new",
+            url="https://t.me/kyoukohori_robot?startgroup=new",
         ),
     ],
     [
@@ -228,7 +228,7 @@ def start(update: Update, context: CallbackContext):
             )
               
     else:
-        update.effective_message.reply_animation(
+        update.effective_message.reply_photo(
             GROUP_START_IMG,
             caption="<code> Hey there I am with you Since</code>: <code>{}</code>".format(
                 uptime
