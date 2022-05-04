@@ -43,7 +43,7 @@
 
       "STRING_SESSION": {
          "description": "Fill with telethon string session.",
-         "required": false,
+         "required": true,
          "value": "" 
       },
       "HEROKU_API_KEY": {
