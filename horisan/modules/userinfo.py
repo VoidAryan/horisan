@@ -362,10 +362,10 @@ def info(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                "【Health】", url="https://t.me/kyouko_update/10"
+                                "【Health】", url="https://t.me/hori_x_updates/7"
                             ),
                             InlineKeyboardButton(
-                                "【Disaster】", url="https://t.me/kyouko_update/13"
+                                "【Disaster】", url="https://t.me/hori_x_updates/6"
                             ),
                         ],
                     ]
@@ -381,10 +381,10 @@ def info(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                "【Health】", url="https://t.me/kyouko_updates/11"
+                                "【Health】", url="https://t.me/hori_x_updates/7"
                             ),
                             InlineKeyboardButton(
-                                "【Disaster】", url="https://t.me/kyouko_updates/6"
+                                "【Disaster】", url="https://t.me/hori_x_updates/6"
                             ),
                         ],
                     ]
