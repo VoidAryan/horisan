@@ -102,7 +102,7 @@ buttons = [
     ],
     [
         InlineKeyboardButton(text="【HELP】", callback_data="help_back"),
-        InlineKeyboardButton(text="【Support】", url="https://t.me/HorixSupport"),
+        InlineKeyboardButton(text="【Support】", url="https://t.me/kyoukoxsupport"),
     ],
 ]
 
@@ -238,7 +238,7 @@ def start(update: Update, context: CallbackContext):
                 [
                     [
                         InlineKeyboardButton(
-                            text="【Support】", url="https://t.me/HorixSupport"
+                            text="【Support】", url="https://t.me/kyoukoxsupport"
                         ),
                     ],
                 ]
@@ -452,9 +452,9 @@ def hori_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="Support", url="t.me/HorixSupport"),
+                        InlineKeyboardButton(text="Support", url="t.me/kyoukoxsupport"),
                         InlineKeyboardButton(
-                            text="Updates", url="https://t.me/kyouko_update"
+                            text="Updates", url="https://t.me/hori_x_updates"
                         ),
                     ],
                     [
