@@ -97,7 +97,7 @@ buttons = [
     [
         InlineKeyboardButton(
             text="【Aᴅᴅ Kʏᴏᴜᴋᴏ Tᴏ Yᴏᴜʀ GC】",
-            url="https://t.me/kyoukohori_robot?startgroup=new",
+            url="https://t.me/HoriXProbot?startgroup=new",
         ),
     ],
     [
