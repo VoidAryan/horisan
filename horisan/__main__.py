@@ -108,13 +108,14 @@ buttons = [
 
 
 HELP_STRINGS = """
-[Click on the buttons bellow to get description of hori's commands!](https://telegra.ph/file/d42a65f5391b9ca926375.mp4)"""
+Click on the buttons bellow to get description of hori's commands[!](https://telegra.ph/file/d42a65f5391b9ca926375.mp4)"""
 
 
-DONATE_STRING = """Heya, glad to hear you want to donate!
- You can support the project by contacting voidxtoxic \
- Supporting isnt always financial! \
- Those who cannot provide monetary support are welcome to help us develop the bot at ."""
+DONATE_STRING = """Heya, glad to hear you want to donate! ❤ \\
+
+ You can support the project by contacting @voidaryan \\
+ If you can't donate us financially support us by helping in growth of hori san \
+ Those who cannot provide monetary support are welcome to help us we are here to hear you."""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -197,7 +198,7 @@ def start(update: Update, context: CallbackContext):
                     update.effective_chat.id,
                     HELPABLE[mod].__help__,
                     InlineKeyboardMarkup(
-                        [[InlineKeyboardButton(text="Go Back", callback_data="help_back")]]
+                        [[InlineKeyboardButton(text="【Go Back】", callback_data="help_back")]]
                     ),
                 )
 
@@ -533,7 +534,7 @@ def get_help(update: Update, context: CallbackContext):
         if len(args) >= 2 and any(args[1].lower() == x for x in HELPABLE):
             module = args[1].lower()
             update.effective_message.reply_text(
-                f"BaKa contact me in PM to get help of {module.capitalize()}",
+                f"BaKa [💫](https://telegra.ph/file/701a262db236e4f8bd6e3.jpg) contact me in PM to get help of {module.capitalize()}",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
@@ -549,7 +550,7 @@ def get_help(update: Update, context: CallbackContext):
             )
             return
         update.effective_message.reply_text(
-            "Baka Contact me in PM to get the list of possible commands.",
+            "Baka [💫](https://telegra.ph/file/701a262db236e4f8bd6e3.jpg) Contact me in PM to get the list of possible commands.",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
@@ -796,7 +797,7 @@ def main():
         try:
             dispatcher.bot.sendMessage(
                 f"@{SUPPORT_CHAT}",
-                "[👋](https://telegra.ph/file/c458924bf40c213062dd2.mp4) Hi weebs, [HoriSan](t.me/kyoukohori_robot) is back alive.",
+                "[👋](https://telegra.ph/file/c458924bf40c213062dd2.mp4) Hi weebs, HoriSan is back to work!.",
                 parse_mode=ParseMode.MARKDOWN,
             )
         except Unauthorized:
