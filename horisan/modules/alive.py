@@ -9,19 +9,20 @@ from horisan.events import register
 from horisan import telethn as tbot
 
 
-PHOTO = "https://telegra.ph/file/c458924bf40c213062dd2.mp4"
+PHOTO = "https://telegra.ph/file/65c078b44d2e0dec549e2.mp4"
 
 
 @register(pattern=("/alive"))
 async def awake(event):
-    TEXT = f"**Hey There Weebs!![{event.sender.first_name}](tg://user?id={event.sender.id})** \n\n"
-    TEXT += f"**I Am Hori San!**\n\n"
-    TEXT += f"**Meet My izumi kun hehe - [VOID](https://t.me/voidxtoxic)**** \n\n"
-    TEXT += "**◈ I will love to be in your groupchat ◈"
+    TEXT = f"**Hey [{event.sender.first_name}](tg://user?id={event.sender.id}) ! Im Kyouko** \n"
+    TEXT += f"**Developed By - [VOID](https://t.me/Voidaryan)**** \n\n"
+    TEXT += "**◈ Working Under [【V๏ɪ፝֟𝔡】Network](t.me/voidxnetwork) ◈"
     BUTTON = [
         [
-            Button.url("【Support】", "https://t.me/HoriXSupport"),
-            Button.url("【Updates】", "https://t.me/kyouko_update"),
+            Button.url("【Support】", "https://t.me/kyoukoXSupport"),
+            Button.url("【Updates】", "https://t.me/hori_x_updates"),
+        ],
+        [   Button.url("【V๏ɪ፝֟𝔡】Network","https://t.me/voidxnetwork"),
         ]
     ]
     await tbot.send_file(event.chat_id, PHOTO, caption=TEXT, buttons=BUTTON)
