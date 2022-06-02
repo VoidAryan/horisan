@@ -14,8 +14,7 @@ PHOTO = "https://telegra.ph/file/65c078b44d2e0dec549e2.mp4"
 
 @register(pattern=("/alive"))
 async def awake(event):
-    TEXT = f"**Hey [{event.sender.first_name}](tg://user?id={event.sender.id}) ! Im Kyouko** \n"
-    TEXT += f"**Developed By - [VOID](https://t.me/Voidaryan)**** \n\n"
+    TEXT = f"**Hey [{event.sender.first_name}](tg://user?id={event.sender.id}) ! Im Kyouko San. An anime based robot always ready to make your gc efficient!** \n"
     TEXT += "**◈ Working Under [【V๏ɪ፝֟𝔡】Network](t.me/voidxnetwork) ◈"
     BUTTON = [
         [
