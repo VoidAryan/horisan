@@ -123,6 +123,7 @@ if ENV:
     BOT_ID = int(os.environ.get("BOT_ID", None))
     ARQ_API_URL = "https://arq.hamker.in"
     ARQ_API_KEY = "BCYKVF-KYQWFM-JCMORU-RZWOFQ-ARQ"
+    AI_API_KEY = os.environ.get("AI_API_KEY", None)
 
     ALLOW_CHATS = os.environ.get("ALLOW_CHATS", True)
 
@@ -202,6 +203,7 @@ else:
     BOT_USERNAME = Config.BOT_USERNAME
     LASTFM_API_KEY = Config.LASTFM_API_KEY
     CF_API_KEY = Config.CF_API_KEY
+
 
     try:
         BL_CHATS = {int(x) for x in Config.BL_CHATS or []}
