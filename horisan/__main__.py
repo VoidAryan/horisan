@@ -111,9 +111,9 @@ HELP_STRINGS = """
 Click on the buttons bellow to get description of hori's commands[!](https://telegra.ph/file/d42a65f5391b9ca926375.mp4)"""
 
 
-DONATE_STRING = """Heya, glad to hear you want to donate! ❤ \\
+DONATE_STRING = """Heya, glad to hear you want to donate! ❤ \
 
- You can support the project by contacting @voidaryan \\
+ You can support the project by contacting @voidaryan \
  If you can't donate us financially support us by helping in growth of hori san \
  Those who cannot provide monetary support are welcome to help us we are here to hear you."""
 
@@ -533,7 +533,7 @@ def get_help(update: Update, context: CallbackContext):
     if chat.type != chat.PRIVATE:
         if len(args) >= 2 and any(args[1].lower() == x for x in HELPABLE):
             module = args[1].lower()
-            update.effective_message.reply_text(
+            update.effective_message.reply_animation(
                 f"BaKa [💫](https://telegra.ph/file/701a262db236e4f8bd6e3.jpg) contact me in PM to get help of {module.capitalize()}",
                 reply_markup=InlineKeyboardMarkup(
                     [
@@ -549,7 +549,7 @@ def get_help(update: Update, context: CallbackContext):
                 ),
             )
             return
-        update.effective_message.reply_text(
+        update.effective_message.reply_animation(
             "Baka [💫](https://telegra.ph/file/701a262db236e4f8bd6e3.jpg) Contact me in PM to get the list of possible commands.",
             reply_markup=InlineKeyboardMarkup(
                 [
