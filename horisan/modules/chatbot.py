@@ -3,8 +3,8 @@ import re
 import os
 import html
 import requests
-import Shikimori.modules.sql.chatbot_sql as sql
-from Shikimori import AI_API_KEY as api
+import horisan.modules.sql.chatbot_sql as sql
+from horisan import AI_API_KEY as api
 
 from time import sleep
 from telegram import ParseMode
@@ -16,10 +16,10 @@ from telegram.ext import (CallbackContext, CallbackQueryHandler, CommandHandler,
 from telegram.error import BadRequest, RetryAfter, Unauthorized
 from telegram.utils.helpers import mention_html, mention_markdown, escape_markdown
 
-from Shikimori.modules.helper_funcs.filters import CustomFilters
-from Shikimori.modules.helper_funcs.chat_status import user_admin, user_admin_no_reply
-from Shikimori import  dispatcher, updater, SUPPORT_CHAT
-from Shikimori.modules.log_channel import gloggable
+from horisan.modules.helper_funcs.filters import CustomFilters
+from horisan.modules.helper_funcs.chat_status import user_admin, user_admin_no_reply
+from horisan import  dispatcher, updater, SUPPORT_CHAT
+from horisan.modules.log_channel import gloggable
 
 
 @user_admin_no_reply
@@ -41,7 +41,7 @@ def kukirm(update: Update, context: CallbackContext) -> str:
             )
         else:
             update.effective_message.edit_text(
-                "Shikimori Chatbot disable by {}.".format(mention_html(user.id, user.first_name)),
+                "Kyouko Chatbot Deactivated by {}.".format(mention_html(user.id, user.first_name)),
                 parse_mode=ParseMode.HTML,
             )
 
@@ -67,7 +67,7 @@ def kukiadd(update: Update, context: CallbackContext) -> str:
             )
         else:
             update.effective_message.edit_text(
-                "Shikimori Chatbot enable by {}.".format(mention_html(user.id, user.first_name)),
+                "Kyouko Chatbot Activated by {}.".format(mention_html(user.id, user.first_name)),
                 parse_mode=ParseMode.HTML,
             )
 
@@ -79,14 +79,14 @@ def kukiadd(update: Update, context: CallbackContext) -> str:
 def kuki(update: Update, context: CallbackContext):
     user = update.effective_user
     message = update.effective_message
-    msg = "Choose an option"
+    msg = "Kyouko Chat Bot"
     keyboard = InlineKeyboardMarkup([[
         InlineKeyboardButton(
-            text="Enable",
+            text="【Activate】",
             callback_data="add_chat({})")],
        [
         InlineKeyboardButton(
-            text="Disable",
+            text="【Deactivate】",
             callback_data="rm_chat({})")]])
     message.reply_text(
         msg,
@@ -96,7 +96,7 @@ def kuki(update: Update, context: CallbackContext):
 
 def kuki_message(context: CallbackContext, message):
     reply_message = message.reply_to_message
-    if message.text.lower() == "Yuzuki":
+    if message.text.lower() == "VOID":
         return True
     if reply_message:
         if reply_message.from_user.id == context.bot.get_me().id:
@@ -127,7 +127,7 @@ def chatbot(update: Update, context: CallbackContext):
 
 def list_all_chats(update: Update, context: CallbackContext):
     chats = sql.get_all_kuki_chats()
-    text = "<b>KUKI-Enabled Chats</b>\n"
+    text = "<b>Kyouko-Activated Chats</b>\n"
     for chat in chats:
         try:
             x = context.bot.get_chat(int(*chat))
@@ -164,11 +164,11 @@ __handlers__ = [
     CHATBOT_HANDLER,
 ]
 
-__mod_name__ = "ChatBot 🤖"
+__mod_name__ = "【ᴄʜᴀᴛʙᴏᴛ】"
 
 __help__ = """
-Chatbot utilizes the Kuki's api which allows Kuki to talk and provide a more interactive group chat experience.
+Chatbot utilizes the Kuki's api which allows Kyouko to talk and provide a more interactive group chat experience.
 *Admins only Commands*:
   ➢ `/Chatbot`*:* Shows chatbot control panel
-*Powered by ItelAi*
+*Powered by ItelAi* - Credits :)
 """
