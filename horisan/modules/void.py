@@ -11,11 +11,10 @@ from horisan import telethn as tbot
 
 PHOTO = "https://telegra.ph/file/913c2ccbcbbe2f75c8940.jpg"
 
-
 @register(pattern=("/void"))
 async def awake(event):
     TEXT = f"**Welcome to [【V๏ɪ፝֟𝔡】Network](https://t.me/void_network)** \n\n"
-    TEXT += "**◈ Void is an anime based Community with a motive to spread love and peace around telegram. Go through the channel and join the Community if it draws your attention. ◈"
+    TEXT += "◈ Void is an anime based Community with a motive to spread love and peace around telegram. Go through the channel and join the Community if it draws your attention. ◈"
     BUTTON = [
         [
             Button.url("【Usertag】", "https://t.me/VoidxNetwork/3"),
