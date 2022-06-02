@@ -409,8 +409,7 @@ def hori_about_callback(update, context):
                 escape_markdown(first_name),
                 escape_markdown(uptime),
                 sql.num_users(),
-                sql.num_chats(),
-            ),
+                sql.num_chats()),                        
             reply_markup=InlineKeyboardMarkup(buttons),
             parse_mode=ParseMode.MARKDOWN,
             timeout=60,
@@ -516,8 +515,7 @@ def Source_about_callback(update, context):
                 escape_markdown(first_name),
                 escape_markdown(uptime),
                 sql.num_users(),
-                sql.num_chats(),
-            ),
+                sql.num_chats()),                        
             reply_markup=InlineKeyboardMarkup(buttons),
             parse_mode=ParseMode.MARKDOWN,
             timeout=60,
@@ -533,8 +531,9 @@ def get_help(update: Update, context: CallbackContext):
     if chat.type != chat.PRIVATE:
         if len(args) >= 2 and any(args[1].lower() == x for x in HELPABLE):
             module = args[1].lower()
-            update.effective_message.reply_animation(
-                f"BaKa [💫](https://telegra.ph/file/701a262db236e4f8bd6e3.jpg) contact me in PM to get help of {module.capitalize()}",
+            update.effective_message.reply_photo(
+                "https://telegra.ph/file/a54dd39eef75d3870bad4.jpg",
+                caption=f"Baka 💫 contact me in PM to get help of {module.capitalize()}",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
@@ -549,8 +548,9 @@ def get_help(update: Update, context: CallbackContext):
                 ),
             )
             return
-        update.effective_message.reply_animation(
-            "Baka [💫](https://telegra.ph/file/701a262db236e4f8bd6e3.jpg) Contact me in PM to get the list of possible commands.",
+        update.effective_message.reply_photo(
+            "https://telegra.ph/file/a54dd39eef75d3870bad4.jpg",
+            caption=f"Baka 💫 contact me in PM to get the list of possible commands.",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
