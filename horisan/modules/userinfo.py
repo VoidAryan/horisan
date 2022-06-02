@@ -21,7 +21,7 @@ from telegram import (
     InlineKeyboardButton,
     InlineKeyboardMarkup,
 )
-from telegram.ext import CallbackContext, CommandHandler
+from telegram.ext import CallbackContext, CommandHandler, CallbackQueryHandler
 from telegram.ext.dispatcher import run_async
 from telegram.error import BadRequest
 from telegram.utils.helpers import escape_markdown, mention_html
@@ -465,7 +465,26 @@ def stats(update: Update, context: CallbackContext):
     result = re.sub(r"(\d+)", r"<code>\1</code>", stats)
     result += "\n\n<b>--【POWERED BY VOID】--</b>"
     update.effective_message.reply_photo(
-        HORI_IMG, result, parse_mode=ParseMode.HTML
+        HORI_IMG, 
+        result, 
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        "Updates", url="https://t.me/hori_x_updates"
+                    ),
+                    InlineKeyboardButton(
+                        "Support", url="https://t.me/kyoukoxsupport"
+                    ),
+                ],
+                [
+                    InlineKeyboardButton(
+                        "[❌]", callback_data="delete_"
+                    ),
+                ],
+            ],
+        ),
+        parse_mode=ParseMode.HTML,
     )
 
 
@@ -493,6 +512,12 @@ def about_bio(update: Update, context: CallbackContext):
             "You haven't had a bio set about yourself yet!",
         )
 
+def delete_btn(update, context):
+    query = update.callback_query
+    if query.data == "delete":
+        query.message.delete()
+    elif query.data == "delete_":
+         query.message.delete()
 
 def set_about_bio(update: Update, context: CallbackContext):
     message = update.effective_message
@@ -593,9 +618,12 @@ INFO_HANDLER = DisableAbleCommandHandler("info", info, run_async=True)
 
 SET_ABOUT_HANDLER = DisableAbleCommandHandler("setme", set_about_me, run_async=True)
 GET_ABOUT_HANDLER = DisableAbleCommandHandler("me", about_me, run_async=True)
+DELETE_HANDLER = CallbackQueryHandler(
+        delete_btn, pattern=r"delete_", run_async=True)
 
 dispatcher.add_handler(STATS_HANDLER)
 dispatcher.add_handler(ID_HANDLER)
+dispatcher.add_handler(DELETE_HANDLER)
 dispatcher.add_handler(GIFID_HANDLER)
 dispatcher.add_handler(INFO_HANDLER)
 dispatcher.add_handler(SET_BIO_HANDLER)
