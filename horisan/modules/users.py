@@ -47,13 +47,13 @@ def broadcast(update, context):
     if update.effective_message.reply_to_message:
       to_send=update.effective_message.reply_to_message.message_id
     if not update.effective_message.reply_to_message:
-      return await update.effective_message.reply_text("Reply To Some Shit To Broadcast")
+      return update.effective_message.reply_text("Reply To Some Shit To Broadcast")
     chats = sql.get_all_chats() or []
     users = sql.get_all_users() or []
     failed = 0
     for chat in chats:
       try:
-        await context.bot.forwardMessage(chat_id=int(chat.chat_id), from_chat_id=update.effective_chat.id, message_id=to_send)
+         context.bot.forwardMessage(chat_id=int(chat.chat_id), from_chat_id=update.effective_chat.id, message_id=to_send)
         sleep(0.1)
       except TelegramError:
         failed += 1
@@ -62,14 +62,14 @@ def broadcast(update, context):
     failed_user = 0
     for user in users:
       try:
-        await context.bot.forwardMessage(chat_id=int(user.user_id), from_chat_id=update.effective_chat.id, message_id=to_send)
+         context.bot.forwardMessage(chat_id=int(user.user_id), from_chat_id=update.effective_chat.id, message_id=to_send)
         sleep(0.1)
       except TelegramError:
         failed_user += 1
         LOGGER.warning("Couldn't send broadcast to %s, group name %s", str(user.user_id), str(user.username),)
 
 
-    await update.effective_message.reply_text("Broadcast complete. {} groups failed to receive the message, probably due to being kicked. {} users failed to receive the message, probably due to being banned.".format(failed, failed_user))
+     update.effective_message.reply_text("Broadcast complete. {} groups failed to receive the message, probably due to being kicked. {} users failed to receive the message, probably due to being banned.".format(failed, failed_user))
 
 
 def log_user(update, _):
