@@ -4,7 +4,7 @@ from time import sleep
 
 from telegram import TelegramError
 from telegram.error import BadRequest
-from telegram.ext import MessageHandler, Filters, CommandHandler
+from telegram.ext import MessageHandler, Filters, CommandHandler, run_async
 
 import horisan.modules.sql.users_sql as sql
 from horisan import dispatcher, LOGGER, DEV_USERS
