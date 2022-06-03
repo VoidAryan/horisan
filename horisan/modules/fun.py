@@ -338,7 +338,8 @@ __help__ = """
 ❂ /weebify <text>*:* returns a weebified text
 ❂ /sanitize*:* always use this before /pat or any contact
 ❂ /pat*:* pats a user, or get patted
-❂ /8ball*:* predicts using 8ball method
+❂ /8ball*:* predicts using 8ball method 
+❂ /meme : for some random anime memes     #RyuSenpai heyyy i am intrested in working as dev in projects
 
 - Animation
 ❂ /love 
