@@ -45,7 +45,6 @@ RUN apt-get update && apt-get upgrade -y && \
     libsqlite3-dev \
     sudo \
     zlib1g \
-    ffmpeg \
     libssl-dev \
     libgconf-2-4 \
     libxi6 \
@@ -57,7 +56,7 @@ RUN apt-get update && apt-get upgrade -y && \
 
 RUN python3 -m pip install --upgrade pip
 
-COPY . . 
+COPY . .
 
 RUN python3 -m pip install -U -r requirements.txt
 
