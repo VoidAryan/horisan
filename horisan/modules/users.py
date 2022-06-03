@@ -42,7 +42,7 @@ def get_user_id(username):
     return None
 
 
-run_async def broadcast(update, context):
+async def broadcast(update, context):
     if update.effective_message.reply_to_message:
       to_send=update.effective_message.reply_to_message.message_id
     if not update.effective_message.reply_to_message:
