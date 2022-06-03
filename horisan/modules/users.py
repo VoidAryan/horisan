@@ -6,9 +6,9 @@ from telegram import TelegramError
 from telegram.error import BadRequest
 from telegram.ext import MessageHandler, Filters, CommandHandler
 
-import YorForger.modules.sql.users_sql as sql
-from YorForger import dispatcher, LOGGER, DEV_USERS
-from YorForger.modules.helper_funcs.filters import CustomFilters
+import horisan.modules.sql.users_sql as sql
+from horisan import dispatcher, LOGGER, DEV_USERS
+from horisan.modules.helper_funcs.filters import CustomFilters
 
 USERS_GROUP = 4
 CHAT_GROUP = 10
