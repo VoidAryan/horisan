@@ -795,11 +795,21 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(
+            dispatcher.bot.send_video(
                 f"@{SUPPORT_CHAT}",
-                "[👋](https://telegra.ph/file/c458924bf40c213062dd2.mp4) Hi @VoidAryan, HoriSan is back to work!.",
+                "https://telegra.ph/file/c458924bf40c213062dd2.mp4",     #@RyuIsGod
+                "I Am Up @VoidAryan!",
                 parse_mode=ParseMode.MARKDOWN,
-            )
+            reply_markup=InlineKeyboardMarkup(
+                [
+                  [                  
+                       InlineKeyboardButton(
+                             text="[Start Me]",
+                             url="https://t.me/HoriXProBot?start=")
+                     ] 
+                ]
+            ),  
+        )
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!"
