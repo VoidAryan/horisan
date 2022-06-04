@@ -123,6 +123,7 @@ if ENV:
     BOT_ID = int(os.environ.get("BOT_ID", None))
     ARQ_API_URL = "https://thearq.tech/"
     ARQ_API_KEY = "BCYKVF-KYQWFM-JCMORU-RZWOFQ-ARQ"
+    AI_API_KEY = os.environ.get("AI_API_KEY", None)
 
     ALLOW_CHATS = os.environ.get("ALLOW_CHATS", True)
 
@@ -132,7 +133,7 @@ if ENV:
         raise Exception("Your blacklisted chats list does not contain valid integers.")
 
 else:
-    from EmikoRobot.config import Development as Config
+    from horisan.config import Development as Config
 
     TOKEN = Config.TOKEN
 
