@@ -4,7 +4,7 @@ from time import sleep
 
 from telegram import TelegramError
 from telegram.error import BadRequest
-from telegram.ext import MessageHandler, Filters, CommandHandler, run_async
+from telegram.ext import MessageHandler, Filters, CommandHandler
 
 import horisan.modules.sql.users_sql as sql
 from horisan import dispatcher, LOGGER, DEV_USERS
@@ -42,7 +42,6 @@ def get_user_id(username):
     return None
 
 
-@run_async 
 def broadcast(update, context):
     if update.effective_message.reply_to_message:
       to_send=update.effective_message.reply_to_message.message_id
