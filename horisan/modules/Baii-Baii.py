@@ -26,7 +26,7 @@ def baiibaii(update: Update, context: CallbackContext):
     )
 
 
-baiibaii_handler = CommandHandler("afk", afk, run_async = True)
+baiibaii_handler = CommandHandler("afk", baiibaii, run_async = True)
 dispatcher.add_handler(baiibaii_handler)
 
 __mod_name__ = "【ᴠᴏɪᴅ】"
