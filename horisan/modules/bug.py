@@ -45,13 +45,15 @@ async def bug(_, msg: Message):
     datetimes_fmt = "%d-%m-%Y"
     datetimes = datetime.utcnow().strftime(datetimes_fmt)
 
-    thumb = "https://telegra.ph/file/ed9de17a021a6f3b91ad2.jpg"
+    thumb = "https://telegra.ph/file/1e0ae054c8f1076b70adc.jpg"
     
     bug_report = f"""
 **#BUG : ** **@{owner_usn}**
+
 **From User : ** **{mention}**
 **User ID : ** **{user_id}**
 **Group : ** **{chat_username}**
+
 **Bug Report : ** **{bugs}**
 **Event Stamp : ** **{datetimes}**"""
 
@@ -74,7 +76,7 @@ async def bug(_, msg: Message):
         if bugs:
             await msg.reply_text(
                 f"<b>Bug Report : {bugs}</b>\n\n"
-                "✅ <b>The bug was successfully reported to @HorixSupport !</b>",
+                "✅ <b>The bug was successfully reported to @kyoukoxSupport !</b>",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
