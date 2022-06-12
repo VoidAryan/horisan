@@ -76,13 +76,13 @@ async def bug(_, msg: Message):
     elif user_id != owner_id:
         if bugs:
             await msg.reply_text(
-                f"<b>Bug Report : {bugs}</b>\n\n"
-                "✅ <b>The bug was successfully reported to @kyoukoxSupport !</b>",
+                f"<b>× Bug Report : {bugs}</b>\n\n"
+                "✅ <b>× The bug was successfully reported to [【V๏ɪ፝֟𝔡】](https://t.me/voidxnetwork) !</b>",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
                             InlineKeyboardButton(
-                                "Close", callback_data=f"close_reply")
+                                "【Support】", url="https://t.me/kyoukoxsupport")
                         ]
                     ]
                 )
@@ -95,11 +95,11 @@ async def bug(_, msg: Message):
                     [
                         [
                             InlineKeyboardButton(
-                                "➡ View Bug", url=f"{msg.link}")
+                                "【View Bug】", url=f"{msg.link}")
                         ],
                         [
                             InlineKeyboardButton(
-                                "❌ Close", callback_data="close_send_photo")
+                                "【Close Bug】", callback_data="close_send_photo")
                         ]
                     ]
                 )
