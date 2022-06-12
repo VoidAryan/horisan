@@ -10,9 +10,9 @@ import requests
 from bs4 import BeautifulSoup
 from telegram import InputMediaPhoto, TelegramError
 
-from YorForger import dispatcher
-from YorForger.modules.disable import DisableAbleCommandHandler
-from YorForger.modules.helper_funcs.alternate import typing_action
+from horisan import dispatcher
+from horisan.modules.disable import DisableAbleCommandHandler
+from horisan.modules.helper_funcs.alternate import typing_action
 
 opener = urllib.request.build_opener()
 useragent = (
@@ -107,8 +107,7 @@ def reverse(update, context):
         if response != 400:
             xx = context.bot.send_message(
                 chat_id,
-                "Image was successfully uploaded to Google."
-                "\nParsing source now. Maybe.",
+                "Found Your Waifu/Husbando...",
                 reply_to_message_id=rtmid,
             )
         else:
@@ -127,18 +126,18 @@ def reverse(update, context):
 
         if guess and imgspage:
             xx.edit_text(
-                f"[{guess}]({fetchUrl})\nLooking for images...",
+                f"[{guess}]({fetchUrl}...)",
                 parse_mode="Markdown",
                 disable_web_page_preview=True,
             )
         else:
-            xx.edit_text("Couldn't find anything.")
+            xx.edit_text("Couldn't find anything...")
             return
 
         images = scam(imgspage, lim)
         if len(images) == 0:
             xx.edit_text(
-                f"[{guess}]({fetchUrl})\n\n[Visually similar images]({imgspage})",
+                f"[{guess}]({fetchUrl})",
                 parse_mode="Markdown",
                 disable_web_page_preview=True,
             )
@@ -153,7 +152,7 @@ def reverse(update, context):
             chat_id=chat_id, media=imglinks, reply_to_message_id=rtmid
         )
         xx.edit_text(
-            f"[{guess}]({fetchUrl})\n\n[Visually similar images]({imgspage})",
+            f"[{guess}]({fetchUrl})",
             parse_mode="Markdown",
             disable_web_page_preview=True,
         )
