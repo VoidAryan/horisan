@@ -14,9 +14,9 @@ PHOTO = "https://telegra.ph/file/242d186b33c49c0329a0f.mp4"
 
 @register(pattern=("/afk"))
 async def awake(event):
-    TEXT = f"**Hey [{event.sender.first_name}](tg://user?id={event.sender.id}) ! Im `Kyouko San`. An anime based robot always ready to make your gc efficient!** \n\n"
+    TEXT = f"**Baii Baii [{event.sender.first_name}](tg://user?id={event.sender.id}) ! 👋 \n\n"
     BUTTON = [
-        [   Button.url("【V๏ɪ፝֟𝔡】Network","https://t.me/voidxnetwork")
+        [   Button.url("Cancel AFK","https://t.me/voidxnetwork")
         ]
     ]
     await tbot.send_file(event.chat_id, PHOTO, caption=TEXT, buttons=BUTTON)
