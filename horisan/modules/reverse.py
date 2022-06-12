@@ -120,6 +120,7 @@ def reverse(update, context):
         match = ParseSauce(fetchUrl + "&hl=en")
         guess = match["best_guess"]
         if match["override"] and match["override"] != "":                        
+      
         else:
             xx.edit_text("Couldn't find anything.")
             return
