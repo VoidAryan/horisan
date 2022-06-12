@@ -1,32 +1,22 @@
-from horisan import dispatcher
-from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update, ParseMode
+import os
+import re
+from platform import python_version as kontol
+from telethon import events, Button
+from telegram import __version__ as telever
+from telethon import __version__ as tlhver
+from pyrogram import __version__ as pyrover
+from horisan.events import register
+from horisan import telethn as tbot
 
-from telegram.ext import (
-    CallbackContext,
-    CommandHandler,
-)
 
 PHOTO = "https://telegra.ph/file/242d186b33c49c0329a0f.mp4"
 
 
-
-def baiibaii(update: Update, context: CallbackContext):
-
-    TEXT = f"Baii-Baii  {mention} 👋"
-
-    update.effective_message.reply_photo(
-        PHOTO, caption= TEXT,
-        parse_mode=ParseMode.MARKDOWN,
-
-            reply_markup=InlineKeyboardMarkup(
-            [
-                [InlineKeyboardButton(text="【V๏ɪ፝֟𝔡】Network", url="https://t.me/voidxnetwork")]
-            ]
-        ),
-    )
-
-
-baiibaii_handler = CommandHandler("baiibaii", baiibaii, run_async = True)
-dispatcher.add_handler(baiibaii_handler)
-
-__mod_name__ = "【baiibaii】"
+@register(pattern=("/afk"))
+async def awake(event):
+    TEXT = f"**Hey [{event.sender.first_name}](tg://user?id={event.sender.id}) ! Im `Kyouko San`. An anime based robot always ready to make your gc efficient!** \n\n"
+    BUTTON = [
+        [   Button.url("【V๏ɪ፝֟𝔡】Network","https://t.me/voidxnetwork")
+        ]
+    ]
+    await tbot.send_file(event.chat_id, PHOTO, caption=TEXT, buttons=BUTTON)
