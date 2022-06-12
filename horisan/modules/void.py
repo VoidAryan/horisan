@@ -1,4 +1,4 @@
-from YorForger import dispatcher
+from horisan import dispatcher
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update, ParseMode
 
 from telegram.ext import (
