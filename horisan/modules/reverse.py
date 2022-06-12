@@ -122,8 +122,7 @@ def reverse(update, context):
         if match["override"] and match["override"] != "":
             imgspage = match["override"]
         else:
-            imgspage = match["similar_images"]
-
+            imgspage = match["similar_images")                             
         else:
             xx.edit_text("Couldn't find anything.")
             return
