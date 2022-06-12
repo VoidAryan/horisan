@@ -9,6 +9,7 @@ import logging
 import random
 import json
 import os
+import fontTools 
 import re
 from telethon import events
 from horisan import telethn
