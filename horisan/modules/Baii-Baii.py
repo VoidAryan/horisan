@@ -10,7 +10,7 @@ PHOTO = "https://telegra.ph/file/242d186b33c49c0329a0f.mp4"
 
 
 
-def afk(update: Update, context: CallbackContext):
+def baiibaii(update: Update, context: CallbackContext):
 
     TEXT = f"Baii-Baii...! {mention}"
 
@@ -26,7 +26,7 @@ def afk(update: Update, context: CallbackContext):
     )
 
 
-afk_handler = CommandHandler("afk", afk, run_async = True)
-dispatcher.add_handler(afk_handler)
+baiibaii_handler = CommandHandler("afk", afk, run_async = True)
+dispatcher.add_handler(baiibaii_handler)
 
 __mod_name__ = "【ᴠᴏɪᴅ】"
