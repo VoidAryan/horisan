@@ -107,8 +107,7 @@ def reverse(update, context):
         if response != 400:
             xx = context.bot.send_message(
                 chat_id,
-                "`Found Your Waifu/Husbando..`"
-                "\n`Parsing source now. Maybe..`",
+                "Found Your Waifu/Husbando...",
                 reply_to_message_id=rtmid,
             )
         else:
@@ -125,12 +124,6 @@ def reverse(update, context):
         else:
             imgspage = match["similar_images"]
 
-        if guess and imgspage:
-            xx.edit_text(
-                f"[{guess}]({fetchUrl})\nLooking for images...",
-                parse_mode="Markdown",
-                disable_web_page_preview=True,
-            )
         else:
             xx.edit_text("Couldn't find anything.")
             return
@@ -153,7 +146,7 @@ def reverse(update, context):
             chat_id=chat_id, media=imglinks, reply_to_message_id=rtmid
         )
         xx.edit_text(
-            f"[{guess}]({fetchUrl})\n\n[Visually similar images]({imgspage})",
+            f"[{guess}]({fetchUrl})\n\n[]({imgspage})",
             parse_mode="Markdown",
             disable_web_page_preview=True,
         )
