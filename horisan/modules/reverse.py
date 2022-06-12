@@ -99,8 +99,6 @@ def reverse(update: Update, context:CallbackContext):
         guess = match['best_guess']
         if match['override'] and not match['override'] == '':
             imgspage = match['override']
-        else:
-            imgspage = match['similar_images']
 
         if guess and imgspage:
             xx.edit_text(f"[{guess}]({location})\nFinding your waifu/husbando....", parse_mode='Markdown', disable_web_page_preview=True)
@@ -110,7 +108,7 @@ def reverse(update: Update, context:CallbackContext):
 
         images = scam(imgspage, lim)
         if len(images) == 0:
-            xx.edit_text(f"[{guess}]({location})\n\n[similar images....!]({imgspage})"
+            xx.edit_text(f"[{guess}]({location})"
                           , parse_mode='Markdown', disable_web_page_preview=True)
             return
 
