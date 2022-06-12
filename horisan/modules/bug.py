@@ -77,7 +77,7 @@ async def bug(_, msg: Message):
         if bugs:
             await msg.reply_text(
                 f"<b>× Bug Report : {bugs}</b>\n\n"
-                "✅ <b>× The bug was successfully reported to [【V๏ɪ፝֟𝔡】](https://t.me/voidxnetwork) !</b>",
+                "✅ <b>× The bug was successfully reported to `【V๏ɪ፝֟𝔡】` !</b>",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
