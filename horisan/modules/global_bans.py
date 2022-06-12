@@ -187,7 +187,7 @@ def gban(update: Update, context: CallbackContext):
 
     if reason:
         if chat.type == chat.SUPERGROUP and chat.username:
-            log_message += f'\n<b>Reason:</b> <a [Reason]("https://telegram.me/{chat.username}/{message.message_id}">{reason}")</a>'
+            log_message += f'\n<b>Reason:</b> <a href = https://telegram.me/{chat.username}/{message.message_id}">{reason} </a>'
         else:
             log_message += f"\n<b>Reason:</b> <code>{reason}</code>"
 
