@@ -20,7 +20,7 @@ def void(update: Update, context: CallbackContext):
 
             reply_markup=InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton(text="【Close AFK】", callback_data ="delete_")]
+                [InlineKeyboardButton(text="【Close AFK】", callback_data="delete_")]
             ]
         ),
     )
