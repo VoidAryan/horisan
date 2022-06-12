@@ -10,7 +10,7 @@ PHOTO = "https://telegra.ph/file/242d186b33c49c0329a0f.mp4"
 
 
 
-def void(update: Update, context: CallbackContext):
+def afk(update: Update, context: CallbackContext):
 
     TEXT = f"Baii-Baii...! {mention}"
 
