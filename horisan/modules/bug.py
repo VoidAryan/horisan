@@ -50,14 +50,13 @@ async def bug(_, msg: Message):
     bug_report = f"""
 **#BUG : ** **@{owner_usn}**
 
-**┏━━━━━━━━━━━━━━━━━━━  
-┣━ ꜰʀᴏᴍ : {mention}
-┣━ ᴜꜱᴇʀ ɪᴅ : {user_id}
-┣━ ɢʀᴏᴜᴘ : {chat_username}
-┗━━━━━━━━━━━━━━━━━━━**
+**━━━━━━━━━━━━━━━━━━━  
+× ꜰʀᴏᴍ : {mention}
+× ᴜꜱᴇʀ ɪᴅ : {user_id}
+× ɢʀᴏᴜᴘ : {chat_username}
+━━━━━━━━━━━━━━━━━━━**
 
-**Bug Report : ** **{bugs}**
-**Event Stamp : ** **{datetimes}**"""
+**ʙᴜɢ : ** **{bugs}**"""
 
     
     if msg.chat.type == "private":
