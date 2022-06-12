@@ -10,9 +10,9 @@ import requests
 from bs4 import BeautifulSoup
 from telegram import InputMediaPhoto, TelegramError
 
-from YorForger import dispatcher
-from YorForger.modules.disable import DisableAbleCommandHandler
-from YorForger.modules.helper_funcs.alternate import typing_action
+from horisan import dispatcher
+from horisan.modules.disable import DisableAbleCommandHandler
+from horisan.modules.helper_funcs.alternate import typing_action
 
 opener = urllib.request.build_opener()
 useragent = (
@@ -91,7 +91,7 @@ def reverse(update, context):
     else:
         msg.reply_markdown(
             "Please reply to a sticker, or an image to search it!\nDo you know that you can search an image with a "
-            "link too? `/reverse [picturelink] <amount>`. "
+            "\nlink too? `/reverse [picturelink] <amount>`. "
         )
         return
 
@@ -114,33 +114,6 @@ def reverse(update, context):
         else:
             xx = context.bot.send_message(
                 chat_id, "Google told me to go away.", reply_to_message_id=rtmid
-            )
-            return
-
-        os.remove(imagename)
-        match = ParseSauce(fetchUrl + "&hl=en")
-        guess = match["best_guess"]
-        if match["override"] and match["override"] != "":
-            imgspage = match["override"]
-        else:
-            imgspage = match["similar_images"]
-
-        if guess and imgspage:
-            xx.edit_text(
-                f"[{guess}]({fetchUrl})\nLooking for images...",
-                parse_mode="Markdown",
-                disable_web_page_preview=True,
-            )
-        else:
-            xx.edit_text("Couldn't find anything.")
-            return
-
-        images = scam(imgspage, lim)
-        if len(images) == 0:
-            xx.edit_text(
-                f"[{guess}]({fetchUrl})\n\n[Visually similar images]({imgspage})",
-                parse_mode="Markdown",
-                disable_web_page_preview=True,
             )
             return
 
