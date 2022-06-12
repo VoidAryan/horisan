@@ -312,7 +312,7 @@ def ungban(update: Update, context: CallbackContext):
         chat_origin = f"<b>{chat.id}</b>\n"
 
     log_message = (
-        f"#[UNGBANNED](""https://telegra.ph/file/929f744161871543cf362.mp4"")\n"
+        f"#[UNGBANNED](https://telegra.ph/file/929f744161871543cf362.mp4)\n"
         f"<b>Originated from:</b> <code>{chat_origin}</code>\n"
         f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
         f"<b>Unbanned User:</b> {mention_html(user_chat.id, user_chat.first_name)}\n"
