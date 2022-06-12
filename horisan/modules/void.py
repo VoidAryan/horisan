@@ -1,29 +1,37 @@
-import os
-import re
-from platform import python_version as kontol
-from telethon import events, Button
-from telegram import __version__ as telever
-from telethon import __version__ as tlhver
-from pyrogram import __version__ as pyrover
-from horisan.events import register
-from horisan import telethn as tbot
+from YorForger import dispatcher
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update, ParseMode
+
+from telegram.ext import (
+    CallbackContext,
+    CommandHandler,
+)
+
+PHOTO = "https://telegra.ph/file/f9b0895ae78578fda9202.jpg"
 
 
-PHOTO = "https://telegra.ph/file/913c2ccbcbbe2f75c8940.jpg"
 
-@register(pattern=("/void"))
-async def awake(event):
-    TEXT = f"**Welcome to [【V๏ɪ፝֟𝔡】Network](https://t.me/void_network)** \n\n"
-    TEXT += "◈ Void is an anime based Community with a motive to spread love and peace around telegram. Go through the channel and join the Community if it draws your attention. ◈"
-    BUTTON = [
-        [
-            Button.url("【Usertag】", "https://t.me/VoidxNetwork/3"),
-            Button.url("【Owner Sama】", "https://t.me/voidaryan"),
-        ],
-        [   Button.url("【V๏ɪ፝֟𝔡】 ✧Network✧", "https://t.me/voidxnetwork"),
-        ]
-    ]
-    await tbot.send_file(event.chat_id, PHOTO, caption=TEXT, buttons=BUTTON)
+def void(update: Update, context: CallbackContext):
+
+    TEXT = f"Welcome to **[【V๏ɪ፝֟𝔡】 ✧Network✧](https://t.me/voidxnetwork)** \n\n◈ Void is an anime based Community with a motive to spread love and peace around telegram. Go through the channel and join the Community if it draws your attention. ◈"
+
+    update.effective_message.reply_photo(
+        PHOTO, caption= TEXT,
+        parse_mode=ParseMode.MARKDOWN,
+
+            reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                InlineKeyboardButton(text="【Usertag】", url="https://t.me/void_network/103"),
+                InlineKeyboardButton(text="【Owner Sama】", url="https://t.me/voidxtoxic")
+                ],
+                [InlineKeyboardButton(text="【V๏ɪ፝֟𝔡】Network", url="https://t.me/voidxnetwork")]
+            ]
+        ),
+    )
+
+
+void_handler = CommandHandler("void", void, run_async = True)
+dispatcher.add_handler(void_handler)
 
 __help__ = """
  ──「Void Network」──                         
