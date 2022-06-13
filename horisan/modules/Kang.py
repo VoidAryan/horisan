@@ -132,7 +132,7 @@ def kang(update, context):
                 )
 
             except OSError as e:
-                msg.reply_text("ᴛʜɪꜱ ꜰᴇᴀᴛᴜʀᴇ ɪꜱ ʀᴇᴍᴏᴠᴇᴅ ᴅᴜᴇ ᴛᴏ ᴄᴏɴᴛɪɴᴏᴜꜱ ʙᴜɢꜱ. ᴡɪʟʟ ʙᴇ ᴀᴅᴅᴇᴅ ɪꜰ ꜰɪxᴇᴅ 🎐✨ : [【ʏᴏᴜʀ ᴘᴀᴄᴋ】](t.me/addstickers/{packname})")
+                msg.reply_text("ᴛʜɪꜱ ꜰᴇᴀᴛᴜʀᴇ ɪꜱ ʀᴇᴍᴏᴠᴇᴅ ᴅᴜᴇ ᴛᴏ ᴄᴏɴᴛɪɴᴏᴜꜱ ʙᴜɢꜱ. ᴡɪʟʟ ʙᴇ ᴀᴅᴅᴇᴅ ɪꜰ ꜰɪxᴇᴅ 🎐✨")
                 print(e)
                 return
 
