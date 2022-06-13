@@ -7,8 +7,8 @@ from telegram.ext.callbackcontext import CallbackContext
 from telegram.ext.filters import Filters
 from telegram.parsemode import ParseMode
 
-from KURUMIBOT import OWNER_ID, dispatcher, updater
-from KURUMIBOT.modules.disable import DisableAbleCommandHandler
+from horisan import OWNER_ID, dispatcher, updater
+from horisan.modules.disable import DisableAbleCommandHandler
 
 job_queue = updater.job_queue
 
