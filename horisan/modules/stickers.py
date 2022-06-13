@@ -770,7 +770,7 @@ __help__ = """
 •  `/stickerid`*:* reply to a sticker to me to tell you its file ID.
 •  `/getsticker`*:* reply to a sticker to me to upload its raw PNG file.
 •  `/getvidsticker` *:* reply to a video sticker to me to upload it's mp4 file.
-•  `/kang`*:* reply to a sticker/video sticker/animated sticker to add it to your pack.
+•  `/kang`or `/steal`*:* reply to a sticker/video sticker/animated sticker to add it to your pack.
 •  `/delsticker`*:* Reply to your anime exist sticker to your pack to delete it.
 •  `/stickers`*:* Find stickers for given term on combot sticker catalogue 
 •  `/getvideo`*:* reply to a gif to get video easily !
@@ -781,7 +781,7 @@ __mod_name__ = "【ꜱᴛɪᴄᴋᴇʀꜱ】"
 STICKERID_HANDLER = DisableAbleCommandHandler("stickerid", stickerid, run_async=True)
 GETSTICKER_HANDLER = DisableAbleCommandHandler("getsticker", getsticker, run_async=True)
 GETVIDSTICKER_HANDLER = DisableAbleCommandHandler("getvidsticker", getvidsticker, run_async=True)
-KANG_HANDLER = DisableAbleCommandHandler("kang", kang, pass_args=True, run_async=True)
+KANG_HANDLER = DisableAbleCommandHandler("kang", kang, pass_args=False, run_async=True)
 DEL_HANDLER = DisableAbleCommandHandler("delsticker", delsticker, run_async=True)
 STICKERS_HANDLER = DisableAbleCommandHandler("stickers", cb_sticker, run_async=True)
 VIDEO_HANDLER = DisableAbleCommandHandler ("getvideo", video, run_async=True)
