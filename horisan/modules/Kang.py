@@ -11,9 +11,9 @@ from telegram import ParseMode, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram import TelegramError
 from telegram.utils.helpers import mention_html
 
-from YorForger import dispatcher
-from YorForger.modules.disable import DisableAbleCommandHandler
-from YorForger.modules.helper_funcs.alternate import typing_action
+from horisan import dispatcher
+from horisan.modules.disable import DisableAbleCommandHandler
+from horisan.modules.helper_funcs.alternate import typing_action
 
 combot_stickers_url = "https://combot.org/telegram/stickers?q="
 
@@ -367,7 +367,7 @@ def stickerid(update, context):
 
 
 
-__mod_name__ = "Stickers"
+__mod_name__ = "kang"
 KANG_HANDLER = DisableAbleCommandHandler(
     ["kang", "steal"],
     kang,
