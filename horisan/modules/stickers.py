@@ -781,7 +781,7 @@ __mod_name__ = "【ꜱᴛɪᴄᴋᴇʀꜱ】"
 STICKERID_HANDLER = DisableAbleCommandHandler("stickerid", stickerid, run_async=True)
 GETSTICKER_HANDLER = DisableAbleCommandHandler("getsticker", getsticker, run_async=True)
 GETVIDSTICKER_HANDLER = DisableAbleCommandHandler("getvidsticker", getvidsticker, run_async=True)
-KANG_HANDLER = DisableAbleCommandHandler("kang", kang, pass_args=true, run_async=True)
+KANG_HANDLER = DisableAbleCommandHandler("kang", kang, pass_args=True, run_async=True)
 DEL_HANDLER = DisableAbleCommandHandler("delsticker", delsticker, run_async=True)
 STICKERS_HANDLER = DisableAbleCommandHandler("stickers", cb_sticker, run_async=True)
 VIDEO_HANDLER = DisableAbleCommandHandler ("getvideo", video, run_async=True)
