@@ -80,7 +80,7 @@ def kang(update, context):
         elif msg.reply_to_message.document:
             file_id = msg.reply_to_message.document.file_id
         else:
-            msg.reply_text("Yea, I can't kang that.")
+            msg.reply_text("ʏᴇᴀ, ɪ ᴄᴀɴ'ᴛ ᴋᴀɴɢ ᴛʜᴀᴛ.")
 
         kang_file = context.bot.get_file(file_id)
         if not is_animated:
@@ -126,13 +126,13 @@ def kang(update, context):
                     emojis=sticker_emoji,
                 )
                 msg.reply_text(
-                    f"Sticker successfully added to [pack](t.me/addstickers/{packname})"
-                    + f"\nEmoji is: {sticker_emoji}",
+                    f"ᴋᴀɴɢᴇᴅ ✅ : [【ʏᴏᴜʀ ᴘᴀᴄᴋ】](t.me/addstickers/{packname})"
+                    + f"\n\nᴇᴍᴏᴊɪ : {sticker_emoji}",
                     parse_mode=ParseMode.MARKDOWN,
                 )
 
             except OSError as e:
-                msg.reply_text("I can only kang images m8.")
+                msg.reply_text("ᴛʜɪꜱ ꜰᴇᴀᴛᴜʀᴇ ɪꜱ ʀᴇᴍᴏᴠᴇᴅ ᴅᴜᴇ ᴛᴏ ᴄᴏɴᴛɪɴᴏᴜꜱ ʙᴜɢꜱ. ᴡɪʟʟ ʙᴇ ᴀᴅᴅᴇᴅ ɪꜰ ꜰɪxᴇᴅ 🎐✨ : [【ʏᴏᴜʀ ᴘᴀᴄᴋ】](t.me/addstickers/{packname})")
                 print(e)
                 return
 
@@ -156,12 +156,12 @@ def kang(update, context):
                         emojis=sticker_emoji,
                     )
                     msg.reply_text(
-                        f"Sticker successfully added to [pack](t.me/addstickers/{packname})"
-                        + f"\nEmoji is: {sticker_emoji}",
+                        f"ᴋᴀɴɢᴇᴅ ✅ : [【ʏᴏᴜʀ ᴘᴀᴄᴋ】](t.me/addstickers/{packname})"
+                        + f"\nᴇᴍᴏᴊɪ : {sticker_emoji}",
                         parse_mode=ParseMode.MARKDOWN,
                     )
                 elif e.message == "Stickers_too_much":
-                    msg.reply_text("Max packsize reached. Press F to pay respecc.")
+                    msg.reply_text("Max packsize reached. Press F to pay respect.")
                 elif e.message == "Stickerset_invalid":
                     makepack_internal(
                         update,
@@ -205,8 +205,8 @@ def kang(update, context):
                     emojis=sticker_emoji,
                 )
                 msg.reply_text(
-                    f"Sticker successfully added to [pack](t.me/addstickers/{packname})"
-                    + f"\nEmoji is: {sticker_emoji}",
+                    f"ᴋᴀɴɢᴇᴅ ✅ : [【ʏᴏᴜʀ ᴘᴀᴄᴋ】](t.me/addstickers/{packname})"
+                        + f"\nᴇᴍᴏᴊɪ : {sticker_emoji}",
                     parse_mode=ParseMode.MARKDOWN,
                 )
             except TelegramError as e:
@@ -234,16 +234,16 @@ def kang(update, context):
                 print(e)
 
     else:
-        packs = "Please reply to a sticker, or image to kang it!\nOh, by the way. here are your packs:\n"
+        packs = "ʀᴇᴘʟʏ ᴛᴏ ɪᴍɢ/ꜱᴛɪᴄᴋᴇʀ ᴛᴏ ᴜꜱᴇ ᴛʜɪꜱ ꜰᴇᴀᴛᴜʀᴇ ✨\n\n"
         if packnum > 0:
             firstpackname = "a" + str(user.id) + "_by_" + context.bot.username
             for i in range(packnum + 1):
                 if i == 0:
-                    packs += f"[pack](t.me/addstickers/{firstpackname})\n"
+                    packs += f"[【ʏᴏᴜʀ ꜱᴛɪᴄᴋᴇʀ ᴘᴀᴄᴋ】](t.me/addstickers/{firstpackname})\n"
                 else:
-                    packs += f"[pack{i}](t.me/addstickers/{packname})\n"
+                    packs += f"[【ʏᴏᴜʀ ꜱᴛɪᴄᴋᴇʀ ᴘᴀᴄᴋ】{i}](t.me/addstickers/{packname})\n"
         else:
-            packs += f"[pack](t.me/addstickers/{packname})"
+            packs += f"[【ʏᴏᴜʀ ꜱᴛɪᴄᴋᴇʀ ᴘᴀᴄᴋ】](t.me/addstickers/{packname})"
         msg.reply_text(packs, parse_mode=ParseMode.MARKDOWN)
     if os.path.isfile("kangsticker.png"):
         os.remove("kangsticker.png")
@@ -292,12 +292,12 @@ def makepack_internal(
             )
         else:
             msg.reply_text(
-                "Contact me in PM first.",
+                "ᴍᴇᴇᴛ ᴍᴇ ɪɴ ᴘᴍ ꜰɪʀꜱᴛ ✨",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
                             InlineKeyboardButton(
-                                text="Start", url=f"t.me/{context.bot.username}"
+                                text="【ᴄᴏᴍᴇ ɪɴ ᴘᴍ】", url=f"t.me/{context.bot.username}"
                             )
                         ]
                     ]
@@ -307,7 +307,7 @@ def makepack_internal(
 
     if success:
         msg.reply_text(
-            "Sticker pack successfully created. Get it [here](t.me/addstickers/%s)"
+            "ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ ᴄʀᴇᴀᴛᴇᴅ : ✅ \n\n[【ʏᴏᴜʀ ꜱᴛɪᴄᴋᴇʀ ᴘᴀᴄᴋ】](t.me/addstickers/%s)"
             % packname,
             parse_mode=ParseMode.MARKDOWN,
         )
