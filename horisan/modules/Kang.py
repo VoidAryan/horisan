@@ -366,14 +366,6 @@ def stickerid(update, context):
         )
 
 
-__help__ = """
-Kanging Stickers made easy with stickers module!
-
-× /stickers: Find stickers for given term on combot sticker catalogue.
-× /stickerid: Reply to a sticker to me to tell you its file ID.
-× /getsticker: Reply to a sticker to me to upload its raw PNG file.
-× /kang: Reply to a sticker to add it to your pack.
-"""
 
 __mod_name__ = "Stickers"
 KANG_HANDLER = DisableAbleCommandHandler(
@@ -382,14 +374,5 @@ KANG_HANDLER = DisableAbleCommandHandler(
     pass_args=True,
     run_async=True,
 )
-STICKERID_HANDLER = DisableAbleCommandHandler("stickerid", stickerid, run_async=True)
-GETSTICKER_HANDLER = DisableAbleCommandHandler("getsticker", getsticker, run_async=True)
-FIND_STICKERS_HANDLER = DisableAbleCommandHandler(
-    "stickers", combot_sticker, run_async=True
-)
-
 
 dispatcher.add_handler(KANG_HANDLER)
-dispatcher.add_handler(STICKERID_HANDLER)
-dispatcher.add_handler(GETSTICKER_HANDLER)
-dispatcher.add_handler(FIND_STICKERS_HANDLER)
