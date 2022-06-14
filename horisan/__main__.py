@@ -371,32 +371,27 @@ def hori_about_callback(update, context):
     query = update.callback_query
     if query.data == "hori_":
         query.message.edit_text(
-            text="๏ I'm *horisan*, a powerful group management bot built to help you manage your group easily."
-            "\n• I can restrict users."
-            "\n• I can greet users with customizable welcome messages and even set a group's rules."
-            "\n• I have an advanced anti-flood system."
-            "\n• I can warn users until they reach max warns, with each predefined actions such as ban, mute, kick, etc."
-            "\n• I have a note keeping system, blacklists, and even predetermined replies on certain keywords."
-            "\n• I check for admins' permissions before executing any command and more stuffs"
-            "\n\n_Hori's licensed under the GNU General Public License v3.0_"
-            "\n\n Click on button bellow to get basic help for Hori San.",
+            text="ɪᴍ ᴋʏᴏᴜᴋᴏ ʜᴏʀɪ ʙᴏᴛ ʙᴀꜱᴇᴅ ᴏɴ ᴍᴀɪɴ ᴄʜᴀʀᴀᴄᴛᴇʀ ꜰʀᴏᴍ ᴀɴɪᴍᴇ ɴᴀᴍᴇᴅ ʜᴏʀɪᴍɪʏᴀ 🥀"
+            "\n\n ۞ ᴋʏᴏᴜᴋᴏ ʜᴀᴠᴇ ᴠᴀʀɪᴏᴜꜱ ꜰᴇᴀᴛᴜʀᴇꜱ ɪɴ ɪᴛ ꜱᴜᴄʜ ᴀꜱ ꜰʟᴏᴏᴅ ᴄᴏɴᴛʀᴏʟ / ᴀɴᴛɪᴄʜᴀɴɴᴇʟ / ᴀɴᴛɪɴꜱꜰᴡ / ᴡᴀʀɴꜱ / ʙᴀɴꜱ / ɢʟᴏʙᴀʟ ʙᴀɴꜱ / ʀᴇᴍɪɴᴅᴇʀ / ꜰɪʟᴛᴇʀꜱ. ᴇᴛᴄ ᴡʜɪᴄʜ ᴍᴀᴋᴇꜱ ʏᴏᴜʀ ɢʀᴏᴜᴘᴄʜᴀᴛꜱ ᴍᴏʀᴇ ᴇꜰꜰᴇᴄᴛɪᴠᴇ ᴀɴᴅ ᴍᴀɴᴀɢᴇᴅ"
+            "\n\n۞ ᴋʏᴏᴜᴋᴏ ᴡᴀꜱ ᴅᴇᴠᴇʟᴏᴘᴇᴅ ʙʏ [V O I D](https://t.me/voidaryan)"
+            "\n\n۞ ᴄᴜʀʀᴇɴᴛʟʏ ᴡᴏʀᴋɪɴɢ ᴜɴᴅᴇʀ [【V๏ɪ፝֟𝔡】✧Network✧](https://t.me/voidxnetwork)"
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Admins", callback_data="hori_admin"),
+                    InlineKeyboardButton(text="【Admins】", callback_data="hori_admin"),
                     InlineKeyboardButton(text="Notes", callback_data="hori_notes"),
                  ],
                  [
-                    InlineKeyboardButton(text="Support", callback_data="hori_support"),
-                    InlineKeyboardButton(text="Credits", callback_data="hori_credit"),
+                    InlineKeyboardButton(text="【Our Domain】", callback_data="hori_support"),
+                    InlineKeyboardButton(text="【Network】", callback_data="hori_credit"),
                  ],
                  [
-                    InlineKeyboardButton(text="Source Code", url="https://github.com/voidxtoxic/horisan"),
+                    InlineKeyboardButton(text="【Github】", url="https://github.com/voidxtoxic"),
                  ],
                  [
-                    InlineKeyboardButton(text="Go Back", callback_data="hori_back"),
+                    InlineKeyboardButton(text="【Home】", callback_data="hori_back"),
                  ]
                 ]
             ),
