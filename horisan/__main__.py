@@ -102,7 +102,7 @@ buttons = [
     ],
     [
         InlineKeyboardButton(text="【HELP】", callback_data="help_back"),
-        InlineKeyboardButton(text="【Support】", url="https://t.me/kyoukoxsupport"),
+        InlineKeyboardButton(text="【About】", callback_data="hori_about_callback"),
     ],
 ]
 
