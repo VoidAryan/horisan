@@ -381,7 +381,7 @@ def hori_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="【Admins】", callback_data="hori_admin"),
+                    InlineKeyboardButton(text="【ChatGroup】", callback_data="hori_admin"),
                     InlineKeyboardButton(text="Notes", callback_data="hori_notes"),
                  ],
                  [
@@ -414,14 +414,12 @@ def hori_about_callback(update, context):
 
     elif query.data == "hori_admin":
         query.message.edit_text(
-            text=f"*๏ Let's make your group bit effective now*"
-            "\nCongragulations, bot now ready to manage your group."
-            "\n\n*Admin Tools*"
-            "\nBasic Admin tools help you to protect and powerup your group."
-            "\nYou can ban members, Kick members, Promote someone as admin through commands of bot."
-            "\n\n*Greetings*"
-            "\nLets set a welcome message to welcome new users coming to your group."
-            "\nsend `/setwelcome [message]` to set a welcome message!",
+            text=f"*ʜᴇʟʟᴏ,*"
+            "\nꜱᴏ ʏᴏᴜʀᴇ ɪɴᴛʀᴇꜱᴛᴇᴅ ɪɴ ᴊᴏɪɴɪɴɢ ᴏᴜʀ ᴄʜᴀᴛ ɢʀᴏᴜᴘ...ɪ ꜱᴇᴇ ɪᴍ ɢʟᴀᴅ. 🥀"
+            "\n*ᴏᴜʀ ᴄʜᴀᴛ ɢʀᴏᴜᴘ ɪꜱ ᴀɴ ᴇɴɢʟɪꜱʜ ɢʀᴏᴜᴘ ᴡʜɪᴄʜ ᴍᴀɪɴᴛᴀɪɴꜱ ᴘᴇᴀᴄᴇ ᴀɴᴅ ʟᴏᴠᴇ ꜱᴏ ᴍᴀᴋᴇ ꜱᴜʀᴇ ʏᴏᴜ ʀᴇᴀᴅ ʀᴜʟᴇꜱ ᴛᴏ ᴀᴠᴏɪᴅ ᴡᴀʀɴꜱ ᴀɴᴅ ʙᴀɴꜱ.*"
+            "\n*⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯*"
+            "\n--| [ʜᴏʀɪᴍɪʏᴀ ꜰᴀᴍɪʟʏ](https://t.me/+CgTTj7-fLv03NDI1)|--"
+            "\n*⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯*",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
