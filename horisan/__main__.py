@@ -381,15 +381,15 @@ def hori_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="【ChatGroup】", callback_data="hori_admin"),
-                    InlineKeyboardButton(text="【Channels】", callback_data="hori_notes"),
+                    InlineKeyboardButton(text="【ChatGroup】", callback_data="hori_chat"),
+                    InlineKeyboardButton(text="【Channels】", callback_data="hori_channel"),
                  ],
                  [
                     InlineKeyboardButton(text="【Our Domain】", callback_data="hori_support"),
-                    InlineKeyboardButton(text="【Network】", callback_data="hori_credit"),
+                    InlineKeyboardButton(text="【Github】", url="https://github.com/voidxtoxic"),
                  ],
                  [
-                    InlineKeyboardButton(text="【Github】", url="https://github.com/voidxtoxic"),
+                    InlineKeyboardButton(text="【Network】", callback_data="hori_credit"),
                  ],
                  [
                     InlineKeyboardButton(text="【Home】", callback_data="hori_back"),
@@ -412,7 +412,7 @@ def hori_about_callback(update, context):
             disable_web_page_preview=False,
         )
 
-    elif query.data == "hori_admin":
+    elif query.data == "hori_chat":
         query.message.edit_text(
             text=f"*ʜᴇʟʟᴏ,*"
             "\nꜱᴏ ʏᴏᴜʀᴇ ɪɴᴛʀᴇꜱᴛᴇᴅ ɪɴ ᴊᴏɪɴɪɴɢ ᴏᴜʀ ᴄʜᴀᴛ ɢʀᴏᴜᴘ...ɪ ꜱᴇᴇ ɪᴍ ɢʟᴀᴅ. 🥀"
@@ -425,23 +425,38 @@ def hori_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                    InlineKeyboardButton(text="【Our Domain】", callback_data="hori_support"),
-                    InlineKeyboardButton(text="【Network】", callback_data="hori_credit"),
+                    InlineKeyboardButton(text="【Group】", url="https://t.me/+CgTTj7-fLv03NDI1"),
+                    InlineKeyboardButton(text="【Rules】", url="https://telegra.ph/R%E1%B4%9C%CA%9F%E1%B4%87s--R%E1%B4%87%C9%A2%E1%B4%9C%CA%9F%E1%B4%80%E1%B4%9B%C9%AA%E1%B4%8F%C9%B4s-B%CA%8F-H%E1%B4%8F%CA%80%C9%AA%E1%B4%8D%C9%AA%CA%8F%E1%B4%80-F%E1%B4%80%E1%B4%8D%C9%AA%CA%9F%CA%8F-02-23"),
                  ],
                     [InlineKeyboardButton(text="【Back】", callback_data="hori_")]
                 ]
             ),
         )
 
-    elif query.data == "hori_notes":
+    elif query.data == "hori_channel":
         query.message.edit_text(
-            text=f"<b>๏ Setting up notes</b>"
-            f"\nYou can save message/media/audio or anything as notes"
-            f"\nto get a note simply use # at the beginning of a word"
-            f"\n\nYou can also set buttons for notes and filters (refer help menu)",
+            text=f"<b>ʜᴇʟʟᴏ,</b>"
+            f"\nꜱᴏ ʏᴏᴜʀᴇ ɪɴᴛʀᴇꜱᴛᴇᴅ ɪɴ ᴊᴏɪɴɪɴɢ ᴏᴜʀ ᴄʜᴀɴɴᴇʟꜱ...ɪ ꜱᴇᴇ ɪᴍ ɢʟᴀᴅ ♡"
+            f"\nᴏᴜʀ ᴄʜᴀɴɴᴇʟꜱ ᴀʀᴇ ᴄʀᴇᴀᴛᴇᴅ ᴛᴏ ᴘʀᴏᴠɪᴅᴇ ʏᴏᴜ ꜱᴛᴜꜰꜰꜱ ʀᴇʟᴀᴛᴇᴅ ᴛᴏ ᴀɴɪᴍᴇ. ʟɪᴋᴇ ᴍᴇᴍᴇꜱ / ᴀɴɪᴍᴇ ᴇᴛᴄ. ♡"
+            f"\n\nᴄʜᴇᴄᴋ ᴏᴜᴛ ᴏᴜʀ ᴄʜᴀɴɴᴇʟꜱ 👇",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="【Back】", callback_data="hori_")]]
+                [
+                 [
+                    InlineKeyboardButton(text="【Anime】", url="https//t.me/anime_uploadz"),
+                    InlineKeyboardButton(text="【Memes】", url="https://t.me/horimiya_summons"),
+                 ],
+                 [
+                    InlineKeyboardButton(text="【Stickers】", url="https://t.me/Fushigur0_Megumi"),
+                    InlineKeyboardButton(text="【Amv】", url="https://t.me/void_amv"),
+                 ],
+                 [
+                    InlineKeyboardButton(text="【Wallpaper/Icons】", url="https://t.me/hdcoolanime"),
+                 ],
+                 [
+                    InlineKeyboardButton(text="【Back】", callback_data="hori_"),
+                 ]
+                ]
             ),
         )
     elif query.data == "hori_support":
