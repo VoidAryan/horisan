@@ -456,6 +456,7 @@ def hori_about_callback(update, context):
                 ]
             ),
         )
+        
     elif query.data == "hori_support":
         query.message.edit_text(
             text="*๏ Hori san support chats*"
