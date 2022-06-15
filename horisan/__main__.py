@@ -382,14 +382,14 @@ def hori_about_callback(update, context):
                 [
                  [
                     InlineKeyboardButton(text="【ChatGroup】", callback_data="hori_chat"),
-                    InlineKeyboardButton(text="【Channels】", callback_data="hori_notes"),
+                    InlineKeyboardButton(text="【Channels】", callback_data="hori_channel"),
                  ],
                  [
                     InlineKeyboardButton(text="【Our Domain】", callback_data="hori_support"),
                     InlineKeyboardButton(text="【Github】", url="https://github.com/voidxtoxic"),
                  ],
                  [
-                    InlineKeyboardButton(text="【Network】", callback_data="hori_credit"),
+                    InlineKeyboardButton(text="【V๏ɪ፝֟𝔡】✧Network✧", callback_data="hori_network"),
                  ],
                  [
                     InlineKeyboardButton(text="【Home】", callback_data="hori_back"),
@@ -433,19 +433,19 @@ def hori_about_callback(update, context):
             ),
         )
 
-    elif query.data == "hori_notes":
+    elif query.data == "hori_channel":
         query.message.edit_text(
-            text=f"*ʜᴇʟʟᴏ,*"
-            "\n*ꜱᴏ ʏᴏᴜʀᴇ ɪɴᴛʀᴇꜱᴛᴇᴅ ɪɴ ᴊᴏɪɴɪɴɢ ᴏᴜʀ ᴄʜᴀɴɴᴇʟꜱ...ɪ ꜱᴇᴇ ɪᴍ ɢʟᴀᴅ ♡*"
-            "\n*ᴏᴜʀ ᴄʜᴀɴɴᴇʟꜱ ᴀʀᴇ ᴄʀᴇᴀᴛᴇᴅ ᴛᴏ ᴘʀᴏᴠɪᴅᴇ ʏᴏᴜ ꜱᴛᴜꜰꜰꜱ ʀᴇʟᴀᴛᴇᴅ ᴛᴏ ᴀɴɪᴍᴇ. ʟɪᴋᴇ ᴍᴇᴍᴇꜱ / ᴀɴɪᴍᴇ ᴇᴛᴄ. ♡*"
-            "\n\n*ᴄʜᴇᴄᴋ ᴏᴜᴛ ᴏᴜʀ ᴄʜᴀɴɴᴇʟꜱ 👇*",
+            text=f"ʜᴇʟʟᴏ,"
+            "\nꜱᴏ ʏᴏᴜʀᴇ ɪɴᴛʀᴇꜱᴛᴇᴅ ɪɴ ᴊᴏɪɴɪɴɢ ᴏᴜʀ ᴄʜᴀɴɴᴇʟꜱ...ɪ ꜱᴇᴇ ɪᴍ ɢʟᴀᴅ ♡"
+            "\nᴏᴜʀ ᴄʜᴀɴɴᴇʟꜱ ᴀʀᴇ ᴄʀᴇᴀᴛᴇᴅ ᴛᴏ ᴘʀᴏᴠɪᴅᴇ ʏᴏᴜ ꜱᴛᴜꜰꜰꜱ ʀᴇʟᴀᴛᴇᴅ ᴛᴏ ᴀɴɪᴍᴇ. ʟɪᴋᴇ ᴍᴇᴍᴇꜱ / ᴀɴɪᴍᴇ ᴇᴛᴄ. ♡"
+            "\n\nᴄʜᴇᴄᴋ ᴏᴜᴛ ᴏᴜʀ ᴄʜᴀɴɴᴇʟꜱ 👇",
             parse_mode=ParseMode.HTML,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                    InlineKeyboardButton(text="【Group】", url="https://t.me/+CgTTj7-fLv03NDI1"),
-                    InlineKeyboardButton(text="【Rules】", url="https://telegra.ph/R%E1%B4%9C%CA%9F%E1%B4%87s--R%E1%B4%87%C9%A2%E1%B4%9C%CA%9F%E1%B4%80%E1%B4%9B%C9%AA%E1%B4%8F%C9%B4s-B%CA%8F-H%E1%B4%8F%CA%80%C9%AA%E1%B4%8D%C9%AA%CA%8F%E1%B4%80-F%E1%B4%80%E1%B4%8D%C9%AA%CA%9F%CA%8F-02-23"),
+                    InlineKeyboardButton(text="【Anime】", url="https://t.me/anime_uploadz"),
+                    InlineKeyboardButton(text="【Memes】", url="https://t.me/horimiya_summons"),
                  ],
                     [InlineKeyboardButton(text="【Back】", callback_data="hori_")]
                 ]
@@ -454,15 +454,15 @@ def hori_about_callback(update, context):
         
     elif query.data == "hori_support":
         query.message.edit_text(
-            text="*๏ Hori san support chats*"
-            "\nJoin My Support Group/Channel for see or report a problem on Hori.",
+            text="ʜᴏʀɪ ꜱᴜᴘᴘᴏʀᴛ | ᴜᴘᴅᴀᴛᴇꜱ ™"
+            "\nᴊᴏɪɴ ᴍʏ ꜱᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ ᴛᴏ ʀᴇᴘᴏʀᴛ ᴀ ᴘʀᴏʙʟᴇᴍ ᴏɴ ʜᴏʀɪ. ʏᴏᴜ ᴄᴀɴ ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇꜱ ᴀꜱᴡᴇʟʟ ꜱᴏ ʏᴏᴜ ɢᴇᴛ ɴᴏᴛɪꜰɪᴇᴅ ᴀʙᴏᴜᴛ ʜᴏʀɪ ᴀɴᴅ ɪᴛꜱ ꜰᴜᴛᴜʀᴇ ᴜᴘᴅᴀᴛᴇꜱ ᴀɴᴅ ᴀʟʟ 💫",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="Support", url="t.me/kyoukoxsupport"),
+                        InlineKeyboardButton(text="【Support】", url="t.me/kyoukoxsupport"),
                         InlineKeyboardButton(
-                            text="Updates", url="https://t.me/hori_x_updates"
+                            text="【Updates】", url="https://t.me/hori_x_updates"
                         ),
                     ],
                     [
@@ -472,19 +472,19 @@ def hori_about_callback(update, context):
             ),
         )
 
-    elif query.data == "hori_credit":
+    elif query.data == "hori_network":
         query.message.edit_text(
-            text=f"๏ Credis for Hori\n"
-            "\nHere Developers Making And Give Inspiration For Made The HoriRobot",
+            text=f"[【V๏ɪ፝֟𝔡】✧Network✧](https://t.me/voidxnetwork)\n"
+            "\n◈ Void is an anime based Community with a motive to spread love and peace around telegram. Go through the channel and join the Community if it draws your attention. ◈",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            text="VOID", url="https://github.com/voidxtoxic"
+                            text="【Network】", url="https://t.me/voidxnetwork"
                         ),
                         InlineKeyboardButton(
-                            text="Void (telegram)", url="https://t.me/voidxtoxic"
+                            text="【Bot】", url="https://t.me/voidxnetworkbot"
                         ),
                     ],
                     [
