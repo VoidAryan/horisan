@@ -382,7 +382,7 @@ def hori_about_callback(update, context):
                 [
                  [
                     InlineKeyboardButton(text="【ChatGroup】", callback_data="hori_admin"),
-                    InlineKeyboardButton(text="Notes", callback_data="hori_notes"),
+                    InlineKeyboardButton(text="【Channels】", callback_data="hori_notes"),
                  ],
                  [
                     InlineKeyboardButton(text="【Our Domain】", callback_data="hori_support"),
@@ -423,7 +423,13 @@ def hori_about_callback(update, context):
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="【Back】", callback_data="hori_")]]
+                [
+                    [
+                    InlineKeyboardButton(text="【Our Domain】", callback_data="hori_support"),
+                    InlineKeyboardButton(text="【Network】", callback_data="hori_credit"),
+                 ],
+                    [InlineKeyboardButton(text="【Back】", callback_data="hori_")]
+                ]
             ),
         )
 
