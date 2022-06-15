@@ -440,19 +440,14 @@ def hori_about_callback(update, context):
             "\n*ᴏᴜʀ ᴄʜᴀɴɴᴇʟꜱ ᴀʀᴇ ᴄʀᴇᴀᴛᴇᴅ ᴛᴏ ᴘʀᴏᴠɪᴅᴇ ʏᴏᴜ ꜱᴛᴜꜰꜰꜱ ʀᴇʟᴀᴛᴇᴅ ᴛᴏ ᴀɴɪᴍᴇ. ʟɪᴋᴇ ᴍᴇᴍᴇꜱ / ᴀɴɪᴍᴇ ᴇᴛᴄ. ♡*"
             "\n\n*ᴄʜᴇᴄᴋ ᴏᴜᴛ ᴏᴜʀ ᴄʜᴀɴɴᴇʟꜱ 👇*",
             parse_mode=ParseMode.HTML,
+            disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
-                 [
-                    InlineKeyboardButton(text="【Anime】", url="https//t.me/anime_uploadz"),
-                    InlineKeyboardButton(text="【Memes】", url="https://t.me/horimiya_summons"),
+                    [
+                    InlineKeyboardButton(text="【Group】", url="https://t.me/+CgTTj7-fLv03NDI1"),
+                    InlineKeyboardButton(text="【Rules】", url="https://telegra.ph/R%E1%B4%9C%CA%9F%E1%B4%87s--R%E1%B4%87%C9%A2%E1%B4%9C%CA%9F%E1%B4%80%E1%B4%9B%C9%AA%E1%B4%8F%C9%B4s-B%CA%8F-H%E1%B4%8F%CA%80%C9%AA%E1%B4%8D%C9%AA%CA%8F%E1%B4%80-F%E1%B4%80%E1%B4%8D%C9%AA%CA%9F%CA%8F-02-23"),
                  ],
-                 [
-                    InlineKeyboardButton(text="【Stickers】", url="https://t.me/Fushigur0_Megumi"),
-                    InlineKeyboardButton(text="【Wallpaper】", url="https://t.me/hdcoolanime"),
-                 ],
-                 [
-                    InlineKeyboardButton(text="【Back】", callback_data="hori_"),
-                 ]
+                    [InlineKeyboardButton(text="【Back】", callback_data="hori_")]
                 ]
             ),
         )
