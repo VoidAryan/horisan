@@ -474,7 +474,7 @@ def hori_about_callback(update, context):
 
     elif query.data == "hori_network":
         query.message.edit_text(
-            text=f"[【V๏ɪ፝֟𝔡】✧Network✧](https://t.me/voidxnetwork)\n"
+            text=f"【V๏ɪ፝֟𝔡】✧Network✧\n"
             "\n◈ Void is an anime based Community with a motive to spread love and peace around telegram. Go through the channel and join the Community if it draws your attention. ◈",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
