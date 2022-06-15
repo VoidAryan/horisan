@@ -1,7 +1,7 @@
 from io import BytesIO
 from time import sleep
 
-from telegram import TelegramError, Update, run_async
+from telegram import TelegramError, Update
 from telegram.error import BadRequest, Unauthorized
 from telegram.ext import (
     CallbackContext,
@@ -12,7 +12,7 @@ from telegram.ext import (
 
 import horisan.modules.sql.users_sql as sql
 from horisan import DEV_USERS, LOGGER, OWNER_ID, dispatcher
-from horisan.modules.helper_funcs.chat_status import dev_plus, sudo_plus
+from horisan.modules.helper_funcs.chat_status import dev_plus, sudo_plus, run_async
 from horisan.modules.sql.users_sql import get_all_users
 
 USERS_GROUP = 4
