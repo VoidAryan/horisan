@@ -448,10 +448,7 @@ def hori_about_callback(update, context):
                  ],
                  [
                     InlineKeyboardButton(text="【Stickers】", url="https://t.me/Fushigur0_Megumi"),
-                    InlineKeyboardButton(text="【Amv】", url="https://t.me/void_amv"),
-                 ],
-                 [
-                    InlineKeyboardButton(text="【Wallpaper/Icons】", url="https://t.me/hdcoolanime"),
+                    InlineKeyboardButton(text="【Wallpaper】", url="https://t.me/hdcoolanime"),
                  ],
                  [
                     InlineKeyboardButton(text="【Back】", callback_data="hori_"),
