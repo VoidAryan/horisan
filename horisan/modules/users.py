@@ -1,7 +1,7 @@
 from io import BytesIO
 from time import sleep
 
-from telegram import TelegramError, Update
+from telegram import TelegramError, Update, run_async
 from telegram.error import BadRequest, Unauthorized
 from telegram.ext import (
     CallbackContext,
@@ -50,7 +50,7 @@ def get_user_id(username):
     return None
 
 
-@dev_plus
+@run_async
 def broadcast(update: Update, context: CallbackContext):
     to_send = update.effective_message.text.split(None, 1)
 
