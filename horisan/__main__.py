@@ -811,13 +811,13 @@ def main():
             dispatcher.bot.send_video(
                 f"@{SUPPORT_CHAT}",
                 "https://telegra.ph/file/c458924bf40c213062dd2.mp4",     #@RyuIsGod
-                "I Am Up @VoidAryan!",
+                caption:f"I Am Up @VoidAryan!",
                 parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
                   [                  
                        InlineKeyboardButton(
-                             text="[Start Me]",
+                             text="• ꜱᴛᴀʀᴛ ʜᴏʀɪ ꜱᴀɴ ɪɴ ᴘᴍ •",
                              url="https://t.me/HoriXProBot?start=")
                      ] 
                 ]
