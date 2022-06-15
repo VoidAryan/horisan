@@ -382,7 +382,7 @@ def hori_about_callback(update, context):
                 [
                  [
                     InlineKeyboardButton(text="【ChatGroup】", callback_data="hori_chat"),
-                    InlineKeyboardButton(text="【Channels】", callback_data="hori_channel"),
+                    InlineKeyboardButton(text="【Channels】", callback_data="hori_notes"),
                  ],
                  [
                     InlineKeyboardButton(text="【Our Domain】", callback_data="hori_support"),
@@ -433,7 +433,7 @@ def hori_about_callback(update, context):
             ),
         )
 
-    elif query.data == "hori_channel":
+    elif query.data == "hori_notes":
         query.message.edit_text(
             text=f"<b>ʜᴇʟʟᴏ,</b>"
             f"\nꜱᴏ ʏᴏᴜʀᴇ ɪɴᴛʀᴇꜱᴛᴇᴅ ɪɴ ᴊᴏɪɴɪɴɢ ᴏᴜʀ ᴄʜᴀɴɴᴇʟꜱ...ɪ ꜱᴇᴇ ɪᴍ ɢʟᴀᴅ ♡"
