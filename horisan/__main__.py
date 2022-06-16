@@ -728,7 +728,6 @@ def get_settings(update: Update, context: CallbackContext):
                 "https://telegra.ph/file/250fa84d9d9abfc05904b.jpg",
                 caption=f"Baka 💫 contact me in PM to get help",
                 reply_markup=InlineKeyboardMarkup(
-                    [
                         [
                             text="【Settings】",
                                 url="t.me/{}?start=stngs_{}".format(
