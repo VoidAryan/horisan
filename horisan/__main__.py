@@ -540,7 +540,7 @@ def get_help(update: Update, context: CallbackContext):
         if len(args) >= 2 and any(args[1].lower() == x for x in HELPABLE):
             module = args[1].lower()
             update.effective_message.reply_photo(
-                "https://telegra.ph/file/a54dd39eef75d3870bad4.jpg",
+                "https://telegra.ph/file/250fa84d9d9abfc05904b.jpg",
                 caption=f"Baka 💫 contact me in PM to get help of {module.capitalize()}",
                 reply_markup=InlineKeyboardMarkup(
                     [
@@ -557,7 +557,7 @@ def get_help(update: Update, context: CallbackContext):
             )
             return
         update.effective_message.reply_photo(
-            "https://telegra.ph/file/a54dd39eef75d3870bad4.jpg",
+            "https://telegra.ph/file/250fa84d9d9abfc05904b.jpg",
             caption=f"Baka 💫 contact me in PM to get the list of possible commands.",
             reply_markup=InlineKeyboardMarkup(
                 [
@@ -727,13 +727,16 @@ def get_settings(update: Update, context: CallbackContext):
             text = "Click here to get this chat's settings, as well as yours."
             msg.reply_text(
                 text,
+                update.effective_message.reply_photo(
+                "https://telegra.ph/file/250fa84d9d9abfc05904b.jpg",
+                caption=f"Baka 💫 contact me in PM to get help of {module.capitalize()}",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
                             InlineKeyboardButton(
-                                text="【Settings】",
-                                url="t.me/{}?start=stngs_{}".format(
-                                    context.bot.username, chat.id
+                                text="【HELP】",
+                                url="t.me/{}?start=ghelp_{}".format(
+                                    context.bot.username, module
                                 ),
                             )
                         ]
