@@ -726,14 +726,13 @@ def get_settings(update: Update, context: CallbackContext):
         if is_user_admin(chat, user.id):
             update.effective_message.reply_photo(
                 "https://telegra.ph/file/250fa84d9d9abfc05904b.jpg",
-                caption=f"Baka 💫 contact me in PM to get help of {module.capitalize()}",
+                caption=f"Baka 💫 contact me in PM to get help",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton(
-                                text="【HELP】",
-                                url="t.me/{}?start=ghelp_{}".format(
-                                    context.bot.username, module
+                            text="【Settings】",
+                                url="t.me/{}?start=stngs_{}".format(
+                                    context.bot.username, chat.id
                                 ),
                             )
                         ]
