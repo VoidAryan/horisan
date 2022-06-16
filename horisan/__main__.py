@@ -732,8 +732,7 @@ def get_settings(update: Update, context: CallbackContext):
                             text="【Settings】",
                                 url="t.me/{}?start=stngs_{}".format(
                                     context.bot.username, chat.id
-                                ),
-                            )
+                                )
                         ]
                     ]
                 ),
