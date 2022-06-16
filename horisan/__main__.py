@@ -724,15 +724,18 @@ def get_settings(update: Update, context: CallbackContext):
     # ONLY send settings in PM
     if chat.type != chat.PRIVATE:
         if is_user_admin(chat, user.id):
-            update.effective_message.reply_photo(
-                "https://telegra.ph/file/250fa84d9d9abfc05904b.jpg",
-                caption=f"Baka 💫 contact me in PM to get help",
+            text = "Click here to get this chat's settings, as well as yours."
+            msg.reply_text(
+                text,
                 reply_markup=InlineKeyboardMarkup(
+                    [
                         [
-                            text="【Settings】",
+                            InlineKeyboardButton(
+                                text="【Settings】",
                                 url="t.me/{}?start=stngs_{}".format(
                                     context.bot.username, chat.id
                                 ),
+                            )
                         ]
                     ]
                 ),
