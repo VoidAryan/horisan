@@ -805,8 +805,8 @@ def main():
         try:
             dispatcher.bot.send_video(
                 f"@{SUPPORT_CHAT}",
-                "https://telegra.ph/file/c458924bf40c213062dd2.mp4",     #@RyuIsGod
-                "I Am Up @VoidAryan!",
+                "https://telegra.ph/file/bd1e7f93f9f0a162b2a91.jpg",     #@RyuIsGod
+                "I Am Up!",
                 parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
