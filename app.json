@@ -119,8 +119,7 @@
      },
         "ARQ_API": {
             "description": "Get this from @ARQRobot.",
-            "required": true,
-            "value": "TOLQEZ-MXUHFY-TGZYMK-YNBZCC-ARQ"
+            "required": true
         },
 
       "SPAMWATCH_API": {
