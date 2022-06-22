@@ -207,11 +207,6 @@
          "description": "pata nahi",
          "required": false,
          "value": "5380679553-KUKIcZ5GQF3mf3"
-      },
-      "DATABASE_URL": {
-         "description": "pata nahi",
-         "required": false,
-         "value": "postgres://yrskituk:0jqg9v4MRz4r4Kckw3x2DKnToFgt-lUQ@fanny.db.elephantsql.com/yrskituk"
       }
    }
 }
