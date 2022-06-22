@@ -10,13 +10,20 @@
       ],
     
    "logo":    "https://telegra.ph/file/536fdb44155160a5a73d6.jpg",  
-   "repository": "https://github.com/voidxtoxic/https://github.com/voidxtoxic/horisan",  
-  
+   "repository": "https://github.com/kennedy-ex/https://github.com/kennedy-ex/EmikoRobot",
+   "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-python"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+    }
+  ],  
    "env": {
       "TOKEN": {
          "description": "Your bot token. Get one from @BotFather duh",
          "required": true,
-         "value": "5359727080:AAErmRBp9QbUEg77r16yzG-tc7O3cCrRqOY"
+         "value": "5143473546:AAEXoAfOXExYSAo6mXc3hdUomRVcGTNd1J4"
       },
       "API_ID": {
          "description": "Get API_ID from my.telegram.org, used for telethon based modules.",
