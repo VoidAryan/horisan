@@ -13,6 +13,7 @@ feedparser
 faker
 fontTools
 hachoir
+httpx
 pykeyboard
 pynewtonmath
 ffmpeg-python
