@@ -25,7 +25,9 @@ psutil
 aiohttp
 Pillow
 CurrencyConverter
+httpx
 googletrans==4.0.0rc1
+httpx
 google-trans-new
 jikanpy
 speedtest-cli
@@ -48,7 +50,9 @@ TgCrypto
 pyrogram==1.4.9
 
 git+https://github.com/Sorrybabe/downloader
+httpx
 youtube_search_python==1.6.4
+httpx
 youtube_search
 lyrics_extractor
 asyncio
