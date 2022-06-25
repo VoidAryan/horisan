@@ -36,7 +36,6 @@ markdown2
 telethon
 telegraph
 heroku3
-httpx==0.13.3
 spamwatch
 alphabet_detector
 pyrate-limiter
@@ -90,4 +89,3 @@ pytimeparse
 PyYAML>=5.3.1
 numpy
 wikipedia
-httpx>=0.14.2
