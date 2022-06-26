@@ -89,3 +89,4 @@ pytimeparse
 PyYAML>=5.3.1
 numpy
 wikipedia
+httpx
