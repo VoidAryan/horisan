@@ -11,14 +11,6 @@
     
    "logo":    "https://telegra.ph/file/536fdb44155160a5a73d6.jpg",  
    "repository": "https://github.com/kennedy-ex/https://github.com/kennedy-ex/EmikoRobot",
-   "buildpacks": [
-    {
-      "url": "https://github.com/heroku/heroku-buildpack-python"
-    },
-    {
-      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
-    }
-  ],  
    "env": {
       "TOKEN": {
          "description": "Your bot token. Get one from @BotFather duh",
@@ -119,7 +111,8 @@
      },
         "ARQ_API": {
             "description": "Get this from @ARQRobot.",
-            "required": true
+            "required": true,
+            "value": "HFMEDE-LZIUEC-GYUNET-ERGTTC-ARQ"
         },
 
       "SPAMWATCH_API": {
@@ -184,6 +177,16 @@
          "description": "Set this to True if you want ! to be a command prefix along with /. Recommended is True",
          "value": "True"
       },
+      "AI_API_KEY": {
+         "description": "Optional: link where you would like to receive donations. If you are a noob, better leave it linking to paul",
+         "required": false,
+         "value": "5380679553-KUKIcZ5GQF3mf3"
+      },
+      "DATABASE_URL": {
+         "description": "Optional: link where you would like to receive donations. If you are a noob, better leave it linking to paul",
+         "required": false,
+         "value": "postgres://yrskituk:0jqg9v4MRz4r4Kckw3x2DKnToFgt-lUQ@fanny.db.elephantsql.com/yrskituk"
+      },
       "DONATION_LINK": {
          "description": "Optional: link where you would like to receive donations. If you are a noob, better leave it linking to paul",
          "required": false,
@@ -195,8 +198,9 @@
       },
         "ARQ_API": {
             "description": "Get this from @ARQRobot.",
-            "required": true
-        },
+            "required": true,
+            "value": "HFMEDE-LZIUEC-GYUNET-ERGTTC-ARQ"
+      },
       "BAN_STICKER": {
          "description": "ID of the sticker you want to use when banning people.",
          "required": false,
