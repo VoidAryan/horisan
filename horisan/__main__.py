@@ -812,8 +812,8 @@ def main():
                 [
                   [                  
                        InlineKeyboardButton(
-                             text="【ꜱᴛᴀʀᴛ ʜᴏʀɪ ꜱᴀɴ ɪɴ ᴘᴍ】",
-                             url="https://t.me/HoriXProBot?start=")
+                             text="【trial】",
+                             callback_data="hori_support")
                      ] 
                 ]
             ),  
