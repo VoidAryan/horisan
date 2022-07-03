@@ -21,8 +21,8 @@ def void(update: Update, context: CallbackContext):
             reply_markup=InlineKeyboardMarkup(
             [
                 [
-                InlineKeyboardButton(text="【Usertag】", url="https://t.me/void_network/103"),
-                InlineKeyboardButton(text="【Owner Sama】", url="https://t.me/voidxtoxic")
+                InlineKeyboardButton(text="【Usertag】", url="https://t.me/VoidxNetwork/3"),
+                InlineKeyboardButton(text="【Index】", url="https://t.me/VoidxNetwork/15")
                 ],
                 [InlineKeyboardButton(text="【V๏ɪ፝֟𝔡】Network", url="https://t.me/voidxnetwork")]
             ]
