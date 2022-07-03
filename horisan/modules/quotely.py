@@ -26,7 +26,7 @@ from pyrogram.types import Message
 from horisan import pbot as app, arq
 from horisan.utils.errors import capture_err
 
-__mod_name__ = "Qᴜᴏᴛʟʏ"
+__mod_name__ = "【Qᴜᴏᴛʟʏ】"
 __help__ = """
 /q - To quote a message.
 /q [INTEGER] - To quote more than 1 messages.
@@ -67,7 +67,7 @@ async def quotly_func(client, message: Message):
         return await message.reply_text(
             "Replied message has no text, can't quote it."
         )
-    m = await message.reply_text("Quoting Messages")
+    m = await message.reply_text("Quoting Messages By @HoriXProbot")
     if len(message.command) < 2:
         messages = [message.reply_to_message]
 
