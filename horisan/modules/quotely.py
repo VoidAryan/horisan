@@ -23,8 +23,8 @@ from traceback import format_exc
 from pyrogram import filters
 from pyrogram.types import Message
 
-from DarlingRobot import pbot as app, arq
-from DarlingRobot.utils.errors import capture_err
+from horisan import pbot as app, arq
+from horisan.utils.errors import capture_err
 
 __mod_name__ = "Qᴜᴏᴛʟʏ"
 __help__ = """
