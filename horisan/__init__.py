@@ -7,7 +7,7 @@ import asyncio
 import time
 import spamwatch
 import telegram.ext as tg
-
+from horisan.services.quoteapi import Quotly
 from inspect import getfullargspec
 from aiohttp import ClientSession
 from Python_ARQ import ARQ
@@ -20,6 +20,8 @@ from pyrogram.types import Chat, User
 from ptbcontrib.postgres_persistence import PostgresPersistence
 
 StartTime = time.time()
+
+quotly = Quotly()
 
 def get_user_list(__init__, key):
     with open("{}/horisan/{}".format(os.getcwd(), __init__), "r") as json_file:
