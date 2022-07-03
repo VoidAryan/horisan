@@ -14,10 +14,10 @@ from search_engine_parser import GoogleSearch
 from horisan import BOT_ID, OWNER_ID, ARQ_API_URL, ARQ_API_KEY
 from horisan import pbot
 
-ARQ_API = "WZQUBA-PFAZQJ-OMIINH-MIVHYM-ARQ"
-ARQ_API_KEY = "WZQUBA-PFAZQJ-OMIINH-MIVHYM-ARQ"
+ARQ_API = "TOLQEZ-MXUHFY-TGZYMK-YNBZCC-ARQ"
+ARQ_API_KEY = "TOLQEZ-MXUHFY-TGZYMK-YNBZCC-ARQ"
 SUDOERS = OWNER_ID
-ARQ_API_URL = "https://thearq.tech"
+ARQ_API_URL = "http://arq.hamker.dev"
 
 # Aiohttp Client
 print("[INFO]: INITIALZING AIOHTTP SESSION")
