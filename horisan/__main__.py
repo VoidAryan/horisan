@@ -803,16 +803,16 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.send_photo(
+            dispatcher.bot.send_animation(
                 f"@{SUPPORT_CHAT}",
-                "https://telegra.ph/file/2e59a93ffd0dcdeb57bc1.jpg",     #@RyuIsGod
-                "I Am Up!",
+                "https://telegra.ph/file/92bb7ad57262410430bc6.mp4",     #@RyuIsGod
+                "ɪ ᴀᴍ ᴀʟɪᴠᴇ ᴠᴏɪᴅ ꜱᴀᴍᴀ 🥀",
                 parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
                   [                  
                        InlineKeyboardButton(
-                             text="• ꜱᴛᴀʀᴛ ʜᴏʀɪ ꜱᴀɴ ɪɴ ᴘᴍ •",
+                             text="【ꜱᴛᴀʀᴛ ʜᴏʀɪ ꜱᴀɴ ɪɴ ᴘᴍ】",
                              url="https://t.me/HoriXProBot?start=")
                      ] 
                 ]
