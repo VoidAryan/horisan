@@ -9,6 +9,7 @@ python-telegram-bot==13.13
 SQLAlchemy==1.4.35
 psycopg2-binary
 aiofiles
+ffmpeg
 feedparser
 faker
 fontTools
