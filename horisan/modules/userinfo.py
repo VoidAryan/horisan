@@ -470,7 +470,7 @@ def stats(update: Update, context: CallbackContext):
         reply_markup=InlineKeyboardMarkup(
             [
                     InlineKeyboardButton(
-                        "♢ System Stats ♢", callback_data="system_stats"
+                        "♢ Updates ♢", url="t.me/hori_x_updates"
                     ),
                 ],
         ),
