@@ -158,7 +158,7 @@ __help__ = """
 × try afk whenever going offline or away from group chat! 
 × person tagging you will get notified that you are unavailable 
 
-× command can be used as : /afk or brb"""
+× command can be used as : /afk or afk"""
 
 __mod_name__ = "【ᴀꜰᴋ】"
 __command_list__ = ["afk"]
