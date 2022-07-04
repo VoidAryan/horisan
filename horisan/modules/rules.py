@@ -115,7 +115,7 @@ def clear_rules(update: Update, context: CallbackContext):
 
 
 def __stats__():
-    return f"۞ ᴄʜᴀᴛs  ʜᴀᴠᴇ  ʀᴜʟᴇs  sᴇᴛ : `{sql.num_chats()}`\n"
+    return f"۞ ᴄʜᴀᴛs  ʜᴀᴠᴇ  ʀᴜʟᴇs  sᴇᴛ : {sql.num_chats()}\n"
 
 
 def __import_data__(chat_id, data):
