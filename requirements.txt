@@ -16,7 +16,6 @@ fontTools
 hachoir
 pykeyboard
 pynewtonmath
-ffmpeg-location
 ffmpeg-python
 spongemock
 zalgo-text
