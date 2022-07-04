@@ -162,7 +162,7 @@ def __user_info__(user_id):
 
 
 def __stats__():
-    return f"۞ ᴜsᴇʀs : {sql.num_users()} | ۞ ᴄʜᴀᴛs : {sql.num_chats()}\n"
+    return f"۞ ᴜsᴇʀs : {sql.num_users()} |  ۞ ᴄʜᴀᴛs : {sql.num_chats()}\n"
 
 
 def __migrate__(old_chat_id, new_chat_id):
