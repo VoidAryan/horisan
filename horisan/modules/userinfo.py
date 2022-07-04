@@ -463,7 +463,7 @@ def stats(update: Update, context: CallbackContext):
         [mod.__stats__() for mod in STATS]
     )
     result = re.sub(r"(\d+)", r"<code>\1</code>", stats)
-    result += "\n\n<b>--[【POWERED BY VOID】](https://t.me/voidxnetwork)--</b>"
+    result += "\n\n<b>--【POWERED BY VOID】--</b>"
     update.effective_message.reply_photo(
         HORI_IMG, 
         result, 
@@ -479,7 +479,7 @@ def stats(update: Update, context: CallbackContext):
                 ],
                 [
                     InlineKeyboardButton(
-                        "[🔱 CLOSE 🔱]", callback_data="delete_"
+                        "♢ CLOSE ♢", callback_data="delete_"
                     ),
                 ],
             ],
