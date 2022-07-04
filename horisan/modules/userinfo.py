@@ -469,10 +469,20 @@ def stats(update: Update, context: CallbackContext):
         result, 
         reply_markup=InlineKeyboardMarkup(
             [
+                [
                     InlineKeyboardButton(
-                        "♢ Updates ♢", url="t.me/hori_x_updates"
+                        "Updates", url="https://t.me/hori_x_updates"
+                    ),
+                    InlineKeyboardButton(
+                        "Support", url="https://t.me/kyoukoxsupport"
                     ),
                 ],
+                [
+                    InlineKeyboardButton(
+                        "♢ CLOSE ♢", callback_data="delete_"
+                    ),
+                ],
+            ],
         ),
         parse_mode=ParseMode.HTML,
     )
