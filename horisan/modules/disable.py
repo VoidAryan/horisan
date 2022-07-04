@@ -155,7 +155,7 @@ if is_module_loaded(FILENAME):
         args = context.args
         chat = update.effective_chat
         if len(args) >= 1:
-            disable_module = "SaitamaRobot.modules." + args[0].rsplit(".", 1)[0]
+            disable_module = "horisan.modules." + args[0].rsplit(".", 1)[0]
 
             try:
                 module = importlib.import_module(disable_module)
@@ -229,7 +229,7 @@ if is_module_loaded(FILENAME):
         chat = update.effective_chat
 
         if len(args) >= 1:
-            enable_module = "SaitamaRobot.modules." + args[0].rsplit(".", 1)[0]
+            enable_module = "horisan.modules." + args[0].rsplit(".", 1)[0]
 
             try:
                 module = importlib.import_module(enable_module)
@@ -308,7 +308,7 @@ if is_module_loaded(FILENAME):
         )
 
     def __stats__():
-        return f"× {sql.num_disabled()} disabled items, across {sql.num_chats()} chats."
+        return f"۞ ᴅɪsᴀʙʟᴇᴅ  ɪᴛᴇᴍs : {sql.num_disabled()} | ᴄʜᴀᴛs : {sql.num_chats()}\n"
 
     def __migrate__(old_chat_id, new_chat_id):
         sql.migrate_chat(old_chat_id, new_chat_id)
