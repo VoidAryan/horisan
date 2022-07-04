@@ -47,7 +47,7 @@ def send_rules(update, chat_id, from_pm=False):
             user.id,
             text,
             parse_mode=ParseMode.MARKDOWN,
-            disable_web_page_preview=True,
+            disable_web_page_preview=False,
         )
     elif from_pm:
         bot.send_message(
