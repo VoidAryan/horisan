@@ -1,13 +1,14 @@
 from io import BytesIO
 from time import sleep
 
-from telegram import TelegramError, Update, run_async
+from telegram import TelegramError, Update
 from telegram.error import BadRequest, Unauthorized
 from telegram.ext import (
     CallbackContext,
     CommandHandler,
     Filters,
     MessageHandler,
+    run_async,
 )
 
 import horisan.modules.sql.users_sql as sql
