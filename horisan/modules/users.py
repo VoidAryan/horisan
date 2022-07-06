@@ -1,7 +1,7 @@
 from io import BytesIO
 from time import sleep
 
-from telegram import TelegramError, Update
+from telegram import TelegramError, Update, run_async
 from telegram.error import BadRequest, Unauthorized
 from telegram.ext import (
     CallbackContext,
