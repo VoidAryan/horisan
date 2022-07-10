@@ -230,10 +230,10 @@ else:
         sw = None
         LOGGER.warning("Can't connect to SpamWatch!")
 
+session_name = TOKEN.split(":")[0]        
 pgram = Client(session_name, api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 
 from horisan.modules.sql import SESSION
-pgram = Client(session_name, api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 
 defaults = tg.Defaults(run_async=True)
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
