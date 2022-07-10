@@ -18,7 +18,7 @@ from telegram import __version__
 from telegram.error import BadRequest
 from telegram.ext import (CallbackContext, CallbackQueryHandler, CommandHandler,
                           Filters, MessageHandler)
-from horisan.utils.helpers import mention_html
+from telegram.utils.helpers import mention_html
 import horisan.modules.sql.users_sql as sql
 from horisan import (
     OWNER_ID,
