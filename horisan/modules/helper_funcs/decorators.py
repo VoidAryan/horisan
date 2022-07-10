@@ -175,4 +175,4 @@ class horiHandler:
 horicmd = horiHandler(d).command
 horimsg = horiHandler(d).message
 horicallback = horiHandler(d).callbackquery
-horinline = horiHandler(d).inlinequery
+Horinline = horiHandler(d).inlinequery
