@@ -1,6 +1,7 @@
 future
 emoji
 lxml
+uuid
 wget
 gtts
 beautifulsoup4
