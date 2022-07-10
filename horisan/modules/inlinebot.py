@@ -18,9 +18,9 @@ from telegram import __version__
 from telegram.error import BadRequest
 from telegram.ext import (CallbackContext, CallbackQueryHandler, CommandHandler,
                           Filters, MessageHandler)
-from telegram.utils.helpers import mention_html
-import AsukaRobot.modules.sql.users_sql as sql
-from AsukaRobot import (
+from horisan.utils.helpers import mention_html
+import horisan.modules.sql.users_sql as sql
+from horisan import (
     OWNER_ID,
     DRAGONS,
     DEMONS,
@@ -30,9 +30,9 @@ from AsukaRobot import (
     pgram,
     sw, LOGGER
 )
-from AsukaRobot.modules.helper_funcs.misc import article
-from AsukaRobot.modules.helper_funcs.decorators import Asukainline
-from AsukaRobot.modules.sudoers import bot_sys_stats as bss
+from horisan.modules.helper_funcs.misc import article
+from horisan.modules.helper_funcs.decorators import Asukainline
+from horisan.modules.sudoers import bot_sys_stats as bss
 
 
 def remove_prefix(text, prefix):
