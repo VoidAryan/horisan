@@ -53,50 +53,50 @@ def inlinequery(update: Update, _) -> None:
         {
             "title": "O W N E R",
             "description": "He's Creator Of Me !",
-            "message_text": "Click the button below to get the links.",
+            "message_text": "Link to my owner sama! 👑",
             "thumb_urL": "https://telegra.ph/file/40d4f0659dd7468ae376a.jpg",
             "keyboard": ".void",
         },
          {
-            "title": "Anime Cruise",
-            "description": "Get Anime Channel Link",
-            "message_text": "Click the button below to get the links.",
-            "thumb_urL": "https://telegra.ph/file/941e6d601c37c3ddf2925.jpg",
+            "title": "Anime Channel",
+            "description": "Anime Providing Channel For Watching Anime",
+            "message_text": "Click the button below to Watch Anime in our channel.",
+            "thumb_urL": "https://telegra.ph/file/6638fd2dd521bf1ee6e2b.jpg",
             "keyboard": ".anime",
         },
         {
-            "title": "Asuka",
-            "description": "AsukaRobot Inline",
-            "message_text": "Click the button below to get the Asuka Inline.",
-            "thumb_urL": "https://telegra.ph/file/93b575c4c4da42d9fa4b2.jpg",
-            "keyboard": ".asuka",
+            "title": "Kyouko • Hori",
+            "description": "Kyouko Hori Inline...",
+            "message_text": "Click the button below to get the Kyouko Inline.",
+            "thumb_urL": "https://telegra.ph/file/0eb9add961031411f5312.jpg",
+            "keyboard": ".hori",
         },
         {
-            "title": "Kaizuryu",
-            "description": "The Kaizuryu",
-            "message_text": "Click the button below to get the Kaizuryu Network Info.",
-            "thumb_urL": "https://telegra.ph/file/5daac1fcf88ca6f177ef4.jpg",
-            "keyboard": ".kaizuryu",
+            "title": "【V๏ɪ፝֟𝔡】◈Network◈",
+            "description": "Kyouko Works Under 【V๏ɪ፝֟𝔡】◈Network◈",
+            "message_text": "Click the button to check out 【V๏ɪ፝֟𝔡】◈Network◈",
+            "thumb_urL": "https://telegra.ph/file/2d49d53bace654813fa37.jpg",
+            "keyboard": ".network",
         },
         {
-            "title": "Account info on Asuka",
-            "description": "Look up a Telegram account in Asuka database",
-            "message_text": "Click the button below to look up a person in Asuka database using their Telegram ID",
-            "thumb_urL": "https://telegra.ph/file/3c93a66c6751088a00fbd.jpg",
+            "title": "Account info on Hori",
+            "description": "Look up a Telegram account in Kuouko database",
+            "message_text": "Click the button below to look up a person in Kyouko database using their Telegram ID",
+            "thumb_urL": "https://telegra.ph/file/5adc1fd5632f64f379a51.jpg",
             "keyboard": ".info",
         },
         {
             "title": "Help",
             "description": "Help Inline Commands",
             "message_text": "Click the button below to get Help Of Inline Commands.",
-            "thumb_urL": "https://telegra.ph/file/645e0b5ca6382d6d73ab5.jpg",
+            "thumb_urL": "https://telegra.ph/file/5adc1fd5632f64f379a51.jpg",
             "keyboard": ".help",
         },
         {
             "title": "Anilist",
             "description": "Search anime and manga on AniList.co",
             "message_text": "Click the button below to search anime and manga on AniList.co",
-            "thumb_urL": "https://telegra.ph/file/ace91d9ae6af3881d3940.jpg",
+            "thumb_urL": "https://telegra.ph/file/68bb30a3aee0a98cb501a.jpg",
             "keyboard": ".anilist",
         },
     ]
@@ -104,9 +104,9 @@ def inlinequery(update: Update, _) -> None:
     inline_funcs = {
         ".info": inlineinfo,
         ".void": void,
-        ".asuka": asuka,  
+        ".hori": hori,  
         ".anime": anime,
-        ".kaizuryu": kaizuryu,
+        ".network": network,
         ".anilist": media_query,
         ".help": help,
     }
@@ -176,16 +176,16 @@ def inlineinfo(query: str, update: Update, context: CallbackContext) -> None:
     nation_level_present = False
 
     if user.id == OWNER_ID:
-        text += f"\n\nThis person is my Owner"
+        text += f"\n\nThis person is VOID'S wife aka : Owner 👑"
         nation_level_present = True
     elif user.id in DEV_USERS:
-        text += f"\n\nThis Person is a part Developer of Asuka"
+        text += f"\n\nThis Person is Vice-president 💫"
         nation_level_present = True
     elif user.id in DRAGONS:
-        text += f"\n\nThe Nation level of this person is Royal"
+        text += f"\n\nThe Only Advisors Are Here ! 🔱"
         nation_level_present = True
     elif user.id in DEMONS:
-        text += f"\n\nThe Nation level of this person is Demon"
+        text += f"\n\nMy helpers here for GanFight 💢"
         nation_level_present = True
     elif user.id in TIGERS:
         text += f"\n\nThe Nation level of this person is Tiger Level Disaster"
@@ -202,7 +202,7 @@ def inlineinfo(query: str, update: Update, context: CallbackContext) -> None:
         if spamwtc:
             text += "<b>\n\n• SpamWatched:\n</b> Yes"
             text += f"\n• Reason: <pre>{spamwtc.reason}</pre>"
-            text += "\n• Appeal at @SpamWatchSupport"
+            text += "\n• Appeal at @Kyoukoxsupport"
         else:
             text += "<b>\n\n• SpamWatched:</b> No"
     except:
@@ -219,7 +219,7 @@ def inlineinfo(query: str, update: Update, context: CallbackContext) -> None:
             [
                 InlineKeyboardButton(
                     text="Report Error",
-                    url=f"https://t.me/AsukaSupport",
+                    url=f"https://t.me/Kyoukoxsupport",
                 ),
                 InlineKeyboardButton(
                     text="Search again",
@@ -233,7 +233,7 @@ def inlineinfo(query: str, update: Update, context: CallbackContext) -> None:
     results = [
         InlineQueryResultArticle(
             id=str(uuid4()),
-            thumb_url="https://telegra.ph/file/0b5e88c90238c357641a7.jpg",
+            thumb_url="https://telegra.ph/file/1f8bf7dd687617a7e9d8c.jpg",
             title=f"User info of {html.escape(user.first_name)}",
             input_message_content=InputTextMessageContent(text, parse_mode=ParseMode.HTML,
                                                           disable_web_page_preview=True),
@@ -251,7 +251,7 @@ def void(query: str, update: Update, context: CallbackContext) -> None:
     user = context.bot.get_chat(user_id)
     sql.update_user(user.id, user.username)
     about_text = f"""
-    • [V O I D](https://t.me/Void_Toxic) \n• My Izumi Kun aka the reason why im able to serve you all. 👑
+    • [V O I D](https://t.me/Void_Toxic) \n\n• My Izumi Kun aka the reason why im able to serve you all. 👑
     """
     results: list = []
     kb = InlineKeyboardMarkup(
@@ -286,26 +286,26 @@ def asuka(query: str, update: Update, context: CallbackContext) -> None:
     user = context.bot.get_chat(user_id)
     sql.update_user(user.id, user.username)
     about_text = f"""
-    ──── • Asuka Langley Soryu • ────
+    ──── Kyouko-Hori ────\n\n👑 Advanced Group Management Bot. Developed to manage your groupchats effectively and efficiently 🔱
     """
     results: list = []
     kb = InlineKeyboardMarkup(
         [
             [
                 InlineKeyboardButton(
-                    text="Asuka Robot",
-                    url=f"https://t.me/AsukaRobot",
+                    text="Hori X ProBot",
+                    url=f"https://t.me/HoriXProbot",
                 ),
 
             ],
             [
                 InlineKeyboardButton(
                     text="Support",
-                    url=f"https://t.me/AsukaSupport",
+                    url=f"https://t.me/Kyoukoxsupport",
                 ),
                  InlineKeyboardButton(
                     text="Updates",
-                    url=f"https://t.me/AsukaUpdates",
+                    url=f"https://t.me/hori_x_updates",
                 ),
 
             ],
@@ -321,10 +321,10 @@ def asuka(query: str, update: Update, context: CallbackContext) -> None:
     results.append(
         InlineQueryResultPhoto(
             id=str(uuid4()),
-            title="Asuka",
-            description="Get Asuka Inline",
-            thumb_url="https://telegra.ph/file/62ad4ddfcb9ec5189a590.jpg",
-            photo_url="https://telegra.ph/file/f6be5a2866ae719a17fb0.jpg",
+            title="Kyouko-Hori",
+            description="Get Hori Inline",
+            thumb_url="https://telegra.ph/file/38072e410a01ed891b2e3.jpg,
+            photo_url="https://telegra.ph/file/38072e410a01ed891b2e3.jpg",
             caption=about_text,
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=kb,
@@ -451,7 +451,7 @@ def media_query(query: str, update: Update, context: CallbackContext) -> None:
                 [
                     InlineKeyboardButton(
                         text="Report error",
-                        url="https://t.me/AsukaSupport",
+                        url="https://t.me/Kyoukoxsupport",
                     ),
                     InlineKeyboardButton(
                         text="Search again",
@@ -483,7 +483,7 @@ def help(query: str, update: Update, context: CallbackContext) -> None:
     user = context.bot.get_chat(user_id)
     sql.update_user(user.id, user.username)
     help_text = f"""
-     [Asuka Inline Help](https://t.me/AsukaRobot)\n*Inline Help Commands:*\n*• .hentai:* `You Can Get Hentai Links`\n*• .kaizuryu* `To Check Out Kaizuryu Network`\n*• .anilist:* `To Search Animes And Mangas`\n*• .info:* `To Check Your Information`\n• Want your own inline on @AsukaRobot? You can get it in low pricing by contacting @Xelcius
+     [Kyouko Inline Help](https://t.me/HoriXProbot)\n*Inline Help Commands:*\n*• .void:* `Get Link To Owner's ID`\n*• .network* `To Check Out VOID Network`\n*• .anilist:* `To Search Animes And Mangas`\n*• .info:* `To Check Your Information`\n• Want your own inline on @HoriXProbot? You can get it in low pricing by contacting @Void_Toxic
      """
     results: list = []
     kb = InlineKeyboardMarkup(
@@ -501,8 +501,8 @@ def help(query: str, update: Update, context: CallbackContext) -> None:
         InlineQueryResultPhoto(
             id=str(uuid4()),
             title="Help Commands",
-            thumb_url="https://telegra.ph/file/0b5e88c90238c357641a7.jpg",
-            photo_url="https://telegra.ph/file/f975d75dabca471894485.jpg",
+            thumb_url="https://telegra.ph/file/fdbd57db7c25061c87cb2.jpg",
+            photo_url="https://telegra.ph/file/fdbd57db7c25061c87cb2.jpg",
             caption=help_text,
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=kb,
@@ -535,22 +535,22 @@ def kaizuryu(query: str, update: Update, context: CallbackContext) -> None:
     user = context.bot.get_chat(user_id)
     sql.update_user(user.id, user.username)
     about_text = f"""
-    ──── • The Kaizuryu Network • ────
+    ──── • 【V๏ɪ፝֟𝔡】Network • ────\n\nVoid is an anime based Community with a motive to spread love and peace around telegram. Go through the channel and join the Community if it draws your attention.
     """
     results: list = []
     kb = InlineKeyboardMarkup(
         [
             [
                 InlineKeyboardButton(
-                    text="Kaizuryu Network",
-                    url=f"https://t.me/TheKaizuryu",
+                    text="【V๏ɪ፝֟𝔡】Network",
+                    url=f"https://t.me/VoidxNetwork",
                 ),
 
             ],
             [
                 InlineKeyboardButton(
-                    text="Chat Group",
-                    url=f"https://t.me/+RH-EofbQPhwyNGE1",
+                    text="| Head-Quarters |",
+                    url=f"t.me/void_headquarters",
                 ),
 
             ],
@@ -559,8 +559,8 @@ def kaizuryu(query: str, update: Update, context: CallbackContext) -> None:
     results.append(
         InlineQueryResultPhoto(
             id=str(uuid4()),
-            title="Kaizuryu",
-            description="Get Kaizuryu Network Link",
+            title="【V๏ɪ፝֟𝔡】Network",
+            description="【V๏ɪ፝֟𝔡】Network At your Domain.",
             thumb_url="https://telegra.ph/file/5daac1fcf88ca6f177ef4.jpg",
             photo_url="https://telegra.ph/file/5daac1fcf88ca6f177ef4.jpg",
             caption=about_text,
@@ -577,22 +577,22 @@ def anime(query: str, update: Update, context: CallbackContext) -> None:
     user = context.bot.get_chat(user_id)
     sql.update_user(user.id, user.username)
     about_text = f"""
-    ‣ Anime Cruise • Kaizuryu \n\n• Uploading All The Latest Animes \n• Best Quality, Low Size Encoded \n• One Tap Channel Access
+    ‣ Anime Uploadz \n\n• Uploading All The Latest Animes \n• Best Quality, Low Size Encoded \n• One Tap Channel Access
     """
     results: list = []
     kb = InlineKeyboardMarkup(
         [
             [
                 InlineKeyboardButton(
-                    text="Join Now",
-                    url=f"https://t.me/Anime_Cruise",
+                    text="Anime Uploadz",
+                    url=f"https://t.me/Anime_Uploadz",
                 ),
 
             ],
             [
                 InlineKeyboardButton(
                     text="Index",
-                    url=f"https://t.me/Cruise_Index",
+                    url=f"https://t.me/indexuploadz",
                 ),
 
             ],
@@ -602,9 +602,9 @@ def anime(query: str, update: Update, context: CallbackContext) -> None:
         InlineQueryResultPhoto(
             id=str(uuid4()),
             title="Anime",
-            description="Get Anime Cruise Link",
-            thumb_url="https://telegra.ph/file/941e6d601c37c3ddf2925.jpg",
-            photo_url="https://telegra.ph/file/941e6d601c37c3ddf2925.jpg",
+            description="Get Anime Uploadz Link",
+            thumb_url="https://telegra.ph/file/e1ab80fc0c68556062115.jpg",
+            photo_url="https://telegra.ph/file/e1ab80fc0c68556062115.jpg",
             caption=about_text,
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=kb,
