@@ -19,7 +19,7 @@ def ann(update, context):
         
 <b>Description :</b> <code>{result['Description']}</code>
 
-<b>For more info :</b> <code>{result['Post_url']}</code>
+<b>For more info :</b> <code>{result[Post_url]}</code>
 '''
         msg.reply_photo(photo=img, caption=text, parse_mode=ParseMode.HTML)
 
