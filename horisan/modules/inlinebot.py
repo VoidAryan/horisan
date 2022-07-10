@@ -279,7 +279,7 @@ def void(query: str, update: Update, context: CallbackContext) -> None:
     )
     update.inline_query.answer(results)
     
-def asuka(query: str, update: Update, context: CallbackContext) -> None:
+def hori(query: str, update: Update, context: CallbackContext) -> None:
     """Handle the inline query."""
     query = update.inline_query.query
     user_id = update.effective_user.id
@@ -528,7 +528,7 @@ def _netcat(host, port, update: Update, context: CallbackContext):
         return data
     s.close()
     
-def kaizuryu(query: str, update: Update, context: CallbackContext) -> None:
+def network(query: str, update: Update, context: CallbackContext) -> None:
     """Handle the inline query."""
     query = update.inline_query.query
     user_id = update.effective_user.id
