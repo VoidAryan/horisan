@@ -51,11 +51,11 @@ def inlinequery(update: Update, _) -> None:
     results: List = []
     inline_help_dicts = [
         {
-            "title": "Hentai",
-            "description": "Get Hentai And Pornhwa Channel Link",
+            "title": "O W N E R",
+            "description": "He's Creator Of Me !",
             "message_text": "Click the button below to get the links.",
-            "thumb_urL": "https://telegra.ph/file/2466b0d2e524b8d47a73d.jpg",
-            "keyboard": ".hentai",
+            "thumb_urL": "https://telegra.ph/file/40d4f0659dd7468ae376a.jpg",
+            "keyboard": ".void",
         },
          {
             "title": "Anime Cruise",
@@ -103,7 +103,7 @@ def inlinequery(update: Update, _) -> None:
 
     inline_funcs = {
         ".info": inlineinfo,
-        ".hentai": hentai,
+        ".void": void,
         ".asuka": asuka,  
         ".anime": anime,
         ".kaizuryu": kaizuryu,
@@ -244,41 +244,34 @@ def inlineinfo(query: str, update: Update, context: CallbackContext) -> None:
     update.inline_query.answer(results, cache_time=5)
 
 
-def hentai(query: str, update: Update, context: CallbackContext) -> None:
+def void(query: str, update: Update, context: CallbackContext) -> None:
     """Handle the inline query."""
     query = update.inline_query.query
     user_id = update.effective_user.id
     user = context.bot.get_chat(user_id)
     sql.update_user(user.id, user.username)
     about_text = f"""
-    • [Hentai Forever](https://t.me/+S6Kq1YC5bxkwZjgx) \n• [Pornhwa Heaven](https://t.me/+jKF-knaR0LE5MzYx) \n• [Hentai Chat Group](https://t.me/+TOAvpiqpUeoxMzdh)
+    • [V O I D](https://t.me/Void_Toxic) \n• My Izumi Kun aka the reason why im able to serve you all. 👑
     """
     results: list = []
     kb = InlineKeyboardMarkup(
         [
             [
                 InlineKeyboardButton(
-                    text="Hentai",
-                    url=f"https://t.me/+S6Kq1YC5bxkwZjgx",
+                    text="V O I D",
+                    url=f"https://t.me/void_toxic",
                 ),
 
             ],
-            [
-                InlineKeyboardButton(
-                    text="Pornhwa",
-                    url=f"https://t.me/+jKF-knaR0LE5MzYx",
-                ),
-
-            ],
-        ])
+            ])
 
     results.append(
         InlineQueryResultPhoto(
             id=str(uuid4()),
-            title="Hentai",
-            description="Get Hentai Channel Link",
-            thumb_url="https://telegra.ph/file/2466b0d2e524b8d47a73d.jpg",
-            photo_url="https://telegra.ph/file/2466b0d2e524b8d47a73d.jpg",
+            title="VOID",
+            description="Creator Of Hori",
+            thumb_url="https://telegra.ph/file/58c5ce909c2add2928f97.jpg",
+            photo_url="https://telegra.ph/file/40d4f0659dd7468ae376a.jpg",
             caption=about_text,
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=kb,
