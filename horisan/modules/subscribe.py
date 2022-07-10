@@ -1,4 +1,4 @@
-from requests
+import requests
 from telegram import ParseMode
 from telegram.ext import CommandHandler
 
