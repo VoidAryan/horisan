@@ -2,7 +2,7 @@ from math import ceil
 from typing import Dict, List
 
 from horisan import NO_LOAD
-from telegram import MAX_MESSAGE_LENGTH, Bot, InlineKeyboardButton, InlineKeyboardMarkup, ParseMode
+from telegram import MAX_MESSAGE_LENGTH, Bot, InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, InputTextMessageContent, InlineQueryResultArticle
 from telegram.error import TelegramError
 
 
