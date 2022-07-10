@@ -31,7 +31,7 @@ from horisan import (
     sw, LOGGER
 )
 from horisan.modules.helper_funcs.misc import article
-from horisan.modules.helper_funcs.decorators import Asukainline
+from horisan.modules.helper_funcs.decorators import Horinline
 from horisan.modules.sudoers import bot_sys_stats as bss
 
 
