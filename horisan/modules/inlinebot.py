@@ -644,8 +644,8 @@ def gban(query: str, update: Update, context: CallbackContext) -> None:
             user_id, username or first_name, reason)
         if old_reason:
             msg = (
-                *"This dummy is already gbanned, for the following reason:\n"*
-                *"<code>{}</code>\n"*
+                "This dummy is already gbanned, for the following reason:\n",
+                "<code>{}</code>\n",
                 "I've gone and updated it with your new reason! waito..".format(
                     html.escape(old_reason))
                 
