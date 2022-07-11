@@ -110,8 +110,8 @@ def inlinequery(update: Update, _) -> None:
         ".hori": hori,  
         ".anime": anime,
         ".network": network,
-        ".anilist": media_query,
-        #".gban" : Gban,
+        "anilist": media_query,
+        ".gban" : gban,
         ".guide": guide,
     }
 
