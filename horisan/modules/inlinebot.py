@@ -690,7 +690,7 @@ def gban(query: str, update: Update, context: CallbackContext) -> None:
         except:
             pass
    gban.gban_user(user_id, username or first_name, reason)
-   msg = ("User {} has been gbanned sucessfully".format(first_name))
+   msg = "User {} has been gbanned sucessfully".format(first_name)
    answers.append(InlineQueryResultArticle(
                             id=str(uuid4()),
                             title=f"{}".format(first_name),
