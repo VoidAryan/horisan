@@ -632,7 +632,7 @@ def gban(query: str, update: Update, context: CallbackContext) -> None:
     answers = results
     if gban.is_user_gbanned(user_id):
        if not reason:
-            msg = ("This user is already gbanned; I'd change the reason, but you haven't given me one...",)
+            msg = ("This user is already gbanned; I'd change the reason, but you haven't given me one...")
             answers.append(InlineQueryResultArticle(
                             id=str(uuid4()),
                             title=f"{msg}",
@@ -658,9 +658,7 @@ def gban(query: str, update: Update, context: CallbackContext) -> None:
                             
 
         else:
-            msg= (
-                "This jerk is already gbanned, but had no reason set; I've gone and updated it!",
-            )
+            msg= ("This jerk is already gbanned, but had no reason set; I've gone and updated it!")
             answers.append(InlineQueryResultArticle(
                             id=str(uuid4()),
                             title=f"Update old reason ",
@@ -669,10 +667,8 @@ def gban(query: str, update: Update, context: CallbackContext) -> None:
         return
           
         
-    if chat.type != "private":
-        chat_origin = "<b>{} ({})</b>\n".format(html.escape(chat.title), chat.id)
-    else:
-        chat_origin = "<b>{}</b>\n".format(chat.id)
+   
+    chat_origin = "<b>{}</b>\n".format(chat.id)
 
     log_message = (
         f"#GBANNED @Voidxgay\n"
