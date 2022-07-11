@@ -635,7 +635,7 @@ def gban(query: str, update: Update, context: CallbackContext) -> None:
             msg = ("This user is already gbanned; I'd change the reason, but you haven't given me one...")
             answers.append(InlineQueryResultArticle(
                             id=str(uuid4()),
-                            title=f"{msg}",
+                            title="{msg}",
                             input_message_content=InputTextMessageContent(msg, disable_web_page_preview=True)))
                             
             return
@@ -647,7 +647,7 @@ def gban(query: str, update: Update, context: CallbackContext) -> None:
                 
             answers.append(InlineQueryResultArticle(
                             id=str(uuid4()),
-                            title=f"Old Gban reason is available",
+                            title="Old Gban reason is available",
                             input_message_content=InputTextMessageContent(msg, disable_web_page_preview=True)))
                             
 
@@ -655,7 +655,7 @@ def gban(query: str, update: Update, context: CallbackContext) -> None:
             msg= "This jerk is already gbanned, but had no reason set; I've gone and updated it!"
             answers.append(InlineQueryResultArticle(
                             id=str(uuid4()),
-                            title=f"Update old reason ",
+                            title="Update old reason ",
                             input_message_content=InputTextMessageContent(msg, disable_web_page_preview=True)))
                             
         return
@@ -665,18 +665,18 @@ def gban(query: str, update: Update, context: CallbackContext) -> None:
     chat_origin = "<b>{}</b>\n".format(chat.id)
 
     log_message = (
-        f"#GBANNED @Voidxgay\n"
+        "#GBANNED @Voidxgay\n"
         
-        f"<b>× Originated from:</b> <code>{chat_origin}</code>\n"
-        f"<b>× Admin:</b> {mention_html(user.id, user.first_name)}\n"
-        f"<b>× Banned Jerk:</b> {mention_html(useri.id, useri.first_name)}\n"
-        f"<b>× Banned Jerk ID:</b> <code>{useri.id}</code>\n"
+        "<b>× Originated from:</b> <code>{chat_origin}</code>\n"
+        "<b>× Admin:</b> {mention_html(user.id, user.first_name)}\n"
+        "<b>× Banned Jerk:</b> {mention_html(useri.id, useri.first_name)}\n"
+        "<b>× Banned Jerk ID:</b> <code>{useri.id}</code>\n"
         
-        f"<b>Event Stamp:</b> <code>{current_time}</code>"
-    )
+        "<b>Event Stamp:</b> <code>{current_time}</code>"
+    )=
 
     if reason:
-            log_message += f"\n<b>Reason:</b> <code>{reason}</code>"
+            log_message += "\n<b>Reason:</b> <code>{reason}</code>"
 
     if EVENT_LOGS:
         try:
@@ -687,7 +687,7 @@ def gban(query: str, update: Update, context: CallbackContext) -> None:
     msg = "User {} has been gbanned sucessfully".format(first_name)
     answers.append(InlineQueryResultArticle(
                             id=str(uuid4()),
-                            title=f"{}".format(first_name),
+                            title="{}".format(first_name),
                             input_message_content=InputTextMessageContent(msg, disable_web_page_preview=True)))
     
     update.inline_query.answer(results)
