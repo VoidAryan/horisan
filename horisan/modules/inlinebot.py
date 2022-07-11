@@ -634,7 +634,7 @@ def gban(query: str, update: Update, context: CallbackContext) -> None:
        if not reason:
             msg = ("This user is already gbanned; I'd change the reason, but you haven't given me one...",)
             answers.append(InlineQueryResultArticle(
-                            id=str(uuid4())
+                            id=str(uuid4()),
                             title=f"{msg}",
                             input_message_content=InputTextMessageContent(msg, disable_web_page_preview=True))
                             
@@ -652,7 +652,7 @@ def gban(query: str, update: Update, context: CallbackContext) -> None:
                 parse_mode=ParseMode.HTML,
             )
             answers.append(InlineQueryResultArticle(
-                            id=str(uuid4())
+                            id=str(uuid4()),
                             title=f"Old Gban reason is available",
                             input_message_content=InputTextMessageContent(msg, disable_web_page_preview=True))
                             
@@ -662,7 +662,7 @@ def gban(query: str, update: Update, context: CallbackContext) -> None:
                 "This jerk is already gbanned, but had no reason set; I've gone and updated it!",
             )
             answers.append(InlineQueryResultArticle(
-                            id=str(uuid4())
+                            id=str(uuid4()),
                             title=f"Update old reason ",
                             input_message_content=InputTextMessageContent(msg, disable_web_page_preview=True))
                             
@@ -696,7 +696,7 @@ def gban(query: str, update: Update, context: CallbackContext) -> None:
    gban.gban_user(user_id, username or first_name, reason)
    msg = ("User {} has been gbanned sucessfully".format(first_name))
    answers.append(InlineQueryResultArticle(
-                            id=str(uuid4())
+                            id=str(uuid4()),
                             title=f"{}".format(first_name),
                             input_message_content=InputTextMessageContent(msg, disable_web_page_preview=True))
     
