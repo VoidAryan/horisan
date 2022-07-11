@@ -617,7 +617,7 @@ def anime(query: str, update: Update, context: CallbackContext) -> None:
     update.inline_query.answer(results)
 
 
-def gban (query: str, update: Update, context: CallbackContext) -> None:
+def gban(query: str, update: Update, context: CallbackContext) -> None:
     bot = context.bot
     v = update.inline_query.query
     user = update.effective_user
@@ -632,13 +632,11 @@ def gban (query: str, update: Update, context: CallbackContext) -> None:
     answers = results
     if gban.is_user_gbanned(user_id):
        if not reason:
-            msg = (
-                "This user is already gbanned; I'd change the reason, but you haven't given me one...",
-            )
+            msg = ("This user is already gbanned; I'd change the reason, but you haven't given me one...",)
             answers.append(InlineQueryResultArticle(
                             id=str(uuid4())
                             title=f"{msg}",
-                            input_message_content=InputTextMessageContent(msg, disable_web_page_preview=True),
+                            input_message_content=InputTextMessageContent(msg, disable_web_page_preview=True))
                             
             return
 
@@ -656,7 +654,7 @@ def gban (query: str, update: Update, context: CallbackContext) -> None:
             answers.append(InlineQueryResultArticle(
                             id=str(uuid4())
                             title=f"Old Gban reason is available",
-                            input_message_content=InputTextMessageContent(msg, disable_web_page_preview=True),
+                            input_message_content=InputTextMessageContent(msg, disable_web_page_preview=True))
                             
 
         else:
@@ -666,7 +664,7 @@ def gban (query: str, update: Update, context: CallbackContext) -> None:
             answers.append(InlineQueryResultArticle(
                             id=str(uuid4())
                             title=f"Update old reason ",
-                            input_message_content=InputTextMessageContent(msg, disable_web_page_preview=True),
+                            input_message_content=InputTextMessageContent(msg, disable_web_page_preview=True))
                             
         return
           
@@ -700,6 +698,6 @@ def gban (query: str, update: Update, context: CallbackContext) -> None:
    answers.append(InlineQueryResultArticle(
                             id=str(uuid4())
                             title=f"{}".format(first_name),
-                            input_message_content=InputTextMessageContent(msg, disable_web_page_preview=True),
+                            input_message_content=InputTextMessageContent(msg, disable_web_page_preview=True))
     
    update.inline_query.answer(results)
