@@ -643,11 +643,7 @@ def gban(query: str, update: Update, context: CallbackContext) -> None:
         old_reason = gban.update_gban_reason(
             user_id, username or first_name, reason)
         if old_reason:
-            msg = (
-                "This dummy is already gbanned, for the following reason:\n"
-                "<code>{}</code>\n"
-                "I've gone and updated it with your new reason! waito..".format(
-                    html.escape(old_reason))
+            msg = "GBanned user with new reason {}".format(reason)
                 
             answers.append(InlineQueryResultArticle(
                             id=str(uuid4()),
@@ -656,7 +652,7 @@ def gban(query: str, update: Update, context: CallbackContext) -> None:
                             
 
         else:
-            msg= ("This jerk is already gbanned, but had no reason set; I've gone and updated it!")
+            msg= "This jerk is already gbanned, but had no reason set; I've gone and updated it!"
             answers.append(InlineQueryResultArticle(
                             id=str(uuid4()),
                             title=f"Update old reason ",
