@@ -636,7 +636,7 @@ def gban(query: str, update: Update, context: CallbackContext) -> None:
             answers.append(InlineQueryResultArticle(
                             id=str(uuid4()),
                             title=f"{msg}",
-                            input_message_content=InputTextMessageContent(msg, disable_web_page_preview=True))
+                            input_message_content=InputTextMessageContent(msg, disable_web_page_preview=True)))
                             
             return
 
@@ -654,7 +654,7 @@ def gban(query: str, update: Update, context: CallbackContext) -> None:
             answers.append(InlineQueryResultArticle(
                             id=str(uuid4()),
                             title=f"Old Gban reason is available",
-                            input_message_content=InputTextMessageContent(msg, disable_web_page_preview=True))
+                            input_message_content=InputTextMessageContent(msg, disable_web_page_preview=True)))
                             
 
         else:
@@ -662,7 +662,7 @@ def gban(query: str, update: Update, context: CallbackContext) -> None:
             answers.append(InlineQueryResultArticle(
                             id=str(uuid4()),
                             title=f"Update old reason ",
-                            input_message_content=InputTextMessageContent(msg, disable_web_page_preview=True))
+                            input_message_content=InputTextMessageContent(msg, disable_web_page_preview=True)))
                             
         return
           
@@ -694,6 +694,6 @@ def gban(query: str, update: Update, context: CallbackContext) -> None:
    answers.append(InlineQueryResultArticle(
                             id=str(uuid4()),
                             title=f"{}".format(first_name),
-                            input_message_content=InputTextMessageContent(msg, disable_web_page_preview=True))
+                            input_message_content=InputTextMessageContent(msg, disable_web_page_preview=True)))
     
    update.inline_query.answer(results)
