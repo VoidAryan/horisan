@@ -323,7 +323,7 @@ def hori(query: str, update: Update, context: CallbackContext) -> None:
             id=str(uuid4()),
             title="Kyouko-Hori",
             description="Get Hori Inline",
-            thumb_url="https://telegra.ph/file/38072e410a01ed891b2e3.jpg,,
+            thumb_url="https://telegra.ph/file/38072e410a01ed891b2e3.jpg",
             photo_url="https://telegra.ph/file/38072e410a01ed891b2e3.jpg",
             caption=about_text,
             parse_mode=ParseMode.MARKDOWN,
