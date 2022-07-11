@@ -90,7 +90,7 @@ def inlinequery(update: Update, _) -> None:
             "description": "Help Inline Commands",
             "message_text": "Click the button below to get Help Of Inline Commands.",
             "thumb_urL": "https://telegra.ph/file/5adc1fd5632f64f379a51.jpg",
-            "keyboard": ".help",
+            "keyboard": ".guide",
         },
         {
             "title": "Anilist",
@@ -108,7 +108,7 @@ def inlinequery(update: Update, _) -> None:
         ".anime": anime,
         ".network": network,
         ".anilist": media_query,
-        ".help": guide,
+        ".guide": guide,
     }
 
     if (f := query.split(" ", 1)[0]) in inline_funcs:
