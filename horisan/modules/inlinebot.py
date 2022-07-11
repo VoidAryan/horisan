@@ -108,7 +108,7 @@ def inlinequery(update: Update, _) -> None:
         ".anime": anime,
         ".network": network,
         ".anilist": media_query,
-        ".help": help,
+        ".help": guide,
     }
 
     if (f := query.split(" ", 1)[0]) in inline_funcs:
@@ -476,7 +476,7 @@ def media_query(query: str, update: Update, context: CallbackContext) -> None:
 
     update.inline_query.answer(results, cache_time=5)
 
-def help(query: str, update: Update, context: CallbackContext) -> None:
+def guide(query: str, update: Update, context: CallbackContext) -> None:
     """Handle the inline query."""
     query = update.inline_query.query
     user_id = update.effective_user.id
@@ -561,8 +561,8 @@ def network(query: str, update: Update, context: CallbackContext) -> None:
             id=str(uuid4()),
             title="【V๏ɪ፝֟𝔡】Network",
             description="【V๏ɪ፝֟𝔡】Network At your Domain.",
-            thumb_url="https://telegra.ph/file/5daac1fcf88ca6f177ef4.jpg",
-            photo_url="https://telegra.ph/file/5daac1fcf88ca6f177ef4.jpg",
+            thumb_url="https://telegra.ph/file/f33fa9857280297eae877.jpg",
+            photo_url="https://telegra.ph/file/f33fa9857280297eae877.jpg",
             caption=about_text,
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=kb,
