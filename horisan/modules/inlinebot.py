@@ -489,7 +489,7 @@ def stats(query: str, update: Update, context: CallbackContext) -> None:
             [
                 InlineKeyboardButton(
                     text="S Y S T E M • S T A T S",
-                    Callback_data="hori_",
+                    Callback_data="stats_callback",
                 ),
 
             ],
