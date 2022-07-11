@@ -19,12 +19,15 @@ from telegram.error import BadRequest
 from telegram.ext import (CallbackContext, CallbackQueryHandler, CommandHandler,
                           Filters, MessageHandler)
 from telegram.utils.helpers import mention_html
+import horisan.modules.sql.global_bans_sql as gban
+
 import horisan.modules.sql.users_sql as sql
 from horisan import (
     OWNER_ID,
     DRAGONS,
     DEMONS,
     DEV_USERS,
+    EVENT_LOGS,
     TIGERS,
     WOLVES,
     pgram,
@@ -108,6 +111,7 @@ def inlinequery(update: Update, _) -> None:
         ".anime": anime,
         ".network": network,
         ".anilist": media_query,
+        #".gban" : Gban,
         ".guide": guide,
     }
 
@@ -611,3 +615,91 @@ def anime(query: str, update: Update, context: CallbackContext) -> None:
         )
     )
     update.inline_query.answer(results)
+
+
+def gban (query: str, update: Update, context: CallbackContext) -> None:
+    bot = context.bot
+    v = update.inline_query.query
+    user = update.effective_user
+    chat = update.effective_chat
+    voidgay = v.split(" ", 1)[1]
+    reason = v.split(" ", 2)[2]
+    useri = bot.get_chat(voidgay)
+    user_id = useri["id"]
+    username =  useri["username"]
+    first_name = useri["first_name"]
+    results: list = []
+    answers = results
+    if gban.is_user_gbanned(user_id):
+       if not reason:
+            msg = (
+                "This user is already gbanned; I'd change the reason, but you haven't given me one...",
+            )
+            answers.append(InlineQueryResultArticle(
+                            id=str(uuid4())
+                            title=f"{msg}",
+                            input_message_content=InputTextMessageContent(msg, disable_web_page_preview=True),
+                            
+            return
+
+        old_reason = gban.update_gban_reason(
+            user_id, username or first_name, reason)
+        if old_reason:
+            msg = (
+                "This dummy is already gbanned, for the following reason:\n"
+                "<code>{}</code>\n"
+                "I've gone and updated it with your new reason! waito..".format(
+                    html.escape(old_reason),
+                ),
+                parse_mode=ParseMode.HTML,
+            )
+            answers.append(InlineQueryResultArticle(
+                            id=str(uuid4())
+                            title=f"Old Gban reason is available",
+                            input_message_content=InputTextMessageContent(msg, disable_web_page_preview=True),
+                            
+
+        else:
+            msg= (
+                "This jerk is already gbanned, but had no reason set; I've gone and updated it!",
+            )
+            answers.append(InlineQueryResultArticle(
+                            id=str(uuid4())
+                            title=f"Update old reason ",
+                            input_message_content=InputTextMessageContent(msg, disable_web_page_preview=True),
+                            
+        return
+          
+        
+    if chat.type != "private":
+        chat_origin = "<b>{} ({})</b>\n".format(html.escape(chat.title), chat.id)
+    else:
+        chat_origin = "<b>{}</b>\n".format(chat.id)
+
+    log_message = (
+        f"#GBANNED @Voidxgay\n"
+        
+        f"<b>× Originated from:</b> <code>{chat_origin}</code>\n"
+        f"<b>× Admin:</b> {mention_html(user.id, user.first_name)}\n"
+        f"<b>× Banned Jerk:</b> {mention_html(useri.id, useri.first_name)}\n"
+        f"<b>× Banned Jerk ID:</b> <code>{useri.id}</code>\n"
+        
+        f"<b>Event Stamp:</b> <code>{current_time}</code>"
+    )
+
+    if reason:
+            log_message += f"\n<b>Reason:</b> <code>{reason}</code>"
+
+    if EVENT_LOGS:
+        try:
+            log = bot.send_message(EVENT_LOGS, log_message, parse_mode=ParseMode.HTML)
+        except:
+            pass
+   gban.gban_user(user_id, username or first_name, reason)
+   msg = ("User {} has been gbanned sucessfully".format(first_name))
+   answers.append(InlineQueryResultArticle(
+                            id=str(uuid4())
+                            title=f"{}".format(first_name),
+                            input_message_content=InputTextMessageContent(msg, disable_web_page_preview=True),
+    
+   update.inline_query.answer(results)
