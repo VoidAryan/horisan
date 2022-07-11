@@ -86,11 +86,11 @@ def inlinequery(update: Update, _) -> None:
             "keyboard": ".info",
         },
         {
-            "title": "Help",
-            "description": "Help Inline Commands",
-            "message_text": "Click the button below to get Help Of Inline Commands.",
+            "title": "System Stats",
+            "description": "System Stats of kyouko hori",
+            "message_text": "Click the button below to get System Stats.",
             "thumb_urL": "https://telegra.ph/file/5adc1fd5632f64f379a51.jpg",
-            "keyboard": ".guide",
+            "keyboard": ".stats",
         },
         {
             "title": "Anilist",
@@ -108,7 +108,7 @@ def inlinequery(update: Update, _) -> None:
         ".anime": anime,
         ".network": network,
         ".anilist": media_query,
-        ".guide": guide,
+        ".stats": stats,
     }
 
     if (f := query.split(" ", 1)[0]) in inline_funcs:
@@ -473,37 +473,36 @@ def media_query(query: str, update: Update, context: CallbackContext) -> None:
             )
 
         )
-
-    update.inline_query.answer(results, cache_time=5)
-
-def guide(query: str, update: Update, context: CallbackContext) -> None:
+        
+def stats(query: str, update: Update, context: CallbackContext) -> None:
     """Handle the inline query."""
     query = update.inline_query.query
     user_id = update.effective_user.id
     user = context.bot.get_chat(user_id)
     sql.update_user(user.id, user.username)
-    help_text = f"""
-     [Kyouko Inline Help](https://t.me/HoriXProbot)\n*Inline Help Commands:*\n*• .void:* `Get Link To Owner's ID`\n*• .network* `To Check Out VOID Network`\n*• .anilist:* `To Search Animes And Mangas`\n*• .info:* `To Check Your Information`\n• Want your own inline on @HoriXProbot? You can get it in low pricing by contacting @Void_Toxic
-     """
+    about_text = f"""
+    • [Kyouko • Stats](https://t.me/HoriXProbot) \n\n• Click The Button Below To Check Out System Stats Of Kyouko
+    """
     results: list = []
     kb = InlineKeyboardMarkup(
         [
             [
                 InlineKeyboardButton(
-                    text="Search Inline",
-                    switch_inline_query_current_chat=".info ",
+                    text="S Y S T E M • S T A T S",
+                    Callback_data="hori_",
                 ),
 
             ],
-        ])
+            ])
 
     results.append(
         InlineQueryResultPhoto(
             id=str(uuid4()),
-            title="Help Commands",
-            thumb_url="https://telegra.ph/file/fdbd57db7c25061c87cb2.jpg",
-            photo_url="https://telegra.ph/file/fdbd57db7c25061c87cb2.jpg",
-            caption=help_text,
+            title="System Stats",
+            description="System Stats Of Kyouko Hori",
+            thumb_url="https://telegra.ph/file/6fc4c7a913dfcd415e7fd.jpg",
+            photo_url="https://telegra.ph/file/6fc4c7a913dfcd415e7fd.jpg",
+            caption=about_text,
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=kb,
         )
