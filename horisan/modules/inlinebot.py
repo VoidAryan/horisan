@@ -647,10 +647,8 @@ def gban(query: str, update: Update, context: CallbackContext) -> None:
                 "This dummy is already gbanned, for the following reason:\n"
                 "<code>{}</code>\n"
                 "I've gone and updated it with your new reason! waito..".format(
-                    html.escape(old_reason),
-                ),
-                parse_mode=ParseMode.HTML,
-            )
+                    html.escape(old_reason))
+                
             answers.append(InlineQueryResultArticle(
                             id=str(uuid4()),
                             title=f"Old Gban reason is available",
