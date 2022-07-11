@@ -631,7 +631,7 @@ def gban(query: str, update: Update, context: CallbackContext) -> None:
     results: list = []
     answers = results
     if gban.is_user_gbanned(user_id):
-       if not reason:
+        if not reason:
             msg = ("This user is already gbanned; I'd change the reason, but you haven't given me one...")
             answers.append(InlineQueryResultArticle(
                             id=str(uuid4()),
