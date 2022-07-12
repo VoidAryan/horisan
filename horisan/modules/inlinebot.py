@@ -662,12 +662,11 @@ def gban(query: str, update: Update, context: CallbackContext) -> None:
           
         
    
-    chat_origin = "<b>{}</b>\n".format(chat.id)
+    #chat_origin = "<b>{}</b>\n".format(chat.id)
 
     log_message = (
         "#GBANNED @Voidxgay\n"
         
-        "<b>× Originated from:</b> <code>{chat_origin}</code>\n"
         "<b>× Admin:</b> {mention_html(user.id, user.first_name)}\n"
         "<b>× Banned Jerk:</b> {mention_html(useri.id, useri.first_name)}\n"
         "<b>× Banned Jerk ID:</b> <code>{useri.id}</code>\n"
