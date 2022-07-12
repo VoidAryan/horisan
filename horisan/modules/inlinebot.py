@@ -681,7 +681,7 @@ def gban(query: str, update: Update, context: CallbackContext) -> None:
    
 
 
-     try:
+    try:
        log = bot.send_message(EVENT_LOGS, log_message, parse_mode=ParseMode.MARKDOWN)
     except:
           pass
