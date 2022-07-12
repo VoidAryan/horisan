@@ -667,20 +667,24 @@ def gban(query: str, update: Update, context: CallbackContext) -> None:
     log_message = (
         "#GBANNED @Voidxgay\n"
         
-        "<b>× Admin:</b> {mention_html(user.id, user.first_name)}\n"
-        "<b>× Banned Jerk:</b> {mention_html(useri.id, useri.first_name)}\n"
-        "<b>× Banned Jerk ID:</b> <code>{useri.id}</code>\n"
+        "<b>× Admin:</b> {}\n".format(user.username or user.first_name)
+        "<b>× Banned Jerk:</b> {}\n".format(username or first_name)
+        "<b>× Banned Jerk ID:</b> <code>{}</code>\n".format(user_id)
      
     )
 
     if reason:
-            log_message += "\n<b>Reason:</b> <code>{reason}</code>"
+            log_message += "\n<b>Reason:</b> <code>{}</code>".format(reason)
+     
     else:
             log_message += "\n<b>Reason:</b> <code>No Reason Given</code>"
    
 
 
-   
+     try:
+       log = bot.send_message(EVENT_LOGS, log_message, parse_mode=ParseMode.HTML)
+    except:
+          pass
     gbandb.gban_user(user_id, username or first_name, reason)
     bot.send_message(-1001786854966 , log_message, parse_mode=ParseMode.HTML)
 
