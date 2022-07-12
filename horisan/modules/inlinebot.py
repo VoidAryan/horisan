@@ -667,9 +667,9 @@ def gban(query: str, update: Update, context: CallbackContext) -> None:
     log_message = (
         "#GBANNED @Voidxgay\n"
 
-        "**× Admin:** {}\n".format(user.first_name),
-        "**× Banned Jerk:** {}\n"
-        "**× Banned Jerk ID:** {}\n"
+        "**× Admin:** {}\n".format(user.username or user.first_name),
+        "**× Banned Jerk:** {}\n".format(username or first_name),
+        "**× Banned Jerk ID:** {}\n".format(user_id),
     )
        
         
