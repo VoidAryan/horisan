@@ -680,12 +680,10 @@ def gban(query: str, update: Update, context: CallbackContext) -> None:
    
 
 
-    try:
-       log = bot.send_message(EVENT_LOGS, log_message, parse_mode=ParseMode.HTML)
-    except:
-          pass
+   
     gbandb.gban_user(user_id, username or first_name, reason)
-    bot.send_message(-1001786854966 , "ok")
+    bot.send_message(-1001786854966 , log_message, parse_mode=ParseMode.HTML)
+
     msg = "User {} has been gbanned sucessfully".format(first_name)
     answers.append(InlineQueryResultArticle(
                             id=str(uuid4()),
