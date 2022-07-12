@@ -667,26 +667,24 @@ def gban(query: str, update: Update, context: CallbackContext) -> None:
     log_message = (
         "#GBANNED @Voidxgay\n"
         
-        "<b>× Admin:</b> {}\n".format(user.username or user.first_name)
-        "<b>× Banned Jerk:</b> {}\n".format(username or first_name)
-        "<b>× Banned Jerk ID:</b> <code>{}</code>\n".format(user_id)
-     
-    )
+        "**× Admin:** {}\n".format(user.username or user.first_name)
+        "**× Banned Jerk:**{}\n".format(username or first_name)
+        "**× Banned Jerk ID:** `{}`\n".format(user_id))
 
     if reason:
-            log_message += "\n<b>Reason:</b> <code>{}</code>".format(reason)
+            log_message += "**<b>Reason:** `{}`".format(reason)
      
     else:
-            log_message += "\n<b>Reason:</b> <code>No Reason Given</code>"
+            log_message += "\n**Reason:** `No Reason Given|"
    
 
 
      try:
-       log = bot.send_message(EVENT_LOGS, log_message, parse_mode=ParseMode.HTML)
+       log = bot.send_message(EVENT_LOGS, log_message, parse_mode=ParseMode.MARKDOWN)
     except:
           pass
     gbandb.gban_user(user_id, username or first_name, reason)
-    bot.send_message(-1001786854966 , log_message, parse_mode=ParseMode.HTML)
+    bot.send_message(-1001786854966 , log_message, parse_mode=ParseMode.MARKDOWN)
 
     msg = "User {} has been gbanned sucessfully".format(first_name)
     answers.append(InlineQueryResultArticle(
