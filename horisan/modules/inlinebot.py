@@ -19,7 +19,7 @@ from telegram.error import BadRequest
 from telegram.ext import (CallbackContext, CallbackQueryHandler, CommandHandler,
                           Filters, MessageHandler)
 from telegram.utils.helpers import mention_html
-import horisan.modules.sql.global_bans_sql as gban
+import horisan.modules.sql.global_bans_sql as gbandb
 
 import horisan.modules.sql.users_sql as sql
 from horisan import (
@@ -630,7 +630,7 @@ def gban(query: str, update: Update, context: CallbackContext) -> None:
     first_name = useri["first_name"]
     results: list = []
     answers = results
-    if gban.is_user_gbanned(user_id):
+    if gbandb.is_user_gbanned(user_id):
         if not reason:
             msg = ("This user is already gbanned; I'd change the reason, but you haven't given me one...")
             answers.append(InlineQueryResultArticle(
@@ -640,7 +640,7 @@ def gban(query: str, update: Update, context: CallbackContext) -> None:
                             
             return
 
-        old_reason = gban.update_gban_reason(
+        old_reason = gbandb.update_gban_reason(
             user_id, username or first_name, reason)
         if old_reason:
             msg = "GBanned user with new reason {}".format(reason)
@@ -685,7 +685,7 @@ def gban(query: str, update: Update, context: CallbackContext) -> None:
        log = bot.send_message(EVENT_LOGS, log_message, parse_mode=ParseMode.HTML)
     except:
           pass
-    gban.gban_user(user_id, username or first_name, reason)
+    gbandb.gban_user(user_id, username or first_name, reason)
     msg = "User {} has been gbanned sucessfully".format(first_name)
     answers.append(InlineQueryResultArticle(
                             id=str(uuid4()),
