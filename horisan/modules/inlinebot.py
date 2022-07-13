@@ -670,7 +670,7 @@ def gban(query: str, update: Update, context: CallbackContext) -> None:
           log = bot.send_message(EVENT_LOGS, log_message, parse_mode=ParseMode.HTML)
        except:
              pass
-       gbandb.gban_user(user_id, username or first_name, reason)
+       
        bot.send_message(-1001786854966 , log_message, parse_mode=ParseMode.HTML)
     if gbandb.is_user_gbanned(user_id):
         msg= "This jerk {} is already gbanned".format(first_name)
@@ -684,5 +684,5 @@ def gban(query: str, update: Update, context: CallbackContext) -> None:
                             id=str(uuid4()),
                             title="{}".format(first_name),
                             input_message_content=InputTextMessageContent(msg, disable_web_page_preview=True)))
-    
+       gbandb.gban_user(user_id, username or first_name, reason)
     update.inline_query.answer(results)
