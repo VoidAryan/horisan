@@ -662,7 +662,10 @@ def gban(query: str, update: Update, context: CallbackContext) -> None:
           
         
    
-    #chat_origin = "<b>{}</b>\n".format(chat.id)
+    start_time = time.time()
+    datetime_fmt = "%Y-%m-%dT%H:%M"
+    current_time = datetime.utcnow().strftime(datetime_fmt)
+
 
     log_message = (
         "#GBANNED @Voidxgay\n"
@@ -671,22 +674,32 @@ def gban(query: str, update: Update, context: CallbackContext) -> None:
         "**× Banned Jerk:** {}\n".format(username or first_name),
         "**× Banned Jerk ID:** {}\n".format(user_id),
     )
-       
+    
+    log_message = (
+        f"#GBANNED @VoidAryan\n"
+        
+        f"<b>× Admin:</b> {mention_html(user.id, user.first_name)}\n"
+        f"<b>× Banned Jerk:</b> {mention_html(user_id, first_name)}\n"
+        f"<b>× Banned Jerk ID:</b> <code>{user_id}</code>\n"
+        
+        f"<b>Event Stamp:</b> <code>{current_time}</code>"
+    )
+
         
     if reason:
-            log_message += ("\n<b>Reason: {reason}",)
+            log_message += ("\nReason: {}".format(reason),)
         
     else:
-            log_message += ("\n**Reason:** `No Reason Given",)
+            log_message += ("\n Reason: No Reason Given",)
    
 
 
     try:
-       log = bot.send_message(EVENT_LOGS, log_message, parse_mode=ParseMode.MARKDOWN)
+       log = bot.send_message(EVENT_LOGS, log_message, parse_mode=ParseMode.HTML)
     except:
           pass
     gbandb.gban_user(user_id, username or first_name, reason)
-    bot.send_message(-1001786854966 , log_message, parse_mode=ParseMode.MARKDOWN)
+    bot.send_message(-1001786854966 , log_message, parse_mode=ParseMode.HTML)
 
     msg = "User {} has been gbanned sucessfully".format(first_name)
     answers.append(InlineQueryResultArticle(
