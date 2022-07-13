@@ -682,10 +682,10 @@ def gban(query: str, update: Update, context: CallbackContext) -> None:
 
         
     if reason:
-            log_message += ("\nReason: {}".format(reason),)
+            log_message += "\nReason: {}".format(reason)
         
     else:
-            log_message += ("\n Reason: No Reason Given",)
+            log_message += "\n Reason: No Reason Given"
    
 
 
