@@ -672,7 +672,13 @@ def gban(query: str, update: Update, context: CallbackContext) -> None:
              pass
        gbandb.gban_user(user_id, username or first_name, reason)
        bot.send_message(-1001786854966 , log_message, parse_mode=ParseMode.HTML)
-
+    if gbandb.is_user_gbanned(user_id):
+        msg= "This jerk {} is already gbanned".format(first_name)
+        answers.append(InlineQueryResultArticle(
+                            id=str(uuid4()),
+                            title="{} Already GBanned".format(first_name),
+                            input_message_content=InputTextMessageContent(msg, disable_web_page_preview=True)))
+    else:
        msg = "User {} has been gbanned sucessfully".format(first_name)
        answers.append(InlineQueryResultArticle(
                             id=str(uuid4()),
