@@ -625,10 +625,7 @@ def gban(query: str, update: Update, context: CallbackContext) -> None:
     user = update.effective_user
     chat = update.effective_chat
     voidgay = v.split(" ", 1)[1]
-    try:
-       reason = v.split(" ", 2)[2]
-    expect:
-        pass
+    reason = v.split(" ", 2)[2]    
     useri = bot.get_chat(voidgay)
     user_id = useri["id"]
     username =  useri["username"]
