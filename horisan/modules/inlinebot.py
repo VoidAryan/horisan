@@ -667,14 +667,7 @@ def gban(query: str, update: Update, context: CallbackContext) -> None:
     current_time = datetime.utcnow().strftime(datetime_fmt)
 
 
-    log_message = (
-        "#GBANNED @Voidxgay\n"
 
-        "**× Admin:** {}\n".format(user.username or user.first_name),
-        "**× Banned Jerk:** {}\n".format(username or first_name),
-        "**× Banned Jerk ID:** {}\n".format(user_id),
-    )
-    
     log_message = (
         f"#GBANNED @VoidAryan\n"
         
