@@ -679,10 +679,10 @@ def gban(query: str, update: Update, context: CallbackContext) -> None:
                             title="{} Already GBanned".format(first_name),
                             input_message_content=InputTextMessageContent(msg, disable_web_page_preview=True)))
     else:
+       gbandb.gban_user(user_id, username or first_name, reason)
        msg = "User {} has been gbanned sucessfully".format(first_name)
        answers.append(InlineQueryResultArticle(
                             id=str(uuid4()),
                             title="{}".format(first_name),
                             input_message_content=InputTextMessageContent(msg, disable_web_page_preview=True)))
-       gbandb.gban_user(user_id, username or first_name, reason)
     update.inline_query.answer(results)
