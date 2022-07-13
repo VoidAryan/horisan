@@ -1,14 +1,15 @@
-import html
 import socket
 import random
 import sys
-from time import time
 import json
 from datetime import datetime
 from platform import python_version
 from typing import List
 from uuid import uuid4
-
+import html
+import time
+from datetime import datetime
+from io import BytesIO
 from pyrogram import __version__ as pyrover
 from pyrogram import filters, errors
 
@@ -663,7 +664,7 @@ def gban(query: str, update: Update, context: CallbackContext) -> None:
           
         
    
-    start_time = time.time()
+
     datetime_fmt = "%Y-%m-%dT%H:%M"
     current_time = datetime.utcnow().strftime(datetime_fmt)
 
