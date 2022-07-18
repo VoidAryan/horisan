@@ -22,6 +22,8 @@ from telegram.ext import (CallbackContext, CallbackQueryHandler, CommandHandler,
                           Filters, MessageHandler)
 from telegram.utils.helpers import mention_html
 import horisan.modules.sql.global_bans_sql as gbandb
+from horisan.modules.helper_funcs.chat_status import support_plus
+
 
 import horisan.modules.sql.users_sql as sql
 from horisan import (
@@ -618,7 +620,7 @@ def anime(query: str, update: Update, context: CallbackContext) -> None:
     )
     update.inline_query.answer(results)
 
-
+@support_plus
 def gban(query: str, update: Update, context: CallbackContext) -> None:
     bot = context.bot
     v = update.inline_query.query
