@@ -671,7 +671,7 @@ def gban(query: str, update: Update, context: CallbackContext) -> None:
                             id=str(uuid4()),
                             title="{} Already GBanned".format(first_name),
                             input_message_content=InputTextMessageContent(msg, disable_web_page_preview=True)))
-       return  
+       return answers
     else:
        gbandb.gban_user(user_id, username or first_name, reason)
        try:
