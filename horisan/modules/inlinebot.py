@@ -632,23 +632,25 @@ def gban(query: str, update: Update, context: CallbackContext) -> None:
     first_name = useri["first_name"]
     results: list = []
     answers = results
-    if gbandb.is_user_gbanned(user_id):
-        msg= "This jerk is already gbanned"
-        answers.append(InlineQueryResultArticle(
-                            id=str(uuid4()),
-                            title="Update old reason ",
-                            input_message_content=InputTextMessageContent(msg, disable_web_page_preview=True)))                           
+    if int(user_id) in DEV_USERS:
         return
-          
-        
-    else:
 
-       datetime_fmt = "%Y-%m-%dT%H:%M"
-       current_time = datetime.utcnow().strftime(datetime_fmt)
+    if int(user_id) in DRAGONS:
+        return
 
+    if int(user_id) in DEMONS:
+        return
 
+    if int(user_id) in TIGERS:
+        return
 
-       log_message = (
+    if int(user_id) in WOLVES:
+        return
+
+    datetime_fmt = "%Y-%m-%dT%H:%M"
+    current_time = datetime.utcnow().strftime(datetime_fmt)
+
+    log_message = (
         f"#GBANNED @VoidAryan\n"
         
         f"<b>× Admin:</b> {mention_html(user.id, user.first_name)}\n"
@@ -658,28 +660,24 @@ def gban(query: str, update: Update, context: CallbackContext) -> None:
         f"<b>Event Stamp:</b> <code>{current_time}</code>"
        )
 
+         
+    log_message += "\nReason: {}".format(reason)
         
+   
   
-       log_message += "\nReason: {}".format(reason)
-        
-   
-   
-
-
-       try:
-          log = bot.send_message(EVENT_LOGS, log_message, parse_mode=ParseMode.HTML)
-       except:
-             pass
-       
-       bot.send_message(-1001786854966 , log_message, parse_mode=ParseMode.HTML)
     if gbandb.is_user_gbanned(user_id):
         msg= "This jerk {} is already gbanned".format(first_name)
         answers.append(InlineQueryResultArticle(
                             id=str(uuid4()),
                             title="{} Already GBanned".format(first_name),
                             input_message_content=InputTextMessageContent(msg, disable_web_page_preview=True)))
+       return answers
     else:
        gbandb.gban_user(user_id, username or first_name, reason)
+       try:
+          log = bot.send_message(EVENT_LOGS, log_message, parse_mode=ParseMode.HTML)
+       except:
+             pass
        msg = "User {} has been gbanned sucessfully".format(first_name)
        answers.append(InlineQueryResultArticle(
                             id=str(uuid4()),
