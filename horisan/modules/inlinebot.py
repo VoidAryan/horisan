@@ -666,12 +666,12 @@ def gban(query: str, update: Update, context: CallbackContext) -> None:
    
   
     if gbandb.is_user_gbanned(user_id):
-        msg= "This jerk {} is already gbanned".format(first_name)
-        answers.append(InlineQueryResultArticle(
+       msg= "This jerk {} is already gbanned".format(first_name)
+       answers.append(InlineQueryResultArticle(
                             id=str(uuid4()),
                             title="{} Already GBanned".format(first_name),
                             input_message_content=InputTextMessageContent(msg, disable_web_page_preview=True)))
-       return answers
+       
     else:
        gbandb.gban_user(user_id, username or first_name, reason)
        try:
