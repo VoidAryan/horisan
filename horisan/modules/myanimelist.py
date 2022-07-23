@@ -140,7 +140,7 @@ def upcoming(update: Update, context: CallbackContext):
     msg.reply_text(rep, parse_mode=ParseMode.HTML)
 
 
-def manga(update: Update, context: CallbackContext):
+def hmanga(update: Update, context: CallbackContext):
     msg = update.effective_message
     args = context.args
     query = " ".join(args)
