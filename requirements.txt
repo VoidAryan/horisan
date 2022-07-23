@@ -4,7 +4,9 @@ lxml
 uuid
 wget
 gtts
+tracemoepy
 beautifulsoup4
+zerochan
 requests
 python-telegram-bot==13.13
 SQLAlchemy==1.4.35
