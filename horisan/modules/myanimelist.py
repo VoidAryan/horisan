@@ -195,7 +195,7 @@ CHARACTER_HANDLER = CommandHandler(
     "mcharacter", character, pass_args=True, run_async=True
 )
 UPCOMING_HANDLER = CommandHandler("mupcoming", upcoming, run_async=True)
-MANGA_HANDLER = CommandHandler("mmanga", manga, pass_args=True, run_async=True)
+MANGA_HANDLER = CommandHandler("mmanga", hmanga, pass_args=True, run_async=True)
 
 dispatcher.add_handler(ANIME_HANDLER)
 dispatcher.add_handler(CHARACTER_HANDLER)
