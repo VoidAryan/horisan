@@ -18,16 +18,16 @@ from PIL import Image
 from bs4 import BeautifulSoup
 from jikanpy import Jikan
 from pyrogram import filters
-from MikuXProBot import mongo_client
+from horisan import mongo_client
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update, Message
 from telegram.ext import CommandHandler, CallbackQueryHandler, CallbackContext
 from telegram.utils.helpers import mention_html
 
-from MikuXProBot import OWNER_ID, REDIS, dispatcher, pgram
-from MikuXProBot.modules.disable import DisableAbleCommandHandler
-from MikuXProBot.modules.helper_funcs.alternate import typing_action
-from MikuXProBot.modules.helper_funcs.chat_status import callbacks_in_filters
+from horisan import OWNER_ID, REDIS, dispatcher, pgram
+from horisan.modules.disable import DisableAbleCommandHandler
+from horisan.modules.helper_funcs.alternate import typing_action
+from horisan.modules.helper_funcs.chat_status import callbacks_in_filters
 
 kaizoku_btn = "Kaizoku ☠️"
 kayo_btn = "Kayo 🏴‍☠️"
