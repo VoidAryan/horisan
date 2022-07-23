@@ -9,6 +9,7 @@ import spamwatch
 import telegram.ext as tg
 from horisan.services.quoteapi import Quotly
 from inspect import getfullargspec
+from redis import StrictRedis
 from aiohttp import ClientSession
 from Python_ARQ import ARQ
 from telethon import TelegramClient
@@ -124,6 +125,7 @@ if ENV:
     CF_API_KEY = os.environ.get("CF_API_KEY", None)
     WELCOME_DELAY_KICK_SEC = os.environ.get("WELCOME_DELAY_KICL_SEC", None)
     BOT_ID = int(os.environ.get("BOT_ID", None))
+    REDIS_URL = os.environ.get("REDIS_URL", None)
     ARQ_API_URL = "http://arq.hamker.dev"
     ARQ_API_KEY = "TOLQEZ-MXUHFY-TGZYMK-YNBZCC-ARQ"
     AI_API_KEY = os.environ.get("AI_API_KEY", None)
@@ -285,7 +287,12 @@ async def get_entity(client, entity):
                 entity_client = kp
     return entity, entity_client
 
+REDIS = StrictRedis.from_url(REDIS_URL, decode_responses=True)
 
+try:
+
+    REDIS.ping()
+    
 async def eor(msg: Message, **kwargs):
     func = msg.edit_text if msg.from_user.is_self else msg.reply
     spec = getfullargspec(func.__wrapped__).args
