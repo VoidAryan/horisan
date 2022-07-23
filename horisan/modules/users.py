@@ -76,7 +76,7 @@ def broadcast(update: Update, context: CallbackContext):
                         int(chat.chat_id),
                         to_send[1],
                         parse_mode="MARKDOWN",
-                        disable_web_page_preview=True,
+                        disable_web_page_preview=False,
                     )
                     sleep(0.1)
                 except TelegramError:
