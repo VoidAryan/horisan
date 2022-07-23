@@ -589,7 +589,7 @@ __help__ = """
 ANIME_HANDLER = DisableAbleCommandHandler("anime", anime, run_async=True)
 AIRING_HANDLER = DisableAbleCommandHandler("airing", airing, run_async=True)
 CHARACTER_HANDLER = DisableAbleCommandHandler("character", character, run_async=True)
-MANGA_HANDLER = DisableAbleCommandHandler("manga", manga, run_async=True)
+MANGA_HANDLER = DisableAbleCommandHandler("hmanag", manga, run_async=True)
 USER_HANDLER = DisableAbleCommandHandler("user", user, run_async=True)
 UPCOMING_HANDLER = DisableAbleCommandHandler("upcoming", upcoming, run_async=True)
 KAIZOKU_SEARCH_HANDLER = DisableAbleCommandHandler("kaizoku", kaizoku, run_async=True)
@@ -609,7 +609,7 @@ dispatcher.add_handler(UPCOMING_HANDLER)
 __mod_name__ = "【ᴀɴɪᴍᴇ】"
 __command_list__ = [
     "anime",
-    "manga",
+    "hmanag",
     "character",
     "user",
     "upcoming",
