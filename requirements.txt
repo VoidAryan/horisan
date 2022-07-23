@@ -29,6 +29,7 @@ nltk
 psutil
 aiohttp
 Pillow
+redis==4.1.1
 CurrencyConverter
 googletrans
 google-trans-new
