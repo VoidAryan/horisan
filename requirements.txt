@@ -1,12 +1,12 @@
 future
 emoji
 lxml
+umongo==3.0.0
 uuid
 wget
 gtts
 tracemoepy
 beautifulsoup4
-mongo_client
 zerochan
 requests
 python-telegram-bot==13.13
