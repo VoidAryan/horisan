@@ -37,8 +37,8 @@ sequel_btn = "Sequel ➡️"
 close_btn = "Close ❌"
 
 ANIME_IMG = "https://telegra.ph/file/06237f668f789bc8896f7.gif"
-MANGA_IMG = "https://telegra.ph/file/e6b1c11a9cd09a9c0e223.gif"
-CHARACTER_IMG = "https://telegra.ph/file/a355b31aa5dfe112605d2.gif"
+MANGA_IMG = "https://telegra.ph/file/89d2a27585be95fe930d3.gif"
+CHARACTER_IMG = "https://telegra.ph/file/e4f7b3f7d98dd35f5a2c2.gif"
 
 zerochan = ZeroChan()
 
