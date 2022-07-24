@@ -406,3 +406,6 @@ def connection_status(func):
 from horisan.modules import connection
 
 connected = connection.connected
+
+def callbacks_in_filters(data):
+    return filters.create(lambda flt, _, query: flt.data in query.data, data=data)
