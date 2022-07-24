@@ -8,7 +8,7 @@ from telegram.ext import (
     CallbackQueryHandler,
     InlineQueryHandler,
 )
-from telegram.ext.filters import MessageFilter
+from telegram.ext.filters import MessageFilter, BaseFilter
 from horisan import dispatcher as d, LOGGER
 from typing import Optional, Union, List
 
