@@ -8,6 +8,7 @@ typing
 gtts
 tracemoepy
 beautifulsoup4
+dispatcher
 zerochan
 requests
 python-telegram-bot==13.13
