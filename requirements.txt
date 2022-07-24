@@ -4,6 +4,7 @@ lxml
 umongo==3.0.0
 uuid
 wget
+typing
 gtts
 tracemoepy
 beautifulsoup4
