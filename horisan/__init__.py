@@ -293,7 +293,7 @@ async def eor(msg: Message, **kwargs):
     return await func(**{k: v for k, v in kwargs.items() if k in spec})
 
 #install aiohttp session
-print("[Miku]: Scanning AIO http session")
+print("[Kyouko]: Scanning AIO http session")
 aiohttpsession = ClientSession() 
 
 REDIS = StrictRedis.from_url(REDIS_URL, decode_responses=True)
