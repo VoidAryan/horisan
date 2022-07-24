@@ -5,13 +5,13 @@ from telegram.ext import CallbackContext
 from telegram.utils.helpers import mention_html
 
 from horisan.modules.log_channel import loggable
-from horisan.modules.helper_funcs.decorators import horicmd
+from horisan.modules.helper_funcs.dc import kigcmd
 
 import horisan.modules.sql.logger_sql as sql
 from horisan.modules.helper_funcs.anonymous import user_admin as u_admin, AdminPerms
 
 
-@horicmd(command="announce", pass_args=True)
+@kigcmd(command="announce", pass_args=True)
 @u_admin(AdminPerms.CAN_CHANGE_INFO)
 @loggable
 def announcestat(update: Update, context: CallbackContext) -> str:
