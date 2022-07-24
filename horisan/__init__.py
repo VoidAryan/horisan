@@ -245,11 +245,6 @@ mongo_client = MongoClient(MONGO_DB_URI)
 dispatcher = updater.dispatcher
 print("[INFO]: INITIALIZING AIOHTTP SESSION")
 aiohttpsession = ClientSession()
-REDIS = StrictRedis.from_url(REDIS_URL, decode_responses=True)
-
-try:
-
-    REDIS.ping()
 # ARQ Client
 print("[INFO]: INITIALIZING ARQ CLIENT")
 arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
@@ -296,6 +291,28 @@ async def eor(msg: Message, **kwargs):
     func = msg.edit_text if msg.from_user.is_self else msg.reply
     spec = getfullargspec(func.__wrapped__).args
     return await func(**{k: v for k, v in kwargs.items() if k in spec})
+
+#install aiohttp session
+print("[Miku]: Scanning AIO http session")
+aiohttpsession = ClientSession() 
+
+REDIS = StrictRedis.from_url(REDIS_URL, decode_responses=True)
+
+try:
+
+    REDIS.ping()
+
+    LOGGER.info("[Kyouko]: Connecting To Redis Database")
+
+except BaseException:
+
+    raise Exception("[ERROR]: Your Redis Database Is Not Alive, Please Check Again.")
+
+finally:
+
+   REDIS.ping()
+
+   LOGGER.info("[Kyouko]: Redis Database Successfully! Connected")
 
 
 DRAGONS = list(DRAGONS) + list(DEV_USERS)
