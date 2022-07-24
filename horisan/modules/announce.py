@@ -5,7 +5,7 @@ from telegram.ext import CallbackContext
 from telegram.utils.helpers import mention_html
 
 from horisan.modules.log_channel import loggable
-from horisan.modules.helper_funcs.decorators import kigcmd
+from horisan.modules.helper_funcs.decorators import horicmd
 
 import horisan.modules.sql.logger_sql as sql
 from horisan.modules.helper_funcs.anonymous import user_admin as u_admin, AdminPerms
