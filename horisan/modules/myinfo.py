@@ -13,11 +13,11 @@ from horisan.events import register
 
 edit_time = 5
 """ =======================CONSTANTS====================== """
-file1 = "https://telegra.ph/file/2d8c929d3ae263df9edc3.jpg"
+file1 = "https://telegra.ph/file/f819ae512aad03644ee81.jpg"
 file2 = "https://telegra.ph/file/a8b94c055224e08adb739.png"
 file3 = "https://telegra.ph/file/17c38d512eebc1a67d4ef.jpg"
 file4 = "https://telegra.ph/file/671138f203cbb7223a61d.jpg"
-file5 = "https://telegra.ph/file/f819ae512aad03644ee81.jpg"
+file5 = "https://telegra.ph/file/671138f203cbb7223a61d.jpg"
 """ =======================CONSTANTS====================== """
 
 @register(pattern="/myinfo")
