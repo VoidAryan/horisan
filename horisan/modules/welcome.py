@@ -9,20 +9,20 @@ from functools import partial
 from pyrogram import Client , filters
 from pyrogram.types import Message
 import MikuXProBot.modules.sql.welcome_sql as sql
-from MikuXProBot import (DEV_USERS, LOGGER, OWNER_ID, DRAGONS, DEMONS, TIGERS,
+from horisan import (DEV_USERS, LOGGER, OWNER_ID, DRAGONS, DEMONS, TIGERS,
                           WOLVES, sw, dispatcher, JOIN_LOGGER, pgram)
-from MikuXProBot.modules.helper_funcs.chat_status import (
+from horisan.modules.helper_funcs.chat_status import (
     is_user_ban_protected,
     user_admin,
 )
-from MikuXProBot.modules.helper_funcs.misc import build_keyboard, revert_buttons
-from MikuXProBot.modules.helper_funcs.msg_types import get_welcome_type
-from MikuXProBot.modules.helper_funcs.string_handling import (
+from horisan.modules.helper_funcs.misc import build_keyboard, revert_buttons
+from horisan.modules.helper_funcs.msg_types import get_welcome_type
+from horisan.modules.helper_funcs.string_handling import (
     escape_invalid_curly_brackets,
     markdown_parser,
 )
-from MikuXProBot.modules.log_channel import loggable
-from MikuXProBot.modules.sql.global_bans_sql import is_user_gbanned
+from horisan.modules.log_channel import loggable
+from horisan.modules.sql.global_bans_sql import is_user_gbanned
 from telegram import (
     ChatPermissions,
     InlineKeyboardButton,
@@ -40,8 +40,8 @@ from telegram.ext import (
     run_async,
 )
 from telegram.utils.helpers import escape_markdown, mention_html, mention_markdown
-from MikuXProBot.modules.helper_funcs.misc import paginate_modules
-from MikuXProBot.modules import ALL_MODULES
+from horisan.modules.helper_funcs.misc import paginate_modules
+from horisan.modules import ALL_MODULES
 
 VALID_WELCOME_FORMATTERS = [
     "first",
@@ -70,7 +70,7 @@ VERIFIED_USER_WAITLIST = {}
 MIKU_IMG = "https://telegra.ph/file/be3430b7151fd64706679.mp4"
 MIKU = "https://telegra.ph/file/25442c7b0b61372df7ce9.jpg"
 MIKU_VID = "https://telegra.ph/file/e997d98975496adc09fe7.mp4"
-WAIFUS_IMG = "https://telegra.ph/file/a6c91884e06744ad48fb7.jpg"
+WAIFUS_IMG = "https://telegra.ph/file/0ecc7c3e257db935f296d.jpg"
 
 
 # do not async
