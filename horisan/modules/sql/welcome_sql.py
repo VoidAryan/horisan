@@ -6,73 +6,14 @@ from horisan.modules.helper_funcs.msg_types import Types
 from horisan.modules.sql import BASE, SESSION
 from sqlalchemy import BigInteger, Boolean, Column, Integer, String, UnicodeText
 
-DEFAULT_WELCOME = "Hey {mention},\nwelcome in {chatname}"
-DEFAULT_GOODBYE = "Nice knowing ya!"
+DEFAULT_WELCOME = "۞ Hey {mention},\nwelcome in {chatname}!\n\n۞ Chat Count : {count}"
+DEFAULT_GOODBYE = "۞ {mention} left {chatname}\n\n۞ Chat Count : {count}"
 
 DEFAULT_WELCOME_MESSAGES = [
     "{first} Joined !",  # Discord welcome messages copied
     ]
 DEFAULT_GOODBYE_MESSAGES = [
-    "{first} will be missed.",
-    "{first} just went offline.",
-    "{first} has left the lobby.",
-    "{first} has left the clan.",
-    "{first} has left the game.",
-    "{first} has fled the area.",
-    "{first} is out of the running.",
-    "Nice knowing ya, {first}!",
-    "It was a fun time {first}.",
-    "We hope to see you again soon, {first}.",
-    "I donut want to say goodbye, {first}.",
-    "Goodbye {first}! Guess who's gonna miss you :')",
-    "Goodbye {first}! It's gonna be lonely without ya.",
-    "Please don't leave me alone in this place, {first}!",
-    "Good luck finding better shitposters than us, {first}!",
-    "You know we're gonna miss you {first}. Right? Right? Right?",
-    "Congratulations, {first}! You're officially free of this mess.",
-    "{first}. You were an opponent worth fighting.",
-    "You're leaving, {first}? Yare Yare Daze.",
-    "Bring him the photo",
-    "Go outside!",
-    "Ask again later",
-    "Think for yourself",
-    "Question authority",
-    "You are worshiping a sun god",
-    "Don't leave the house today",
-    "Give up!",
-    "Marry and reproduce",
-    "Stay asleep",
-    "Wake up",
-    "Look to la luna",
-    "Steven lives",
-    "Meet strangers without prejudice",
-    "A hanged man will bring you no luck today",
-    "What do you want to do today?",
-    "You are dark inside",
-    "Have you seen the exit?",
-    "Get a baby pet it will cheer you up.",
-    "Your princess is in another castle.",
-    "You are playing it wrong give me the controller",
-    "Trust good people",
-    "Live to die.",
-    "When life gives you lemons reroll!",
-    "Well that was worthless",
-    "I feel asleep!",
-    "May your troubles be many",
-    "Your old life lies in ruin",
-    "Always look on the bright side",
-    "It is dangerous to go alone",
-    "You will never be forgiven",
-    "You have nobody to blame but yourself",
-    "Only a sinner",
-    "Use bombs wisely",
-    "Nobody knows the troubles you have seen",
-    "You look fat you should exercise more",
-    "Follow the zebra",
-    "Why so blue?",
-    "The devil in disguise",
-    "Go outside",
-    "Always your head in the clouds",
+    "{first} Left.",
 ]
 # Line 111 to 152 are references from https://bindingofisaac.fandom.com/wiki/Fortune_Telling_Machine
 
