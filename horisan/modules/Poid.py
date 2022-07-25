@@ -76,7 +76,7 @@ __help__ = """
 /myinfo: shows your info in inline button
 """
 
-__mod_name__ = "myinfo"
+__mod_name__ = "poid"
 __command_list__ = [
     "myinfo"
 ]
