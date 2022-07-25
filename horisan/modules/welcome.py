@@ -8,7 +8,7 @@ import importlib
 from functools import partial
 from pyrogram import Client , filters
 from pyrogram.types import Message
-import MikuXProBot.modules.sql.welcome_sql as sql
+import horisan.modules.sql.welcome_sql as sql
 from horisan import (DEV_USERS, LOGGER, OWNER_ID, DRAGONS, DEMONS, TIGERS,
                           WOLVES, sw, dispatcher, JOIN_LOGGER, pgram)
 from horisan.modules.helper_funcs.chat_status import (
