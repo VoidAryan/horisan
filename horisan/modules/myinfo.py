@@ -13,8 +13,8 @@ from horisan.events import register
 
 edit_time = 5
 """ =======================CONSTANTS====================== """
-file1 = "https://telegra.ph/file/f819ae512aad03644ee81.jpg"
-file2 = "https://telegra.ph/file/a8b94c055224e08adb739.png"
+file1 = "https://telegra.ph/file/a8b94c055224e08adb739.jpg"
+file2 = "https://telegra.ph/file/2d8c929d3ae263df9edc3.jpg"
 file3 = "https://telegra.ph/file/17c38d512eebc1a67d4ef.jpg"
 file4 = "https://telegra.ph/file/671138f203cbb7223a61d.jpg"
 file5 = "https://telegra.ph/file/671138f203cbb7223a61d.jpg"
@@ -25,8 +25,8 @@ async def myinfo(event):
     chat = await event.get_chat()
     current_time = datetime.utcnow()
     betsy = event.sender.first_name
-    button = [[custom.Button.inline("Click Here",data="information")]]
-    on = await bot.send_file(event.chat_id, file=file2,caption= f"♡ Hey {betsy}, I'm Hori\n♡ I'm Created By [V O I D](tg://user?id=5508585593)\n♡ Click The Button Below To Get Your Info", buttons=button)
+    button = [[custom.Button.inline("【USER INFO】",data="information")]]
+    on = await bot.send_file(event.chat_id, file=file2,caption= f"۞ Konichiwa {betsy}, I'm Kyouko Hori\n۞ I'm Created By [V O I D](t.me/voidaryan)\n\n۞ Click The Button Below To Get Your Info", buttons=button)
 
     await asyncio.sleep(edit_time)
     ok = await bot.edit_message(event.chat_id, on, file=file3, buttons=button) 
@@ -59,13 +59,15 @@ async def myinfo(event):
 async def callback_query_handler(event):
   try:
     PRO = await bot.get_entity(event.sender_id)
-    MIKU = "YOUR DETAILS BY MIKU \n\n"
-    MIKU += f"FIRST NAME : {PRO.first_name} \n"
-    MIKU += f"LAST NAME : {PRO.last_name}\n"
-    MIKU += f"YOU BOT : {PRO.bot} \n"
-    MIKU += f"RESTRICTED : {PRO.restricted} \n"
-    MIKU += f"USER ID : {event.sender_id}\n"
-    MIKU += f"USERNAME : {PRO.username}\n"
+    MIKU = "Your Info Under Kyouko\n\n"
+    MIKU += f"───────────────────\n"
+    MIKU += f"۞ FIRST NAME : {PRO.first_name} \n"
+    MIKU += f"۞ LAST NAME : {PRO.last_name}\n"
+    MIKU += f"۞ YOU BOT : {PRO.bot} \n"
+    MIKU += f"۞ RESTRICTED : {PRO.restricted} \n"
+    MIKU += f"۞ USER ID : {event.sender_id}\n"
+    MIKU += f"۞ USERNAME : {PRO.username}\n"
+    MIKU += f"───────────────────\n"
     await event.answer(MIKU, alert=True)
   except Exception as e:
     return
