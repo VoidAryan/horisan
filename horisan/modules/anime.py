@@ -11,7 +11,7 @@ import random
 import os
 import tracemoepy
 import time
-
+import re 
 from zerochan import ZeroChan, PictureSize, SortBy
 from zerochan.c_exceptions import NoPicturesFound
 from PIL import Image
@@ -43,6 +43,11 @@ CHARACTER_IMG = "https://telegra.ph/file/e4f7b3f7d98dd35f5a2c2.gif"
 zerochan = ZeroChan()
 
 tracemoe = tracemoepy.tracemoe.TraceMoe()
+regex = re.compile(r'<[^>]+>')
+
+def poid(description):
+    return regex.sub('', description)
+
 
 @pgram.on_message(filters.command('whatanime'))
 def whatanime(_, message):
@@ -432,12 +437,13 @@ def anime(update, context):
             site = trailer.get("site", None)
             if site == "youtube":
                 trailer = "https://youtu.be/" + trailer_id
-        description = (
+        descriptions = (
             json.get("description", "N/A")
             .replace("<b>", "")
             .replace("</b>", "")
             .replace("<br>", "")
         )
+        description = poid(descriptions)
         msg += shorten(description, info)
         image = info.replace("anilist.co/anime/", "img.anili.st/media/")
         if trailer:
@@ -512,7 +518,8 @@ def character(update, context):
         msg = (
             f"* {json.get('name').get('full')}*(`{json.get('name').get('native')}`) \n"
         )
-        description = f"{json['description']}"
+        descriptions = f"{json['description']}"
+        description = poid(descriptions)
         site_url = json.get("siteUrl")
         char_name = f"{json.get('name').get('full')}"
         msg += shorten(description, site_url)
