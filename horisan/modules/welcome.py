@@ -67,7 +67,7 @@ ENUM_FUNC_MAP = {
 
 VERIFIED_USER_WAITLIST = {}
 
-MIKU_IMG = "https://telegra.ph/file/be3430b7151fd64706679.mp4"
+MIKU_IMG = "https://telegra.ph/file/0ecc7c3e257db935f296d.jpg"
 MIKU = "https://telegra.ph/file/25442c7b0b61372df7ce9.jpg"
 MIKU_VID = "https://telegra.ph/file/e997d98975496adc09fe7.mp4"
 WAIFUS_IMG = "https://telegra.ph/file/0ecc7c3e257db935f296d.jpg"
