@@ -108,12 +108,17 @@ buttons = [
 
 
 HELP_STRINGS = """
-Click on the buttons bellow to get description of hori's commands[!](https://telegra.ph/file/d42a65f5391b9ca926375.mp4)"""
+ᴍʏ ᴀʙɪʟɪᴛɪᴇꜱ ᴀɴᴅ ɢᴜɪᴅᴇ 💫 :
+
+× Kyouko Hori ɪꜱ ᴀɴ ᴀᴅᴠᴀɴᴄᴇᴅ ᴀɴᴅ ʜɪɢʜʟʏ ᴜᴘᴅᴀᴛᴇᴅ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ. 
+× ʏᴏᴜ ᴄᴀɴ ꜱᴜᴘᴘᴏʀᴛ ᴏᴜʀ ᴡᴏʀᴋ ʙʏ ᴜꜱɪɴɢ /ᴅᴏɴᴀᴛɪᴏɴ 
+× ᴄʟɪᴄᴋ ᴏɴ ʙᴜᴛᴛᴏɴꜱ ɢɪᴠᴇɴ ʙᴇʟᴏᴡ ᴛᴏ ꜱᴇᴇ ɢᴜɪᴅᴇ ꜰᴏʀ ᴜꜱɪɴɢ ᴛʜᴇᴍ. 
+× ᴛʜɪꜱ ʙᴏᴛ ɪꜱ ᴅᴇᴠᴇʟᴏᴘᴇᴅ ᴜɴᴅᴇʀ [【V๏ɪ፝֟𝔡】]("https://t.me/voidxnetwork") [✨](https://telegra.ph/file/6a74e747aa1262f8a778a.jpg)"""
 
 
 DONATE_STRING = """Heya, glad to hear you want to donate! ❤ \
 
- You can support the project by contacting @voidaryan \
+ You can support the project by contacting @Kyoukoxsupport \
  If you can't donate us financially support us by helping in growth of hori san \
  Those who cannot provide monetary support are welcome to help us we are here to hear you."""
 
