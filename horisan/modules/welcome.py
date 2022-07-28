@@ -1022,12 +1022,6 @@ Main commands available :
    • in a group: will redirect you to pm, with all that chat's settings.
 For all command use / or !
 """
-
-for module_name in ALL_MODULES:
-    imported_module = importlib.import_module("horisan.modules." +
-                                              module_name)
-    if hasattr(imported_module, "__help__") and imported_module.__help__:
-        HELPABLE[imported_module.__mod_name__.lower()] = imported_module
  
 def help_button(update, context):
     query = update.callback_query
