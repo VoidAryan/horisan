@@ -1058,8 +1058,6 @@ CLEAN_WELCOME = CommandHandler(
 WELCOME_HELP = CommandHandler("welcomehelp", welcome_help, run_async=True)
 WELCOME_MUTE_HELP = CommandHandler("welcomemutehelp", welcome_mute_help, run_async=True)
 BUTTON_VERIFY_HANDLER = CallbackQueryHandler(user_button, pattern=r"user_join_", run_async=True)
-help_callback_handler = CallbackQueryHandler(
-        help_button, pattern=r"help_.*", run_async=True)
 
 dispatcher.add_handler(NEW_MEM_HANDLER)
 dispatcher.add_handler(LEFT_MEM_HANDLER)
