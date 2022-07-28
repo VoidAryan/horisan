@@ -67,8 +67,8 @@ ENUM_FUNC_MAP = {
 VERIFIED_USER_WAITLIST = {}
 
 MIKU_IMG = "https://telegra.ph/file/8e6f9c97eef79e4f7a7f9.jpg"
-MIKU = "https://telegra.ph/file/25442c7b0b61372df7ce9.jpg"
-MIKU_VID = "https://telegra.ph/file/e997d98975496adc09fe7.mp4"
+MIKU = "https://telegra.ph/file/f70f135269c620e5156e1.jpg"
+MIKU_VID = "https://telegra.ph/file/397268df09301adf25290.mp4"
 WAIFUS_IMG = "https://telegra.ph/file/0ecc7c3e257db935f296d.jpg"
 
 
@@ -242,8 +242,7 @@ def new_member(update: Update, context: CallbackContext):
             # Welcome yourself
             elif new_mem.id == bot.id:
                 update.effective_message.reply_photo(
-                    WAIFUS_IMG, caption= "۞ Hey {}, I'm {}! Thank you for adding me to {}\n"
-                    "Join support and channel update with clicking button below!".format(
+                    WAIFUS_IMG, caption= "۞ Hey {}, I'm {}!\nThank you for adding me to {}\n\n".format(
                         user.first_name, context.bot.first_name, chat.title
                     ),
             
@@ -260,12 +259,7 @@ def new_member(update: Update, context: CallbackContext):
                              text="【ᴜᴘᴅᴀᴛᴇs】",
                              url="https://t.me/hori_x_updates")
                      ],
-                     [                  
-                       InlineKeyboardButton(
-                             text="【ʜᴇʟᴘ & ᴍᴏᴅᴜʟᴇs】",
-                             callback_data="help_back"),
-                ] 
-            ]
+                     ]
         ),
     )
                 continue
@@ -510,13 +504,13 @@ def left_member(update: Update, context: CallbackContext):
             # Give the owner a special goodbye
             if left_mem.id == OWNER_ID:
                 update.effective_message.reply_video(
-                MIKU_VID, caption= "Oi! Genos! He left..", reply_to_message_id=reply)
+                MIKU_VID, caption= "Owner left..You disappointed her mtsm!", reply_to_message_id=reply)
                 return
 
             # Give the devs a special goodbye
             elif left_mem.id in DEV_USERS:
                 update.effective_message.reply_text(
-                    "See you later at the Hero's Association!",
+                    "My Dev Chose To Leave",
                     reply_to_message_id=reply,
                 )
                 return
