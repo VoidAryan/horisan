@@ -66,7 +66,7 @@ ENUM_FUNC_MAP = {
 
 VERIFIED_USER_WAITLIST = {}
 
-MIKU_IMG = "https://telegra.ph/file/0ecc7c3e257db935f296d.jpg"
+MIKU_IMG = "https://telegra.ph/file/8e6f9c97eef79e4f7a7f9.jpg"
 MIKU = "https://telegra.ph/file/25442c7b0b61372df7ce9.jpg"
 MIKU_VID = "https://telegra.ph/file/e997d98975496adc09fe7.mp4"
 WAIFUS_IMG = "https://telegra.ph/file/0ecc7c3e257db935f296d.jpg"
@@ -194,7 +194,7 @@ def new_member(update: Update, context: CallbackContext):
             # Give the owner a special welcome
             if new_mem.id == OWNER_ID:
                 update.effective_message.reply_video(
-                MIKU_IMG, caption= "Oh, Genos? Let's get this moving.",
+                MIKU_IMG, caption= "UwU My Owner {mention} Just Joined !!",
                     reply_to_message_id=reply)
                 welcome_log = (f"{html.escape(chat.title)}\n"
                                f"#USER_JOINED\n"
@@ -203,8 +203,8 @@ def new_member(update: Update, context: CallbackContext):
 
             # Welcome Devs
             elif new_mem.id in DEV_USERS:
-                update.effective_message.reply_text(
-                    "Whoa! S Rank Hunter just joined!",
+                update.effective_message.reply_photo(
+                MIKU, caption= "Whoa! Developer just joined?",
                     reply_to_message_id=reply,
                 )
                 continue
@@ -212,7 +212,7 @@ def new_member(update: Update, context: CallbackContext):
             # Welcome Sudos
             elif new_mem.id in DRAGONS:
                 update.effective_message.reply_photo(
-                MIKU, caption= "Huh! A Rank Hunter just joined! Stay Alert!",
+                MIKU, caption= "Huh! A Sudo holder just joined! Stay Alert!",
                     reply_to_message_id=reply,
                 )
                 continue
@@ -220,7 +220,7 @@ def new_member(update: Update, context: CallbackContext):
             # Welcome Support
             elif new_mem.id in DEMONS:
                 update.effective_message.reply_photo(
-                MIKU, caption= "Huh! Someone with a B Rank Hunter level just joined!",
+                MIKU, caption= "Huh! My Helper Just Joined!",
                     reply_to_message_id=reply,
                 )
                 continue
@@ -242,7 +242,7 @@ def new_member(update: Update, context: CallbackContext):
             # Welcome yourself
             elif new_mem.id == bot.id:
                 update.effective_message.reply_photo(
-                    WAIFUS_IMG, caption= "Hey {}, I'm {}! Thank you for adding me to {}\n"
+                    WAIFUS_IMG, caption= "۞ Hey {}, I'm {}! Thank you for adding me to {}\n"
                     "Join support and channel update with clicking button below!".format(
                         user.first_name, context.bot.first_name, chat.title
                     ),
@@ -254,15 +254,15 @@ def new_member(update: Update, context: CallbackContext):
                 [
                   [                  
                        InlineKeyboardButton(
-                             text="Support",
+                             text="【sᴜᴘᴘᴏʀᴛ】",
                              url=f"https://t.me/kyoukoxsupport"),
                        InlineKeyboardButton(
-                             text="Updates🛰",
+                             text="【ᴜᴘᴅᴀᴛᴇs】",
                              url="https://t.me/hori_x_updates")
                      ],
                      [                  
                        InlineKeyboardButton(
-                             text="Help",
+                             text="【ʜᴇʟᴘ & ᴍᴏᴅᴜʟᴇs】",
                              callback_data="help_back"),
                 ] 
             ]
