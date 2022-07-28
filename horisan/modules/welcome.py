@@ -66,7 +66,7 @@ ENUM_FUNC_MAP = {
 
 VERIFIED_USER_WAITLIST = {}
 
-MIKU_IMG = "https://telegra.ph/file/8e6f9c97eef79e4f7a7f9.jpg"
+MIKU_IMG = "https://telegra.ph/file/e95213458f3a06a579c13.jpg"
 MIKU = "https://telegra.ph/file/f70f135269c620e5156e1.jpg"
 MIKU_VID = "https://telegra.ph/file/397268df09301adf25290.mp4"
 WAIFUS_IMG = "https://telegra.ph/file/0ecc7c3e257db935f296d.jpg"
@@ -194,7 +194,7 @@ def new_member(update: Update, context: CallbackContext):
             # Give the owner a special welcome
             if new_mem.id == OWNER_ID:
                 update.effective_message.reply_video(
-                MIKU_IMG, caption= "UwU My Owner {mention} Just Joined !!",
+                MIKU_IMG, caption= "UwU My Owner Just Joined !!",
                     reply_to_message_id=reply)
                 welcome_log = (f"{html.escape(chat.title)}\n"
                                f"#USER_JOINED\n"
