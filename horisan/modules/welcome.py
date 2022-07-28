@@ -41,7 +41,6 @@ from telegram.ext import (
 )
 from telegram.utils.helpers import escape_markdown, mention_html, mention_markdown
 from horisan.modules.helper_funcs.misc import paginate_modules
-from horisan.modules import ALL_MODULES
 
 VALID_WELCOME_FORMATTERS = [
     "first",
