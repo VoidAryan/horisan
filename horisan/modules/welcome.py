@@ -1092,5 +1092,4 @@ __handlers__ = [
     CLEAN_SERVICE_HANDLER,
     BUTTON_VERIFY_HANDLER,
     WELCOME_MUTE_HELP,
-    help_callback_handler,
 ]
