@@ -15,8 +15,8 @@ from horisan.modules.sql.afk_redis import start_afk, end_afk, is_user_afk, afk_r
 from horisan import REDIS
 from horisan.modules.users import get_user_id
 
-from MikuXProBot.modules.helper_funcs.alternate import send_message
-from MikuXProBot.modules.helper_funcs.readable_time import get_readable_time
+from horisan.modules.helper_funcs.alternate import send_message
+from horisan.modules.helper_funcs.readable_time import get_readable_time
 
 AFK_GROUP = 7
 AFK_REPLY_GROUP = 8
@@ -35,8 +35,6 @@ def afk(update, context):
     start_afk(update.effective_user.id, reason)
     REDIS.set(f'afk_time_{update.effective_user.id}', start_afk_time)
     fname = update.effective_user.first_name
-    except BadRequest:
-        pass
 
 def no_longer_afk(update, context):
     user = update.effective_user
