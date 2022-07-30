@@ -53,10 +53,8 @@ def no_longer_afk(update, context):
         firstname = update.effective_user.first_name
         try:
             options = [
-                "The Dead {} Came Back From His Grave! Time Taken: {}",
-                "Hey {}! Why weren't you online for {}?",
-                "{} Is now back online! Time Taken: {}",
-                "OwO, Welcome back {} You've Missing Till {} ",
+                "{} ɪsɴ'ᴛ ᴀғᴋ!\nᴄᴀᴍᴇ ᴀғᴛᴇʀ {}",
+                "۞ {} NoMore : AFK\n\n۞ Was Afk For :【{}】",
             ]
             chosen_option = random.choice(options)
             update.effective_message.reply_text(
@@ -124,9 +122,9 @@ def check_afk(update, context, user_id, fst_name, userc_id):
         if int(userc_id) == int(user_id):
             return
         if reason == "none":
-            res = "{} is Dead!\nLast Liveliness: {} Ago.".format(fst_name, since_afk)
+            res = "۞ {} Afk Since :\n\n【{}】".format(fst_name, since_afk)
         else:
-            res = "{} is afk!\nReason: {}\nLast seen: {} Ago.".format(fst_name, reason, since_afk)
+            res = "۞ {} Afk Since : 【{}】\n\n۞ Reason : {}".format(fst_name, since_afk, reason)
 
         update.effective_message.reply_text(res)
 
@@ -149,7 +147,7 @@ def __stats__():
 def __gdpr__(user_id):
     end_afk(user_id)
 
-__mod_name__ = "AFK"
+__mod_name__ = "【ᴀғᴋ】"
 __help__ = """
   When marked as AFK, any mentions will be replied to with a message stating that you're not available!
  • `/afk <reason>`*:* Mark yourself as AFK.
