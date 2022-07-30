@@ -44,7 +44,7 @@ from horisan.modules.sql import SESSION
 import horisan.modules.sql.userinfo_sql as sql
 from horisan.modules.disable import DisableAbleCommandHandler
 from horisan.modules.sql.global_bans_sql import is_user_gbanned
-from horisan.modules.sql.afk_sql import is_user_afk, start_afk
+from horisan.modules.sql.afk_redis import is_user_afk, start_afk
 from horisan.modules.sql.users_sql import get_user_num_chats
 from horisan.modules.helper_funcs.chat_status import sudo_plus
 from horisan.modules.helper_funcs.extraction import extract_user
