@@ -21,6 +21,7 @@ feedparser
 faker
 fontTools
 hachoir
+humanize
 pykeyboard
 pynewtonmath
 ffmpeg-python
