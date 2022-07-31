@@ -220,8 +220,6 @@ __help__ = """
 """
 
 INFO_HANDLER = DisableAbleCommandHandler("sinfo", sinfo, run_async=True)
-DELETE_HANDLER = CallbackQueryHandler(
-        delete_btn, pattern=r"delete_", run_async=True)
 
 dispatcher.add_handler(INFO_HANDLER)
 
