@@ -83,35 +83,14 @@ def sinfo(update: Update, context: CallbackContext):
     text = (
         f"「<b> 【ɪɴꜰᴏ ᴏꜰ ᴛʜɪꜱ ᴜꜱᴇʀ】</b> 」\n"
         f"───────────────────\n"
-        f"× ID: <code>{user.id}</code>\n"
-        f"× First Name: {html.escape(user.first_name)}"
-    )
-
-    if user.last_name:
-        text += f"\n× Last Name: {html.escape(user.last_name)}"
+        f"۞ ID: <code>{user.id}</code>\n"
+        )
 
     if user.username:
-        text += f"\n× Username: @{html.escape(user.username)}"
+        text += f"\n۞ Username: @{html.escape(user.username)}"
 
-    text += f"\n× Userlink: {mention_html(user.id, 'link')}"
+    text += f"\n۞ Userlink: {mention_html(user.id, 'LINK')}"
 
-    if chat.type != "private" and user_id != bot.id:
-        _stext = "\n× State In This Chat: <code>{}</code>"
-        
-
-        afk_st = is_user_afk(user.id)
-        if afk_st:
-            text += _stext.format("AFK")
-        else:
-            status = status = bot.get_chat_member(chat.id, user.id).status
-            if status:
-                if status in {"left", "kicked"}:
-                    text += _stext.format("Not here")
-                elif status == "member":
-                    text += _stext.format("Detected")
-                elif status in {"administrator", "creator"}:
-                    text += _stext.format("Admin")
-                    
     disaster_level_present = False
 
     if user.id == OWNER_ID:
