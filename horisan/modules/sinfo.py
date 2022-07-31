@@ -78,12 +78,12 @@ def sinfo(update: Update, context: CallbackContext):
     else:
         return
 
-    rep = message.reply_text("<code>Intel About This User...</code>", parse_mode=ParseMode.HTML)
+    rep = message.reply_text("<code>Small Intel About This User...</code>", parse_mode=ParseMode.HTML)
 
     text = (
         f"「<b> 【ɪɴꜰᴏ ᴏꜰ ᴛʜɪꜱ ᴜꜱᴇʀ】</b> 」\n"
         f"───────────────────\n"
-        f"۞ ID: <code>{user.id}</code>\n"
+        f"۞ ID: <code>{user.id}</code>"
         )
 
     if user.username:
@@ -106,27 +106,6 @@ def sinfo(update: Update, context: CallbackContext):
         text += "\n۞ Disaster : Secretary."
 
     disaster_level_present = True
-
-    try:
-        user_member = chat.get_member(user.id)
-        if user_member.status == "administrator":
-            result = requests.post(
-                f"https://api.telegram.org/bot{TOKEN}/getChatMember?chat_id={chat.id}&user_id={user.id}",
-            )
-            result = result.json()["result"]
-            if "custom_title" in result.keys():
-                custom_title = result["custom_title"]
-                text += f"\n\nTitle:\n<b>{custom_title}</b>"
-    except BadRequest:
-        pass
-
-    for mod in USER_INFO:
-        try:
-            mod_info = mod.__user_info__(user.id)
-        except TypeError:
-            mod_info = mod.__user_info__(user.id, chat.id)
-        if mod_info:
-            text += "\n\n" + mod_info
 
     if INFOPIC:
         try:
