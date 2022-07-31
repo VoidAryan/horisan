@@ -119,10 +119,10 @@ def sinfo(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                "【Health】", url="https://t.me/hori_x_updates/7"
+                                "【Health】", url="https://t.me/hori_x_updates/18"
                             ),
                             InlineKeyboardButton(
-                                "【Disaster】", url="https://t.me/hori_x_updates/6"
+                                "【Disaster】", url="https://t.me/hori_x_updates/16"
                             ),
                         ],
                     ]
@@ -138,10 +138,10 @@ def sinfo(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                "【Health】", url="https://t.me/hori_x_updates/7"
+                                "【Health】", url="https://t.me/hori_x_updates/18"
                             ),
                             InlineKeyboardButton(
-                                "【Disaster】", url="https://t.me/hori_x_updates/6"
+                                "【Disaster】", url="https://t.me/hori_x_updates/16"
                             ),
                         ],
                     ]
