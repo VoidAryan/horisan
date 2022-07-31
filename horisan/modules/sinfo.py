@@ -111,33 +111,20 @@ def sinfo(update: Update, context: CallbackContext):
                     text += _stext.format("Detected")
                 elif status in {"administrator", "creator"}:
                     text += _stext.format("Admin")
-    if user_id not in [bot.id, 777000, 1087968824]:
-        userhp = hpmanager(user)
-        text += f"\n───────────────────"
-        text += f"\n<b>Health:</b> <code>{userhp['earnedhp']}/{userhp['totalhp']}</code>\n[<i>{make_bar(int(userhp['percentage']))} </i>{userhp['percentage']}%]"
-        text += f"\n───────────────────"
-    try:
-        spamwtc = sw.get_ban(int(user.id))
-        if spamwtc:
-            text += "\n\n<b>This person is Spamwatched!</b>"
-            text += f"\nReason: <pre>{spamwtc.reason}</pre>"
-            text += "\nAppeal at @HorixSupport"
-    except:
-        pass  # don't crash if api is down somehow...
-
+                    
     disaster_level_present = False
 
     if user.id == OWNER_ID:
-        text += "\n\n۞ VOID's Wifey ♡ With Disaster : President 👑"
+        text += "\n۞ Disaster : President 👑"
         disaster_level_present = True
     elif user.id in DEV_USERS:
-        text += "\n\n۞ The Disaster level of this person is 'Vice President'."
+        text += "\n۞ Disaster : Vice President."
         disaster_level_present = True
     elif user.id in DRAGONS:
-        text += "\n\n۞ The Disaster level of this person is 'Advisor'."
+        text += "\n۞ Disaster : Advisor."
         disaster_level_present = True
     elif user.id in DEMONS:
-        text += "\n\n۞ The Disaster level of this person is 'Secretary'."
+        text += "\n۞ Disaster : Secretary."
 
     disaster_level_present = True
 
