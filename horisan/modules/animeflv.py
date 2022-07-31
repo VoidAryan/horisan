@@ -10,6 +10,6 @@ async def anime(_, message):
   ufff = api.search('query')
   for uff in ufff: 
     name = uff["title"]
-    rat = uff["rating"]
+    name += uff["rating"]
     pic = uff["banner"]
-  await message.reply_photo(pic, caption=name)
+    await message.reply_photo(pic, caption=name)
