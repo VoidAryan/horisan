@@ -8,7 +8,7 @@ import requests
 async def anime(_, message):
   query = " ".join(message.command[1:])
   ufff = api.search('query')
-  for uff in ufff 
+  for uff in ufff: 
     name = uff["title"]
     rat = uff["rating"]
     pic = uff["banner"]
