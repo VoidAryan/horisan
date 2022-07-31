@@ -7,7 +7,7 @@ from horisan import pbot as bot
 async def anime(_, message):
     query = " ".join(message.command[1:])
     uff = api.search('query')
-    name = uff["title"]
-    rat = uff["rating"]
-    pic = uff["banner"]
+    name = uff.get["title"]
+    rat = uff.get["rating"]
+    pic = uff.get["banner"]
     await message.reply_photo(pic, caption=name)
