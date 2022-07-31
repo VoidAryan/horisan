@@ -214,7 +214,7 @@ def sinfo(update: Update, context: CallbackContext):
     rep.delete()
    
     
-   __help__ = """
+__help__ = """
 *SINFO:*
 ❂ /sinfo*:* Get Your Info But In Smaller Size.
 """
