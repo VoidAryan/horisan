@@ -6,10 +6,10 @@ from telegram.ext import CallbackContext
 from telegram.chatmemberupdated import ChatMemberUpdated
 from telegram.ext.chatmemberhandler import ChatMemberHandler
 
-from MikuXProBot import dispatcher
-from MikuXProBot.modules.log_channel import loggable
+from horisan import dispatcher
+from horisan.modules.log_channel import loggable
 
-import MikuXProBot.modules.sql.logger_sql as sql
+import horisan.modules.sql.logger_sql as sql
 
 # Module to extract and log (optional: send to chat) status changes in chat members using ChatMemberUpdated 
 # https://github.com/python-telegram-bot/python-telegram-bot/blob/master/examples/chatmemberbot.py
