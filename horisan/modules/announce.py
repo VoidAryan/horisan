@@ -4,11 +4,11 @@ from telegram import Update
 from telegram.ext import CallbackContext
 from telegram.utils.helpers import mention_html
 
-from MikuXProBot.modules.log_channel import loggable
-from MikuXProBot.modules.helper_funcs.decorators import kigcmd
+from horisan.modules.log_channel import loggable
+from horisan.modules.helper_funcs.dc import kigcmd
 
-import MikuXProBot.modules.sql.logger_sql as sql
-from MikuXProBot.modules.helper_funcs.anonymous import user_admin as u_admin, AdminPerms
+import horisan.modules.sql.logger_sql as sql
+from horisan.modules.helper_funcs.anonymous import user_admin as u_admin, AdminPerms
 
 
 @kigcmd(command="announce", pass_args=True)
