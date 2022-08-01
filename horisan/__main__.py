@@ -817,7 +817,7 @@ def main():
                 [
                   [                  
                        InlineKeyboardButton(
-                             text="【 Hori Is Back Alive 】",
+                             text="【 SYSTEM STATS 】",
                              callback_data="stats_callback")
                      ] 
                 ]
