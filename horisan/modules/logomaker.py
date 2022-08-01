@@ -5,8 +5,8 @@ import random
 import glob
 from PIL import Image, ImageDraw, ImageFont
 from telethon.tl.types import InputMessagesFilterPhotos
-from MikuXProBot.events import register
-from MikuXProBot import telethn as tbot
+from horisan.events import register
+from horissj import telethn as tbot
 from telethon import Button, custom
 def mediainfo(media):
     xx = str((str(media)).split("(", maxsplit=1)[0])
@@ -45,7 +45,7 @@ def mediainfo(media):
 
 @register(pattern="^/logo ?(.*)")
 async def logo_gen(event):
-    xx = await event.reply("`Processing...`")
+    xx = await event.reply("`Processing Waito...`")
     name = event.pattern_match.group(1)
     if not name:
         await xx.edit("`Please gimme Some Text To Draw`")
@@ -65,14 +65,14 @@ async def logo_gen(event):
         pics = [         "https://telegra.ph/file/adf6be85ec162044e9fbe.jpg"
                ]
         id_ = random.choice(pics)
-        fpath_ = glob.glob("./MikuXProBot/resources/Vampire Wars.otf")
+        fpath_ = glob.glob("./horisan/resources/Vampire Wars.otf")
         font_ = random.choice(fpath_)
     if not bg_:
         pics = []
         id_ = random.choice(pics)
         img = Image.open(io.BytesIO(requests.get(id_).content))
     if not font_:
-        fpath_ = glob.glob("./MikuXProBot/resources/Vampire Wars.otf")
+        fpath_ = glob.glob("./horisan/resources/Vampire Wars.otf")
         font_ = random.choice(fpath_)
     if len(name) <= 8:
         fnt_size = 120
@@ -99,14 +99,14 @@ async def logo_gen(event):
     draw.text((x, y), name, font=font, fill="white",
               stroke_width=strke, stroke_fill="black")
     flnme = f"logo.png"
-    BUTTON = [[Button.url("Support Chat", "https://t.me/MikusSupport"), Button.url("Updates Channel", "https://t.me/MikuXUpdates")]]
+    BUTTON = [[Button.url("Support Chat", "https://t.me/kyoukoxsupport"), Button.url("Updates Channel", "https://t.me/hori_x_updates")]]
     img.save(flnme, "png")
     await xx.edit("`Uploading`")
     if os.path.exists(flnme):
         await tbot.send_file(
             event.chat_id,
             file=flnme,
-            caption=f"Logo by [{event.sender.first_name}](tg://user?id={event.sender.id}) Via [Miku](https://t.me/Mikuxprobot)",
+            caption=f"Logo by [{event.sender.first_name}](tg://user?id={event.sender.id}) By [V O I D](https://t.me/voidxnetwork)",
             buttons=BUTTON,
         )
         os.remove(flnme)
@@ -114,7 +114,7 @@ async def logo_gen(event):
     if os.path.exists(bg_):
         os.remove(bg_) 
     if os.path.exists(font_):
-        if not font_.startswith("./MikuXProBot/resources/Vampire Wars.otf"):
+        if not font_.startswith("./horisan/resources/Vampire Wars.otf"):
             os.remove(font_)
 
 
