@@ -17,27 +17,23 @@ if is_module_loaded(FILENAME):
 
     def loggable(func):
         @wraps(func)
-        def log_action(
-            update: Update,
-            context: CallbackContext,
-            job_queue: JobQueue = None,
-            *args,
-            **kwargs,
-        ):
-            if not job_queue:
-                result = func(update, context, *args, **kwargs)
-            else:
-                result = func(update, context, job_queue, *args, **kwargs)
-
-            chat = update.effective_chat
-            message = update.effective_message
+        def log_action(update, context, *args, **kwargs):
+            result = func(update, context, *args, **kwargs)
+            chat = update.effective_chat  # type: Optional[Chat]
+            message = update.effective_message  # type: Optional[Message]
 
             if result:
                 datetime_fmt = "%H:%M - %d-%m-%Y"
                 result += f"\n<b>Event Stamp</b>: <code>{datetime.utcnow().strftime(datetime_fmt)}</code>"
-
-                if message.chat.type == chat.SUPERGROUP and message.chat.username:
-                    result += f'\n<b>Link:</b> <a href="https://t.me/{chat.username}/{message.message_id}">click here</a>'
+                try:
+                    if message.chat.type == chat.SUPERGROUP:
+                        if message.chat.username:
+                            result += f'\n<b>Link:</b> <a href="https://t.me/{chat.username}/{message.message_id}">click here</a>'
+                        else:
+                            cid = str(chat.id).replace("-100", '')
+                            result += f'\n<b>Link:</b> <a href="https://t.me/c/{cid}/{message.message_id}">click here</a>'
+                except AttributeError:
+                    result += '\n<b>Link:</b> No link for manual actions.' # or just without the whole line
                 log_chat = sql.get_chat_log_channel(chat.id)
                 if log_chat:
                     send_log(context, log_chat, chat.id, result)
