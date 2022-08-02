@@ -6,7 +6,7 @@ import glob
 from PIL import Image, ImageDraw, ImageFont
 from telethon.tl.types import InputMessagesFilterPhotos
 from horisan.events import register
-from horissj import telethn as tbot
+from horisan import telethn as tbot
 from telethon import Button, custom
 def mediainfo(media):
     xx = str((str(media)).split("(", maxsplit=1)[0])
