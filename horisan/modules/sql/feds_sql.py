@@ -1,7 +1,7 @@
 import ast
 import threading
 from horisan import dispatcher
-from horisan.modules.sql import BASE, SESSION
+from horisan.modules.sql.db2 import BASE, SESSION
 from sqlalchemy import Boolean, Column, String, UnicodeText, Integer
 from telegram.error import BadRequest, Unauthorized
 from sqlalchemy.sql.sqltypes import BigInteger
