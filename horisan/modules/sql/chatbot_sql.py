@@ -1,7 +1,7 @@
 import threading
 
 from sqlalchemy import Column, String
-from horisan.modules.sql import BASE, SESSION
+from horisan.modules.sql.db2 import BASE, SESSION
 
 
 class KukiChats(BASE):
