@@ -13,7 +13,7 @@
 
 from sqlalchemy import Column, String
 
-from horisan.modules.sql import BASE, SESSION
+from horisan.modules.sql.db3 import BASE, SESSION
 
 
 class Nsfwatch(BASE):
