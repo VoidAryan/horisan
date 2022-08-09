@@ -1,6 +1,6 @@
 import threading
 
-from horisan.modules.sql import BASE, SESSION
+from horisan.modules.sql.db3 import BASE, SESSION
 from sqlalchemy import Column, String, distinct, func
 
 
