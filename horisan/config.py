@@ -29,6 +29,9 @@ class Config(object):
 
     # RECOMMENDED
     SQLALCHEMY_DATABASE_URI = "something://somewhat:user@hosturl:port/databasename"  # needed for any database modules
+    DATABASE_URL= ""
+    DATABASE_URL2= ""
+    DATABASE_URL3= ""
     LOAD = []
     NO_LOAD = ["rss", "cleaner", "connection", "math"]
     WEBHOOK = False
