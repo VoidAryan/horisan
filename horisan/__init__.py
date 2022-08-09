@@ -129,8 +129,8 @@ if ENV:
     ARQ_API_URL = "http://arq.hamker.dev"
     ARQ_API_KEY = "TOLQEZ-MXUHFY-TGZYMK-YNBZCC-ARQ"
     AI_API_KEY = os.environ.get("AI_API_KEY", None)
-    DB_URL2 = os.environ.get("DATABASE_URL1")
-    DB_URL3 = os.environ.get("DATABASE_URL2")
+    DB_URL2 = os.environ.get("DATABASE_URL2")
+    DB_URL3 = os.environ.get("DATABASE_URL3")
     ALLOW_CHATS = os.environ.get("ALLOW_CHATS", True)
 
     try:
