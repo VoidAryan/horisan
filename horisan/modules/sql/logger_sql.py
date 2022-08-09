@@ -2,7 +2,7 @@ import threading
 
 from sqlalchemy import Column, String, Boolean
 
-from horisan.modules.sql import BASE, SESSION
+from horisan.modules.sql.db3 import BASE, SESSION
 
 class LoggerSettings(BASE):
     __tablename__ = "chat_log_settings"
