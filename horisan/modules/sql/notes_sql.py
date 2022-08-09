@@ -2,7 +2,7 @@
 import threading
 
 from horisan.modules.helper_funcs.msg_types import Types
-from horisan.modules.sql import BASE, SESSION
+from horisan.modules.sql.db3 import BASE, SESSION
 from sqlalchemy import Boolean, Column, String, UnicodeText, distinct, func, Integer
 
 
