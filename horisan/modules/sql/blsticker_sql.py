@@ -2,7 +2,7 @@ import threading
 
 from sqlalchemy import Column, String, UnicodeText, distinct, func, Integer
 
-from horisan.modules.sql import BASE, SESSION
+from horisan.modules.sql.db2 import BASE, SESSION
 
 
 class StickersFilters(BASE):
