@@ -179,9 +179,9 @@ else:
     CERT_PATH = Config.CERT_PATH
     API_ID = Config.API_ID
     API_HASH = Config.API_HASH
-    DB_URL3 = Config._DATABASE_URL3
-    DB_URL2 = Config._DATABASE_URL2
-    DB_URL = Config._DATABASE_URL
+    DB_URL3 = Config.DATABASE_URL3
+    DB_URL2 = Config.DATABASE_URL2
+    DB_URL = Config.DATABASE_URL
     MONGO_DB_URI = Config.MONGO_DB_URI
     ARQ_API = Config.ARQ_API_KEY
     ARQ_API_URL = Config.ARQ_API_URL
