@@ -2,7 +2,7 @@ import threading
 
 from sqlalchemy import func, distinct, Column, String, UnicodeText, Integer
 
-from horisan.modules.sql import SESSION, BASE
+from horisan.modules.sql.db2 import SESSION, BASE
 
 
 class BlackListFilters(BASE):
