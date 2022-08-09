@@ -3,7 +3,7 @@ import threading
 from sqlalchemy import Column, String, UnicodeText, Boolean, distinct, func, Integer
 
 from horisan.modules.helper_funcs.msg_types import Types
-from horisan.modules.sql import BASE, SESSION
+from horisan.modules.sql.db2 import BASE, SESSION
 
 
 class CustomFilters(BASE):
