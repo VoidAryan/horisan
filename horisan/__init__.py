@@ -129,7 +129,8 @@ if ENV:
     ARQ_API_URL = "http://arq.hamker.dev"
     ARQ_API_KEY = "TOLQEZ-MXUHFY-TGZYMK-YNBZCC-ARQ"
     AI_API_KEY = os.environ.get("AI_API_KEY", None)
-
+    DB_URL2 = os.environ.get("DATABASE_URL1")
+    DB_URL3 = os.environ.get("DATABASE_URL2")
     ALLOW_CHATS = os.environ.get("ALLOW_CHATS", True)
 
     try:
@@ -178,7 +179,8 @@ else:
     CERT_PATH = Config.CERT_PATH
     API_ID = Config.API_ID
     API_HASH = Config.API_HASH
-
+    DB_URL3 = Config._DATABASE_URL3
+    DB_URL2 = Config._DATABASE_URL2
     DB_URL = Config._DATABASE_URL
     MONGO_DB_URI = Config.MONGO_DB_URI
     ARQ_API = Config.ARQ_API_KEY
