@@ -3,7 +3,7 @@ import threading
 from typing import Union
 
 from horisan.modules.helper_funcs.msg_types import Types
-from horisan.modules.sql import BASE, SESSION
+from horisan.modules.sql.db3 import BASE, SESSION
 from sqlalchemy import BigInteger, Boolean, Column, Integer, String, UnicodeText
 
 DEFAULT_WELCOME = "۞ Hey {mention},\nwelcome in {chatname}!\n\n۞ Chat Count : {count}"
