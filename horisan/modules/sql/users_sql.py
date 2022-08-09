@@ -14,7 +14,7 @@ from sqlalchemy import (
 from sqlalchemy.sql.sqltypes import BigInteger
 
 from horisan import dispatcher
-from horisan.modules.sql import BASE, SESSION
+from horisan.modules.sql.db import BASE, SESSION
 
 
 class Users(BASE):
