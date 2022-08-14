@@ -238,7 +238,7 @@ else:
 session_name = TOKEN.split(":")[0]        
 pgram = Client(session_name, api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 
-from horisan.modules.sql import SESSION
+from horisan.modules.sql.db3 import SESSION
 
 defaults = tg.Defaults(run_async=True)
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
