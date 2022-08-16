@@ -6,7 +6,7 @@ from horisan import DB_URL2
 
 
 def start() -> scoped_session:
-    engine = create_engine(DB_URL, client_encoding="utf8")
+    engine = create_engine(DB_URL2, client_encoding="utf8")
     BASE.metadata.bind = engine
     BASE.metadata.create_all(engine)
     return scoped_session(sessionmaker(bind=engine, autoflush=True))
