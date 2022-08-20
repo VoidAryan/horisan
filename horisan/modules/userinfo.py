@@ -473,14 +473,6 @@ def stats(update: Update, context: CallbackContext):
                     InlineKeyboardButton(
                         "Updates", url="https://t.me/hori_x_updates"
                     ),
-                    InlineKeyboardButton(
-                        "Support", url="https://t.me/kyoukoxsupport"
-                    ),
-                ],
-                [
-                    InlineKeyboardButton(
-                        "♢ CLOSE ♢", callback_data="delete_"
-                    ),
                 ],
             ],
         ),
