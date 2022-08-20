@@ -144,7 +144,7 @@ def __user_info__(user_id):
 
 
 def __stats__():
-    return "۞ {} ᴜꜱᴇʀꜱ | {} ᴄʜᴀᴛꜱ".format(sql.num_users(), sql.num_chats())
+    return "۞ {} ᴜꜱᴇʀꜱ | {} ᴄʜᴀᴛꜱ\n".format(sql.num_users(), sql.num_chats())
 
 
 def __migrate__(old_chat_id, new_chat_id):
