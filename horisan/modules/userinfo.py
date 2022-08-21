@@ -40,7 +40,6 @@ from horisan import (
     SUPPORT_CHAT,
 )
 from horisan.__main__ import STATS, TOKEN, USER_INFO
-from horisan.modules.sql import SESSION
 import horisan.modules.sql.userinfo_sql as sql
 from horisan.modules.disable import DisableAbleCommandHandler
 from horisan.modules.sql.global_bans_sql import is_user_gbanned
