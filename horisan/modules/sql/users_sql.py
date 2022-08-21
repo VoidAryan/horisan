@@ -1,7 +1,6 @@
 import threading
 
 from horisan import dispatcher
-from horisan.modules.sql import BASE, SESSION
 from sqlalchemy import (
     Column,
     ForeignKey,
