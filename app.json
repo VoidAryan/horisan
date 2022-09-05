@@ -31,7 +31,12 @@
          "description": "Your user ID as an integer.",
          "required": true,
          "value": "5380679553"
-     },
+      },    
+      "REDIS_URL": {
+         "description": "Put your redis url. mat dalo mujhe kya",
+         "required": true,
+         "value": "redis://Asta:Asta_123@redis-11259.c277.us-east-1-3.ec2.cloud.redislabs.com:11259/Asta"
+      },
       "HEROKU_API_KEY": {
         "description": "Your Heroku API key, get it from 'https://dashboard.heroku.com/account'",
         "value": "",
