@@ -84,11 +84,12 @@ def get_readable_time(seconds: int) -> str:
 GROUP_START_IMG = "https://telegra.ph/file/ace3cc2757f843ff71330.jpg"
 
 PM_START_TEXT = """
-*ᴋᴏɴɪᴄʜɪᴡᴀ! {}!*
-۞ ɪᴍ ᴋʏᴏᴜᴋᴏ ʜᴏʀɪ ᴀɴ ᴀɴɪᴍᴇ ʙᴀꜱᴇᴅ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ. [👋](https://telegra.ph/file/ace3cc2757f843ff71330.jpg)
+*ᴋᴏɴɪᴄʜɪᴡᴀ! {}!* [👋](https://telegra.ph/file/ace3cc2757f843ff71330.jpg)
+
+۞ ɪᴍ ᴋʏᴏᴜᴋᴏ ʜᴏʀɪ ᴀɴ ᴀɴɪᴍᴇ ʙᴀꜱᴇᴅ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ.
 ───────────────────────
 × *Aʟɪᴠᴇ Sɪɴᴄᴇ:* {}
-× {} *Wᴇᴇʙꜱ, Aᴄʀᴏꜱꜱ* {} *Cʜᴀᴛꜱ*
+× {} *Wᴇᴇʙꜱ | {} *Cʜᴀᴛꜱ*
 ───────────────────────
 ۞ ɪᴍ ʜᴇʀᴇ ᴛᴏ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ɢᴄ ᴍᴏʀᴇ ᴇꜰꜰɪᴄɪᴇɴᴛʟʏ!
 """
@@ -113,10 +114,10 @@ HELP_STRINGS = """
 ۞ Kyouko Hori ɪꜱ ᴀɴ ᴀᴅᴠᴀɴᴄᴇᴅ ᴀɴᴅ ʜɪɢʜʟʏ ᴜᴘᴅᴀᴛᴇᴅ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ. 
 ۞ ʏᴏᴜ ᴄᴀɴ ꜱᴜᴘᴘᴏʀᴛ ᴏᴜʀ ᴡᴏʀᴋ ʙʏ ᴜꜱɪɴɢ /ᴅᴏɴᴀᴛɪᴏɴ 
 ۞ ᴄʟɪᴄᴋ ᴏɴ ʙᴜᴛᴛᴏɴꜱ ɢɪᴠᴇɴ ʙᴇʟᴏᴡ ᴛᴏ ꜱᴇᴇ ɢᴜɪᴅᴇ ꜰᴏʀ ᴜꜱɪɴɢ ᴛʜᴇᴍ. 
-۞ ᴛʜɪꜱ ʙᴏᴛ ɪꜱ ᴅᴇᴠᴇʟᴏᴘᴇᴅ ᴜɴᴅᴇʀ【V๏ɪ፝֟𝔡】 [✨](https://telegra.ph/file/6a74e747aa1262f8a778a.jpg)"""
+۞ ᴛʜɪꜱ ʙᴏᴛ ɪꜱ ᴅᴇᴠᴇʟᴏᴘᴇᴅ ᴜɴᴅᴇʀ【V๏ɪ፝֟𝔡】"""
 
 
-DONATE_STRING = """Heya, glad to hear you want to donate! ❤ \
+DONATE_STRING = """Heya, glad to hear you want to donate! \
 
  You can support the project by contacting @Kyoukoxsupport \
  If you can't donate us financially support us by helping in growth of hori san \
@@ -236,7 +237,7 @@ def start(update: Update, context: CallbackContext):
     else:
         update.effective_message.reply_photo(
             GROUP_START_IMG,
-            caption="<code> Hey there I am with you Since</code>: <code>{}</code>".format(
+            caption="Hey there I am with you Since: <code>{}</code>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
