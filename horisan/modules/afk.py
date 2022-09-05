@@ -35,6 +35,16 @@ def afk(update, context):
     start_afk(update.effective_user.id, reason)
     REDIS.set(f'afk_time_{update.effective_user.id}', start_afk_time)
     fname = update.effective_user.first_name
+        try:
+        horisan = update.message.reply_video("https://telegra.ph/file/0f024fd6efa00caf090ea.mp4", caption ="Baii Baii [{}](tg://user?id={event.sender.id}) 👋".format(fname), parse_mode=ParseMode.MARKDOWN)
+        time.sleep(50)
+        try:
+            horisan.delete()
+        except BadRequest:
+            pass
+    except BadRequest:
+         pass
+
 
 def no_longer_afk(update, context):
     user = update.effective_user
