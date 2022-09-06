@@ -39,7 +39,7 @@ def afk(update, context):
         try:
             horisan.delete()
         except BadRequest:
-            passl
+            pass
     except BadRequest:
          pass
 
