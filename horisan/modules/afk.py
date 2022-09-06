@@ -21,6 +21,13 @@ from horisan.modules.helper_funcs.readable_time import get_readable_time
 AFK_GROUP = 7
 AFK_REPLY_GROUP = 8
 
+PHOTO = "https://telegra.ph/file/242d186b33c49c0329a0f.mp4"
+
+
+@register(pattern=("/afk"))
+async def awake(event):
+    TEXT = f"Baii Baii [{event.sender.first_name}](tg://user?id={event.sender.id}) 👋"
+    await tbot.send_file(event.chat_id, PHOTO, caption=TEXT)
 
 def afk(update, context):
     args = update.effective_message.text.split(None, 1)
@@ -34,15 +41,6 @@ def afk(update, context):
     reason = args[1] if len(args) >= 2 else "none"
     start_afk(update.effective_user.id, reason)
     REDIS.set(f'afk_time_{update.effective_user.id}', start_afk_time)
-    try: 
-        horisan = update.message.reply_video("https://telegra.ph/file/0f024fd6efa00caf090ea.mp4", caption ="Baii Baii {}!👋".format(user.mention_html()),parse_mode=ParseMode.HTML)
-        time.sleep(10)
-        try:
-            horisan.delete()
-        except BadRequest:
-            pass
-    except BadRequest:
-         pass
 
 
 def no_longer_afk(update, context):
