@@ -753,8 +753,7 @@ def donate(update: Update, context: CallbackContext):
                         ]
                     ]
                 ),
-            )
-            )
+            ),
         except Unauthorized:
             update.effective_message.reply_text(
                 "Contact me in PM first to get donation information."
