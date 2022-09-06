@@ -119,9 +119,10 @@ HELP_STRINGS = """
 
 DONATE_STRING = """Heya, glad to hear you want to donate! \
 
- You can support the project by contacting @Kyoukoxsupport \
- If you can't donate us financially support us by helping in growth of hori san \
- Those who cannot provide monetary support are welcome to help us we are here to hear you."""
+ You can support the project by contacting @VoidAryan \
+ 
+ If you can't donate us financially support us by helping in growth of hori san. \
+ """
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -727,6 +728,7 @@ def donate(update: Update, context: CallbackContext):
                 "I'm free for everyone ❤️ If you wanna make me smile, just join"
                 "[My Channel](t.me/voidxnetwork)".format(DONATION_LINK),
                 parse_mode=ParseMode.MARKDOWN,
+                disable_web_page_preview=True,
             )
     else:
         try:
@@ -738,7 +740,20 @@ def donate(update: Update, context: CallbackContext):
             )
 
             update.effective_message.reply_text(
-                "Check Your Pm to know about Donation! ✌"
+                "Check Your Pm to know about Donation! ✌",
+            reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton(
+                                text="【Donation Info】",
+                                url="t.me/{}?start=".format(
+                                    context.bot.username
+                                ),
+                            )
+                        ]
+                    ]
+                ),
+            )
             )
         except Unauthorized:
             update.effective_message.reply_text(
