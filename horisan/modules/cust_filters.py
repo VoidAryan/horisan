@@ -28,7 +28,7 @@ from horisan.modules.helper_funcs.string_handling import (
     markdown_to_html,
     split_quotes,
 )
-from Yelan.modules.sql import cust_filters_sql as sql
+from horisan.modules.sql import cust_filters_sql as sql
 
 HANDLER_GROUP = 15
 
