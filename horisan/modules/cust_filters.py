@@ -1,4 +1,4 @@
-import re
+"""import re
 import random
 from html import escape
 import telegram
@@ -663,3 +663,4 @@ __handlers__ = [
     LIST_HANDLER,
     (CUST_FILTER_HANDLER, HANDLER_GROUP, RMALLFILTER_HANDLER),
 ]
+"""
