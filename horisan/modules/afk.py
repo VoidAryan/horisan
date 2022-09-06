@@ -17,6 +17,8 @@ from horisan.modules.users import get_user_id
 
 from horisan.modules.helper_funcs.alternate import send_message
 from horisan.modules.helper_funcs.readable_time import get_readable_time
+from horisan.events import register
+from horisan import telethn as tbot
 
 AFK_GROUP = 7
 AFK_REPLY_GROUP = 8
