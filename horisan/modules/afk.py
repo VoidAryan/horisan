@@ -34,7 +34,8 @@ def afk(update, context):
     reason = args[1] if len(args) >= 2 else "none"
     start_afk(update.effective_user.id, reason)
     REDIS.set(f'afk_time_{update.effective_user.id}', start_afk_time)
-    horisan = update.message.reply_video("https://telegra.ph/file/0f024fd6efa00caf090ea.mp4", caption ="Baii Baii {}!👋".format(user.mention_html()),parse_mode=ParseMode.HTML)
+    try: 
+        horisan = update.message.reply_video("https://telegra.ph/file/0f024fd6efa00caf090ea.mp4", caption ="Baii Baii {}!👋".format(user.mention_html()),parse_mode=ParseMode.HTML)
         time.sleep(50)
         try:
             horisan.delete()
