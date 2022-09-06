@@ -1,29 +1,3 @@
-"""
-STATUS: Code is working. ✅
-"""
-
-"""
-GNU General Public License v3.0
-
-Copyright (C) 2022, SOME-1HING [https://github.com/SOME-1HING]
-
-Credits:-
-    I don't know who originally wrote this code. If you originally wrote this code, please reach out to me. 
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <https://www.gnu.org/licenses/>.
-"""
-
 import re
 import random
 from html import escape
@@ -38,23 +12,23 @@ from telegram.ext import (
     Filters,
 )
 from telegram.utils.helpers import mention_html, escape_markdown
-from Shikimori import dispatcher, LOGGER, DRAGONS
-from Shikimori.modules.disable import DisableAbleCommandHandler
-from Shikimori.modules.helper_funcs.handlers import MessageHandlerChecker
-from Shikimori.modules.helper_funcs.chat_status import user_admin
-from Shikimori.modules.helper_funcs.extraction import extract_text
-from Shikimori.modules.helper_funcs.filters import CustomFilters
-from Shikimori.modules.helper_funcs.misc import build_keyboard_parser
-from Shikimori.modules.helper_funcs.msg_types import get_filter_type
-from Shikimori.modules.helper_funcs.string_handling import (
+from horisan import dispatcher, LOGGER, DRAGONS
+from horisan.modules.disable import DisableAbleCommandHandler
+from horisan.modules.helper_funcs.handlers import MessageHandlerChecker
+from horisan.modules.helper_funcs.chat_status import user_admin
+from horisan.modules.helper_funcs.extraction import extract_text
+from horisan.modules.helper_funcs.filters import CustomFilters
+from horisan.modules.helper_funcs.misc import build_keyboard_parser
+from horisan.modules.helper_funcs.msg_types import get_filter_type
+from horisan.modules.helper_funcs.string_handling import (
     split_quotes,
     button_markdown_parser,
     escape_invalid_curly_brackets,
     markdown_to_html,
 )
-from Shikimori.modules.sql import cust_filters_sql as sql
-from Shikimori.modules.connection import connected
-from Shikimori.modules.helper_funcs.alternate import send_message, typing_action
+from horisan.modules.sql import cust_filters_sql as sql
+from horisan.modules.connection import connected
+from horisan.modules.helper_funcs.alternate import send_message, typing_action
 
 HANDLER_GROUP = 10
 
