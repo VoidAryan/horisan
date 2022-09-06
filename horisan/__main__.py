@@ -81,10 +81,10 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 
-GROUP_START_IMG = "https://telegra.ph/file/ace3cc2757f843ff71330.jpg"
+START_IMG = "https://telegra.ph/file/7b26a5a8ffd88df6c32e6.jpg"
 
 PM_START_TEXT = """
-*ᴋᴏɴɪᴄʜɪᴡᴀ! {}!* [👋](https://telegra.ph/file/ace3cc2757f843ff71330.jpg)
+*ᴋᴏɴɪᴄʜɪᴡᴀ {} !* [👋](https://telegra.ph/file/ace3cc2757f843ff71330.jpg)
 
 ۞ ɪᴍ ᴋʏᴏᴜᴋᴏ ʜᴏʀɪ ᴀɴ ᴀɴɪᴍᴇ ʙᴀꜱᴇᴅ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ.
 ───────────────────────
@@ -236,8 +236,8 @@ def start(update: Update, context: CallbackContext):
               
     else:
         update.effective_message.reply_photo(
-            GROUP_START_IMG,
-            caption="Hey there I am with you Since: <code>{}</code>".format(
+            START_IMG,
+            caption="Hey there! I am with you Since: <code>{}</code>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
@@ -501,42 +501,6 @@ def hori_about_callback(update, context):
         )
 
 
-def Source_about_callback(update, context):
-    query = update.callback_query
-    if query.data == "source_":
-        query.message.edit_text(
-            text="๏›› This advance command for Musicplayer."
-            "\n\n๏ Command for admins only."
-            "\n • `/reload` - For refreshing the adminlist."
-            "\n • `/pause` - To pause the playback."
-            "\n • `/resume` - To resuming the playback You've paused."
-            "\n • `/skip` - To skipping the player."
-            "\n • `/end` - For end the playback."
-            "\n • `/musicplayer <on/off>` - Toggle for turn ON or turn OFF the musicplayer."
-            "\n\n๏ Command for all members."
-            "\n • `/play` <query /reply audio> - Playing music via YouTube."
-            "\n • `/playlist` - To playing a playlist of groups or your personal playlist",
-            parse_mode=ParseMode.MARKDOWN,
-            disable_web_page_preview=True,
-            reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="【Back】", callback_data="hori_")]]
-            ),
-        )
-    elif query.data == "source_back":
-        first_name = update.effective_user.first_name
-        query.message.edit_text(
-            PM_START_TEXT.format(
-                escape_markdown(first_name),
-                escape_markdown(uptime),
-                sql.num_users(),
-                sql.num_chats()),                        
-            reply_markup=InlineKeyboardMarkup(buttons),
-            parse_mode=ParseMode.MARKDOWN,
-            timeout=60,
-            disable_web_page_preview=False,
-        )
-
-
 def get_help(update: Update, context: CallbackContext):
     chat = update.effective_chat  # type: Optional[Chat]
     args = update.effective_message.text.split(None, 1)
@@ -545,9 +509,7 @@ def get_help(update: Update, context: CallbackContext):
     if chat.type != chat.PRIVATE:
         if len(args) >= 2 and any(args[1].lower() == x for x in HELPABLE):
             module = args[1].lower()
-            update.effective_message.reply_photo(
-                "https://telegra.ph/file/250fa84d9d9abfc05904b.jpg",
-                caption=f"Baka 💫 contact me in PM to get help of {module.capitalize()}",
+            update.effective_message.reply("⚙ Help For : {module.capitalize()}",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
@@ -562,9 +524,7 @@ def get_help(update: Update, context: CallbackContext):
                 ),
             )
             return
-        update.effective_message.reply_photo(
-            "https://telegra.ph/file/250fa84d9d9abfc05904b.jpg",
-            caption=f"Baka 💫 contact me in PM to get the list of possible commands.",
+        update.effective_message.reply("⚙ Help For Commands and Modules",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
@@ -581,7 +541,7 @@ def get_help(update: Update, context: CallbackContext):
     elif len(args) >= 2 and any(args[1].lower() == x for x in HELPABLE):
         module = args[1].lower()
         text = (
-            "Here is the available help for the *{}* module:\n".format(
+            "⚙ Here is the available help for the *{}* module:\n".format(
                 HELPABLE[module].__mod_name__
             )
             + HELPABLE[module].__help__
@@ -607,7 +567,7 @@ def send_settings(chat_id, user_id, user=False):
             )
             dispatcher.bot.send_message(
                 user_id,
-                "These are your current settings:" + "\n\n" + settings,
+                "⚙ These are your current settings:" + "\n\n" + settings,
                 parse_mode=ParseMode.MARKDOWN,
             )
 
@@ -765,7 +725,7 @@ def donate(update: Update, context: CallbackContext):
         if OWNER_ID != 1606221784:
             update.effective_message.reply_text(
                 "I'm free for everyone ❤️ If you wanna make me smile, just join"
-                "[My Channel]({})".format(DONATION_LINK),
+                "[My Channel](t.me/voidxnetwork)".format(DONATION_LINK),
                 parse_mode=ParseMode.MARKDOWN,
             )
     else:
@@ -778,7 +738,7 @@ def donate(update: Update, context: CallbackContext):
             )
 
             update.effective_message.reply_text(
-                "I've PM'ed you about donating to my creator!"
+                "Check Your Pm to know about Donation! ✌"
             )
         except Unauthorized:
             update.effective_message.reply_text(
@@ -809,9 +769,8 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.send_photo(
+            dispatcher.bot.send(
                 f"@{SUPPORT_CHAT}",
-                "https://telegra.ph/file/98a2be2030b5ffb057815.jpg",     #@RyuIsGod
                 "ɪ ᴀᴍ ᴀʟɪᴠᴇ ᴠᴏɪᴅ ꜱᴀᴍᴀ 🥀",
                 parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
