@@ -510,7 +510,7 @@ def get_help(update: Update, context: CallbackContext):
     if chat.type != chat.PRIVATE:
         if len(args) >= 2 and any(args[1].lower() == x for x in HELPABLE):
             module = args[1].lower()
-            update.effective_message("⚙ Help For : {module.capitalize()}",
+            update.effective_message.reply_text("⚙ Help For : {module.capitalize()}",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
@@ -525,7 +525,7 @@ def get_help(update: Update, context: CallbackContext):
                 ),
             )
             return
-        update.effective_message("⚙ Help For Commands and Modules",
+        update.effective_message.reply_text("⚙ Help For Commands and Modules",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
