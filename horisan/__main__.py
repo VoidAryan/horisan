@@ -117,9 +117,9 @@ HELP_STRINGS = """
 ۞ ᴛʜɪꜱ ʙᴏᴛ ɪꜱ ᴅᴇᴠᴇʟᴏᴘᴇᴅ ᴜɴᴅᴇʀ【V๏ɪ፝֟𝔡】"""
 
 
-DONATE_STRING = """Heya, glad to hear you want to donate! \
+DONATE_STRING = """Heya, glad to hear you want to donate! \n
 
- You can support the project by contacting @VoidAryan \
+ You can support the project by contacting @VoidAryan \n
  
  If you can't donate us financially support us by helping in growth of hori san. \
  """
@@ -746,8 +746,7 @@ def donate(update: Update, context: CallbackContext):
                         [
                             InlineKeyboardButton(
                                 text="【Donation Info】",
-                                url="t.me/{}?start=".format(
-                                    context.bot.username
+                                url="t.me/HoriXProbot"
                                 ),
                             )
                         ]
