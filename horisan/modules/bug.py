@@ -132,4 +132,4 @@ __help__ = """
 × usage : /bug (bug you have or reply to the bug)
 """
 
-__mod_name__ = "【ʙᴜɢ】"
+__mod_name__ = "ʙᴜɢ"
