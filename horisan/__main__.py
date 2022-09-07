@@ -746,7 +746,8 @@ def donate(update: Update, context: CallbackContext):
                         [
                             InlineKeyboardButton(
                                 text="【Donation Info】",
-                                url="t.me/HoriXProbot"
+                                url="t.me/{}".format(
+                                    context.bot.username
                                 ),
                         ]
                     ]
