@@ -162,28 +162,28 @@ def get_id(update: Update, context: CallbackContext):
             user = bot.get_chat(user_id)
 
             msg.reply_text(
-                f"<b>Telegram ID:</b>\n"
-                f"•【 {html.escape(user2.first_name)}'s ID】 - <code>{user2.id}</code>.\n"
-                f"•【 {html.escape(user1.first_name)}'s ID】 - <code>{user1.id}</code>. \n•【 Chat ID 】- <code>{chat.id}</code> ",
+                f"<b> ۞ ID ۞ </b>\n"
+                f"۞ {html.escape(user2.first_name)} - <code>{user2.id}</code>.\n"
+                f"۞ {html.escape(user1.first_name)} - <code>{user1.id}</code>. \n۞ Chat ID - <code>{chat.id}</code> ",
                 parse_mode=ParseMode.HTML,
             )
         else:
 
             user = bot.get_chat(user_id)
             msg.reply_text(
-                f"• {html.escape(user.first_name)}' id is <code>{user.id}</code>. \n•【 Chat ID 】- <code>{chat.id}</code> ",
+                f"۞ {html.escape(user.first_name)}' ID is <code>{user.id}</code>. \n۞ Chat ID - <code>{chat.id}</code> ",
                 parse_mode=ParseMode.HTML,
             )
 
     elif chat.type == "private":
         msg.reply_text(
-            f"•【 Your ID 】- <code>{user.id}</code> \n•【 Chat ID 】- <code>{chat.id}</code>",
+            f"۞ Chat ID - <code>{chat.id}</code>",
             parse_mode=ParseMode.HTML,
         )
 
     else:
         msg.reply_text(
-            f"•【 Chat ID 】- <code>{chat.id}</code>",
+            f"۞ Chat ID - <code>{chat.id}</code>",
             parse_mode=ParseMode.HTML,
         )
 
