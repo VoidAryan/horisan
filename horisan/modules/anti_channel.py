@@ -46,4 +46,4 @@ __help__ = """
 × person wont be able to text as an channel anymore. 
 × command can be used as : /antichannel off/on"""
 
-__mod_name__ = "【ᴀɴᴛɪ-ᴄʜᴀɴɴᴇʟ】"
+__mod_name__ = "ᴀɴᴛɪ-ᴄʜᴀɴɴᴇʟ"
