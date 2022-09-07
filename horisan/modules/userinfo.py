@@ -183,7 +183,7 @@ def get_id(update: Update, context: CallbackContext):
 
     else:
         msg.reply_text(
-            f"•【 Your ID 】- <code>{user.id}</code> \n•【 Chat ID 】- <code>{chat.id}</code>",
+            f"•【 Chat ID 】- <code>{chat.id}</code>",
             parse_mode=ParseMode.HTML,
         )
 
