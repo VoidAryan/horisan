@@ -393,7 +393,7 @@ dispatcher.add_handler(EIGHTBALL_HANDLER)
 dispatcher.add_handler(TABLE_HANDLER)
 dispatcher.add_handler(RYUMEME_HANDLER)
 
-__mod_name__ = "【ꜰᴜɴ】"
+__mod_name__ = "ꜰᴜɴ"
 __command_list__ = [
     "runs",
     "slap",
