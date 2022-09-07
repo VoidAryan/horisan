@@ -8,7 +8,7 @@ __help__ = """
 × usage : /git (github username)
 """
 
-__mod_name__ = "【ɢɪᴛʜᴜʙ】"
+__mod_name__ = "ɢɪᴛʜᴜʙ"
 
 
 @pbot.on_message(filters.command(["github", "git", f"git@{BOT_USERNAME}"]))
