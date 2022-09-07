@@ -29,7 +29,7 @@ sites_list = {
     "Jikan": "https://api.jikan.moe/v3"
 }
 
-PING_IMG = "https://telegra.ph/file/99194183d658bbd930fe8.jpg"
+PING_IMG = "https://telegra.ph/file/e893f94038816b4475447.mp4"
 
 def get_readable_time(seconds: int) -> str:
     count = 0
@@ -91,17 +91,17 @@ def ping(update: Update, context: CallbackContext):
     telegram_ping = str(round((end_time - start_time) * 1000, 3)) + " ms"
     uptime = get_readable_time((time.time() - StartTime))
     text = f""" 
-           <b>PONG!!</b>\n<b>Time Taken:</b> <code>{telegram_ping}</code>\n<b>Service Uptime:</b> <code>{uptime}</code>
+           <b>PONG!!</b>\n\n<b>۞ Time Taken:</b> <code>{telegram_ping}</code>\n<b>۞ Service Uptime:</b> <code>{uptime}</code>
            """
 
 
-    update.effective_message.reply_photo(
+    update.effective_message.reply_media(
         PING_IMG, caption=text,
         parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
                 [
                   [
-                  InlineKeyboardButton(text="Hori System Stats", callback_data="stats_callback")
+                  InlineKeyboardButton(text="Kyouko System Stats", callback_data="stats_callback")
                   ]
                 ]
             ),
