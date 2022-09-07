@@ -128,6 +128,7 @@ buttons = [
         InlineKeyboardButton(
             text="Void Network"
             url="t.me/voidxnetwork",
+            ),
           ]
 
 IMPORTED = {}
