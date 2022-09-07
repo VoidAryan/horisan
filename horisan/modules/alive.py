@@ -1,10 +1,6 @@
 import os
 import re
-from platform import python_version as kontol
 from telethon import events, Button
-from telegram import __version__ as telever
-from telethon import __version__ as tlhver
-from pyrogram import __version__ as pyrover
 from horisan.events import register
 from horisan import telethn as tbot
 
