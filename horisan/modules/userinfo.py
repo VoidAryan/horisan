@@ -176,7 +176,6 @@ def get_id(update: Update, context: CallbackContext):
             )
 
     elif chat.type == "private":
-        user = bot.get_chat(user_id)
         msg.reply_text(
             f"•【 Your ID 】- <code>{user.id}</code> \n•【 Chat ID 】- <code>{chat.id}</code>",
             parse_mode=ParseMode.HTML,
