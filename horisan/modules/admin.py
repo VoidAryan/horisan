@@ -90,7 +90,7 @@ def setchatpic(update: Update, context: CallbackContext):
             if os.path.isfile("gpic.png"):
                 os.remove("gpic.png")
     else:
-        msg.reply_text("Reply to some photo or file to set new chat pic!")
+        msg.reply_text("Reply to some photo or file to set new chat pic!.")
 
 
 @bot_admin
