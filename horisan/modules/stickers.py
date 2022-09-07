@@ -102,7 +102,8 @@ def cbs_callback(update: Update, context: CallbackContext):
     text, buttons = get_cbs_data(search_query, int(page), query.from_user.id)
     query.edit_message_text(text, parse_mode=ParseMode.HTML, reply_markup=buttons)
     query.answer()
- @typing_action
+    
+@typing_action
 def combot_sticker(update, context):
     msg = update.effective_message
     split = msg.text.split(" ", 1)
