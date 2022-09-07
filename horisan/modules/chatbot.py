@@ -164,7 +164,7 @@ __handlers__ = [
     CHATBOT_HANDLER,
 ]
 
-__mod_name__ = "【ᴄʜᴀᴛʙᴏᴛ】"
+__mod_name__ = "ᴄʜᴀᴛʙᴏᴛ"
 
 __help__ = """
 Chatbot utilizes the Kuki's api which allows Kyouko to talk and provide a more interactive group chat experience.
