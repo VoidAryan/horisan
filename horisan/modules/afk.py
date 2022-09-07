@@ -160,7 +160,7 @@ __mod_name__ = "ᴀғᴋ"
 __help__ = """
   When marked as AFK, any mentions will be replied to with a message stating that you're not available!
  • `/afk <reason>`*:* Mark yourself as AFK.
- - `afk <reason>`*:* Same as the afk command, but silent and is not a command.
+ - `afk <reason>`*:* Same as the afk command, but not a command.
 """
 
 
