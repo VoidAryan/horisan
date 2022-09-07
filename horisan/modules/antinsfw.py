@@ -12,7 +12,7 @@ __help__ = """ 【ᴀɴᴛɪ-ɴꜱꜰᴡ】
 × commands can be used as /antinsfw off/on. 
 """
 
-__mod_name__ = "【ᴀɴᴛɪ-ɴꜱꜰᴡ】"
+__mod_name__ = "ᴀɴᴛɪ-ɴꜱꜰᴡ"
 
 
 async def get_file_id_from_message(message):
