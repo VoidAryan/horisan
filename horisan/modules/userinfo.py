@@ -155,7 +155,7 @@ def get_id(update: Update, context: CallbackContext):
 
     if user_id:
 
-        elif msg.reply_to_message and msg.reply_to_message.forward_from:
+        if msg.reply_to_message and msg.reply_to_message.forward_from:
 
             user1 = message.reply_to_message.from_user
             user2 = message.reply_to_message.forward_from
