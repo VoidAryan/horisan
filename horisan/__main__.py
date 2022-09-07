@@ -126,7 +126,7 @@ DONATE_STRING = """Heya, glad to hear you want to donate!\nKyouko Hori is [VOID]
 
 buttons = [
         InlineKeyboardButton(
-            text="Void Network"
+            text="Void Network",
             url="t.me/voidxnetwork",
             ),
           ]
