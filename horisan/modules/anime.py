@@ -1305,7 +1305,7 @@ dispatcher.add_handler(QUOTE)
 dispatcher.add_handler(CHANGE_QUOTE)
 dispatcher.add_handler(QUOTE_CHANGE)
 
-__mod_name__ = "【ᴀɴɪᴍᴇ】"
+__mod_name__ = "ᴀɴɪᴍᴇ"
 __command_list__ = [
     "anime",
     "manga",
