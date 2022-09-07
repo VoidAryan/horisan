@@ -748,7 +748,8 @@ def donate(update: Update, context: CallbackContext):
                                 text="【Donation Info】",
                                 url="t.me/{}".format(
                                     context.bot.username
-                                ),
+                                    ),
+                                )
                         ]
                     ]
                 ),
