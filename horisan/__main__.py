@@ -117,12 +117,18 @@ HELP_STRINGS = """
 ۞ ᴛʜɪꜱ ʙᴏᴛ ɪꜱ ᴅᴇᴠᴇʟᴏᴘᴇᴅ ᴜɴᴅᴇʀ【V๏ɪ፝֟𝔡】"""
 
 
-DONATE_STRING = """Heya, glad to hear you want to donate! \n
+DONATE_STRING = """Heya, glad to hear you want to donate!\nKyouko Hori is [VOID](t.me/voidxnetwork) specially created to manage group chats morr efficiently and effectively.\n
 
- You can support the project by contacting @VoidAryan \n
+ You can support the project by contacting My Owner [VOID ARYAN](t.me/Voidaryan) \n
  
- If you can't donate us financially support us by helping in growth of hori san. \
+ If you can't donate us financially support us by helping in growth of hori san. We are always open to take help as well as help you in your project ♡. \
  """
+
+buttons = [
+        InlineKeyboardButton(
+            text="Void Network"
+            url="t.me/voidxnetwork",
+          ]
 
 IMPORTED = {}
 MIGRATEABLE = []
