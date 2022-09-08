@@ -29,7 +29,7 @@ sites_list = {
     "Jikan": "https://api.jikan.moe/v3"
 }
 
-PING_IMG = "https://telegra.ph/file/e893f94038816b4475447.mp4"
+PING_IMG = "BQACAgUAAx0CZcljTQACBvpjGVsKjH794UImpFrdyHU2cKTGLAACXgYAAs1syVRvPZVI3t6PUx4E"
 
 def get_readable_time(seconds: int) -> str:
     count = 0
@@ -95,7 +95,7 @@ def ping(update: Update, context: CallbackContext):
            """
 
 
-    update.effective_message.reply_video(
+    update.effective_message.send_file(
         PING_IMG, caption=text,
         parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
