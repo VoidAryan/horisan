@@ -29,7 +29,7 @@ sites_list = {
     "Jikan": "https://api.jikan.moe/v3"
 }
 
-PING_IMG = "CgACAgUAAx0CZcljTQACBudjGdlMTncDJMdFxcoifMZ-wORfJQACXAYAAs1syVQqgLXFu99h2CkE"
+PING_IMG = "CgACAgQAAx0CZcljTQACCI9jGi38cabxDyVTPiEUcZdRh7WUAgACJBIAAr1n0FBq60yT5EEdhSkE"
 
 def get_readable_time(seconds: int) -> str:
     count = 0
@@ -92,7 +92,7 @@ async def ping(client, message):
     text = f""" 
            <b>PONG!!</b>\n\n<b>Time Taken:</b> <code>{telegram_ping}</code>\n<b>Service Uptime:</b> <code>{uptime}</code>
            """
-    await pbot.send_document(
+    await pbot.send_file(
         PING_IMG, caption=text,
             reply_markup=InlineKeyboardMarkup(
                 [
