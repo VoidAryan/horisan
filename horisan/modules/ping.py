@@ -81,9 +81,9 @@ def ping_func(to_ping: List[str]) -> List[str]:
 
     return ping_result
 
-@pbot.on_message(filters.command("ping"))
-async def ping(client, message):
-    msg = message
+def ping(update: Update, context: CallbackContext):
+    msg = update.effective_message
+    
     start_time = time.time()
     start = await msg.reply_text("Pinging...")
     end_time = time.time()
