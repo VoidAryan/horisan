@@ -92,7 +92,7 @@ async def ping(client, message):
     text = f""" 
            <b>PONG!!</b>\n\n<b>Time Taken:</b> <code>{telegram_ping}</code>\n<b>Service Uptime:</b> <code>{uptime}</code>
            """
-    await pbot.send_file(
+    update.effective_message.reply_(
         PING_IMG, caption=text,
             reply_markup=InlineKeyboardMarkup(
                 [
