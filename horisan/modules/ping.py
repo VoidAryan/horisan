@@ -29,7 +29,7 @@ sites_list = {
     "Jikan": "https://api.jikan.moe/v3"
 }
 
-PING_IMG = "BQACAgUAAx0CZcljTQACBvpjGVsKjH794UImpFrdyHU2cKTGLAACXgYAAs1syVRvPZVI3t6PUx4E"
+PING_IMG = ""
 
 def get_readable_time(seconds: int) -> str:
     count = 0
@@ -81,23 +81,19 @@ def ping_func(to_ping: List[str]) -> List[str]:
 
     return ping_result
 
-
-def ping(update: Update, context: CallbackContext):
-    msg = update.effective_message
-
+@pbot.on_message(filters.command("ping"))
+async def ping(client, message):
+    msg = message
     start_time = time.time()
-    message = msg.reply_text("Pinging...")
+    start = await msg.reply_text("Pinging...")
     end_time = time.time()
     telegram_ping = str(round((end_time - start_time) * 1000, 3)) + " ms"
     uptime = get_readable_time((time.time() - StartTime))
     text = f""" 
            <b>PONG!!</b>\n\n<b>Time Taken:</b> <code>{telegram_ping}</code>\n<b>Service Uptime:</b> <code>{uptime}</code>
            """
-
-
-    update.effective_message.send_file(
+    await pbot.send_document(
         PING_IMG, caption=text,
-        parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
                 [
                   [
@@ -107,7 +103,7 @@ def ping(update: Update, context: CallbackContext):
             ),
         )
 
-    message.delete()
+    await start.delete()
 
 @pbot.on_callback_query(filters.regex("stats_callback"))
 async def stats_callback(_, CallbackQuery):
@@ -138,10 +134,10 @@ def pingall(update: Update, context: CallbackContext):
         )
 
 
-PING_HANDLER = DisableAbleCommandHandler("ping", ping)
+#PING_HANDLER = DisableAbleCommandHandler("ping", ping)
 PINGALL_HANDLER = DisableAbleCommandHandler("pingall", pingall)
 
-dispatcher.add_handler(PING_HANDLER)
+#dispatcher.add_handler(PING_HANDLER)
 dispatcher.add_handler(PINGALL_HANDLER)
 
 
