@@ -103,7 +103,7 @@ def ping(update: Update, context: CallbackContext):
             ),
         )
 
-    start.delete()
+    message.delete()
 
 @pbot.on_callback_query(filters.regex("stats_callback"))
 async def stats_callback(_, CallbackQuery):
