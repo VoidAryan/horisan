@@ -29,7 +29,7 @@ sites_list = {
     "Jikan": "https://api.jikan.moe/v3"
 }
 
-PING_IMG = "https://telegra.ph/file/5d2b7f1656f9fcfcc2e74.mp4"
+PING_IMG = "CgACAgQAAx0CZcljTQACCKtjGumkFCBxsE1cr0JizwRvZvo47QACjwMAAnpW3FCT4mGmX7_kJykE"
 
 def get_readable_time(seconds: int) -> str:
     count = 0
@@ -90,7 +90,7 @@ def ping(update: Update, context: CallbackContext):
     telegram_ping = str(round((end_time - start_time) * 1000, 3)) + " ms"
     uptime = get_readable_time((time.time() - StartTime))
     text = f""" 
-           <b>PONG!!</b>\n\n<b>Time Taken:</b> <code>{telegram_ping}</code>\n<b>Service Uptime:</b> <code>{uptime}</code>
+           PONG!!🏓\n\n⏱ __Time Taken__: `{telegram_ping}`\n⏳ Service Uptime: `{uptime}`
            """
     update.effective_message.reply_video(
         PING_IMG, caption=text,
