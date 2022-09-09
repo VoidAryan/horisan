@@ -29,6 +29,12 @@ sites_list = {
     "Jikan": "https://api.jikan.moe/v3"
 }
 
+buttons=       [
+                  [
+                  InlineKeyboardButton(text="Kyouko System Stats", callback_data="stats_callback")
+                  ]
+                ]
+
 PING_IMG = "CgACAgQAAx0CZcljTQACCKtjGumkFCBxsE1cr0JizwRvZvo47QACjwMAAnpW3FCT4mGmX7_kJykE"
 
 def get_readable_time(seconds: int) -> str:
@@ -90,17 +96,13 @@ def ping(update: Update, context: CallbackContext):
     telegram_ping = str(round((end_time - start_time) * 1000, 3)) + " ms"
     uptime = get_readable_time((time.time() - StartTime))
     text = f""" 
-           PONG!!🏓\n\n⏱ __Time_Taken__: <code>{telegram_ping}</code>\n⏳ Service Uptime: <code>{uptime}</code>
+           PONG!!🏓\n\n⏱ Time_Taken: <code>{}</code>\n⏳ Service Uptime: <code>{}</code>
            """
+    ping_text = text.format(escape_markdown(telegram_ping), uptime )
+
     update.effective_message.reply_video(
-        PING_IMG, caption=text,
-            reply_markup=InlineKeyboardMarkup(
-                [
-                  [
-                  InlineKeyboardButton(text="Kyouko System Stats", callback_data="stats_callback")
-                  ]
-                ]
-            ),
+        PING_IMG, caption=ping_text, reply_markup=InlineKeyboardMarkup(buttons), 
+           parse_mode=ParseMode.HTML,
         )
 
     message.delete()
