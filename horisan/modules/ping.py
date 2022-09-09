@@ -95,14 +95,16 @@ def ping(update: Update, context: CallbackContext):
     end_time = time.time()
     telegram_ping = str(round((end_time - start_time) * 1000, 3)) + " ms"
     uptime = get_readable_time((time.time() - StartTime))
-    text = """
-PONG!!🏓\n\n⏱ Time_Taken: <code>{}</code>\n⏳ Service Uptime: <code>{}</code>
+    text = f"""
+PONG!!🏓\n\n⏱ _Time_ _Taken_: `{telegram_ping}`\n⏳ _Service_ _Uptime_: `{uptime}`
   """
-    ping_text = text.format(escape_markdown(telegram_ping), uptime )
+    ping_text = text
 
     update.effective_message.reply_video(
-        PING_IMG, caption=ping_text, reply_markup=InlineKeyboardMarkup(buttons), 
-           parse_mode=ParseMode.HTML,
+        PING_IMG,
+        caption=ping_text,
+        reply_markup=InlineKeyboardMarkup(buttons),
+        parse_mode=ParseMode.MARKDOWN,
         )
 
     message.delete()
@@ -147,6 +149,6 @@ __help__ = """
 /ping: Hori Pong
 """
 
-__mod_name__ = "【ᴘɪɴɢ】"
+__mod_name__ = "ᴘɪɴɢ"
 __command_list__ = ["ping", "pingall"]
 __handlers__ = [PING_HANDLER, PINGALL_HANDLER]
