@@ -95,9 +95,9 @@ def ping(update: Update, context: CallbackContext):
     end_time = time.time()
     telegram_ping = str(round((end_time - start_time) * 1000, 3)) + " ms"
     uptime = get_readable_time((time.time() - StartTime))
-    text = f""" 
-           PONG!!🏓\n\n⏱ Time_Taken: <code>{}</code>\n⏳ Service Uptime: <code>{}</code>
-           """
+    text = """
+PONG!!🏓\n\n⏱ Time_Taken: <code>{}</code>\n⏳ Service Uptime: <code>{}</code>
+  """
     ping_text = text.format(escape_markdown(telegram_ping), uptime )
 
     update.effective_message.reply_video(
