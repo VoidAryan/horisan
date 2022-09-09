@@ -29,11 +29,6 @@ sites_list = {
     "Jikan": "https://api.jikan.moe/v3"
 }
 
-buttons=       [
-                  [
-                  InlineKeyboardButton(text="Kyouko System Stats", callback_data="stats_callback")
-                  ]
-                ]
 
 PING_IMG = "CgACAgQAAx0CZcljTQACCKtjGumkFCBxsE1cr0JizwRvZvo47QACjwMAAnpW3FCT4mGmX7_kJykE"
 
@@ -103,7 +98,13 @@ PONG!!🏓\n\n⏱ _Time_ _Taken_: `{telegram_ping}`\n⏳ _Service_ _Uptime_: `{u
     update.effective_message.reply_video(
         PING_IMG,
         caption=ping_text,
-        reply_markup=InlineKeyboardMarkup(buttons),
+        reply_markup=InlineKeyboardMarkup(
+               [
+                  [
+                  InlineKeyboardButton(text="Kyouko System Stats", callback_data="stats_callback")
+                  ]
+                ]
+        ),
         parse_mode=ParseMode.MARKDOWN,
         )
 
