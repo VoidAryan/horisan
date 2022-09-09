@@ -29,7 +29,7 @@ sites_list = {
     "Jikan": "https://api.jikan.moe/v3"
 }
 
-PING_IMG = "CgACAgQAAx0CZcljTQACCI9jGi38cabxDyVTPiEUcZdRh7WUAgACJBIAAr1n0FBq60yT5EEdhSkE"
+PING_IMG = "https://telegra.ph/file/5d2b7f1656f9fcfcc2e74.mp4"
 
 def get_readable_time(seconds: int) -> str:
     count = 0
@@ -92,7 +92,7 @@ def ping(update: Update, context: CallbackContext):
     text = f""" 
            <b>PONG!!</b>\n\n<b>Time Taken:</b> <code>{telegram_ping}</code>\n<b>Service Uptime:</b> <code>{uptime}</code>
            """
-    update.effective_message.reply_(
+    update.effective_message.reply_media(
         PING_IMG, caption=text,
             reply_markup=InlineKeyboardMarkup(
                 [
@@ -103,7 +103,7 @@ def ping(update: Update, context: CallbackContext):
             ),
         )
 
-    await start.delete()
+    start.delete()
 
 @pbot.on_callback_query(filters.regex("stats_callback"))
 async def stats_callback(_, CallbackQuery):
