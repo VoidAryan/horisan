@@ -92,7 +92,7 @@ def ping(update: Update, context: CallbackContext):
     text = f""" 
            <b>PONG!!</b>\n\n<b>Time Taken:</b> <code>{telegram_ping}</code>\n<b>Service Uptime:</b> <code>{uptime}</code>
            """
-    update.effective_message.reply_media(
+    update.effective_message.reply_video(
         PING_IMG, caption=text,
             reply_markup=InlineKeyboardMarkup(
                 [
