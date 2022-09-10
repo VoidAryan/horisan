@@ -522,7 +522,7 @@ __help__ = """
 Please Use 512/512 size Sticker to kang else it will cause internal problem.
 And sometimes video sticker might not kang because of more Size than 512/512.
 """
-__mod_name__ = "【ꜱᴛɪᴄᴋᴇʀꜱ】" 
+__mod_name__ = "ꜱᴛɪᴄᴋᴇʀꜱ" 
 KANG_HANDLER = DisableAbleCommandHandler(
     ["kang", "steal", "k"],
     kang,
