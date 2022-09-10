@@ -14,6 +14,7 @@ from horisan.modules.disable import DisableAbleCommandHandler, DisableAbleMessag
 from horisan.modules.sql.afk_redis import start_afk, end_afk, is_user_afk, afk_reason
 from horisan import REDIS
 from horisan.modules.users import get_user_id
+from horisan.events import register
 
 from horisan.modules.helper_funcs.alternate import send_message
 from horisan.modules.helper_funcs.readable_time import get_readable_time
