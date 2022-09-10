@@ -146,7 +146,7 @@ def check_afk(update, context, user_id, fst_name, userc_id):
         if int(userc_id) == int(user_id):
             return
         if reason == "none":
-            res = "⏱ {} _Afk_ _Since_ :【`{}`】".format(fst_name, since_afk), parse_mode=ParseMode.MARKDOWN)
+            res = "⏱ {} _Afk_ _Since_ :【`{}`】".format(fst_name, since_afk, parse_mode=ParseMode.MARKDOWN)
         else:
             res = "⏱ {} _Afk _Since_ : 【`{}`】\n\n۞ Reason : {}".format(fst_name, since_afk, reason, parse_mode=ParseMode.MARKDOWN)
 
