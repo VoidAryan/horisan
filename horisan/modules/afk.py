@@ -28,7 +28,7 @@ PHOTO = "https://telegra.ph/file/242d186b33c49c0329a0f.mp4"
 @register(pattern='/afk')
 async def awake(event):
     TEXT = f"Baii Baii [{event.sender.first_name}](tg://user?id={event.sender.id}) 👋"
-    await client.send_file(event.chat_id, PHOTO, caption=TEXT)
+    await horisan.send_file(event.chat_id, PHOTO, caption=TEXT)
     time.sleep(10)
     await horisan.delete_messages(event.chat_id, event.message_id)
 
