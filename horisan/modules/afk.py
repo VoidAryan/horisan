@@ -1,7 +1,7 @@
 import time
 import random
 import humanize
-
+from time import sleep
 from typing import Optional
 from datetime import datetime
 from telegram import Message, User
