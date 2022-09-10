@@ -51,7 +51,14 @@ def afk(update, context):
     except BadRequest:
          pass
 
-
+def safk(update, context):
+    args = update.effective_message.text.split(None, 1)
+    user = update.effective_user
+    if not user:  # ignore channels
+        return
+ 
+    if user.id == 777000:
+        return
 
 def no_longer_afk(update, context):
     user = update.effective_user
