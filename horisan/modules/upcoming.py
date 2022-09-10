@@ -4,4 +4,4 @@ __help__ = """
 ❂ /upcoming: returns a list of new anime in the upcoming seasons.
 """
 
-__mod_name__ = "【ᴜᴘᴄᴏᴍɪɴɢ】"
+__mod_name__ = "ᴜᴘᴄᴏᴍɪɴɢ"
