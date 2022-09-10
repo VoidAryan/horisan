@@ -18,7 +18,7 @@ from horisan.modules.users import get_user_id
 from horisan.modules.helper_funcs.alternate import send_message
 from horisan.modules.helper_funcs.readable_time import get_readable_time
 from horisan.events import register
-from horisan import telethn as tbot
+from horisan import telethn as Horisan
 
 AFK_GROUP = 7
 AFK_REPLY_GROUP = 8
@@ -30,7 +30,7 @@ async def awake(event):
     TEXT = f"Baii Baii [{event.sender.first_name}](tg://user?id={event.sender.id}) 👋"
     await horisan.send_file(event.chat_id, PHOTO, caption=TEXT)
     time.sleep(10)
-    await horisan.delete_messages(event.chat_id, event.message_id)
+    await Horisan.delete_messages(event.chat_id, event.message_id)
 
 def afk(update, context):
     args = update.effective_message.text.split(None, 1)
