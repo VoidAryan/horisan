@@ -1,7 +1,7 @@
 import time
 import random
 import humanize
-from time import sleep
+
 from typing import Optional
 from datetime import datetime
 from telegram import Message, User
@@ -25,25 +25,32 @@ AFK_REPLY_GROUP = 8
 
 PHOTO = "https://telegra.ph/file/242d186b33c49c0329a0f.mp4"
 
-@register(pattern='/afk')
-async def awake(event):
-    TEXT = f"Baii Baii [{event.sender.first_name}](tg://user?id={event.sender.id}) 👋"
-    await Horisan.send_file(event.chat_id, PHOTO, caption=TEXT)
-    time.sleep(10)
-    await Horisan.delete_messages(event.chat_id, event.message_id)
+
 
 def afk(update, context):
     args = update.effective_message.text.split(None, 1)
     user = update.effective_user
     if not user:  # ignore channels
         return
-
+ 
     if user.id == 777000:
         return
     start_afk_time = time.time()
     reason = args[1] if len(args) >= 2 else "none"
     start_afk(update.effective_user.id, reason)
     REDIS.set(f'afk_time_{update.effective_user.id}', start_afk_time)
+   fname = update.effective_user.first_name
+    try:
+        horisan = update.effective_message.reply_text(
+            "*{}* is now AFK! GoodBye!".format(fname), parse_mode=ParseMode.MARKDOWN)
+        time.sleep(5)
+        try:
+            horisan.delete()
+        except BadRequest:
+            pass
+    except BadRequest:
+         pass
+
 
 
 def no_longer_afk(update, context):
@@ -166,7 +173,7 @@ __help__ = """
 
 
 AFK_HANDLER = DisableAbleCommandHandler("afk", afk, run_async=True)
-AFK_REGEX_HANDLER = MessageHandler(Filters.regex("(?i)Afk"), afk)
+AFK_REGEX_HANDLER = MessageHandler(Filters.regex("(?i)Brb", "brb" , "safk" ), afk)
 NO_AFK_HANDLER = MessageHandler(Filters.all & Filters.chat_type.groups, no_longer_afk, run_async=True)
 AFK_REPLY_HANDLER = MessageHandler(Filters.all & Filters.chat_type.groups, reply_afk, run_async=True)
 
