@@ -2,7 +2,6 @@ import time
 import random
 import humanize
 
-from asyncio import sleep
 from typing import Optional
 from datetime import datetime
 from telegram import Message, User
@@ -19,7 +18,7 @@ from horisan.modules.users import get_user_id
 from horisan.modules.helper_funcs.alternate import send_message
 from horisan.modules.helper_funcs.readable_time import get_readable_time
 from horisan.events import register
-from horisan import telethn as client
+from horisan import telethn as tbot
 
 AFK_GROUP = 7
 AFK_REPLY_GROUP = 8
@@ -30,8 +29,8 @@ PHOTO = "https://telegra.ph/file/242d186b33c49c0329a0f.mp4"
 async def awake(event):
     TEXT = f"Baii Baii [{event.sender.first_name}](tg://user?id={event.sender.id}) 👋"
     await client.send_file(event.chat_id, PHOTO, caption=TEXT)
-    asyncio.sleep(10)
-    await client.delete_messages(event.chat_id, event.message_id)
+    time.sleep(10)
+    await horisan.delete_messages(event.chat_id, event.message_id)
 
 def afk(update, context):
     args = update.effective_message.text.split(None, 1)
