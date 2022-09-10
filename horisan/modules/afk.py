@@ -183,7 +183,7 @@ __help__ = """
 
 AFK_HANDLER = DisableAbleCommandHandler( "afk", afk,  run_async=True)
 SAFK_HANDLER = DisableAbleCommandHandler( "safk", safk,  run_async=True)
-AFK_REGEX_HANDLER = MessageHandler(Filters.regex("(?i)Safk"), Safk)
+AFK_REGEX_HANDLER = MessageHandler(Filters.regex("(?i)Safk"), safk)
 NO_AFK_HANDLER = MessageHandler(Filters.all & Filters.chat_type.groups, no_longer_afk, run_async=True)
 AFK_REPLY_HANDLER = MessageHandler(Filters.all & Filters.chat_type.groups, reply_afk, run_async=True)
 
