@@ -183,7 +183,7 @@ def clear_all_my_reminders(update: Update, context: CallbackContext):
     )
 
 
-__mod_name__ = "【ʀᴇᴍɪɴᴅᴇʀ】"
+__mod_name__ = "ʀᴇᴍɪɴᴅᴇʀ"
 __help__ = """
   ➢ `/reminders`*:* get a list of *TimeStamps* of your reminders.
   ➢ `/setreminder <time> <remind message>`*:* Set a reminder after the mentioned time.
