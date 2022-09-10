@@ -63,7 +63,7 @@ def no_longer_afk(update, context):
         try:
             options = [
                 "{} ɪsɴ'ᴛ ᴀғᴋ!\nᴄᴀᴍᴇ ᴀғᴛᴇʀ {}",
-                "۞ {} NoMore : AFK\n\n۞ Was Afk For :【{}】",
+                "۞ {} NoMore : AFK\n\n⏱ __Was Afk For__ :【`{}`】",
             ]
             chosen_option = random.choice(options)
             update.effective_message.reply_text(
@@ -131,9 +131,9 @@ def check_afk(update, context, user_id, fst_name, userc_id):
         if int(userc_id) == int(user_id):
             return
         if reason == "none":
-            res = "۞ {} Afk Since :\n\n【{}】".format(fst_name, since_afk)
+            res = "⏱ {} __Afk Since__ :【`{}`】".format(fst_name, since_afk)
         else:
-            res = "۞ {} Afk Since : 【{}】\n\n۞ Reason : {}".format(fst_name, since_afk, reason)
+            res = "⏱ {} __Afk Since__ : 【`{}`】\n\n۞ Reason : {}".format(fst_name, since_afk, reason)
 
         update.effective_message.reply_text(res)
 
