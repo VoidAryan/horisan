@@ -22,7 +22,7 @@ AFK_GROUP = 7
 AFK_REPLY_GROUP = 8
 
 PHOTO = "https://telegra.ph/file/242d186b33c49c0329a0f.mp4"
-
+TEXT = f"Baii Baii [{event.sender.first_name}](tg://user?id={event.sender.id}) 👋"
 
 
 def afk(update, context):
@@ -39,8 +39,7 @@ def afk(update, context):
     REDIS.set(f'afk_time_{update.effective_user.id}', start_afk_time)
     fname = update.effective_user.first_name
     try:
-        horisan = update.effective_message.reply_text(
-            "*{}* is now AFK! GoodBye!".format(fname), parse_mode=ParseMode.MARKDOWN)
+        horisan = update.effective_message.reply_video(PHOTO, caption=TEXT.format(fname), parse_mode=ParseMode.MARKDOWN)
         time.sleep(5)
         try:
             horisan.delete()
@@ -84,8 +83,7 @@ def no_longer_afk(update, context):
             ]
             chosen_option = random.choice(options)
             update.effective_message.reply_text(
-                chosen_option.format(firstname, end_afk_time), parse_mode=PARSEMODE.MARKDOWN
-            )
+                chosen_option.format(firstname, end_afk_time), parse_mode=PARSEMODE.MARKDOWN)
         except BaseException:
             pass
             
