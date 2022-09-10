@@ -242,7 +242,7 @@ def raidtime(update: Update, context: CallbackContext) -> Optional[str]:
         msg.reply_text("Unknown time given, give me something like 5m or 1h", parse_mode=ParseMode.HTML)
 
 
-__mod_name__ = "【ʀᴀɪᴅ】"
+__mod_name__ = "ʀᴀɪᴅ"
 
 __help__ = """
 Admins only! 
