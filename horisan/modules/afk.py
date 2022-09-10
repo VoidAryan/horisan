@@ -7,7 +7,7 @@ from datetime import datetime
 from telegram import Message, User
 from telegram import MessageEntity, ParseMode
 from telegram.error import BadRequest
-from telegram.ext import Filters, MessageHandler, run_async
+from telegram.ext import Filters, MessageHandler, run_async, CommandHandler
 
 from horisan import dispatcher
 from horisan.modules.disable import DisableAbleCommandHandler, DisableAbleMessageHandler
@@ -59,6 +59,10 @@ def safk(update, context):
  
     if user.id == 777000:
         return
+    start_afk_time = time.time()
+    reason = args[1] if len(args) >= 2 else "none"
+    start_afk(update.effective_user.id, reason)
+    REDIS.set(f'afk_time_{update.effective_user.id}', start_afk_time)
 
 def no_longer_afk(update, context):
     user = update.effective_user
@@ -78,7 +82,7 @@ def no_longer_afk(update, context):
         try:
             options = [
                 "{} ɪsɴ'ᴛ ᴀғᴋ!\nᴄᴀᴍᴇ ᴀғᴛᴇʀ {}",
-                "۞ {} NoMore : AFK\n\n⏱ __Was Afk For__ :【`{}`】",
+                "۞ {} No-More : AFK\n\n⏱ _Was_ _Afk_ _For_ :【`{}`】",
             ]
             chosen_option = random.choice(options)
             update.effective_message.reply_text(
@@ -146,9 +150,9 @@ def check_afk(update, context, user_id, fst_name, userc_id):
         if int(userc_id) == int(user_id):
             return
         if reason == "none":
-            res = "⏱ {} __Afk Since__ :【`{}`】".format(fst_name, since_afk)
+            res = "⏱ {} _Afk_ _Since_ :【`{}`】".format(fst_name, since_afk)
         else:
-            res = "⏱ {} __Afk Since__ : 【`{}`】\n\n۞ Reason : {}".format(fst_name, since_afk, reason)
+            res = "⏱ {} _Afk _Since_ : 【`{}`】\n\n۞ Reason : {}".format(fst_name, since_afk, reason)
 
         update.effective_message.reply_text(res)
 
@@ -179,7 +183,7 @@ __help__ = """
 """
 
 
-AFK_HANDLER = CommandHandler( "afk", afk,  run_async=True)
+AFK_HANDLER = DisableCommandHandler( "afk", afk,  run_async=True)
 SAFK_HANDLER = DisableCommandHandler( "safk", safk,  run_async=True)
 AFK_REGEX_HANDLER = CommandHandler(Filters.regex("(?i)Brb" ), afk)
 NO_AFK_HANDLER = MessageHandler(Filters.all & Filters.chat_type.groups, no_longer_afk, run_async=True)
