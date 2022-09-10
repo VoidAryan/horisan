@@ -82,8 +82,7 @@ def no_longer_afk(update, context):
                 "۞ {} No-More : AFK\n\n⏱ _Was_ _Afk_ _For_ :【`{}`】"
             ]
             chosen_option = random.choice(options)
-            update.effective_message.reply_text(
-                chosen_option.format(firstname, end_afk_time), parse_mode=PARSEMODE.MARKDOWN)
+            update.effective_message.reply_text(chosen_option.format(firstname, end_afk_time), parse_mode=PARSEMODE.MARKDOWN)
         except BaseException:
             pass
             
