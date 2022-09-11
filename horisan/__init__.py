@@ -5,7 +5,6 @@ import sys
 import json
 import asyncio
 import time
-import spamwatch
 import telegram.ext as tg
 from horisan.services.quoteapi import Quotly
 from inspect import getfullargspec
