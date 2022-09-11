@@ -83,6 +83,7 @@ def sinfo(update: Update, context: CallbackContext):
     text = (
         f"「<b> 【ɪɴꜰᴏ ᴏꜰ ᴛʜɪꜱ ᴜꜱᴇʀ】</b> 」\n"
         f"───────────────────\n"
+        f"× First Name: {html.escape(user.first_name)}"
         f"۞ ID: <code>{user.id}</code>"
         )
 
@@ -168,7 +169,7 @@ INFO_HANDLER = DisableAbleCommandHandler("sinfo", sinfo, run_async=True)
 
 dispatcher.add_handler(INFO_HANDLER)
 
-__mod_name__ = "【sɪɴꜰᴏ】"
+__mod_name__ = "sɪɴꜰᴏ"
 __command_list__ = ["info"]
 __handlers__ = [
     INFO_HANDLER
