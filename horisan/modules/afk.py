@@ -23,7 +23,7 @@ AFK_GROUP = 7
 AFK_REPLY_GROUP = 8
 
 PHOTO = "https://telegra.ph/file/242d186b33c49c0329a0f.mp4"
-TEXT = f"Baii Baii [{}](tg://user?id={user.id}) 👋"
+TEXT = "Baii Baii [{}](tg://user?id={user.id}) 👋"
 
 
 def afk(update, context, event):
