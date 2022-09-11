@@ -26,7 +26,7 @@ PHOTO = "https://telegra.ph/file/242d186b33c49c0329a0f.mp4"
 TEXT = "Baii Baii [{}](tg://user?id={user.id}) 👋"
 
 
-def afk(update, context, event):
+def afk(update, context):
     args = update.effective_message.text.split(None, 1)
     user = update.effective_user
     if not user:  # ignore channels
