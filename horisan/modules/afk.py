@@ -22,9 +22,6 @@ from horisan.modules.helper_funcs.readable_time import get_readable_time
 AFK_GROUP = 7
 AFK_REPLY_GROUP = 8
 
-PHOTO = "https://telegra.ph/file/242d186b33c49c0329a0f.mp4"
-TEXT = "Baii Baii [{}](tg://user?id={user.id}) 👋"
-
 
 def afk(update, context):
     args = update.effective_message.text.split(None, 1)
@@ -38,13 +35,9 @@ def afk(update, context):
     reason = args[1] if len(args) >= 2 else "none"
     start_afk(update.effective_user.id, reason)
     REDIS.set(f'afk_time_{update.effective_user.id}', start_afk_time)
-    fname = update.effective_user.first_name
-    user = bot.get_chat(user_id)
-    TEXT = "Baii Baii [{}](tg://user?id={user.id}) 👋"
-    PHOTO = "https://telegra.ph/file/242d186b33c49c0329a0f.mp4"
 
     try:
-        horisan = update.effective_message.reply_video(PHOTO, caption=TEXT.format(fname), parse_mode=ParseMode.MARKDOWN)
+        horisan = update.message.reply_video("https://telegra.ph/file/0f024fd6efa00caf090ea.mp4", caption ="Baii Baii {}!👋".format(user.mention_html()),parse_mode=ParseMode.HTML)
         time.sleep(5)
         try:
             horisan.delete()
