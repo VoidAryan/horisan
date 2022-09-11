@@ -40,6 +40,8 @@ def afk(update, context, event):
     REDIS.set(f'afk_time_{update.effective_user.id}', start_afk_time)
     fname = update.effective_user.first_name
     user = bot.get_chat(user_id)
+    TEXT = "Baii Baii [{}](tg://user?id={user.id}) 👋"
+    PHOTO = "https://telegra.ph/file/242d186b33c49c0329a0f.mp4
 
     try:
         horisan = update.effective_message.reply_video(PHOTO, caption=TEXT.format(fname), parse_mode=ParseMode.MARKDOWN)
@@ -82,7 +84,7 @@ def no_longer_afk(update, context):
         try:
             options = [
                 "{} ɪsɴ'ᴛ ᴀғᴋ!\nᴄᴀᴍᴇ ᴀғᴛᴇʀ {}",
-                "۞ {} No-More : AFK\n\n⏱ _Was_ _Afk_ _For_ :【`{}`】"
+                "۞ {} No-More : AFK\n\n⏱ Was Afk For :【`{}`】"
             ]
             chosen_option = random.choice(options)
             update.effective_message.reply_text( chosen_option.format(firstname, end_afk_time),
