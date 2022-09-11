@@ -41,7 +41,7 @@ def afk(update, context, event):
     fname = update.effective_user.first_name
     user = bot.get_chat(user_id)
     TEXT = "Baii Baii [{}](tg://user?id={user.id}) 👋"
-    PHOTO = "https://telegra.ph/file/242d186b33c49c0329a0f.mp4
+    PHOTO = "https://telegra.ph/file/242d186b33c49c0329a0f.mp4"
 
     try:
         horisan = update.effective_message.reply_video(PHOTO, caption=TEXT.format(fname), parse_mode=ParseMode.MARKDOWN)
