@@ -23,8 +23,8 @@ AFK_GROUP = 7
 AFK_REPLY_GROUP = 8
 
 PHOTO = "https://telegra.ph/file/242d186b33c49c0329a0f.mp4"
-TEXT = f"Baii Baii [{user.first_name}](tg://user?id={user.id}) 👋"
-user = bot.get_chat(user_id)
+TEXT = f"Baii Baii [{}](tg://user?id={user.id}) 👋"
+
 
 def afk(update, context, event):
     args = update.effective_message.text.split(None, 1)
@@ -39,6 +39,8 @@ def afk(update, context, event):
     start_afk(update.effective_user.id, reason)
     REDIS.set(f'afk_time_{update.effective_user.id}', start_afk_time)
     fname = update.effective_user.first_name
+    user = bot.get_chat(user_id)
+
     try:
         horisan = update.effective_message.reply_video(PHOTO, caption=TEXT.format(fname), parse_mode=ParseMode.MARKDOWN)
         time.sleep(5)
