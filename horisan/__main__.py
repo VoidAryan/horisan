@@ -229,7 +229,16 @@ def start(update: Update, context: CallbackContext):
 
         else:
             first_name = update.effective_user.first_name 
-            update.effective_message.reply_text(PM_START_TEXT.format(escape_markdown(first_name),escape_markdown(uptime),sql.num_users(),sql.num_chats()),reply_markup=InlineKeyboardMarkup(buttons),parse_mode=ParseMode.MARKDOWN,timeout=60,disable_web_page_preview=False,)
+            update.effective_message.reply_text(
+                  PM_START_TEXT.format(escape_markdown(first_name),
+                  escape_markdown(uptime),
+                  sql.num_users(),
+                  sql.num_chats()),
+                  reply_markup=InlineKeyboardMarkup(buttons),
+                  parse_mode=ParseMode.MARKDOWN,
+                  timeout=60,
+                  disable_web_page_preview=False
+                  )
               
     else:
         update.effective_message.reply_photo(
