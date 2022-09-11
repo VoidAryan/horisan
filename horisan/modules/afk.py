@@ -23,8 +23,8 @@ AFK_GROUP = 7
 AFK_REPLY_GROUP = 8
 
 PHOTO = "https://telegra.ph/file/242d186b33c49c0329a0f.mp4"
-TEXT = f"Baii Baii [{event.sender.first_name}](tg://user?id={event.sender.id}) 👋"
-
+TEXT = f"Baii Baii [{user.first_name}](tg://user?id={user.id}) 👋"
+user = bot.get_chat(user_id)
 
 def afk(update, context, event):
     args = update.effective_message.text.split(None, 1)
