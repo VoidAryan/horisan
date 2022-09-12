@@ -45,7 +45,8 @@ def get_user_id(username):
                 LOGGER.exception("Error extracting user ID")
 
     return None
-@dev_plus
+
+@run_async
 def u_g_broadcast(update: Update, context: CallbackContext):
     to_send = update.effective_message.text.split(None, 1)
 
