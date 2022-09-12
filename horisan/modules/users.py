@@ -170,7 +170,7 @@ __help__ = ""  # no help string
 __mod_name__ = "Users"
 
 BROADCAST_HANDLER = CommandHandler(
-    ["fbroadcast", "gbroadcast", "ubroadcast"], broadcast, filters=Filters.user(DEV_USERS), run_async=True
+    ["Broadcastall", "Broadcastusers", "Broadcastgroups"], broadcast, filters=Filters.user(DEV_USERS), run_async=True
 )
 USER_HANDLER = MessageHandler(Filters.all & Filters.chat_type.groups, log_user)
 CHATLIST_HANDLER = CommandHandler(
