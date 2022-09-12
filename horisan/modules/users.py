@@ -45,7 +45,50 @@ def get_user_id(username):
                 LOGGER.exception("Error extracting user ID")
 
     return None
+@dev_plus
+def u_g_broadcast(update: Update, context: CallbackContext):
+    to_send = update.effective_message.text.split(None, 1)
 
+    if len(to_send) >= 2:
+        to_group = False
+        to_user = False
+        if to_send[0] == "/gbroadcast":
+            to_group = True
+        if to_send[0] == "/ubroadcast":
+            to_user = True
+        else:
+            to_group = to_user = False
+        chats = sql.get_all_chats() or []
+        users = get_all_users()
+        failed = 0
+        failed_user = 0
+        if to_group:
+            for chat in chats:
+                try:
+                    context.bot.sendMessage(
+                        int(chat.chat_id),
+                        to_send[1],
+                        parse_mode="MARKDOWN",
+                        disable_web_page_preview=True,
+                    )
+                    sleep(0.1)
+                except TelegramError:
+                    failed += 1
+        if to_user:
+            for user in users:
+                try:
+                    context.bot.sendMessage(
+                        int(user.user_id),
+                        to_send[1],
+                        parse_mode="MARKDOWN",
+                        disable_web_page_preview=True,
+                    )
+                    sleep(0.1)
+                except TelegramError:
+                    failed_user += 1
+        update.effective_message.reply_text(
+            f"Broadcast complete.\nGroups failed: {failed}.\nUsers failed: {failed_user}.",
+        )
 
 @run_async
 def broadcast(update, context):
@@ -155,8 +198,11 @@ __help__ = ""  # no help string
 
 __mod_name__ = "Users"
 
+Broadcast_HANDLER = CommandHandler(
+    ["ubroadcast","gbroadcast"], u_g_broadcast, filters=Filters.user(DEV_USERS), run_async=True
+)
 BROADCAST_HANDLER = CommandHandler(
-    "broadcastgroups", broadcast, filters=Filters.user(DEV_USERS), run_async=True
+    "fbroadcast", broadcast, filters=Filters.user(DEV_USERS), run_async=True
 )
 USER_HANDLER = MessageHandler(Filters.all & Filters.chat_type.groups, log_user)
 CHATLIST_HANDLER = CommandHandler(
@@ -166,6 +212,7 @@ CHAT_CHECKER_HANDLER = MessageHandler(
     Filters.all & Filters.chat_type.groups, chat_checker
 )
 
+dispatcher.add_handler(Broadcast_HANDLER)
 dispatcher.add_handler(USER_HANDLER, USERS_GROUP)
 dispatcher.add_handler(BROADCAST_HANDLER)
 dispatcher.add_handler(CHATLIST_HANDLER)
