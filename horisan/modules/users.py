@@ -48,7 +48,7 @@ def get_user_id(username):
 
 dispatcher.run_async
 def broadcast(update, context):
-    to_send1=update.effective_message.reply_to_message.message_id
+    to_send1=update.effective_message.text.split(None, 1)
 
     if len(to_send1) >= 2:
         to_group = False
