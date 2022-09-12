@@ -13,6 +13,7 @@ from telegram.ext import (
 
 import horisan.modules.sql.users_sql as sql
 from horisan import dispatcher, LOGGER, DEV_USERS
+from horisan.modules.helper_funcs.chat_status import dev_plus
 from horisan.modules.helper_funcs.filters import CustomFilters
 
 USERS_GROUP = 4
@@ -46,7 +47,7 @@ def get_user_id(username):
 
     return None
 
-@run_async
+@dev_plus
 def broadcast(update, context):
     to_send1=update.effective_message.reply_to_message.message_id
 
