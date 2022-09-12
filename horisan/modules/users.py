@@ -47,15 +47,15 @@ def get_user_id(username):
     return None
 
 @run_async
-def u_g_broadcast(update: Update, context: CallbackContext):
-    to_send = update.effective_message.text.split(None, 1)
+def broadcast(update, context):
+    to_send1 = update.effective_message.text.split(None, 1)
 
-    if len(to_send) >= 2:
+    if len(to_send1) >= 2:
         to_group = False
         to_user = False
-        if to_send[0] == "/gbroadcast":
+        if to_send1[0] == "/gbroadcast":
             to_group = True
-        if to_send[0] == "/ubroadcast":
+        if to_send1[0] == "/ubroadcast":
             to_user = True
         else:
             to_group = to_user = False
@@ -68,7 +68,7 @@ def u_g_broadcast(update: Update, context: CallbackContext):
                 try:
                     context.bot.sendMessage(
                         int(chat.chat_id),
-                        to_send[1],
+                        to_send1[1],
                         parse_mode="MARKDOWN",
                         disable_web_page_preview=True,
                     )
@@ -80,7 +80,7 @@ def u_g_broadcast(update: Update, context: CallbackContext):
                 try:
                     context.bot.sendMessage(
                         int(user.user_id),
-                        to_send[1],
+                        to_send1[1],
                         parse_mode="MARKDOWN",
                         disable_web_page_preview=True,
                     )
@@ -199,11 +199,8 @@ __help__ = ""  # no help string
 
 __mod_name__ = "Users"
 
-Broadcast_HANDLER = CommandHandler(
-    ["ubroadcast","gbroadcast"], u_g_broadcast, filters=Filters.user(DEV_USERS), run_async=True
-)
 BROADCAST_HANDLER = CommandHandler(
-    "fbroadcast", broadcast, filters=Filters.user(DEV_USERS), run_async=True
+    ["fbroadcast", "gbroadcast", "ubroadcast"], broadcast, filters=Filters.user(DEV_USERS), run_async=True
 )
 USER_HANDLER = MessageHandler(Filters.all & Filters.chat_type.groups, log_user)
 CHATLIST_HANDLER = CommandHandler(
@@ -213,7 +210,6 @@ CHAT_CHECKER_HANDLER = MessageHandler(
     Filters.all & Filters.chat_type.groups, chat_checker
 )
 
-dispatcher.add_handler(Broadcast_HANDLER)
 dispatcher.add_handler(USER_HANDLER, USERS_GROUP)
 dispatcher.add_handler(BROADCAST_HANDLER)
 dispatcher.add_handler(CHATLIST_HANDLER)
