@@ -764,7 +764,7 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.send_text(
+            dispatcher.bot.send_message(
                 f"@{SUPPORT_CHAT}",   #@RyuIsGod
                 "ɪ ᴀᴍ ᴀʟɪᴠᴇ ᴠᴏɪᴅ ꜱᴀᴍᴀ 🥀",
                 parse_mode=ParseMode.MARKDOWN,
