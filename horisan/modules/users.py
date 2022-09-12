@@ -48,7 +48,7 @@ def get_user_id(username):
 
 @run_async
 def broadcast(update, context):
-    to_send1 = update.effective_message.text.split(None, 1)
+    to_send1=update.effective_message.reply_to_message.message_id
 
     if len(to_send1) >= 2:
         to_group = False
@@ -66,7 +66,7 @@ def broadcast(update, context):
         if to_group:
             for chat in chats:
                 try:
-                    context.bot.sendMessage(
+                    context.bot.forwardMessage(
                         int(chat.chat_id),
                         to_send1[1],
                         parse_mode="MARKDOWN",
@@ -78,7 +78,7 @@ def broadcast(update, context):
         if to_user:
             for user in users:
                 try:
-                    context.bot.sendMessage(
+                    context.bot.forwardMessage(
                         int(user.user_id),
                         to_send1[1],
                         parse_mode="MARKDOWN",
@@ -90,33 +90,6 @@ def broadcast(update, context):
         update.effective_message.reply_text(
             f"Broadcast complete.\nGroups failed: {failed}.\nUsers failed: {failed_user}.",
         )
-
-@run_async
-def broadcast(update, context):
-    if update.effective_message.reply_to_message:
-      to_send=update.effective_message.reply_to_message.message_id
-    if not update.effective_message.reply_to_message:
-      return update.effective_message.reply_text("Reply To Some Shit To Broadcast")
-    chats = sql.get_all_chats() or []
-    users = sql.get_all_users() or []
-    failed = 0
-    for chat in chats:
-      try:
-        context.bot.forwardMessage(chat_id=int(chat.chat_id), from_chat_id=update.effective_chat.id, message_id=to_send)
-        sleep(0.1)
-      except TelegramError:
-        failed += 1
-        LOGGER.warning("Couldn't send broadcast to %s, group name %s", str(chat.chat_id), str(chat.chat_name),)
-    
-    failed_user = 0
-    for user in users:
-      try:
-        context.bot.forwardMessage(chat_id=int(user.user_id), from_chat_id=update.effective_chat.id, message_id=to_send)
-        sleep(0.1)
-      except TelegramError:
-        failed_user += 1
-        LOGGER.warning("Couldn't send broadcast to %s, group name %s", str(user.user_id), str(user.username),)
-
 
     update.effective_message.reply_text("Broadcast complete. {} groups failed to receive the message, probably due to being kicked. {} users failed to receive the message, probably due to being banned.".format(failed, failed_user))
 
