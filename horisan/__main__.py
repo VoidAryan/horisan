@@ -116,11 +116,15 @@ HELP_STRINGS = """
 ۞ ᴛʜɪꜱ ʙᴏᴛ ɪꜱ ᴅᴇᴠᴇʟᴏᴘᴇᴅ ᴜɴᴅᴇʀ【V๏ɪ፝֟𝔡】 [✨](https://telegra.ph/file/6a74e747aa1262f8a778a.jpg)"""
 
 
-DONATE_STRING = """Heya, glad to hear you want to donate! ❤ \
+DONATE_STRING = """
+Heya, glad to hear you want to donate!
+Kyouko Hori is VOID (http://t.me/voidxnetwork) specially created to manage group chats morr efficiently and effectively.
 
- You can support the project by contacting @Kyoukoxsupport \
- If you can't donate us financially support us by helping in growth of hori san \
- Those who cannot provide monetary support are welcome to help us we are here to hear you."""
+You can support the project by contacting 
+My Owner VOID ARYAN (http://t.me/Voidaryan) 
+
+ If you can't donate us financially support us by helping in growth of hori san.\nWe are always open to take help as well as help you in your project ♡.
+"""
 
 IMPORTED = {}
 MIGRATEABLE = []
