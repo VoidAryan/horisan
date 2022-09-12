@@ -88,11 +88,8 @@ def broadcast(update, context):
                 except TelegramError:
                     failed_user += 1
         update.effective_message.reply_text(
-            f"Broadcast complete.\nGroups failed: {failed}.\nUsers failed: {failed_user}.",
+            f"Broadcast complete.\nGroups failed:-{failed}- .\nUsers failed -{failed_user}-.",
         )
-
-    update.effective_message.reply_text(f"Broadcast complete. {failed} groups failed to receive the message, probably due to being kicked. {failed_user} users failed to receive the message, probably due to being banned.")
-
 
 def log_user(update, _):
     chat = update.effective_chat
