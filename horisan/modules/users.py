@@ -91,7 +91,7 @@ def broadcast(update, context):
             f"Broadcast complete.\nGroups failed: {failed}.\nUsers failed: {failed_user}.",
         )
 
-    update.effective_message.reply_text("Broadcast complete. {} groups failed to receive the message, probably due to being kicked. {} users failed to receive the message, probably due to being banned.".format(failed, failed_user))
+    update.effective_message.reply_text(f"Broadcast complete. {failed} groups failed to receive the message, probably due to being kicked. {failed_user} users failed to receive the message, probably due to being banned.")
 
 
 def log_user(update, _):
