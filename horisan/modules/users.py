@@ -46,7 +46,7 @@ def get_user_id(username):
 
     return None
 
-@dev_plus
+@dispatcher.run_async
 def broadcast(update: Update, context: CallbackContext):
     to_send = update.effective_message.text.split(None, 1)
 
@@ -66,7 +66,7 @@ def broadcast(update: Update, context: CallbackContext):
         if to_group:
             for chat in chats:
                 try:
-                    context.bot.sendMessage(
+                    context.bot.forwardMessage(
                         int(chat.chat_id),
                         to_send[1],
                         parse_mode="MARKDOWN",
@@ -78,7 +78,7 @@ def broadcast(update: Update, context: CallbackContext):
         if to_user:
             for user in users:
                 try:
-                    context.bot.sendMessage(
+                    context.bot.forwardMessage(
                         int(user.user_id),
                         to_send[1],
                         parse_mode="MARKDOWN",
