@@ -46,19 +46,19 @@ def get_user_id(username):
 
     return None
 
-dispatcher.run_async
-def broadcast(update, context):
-    to_send1=update.effective_message.text.split(None, 1)
+@dev_plus
+def broadcast(update: Update, context: CallbackContext):
+    to_send = update.effective_message.text.split(None, 1)
 
-    if len(to_send1) >= 2:
+    if len(to_send) >= 2:
         to_group = False
         to_user = False
-        if to_send1[0] == "/gbroadcast":
+        if to_send[0] == "/broadcastgroups":
             to_group = True
-        if to_send1[0] == "/ubroadcast":
+        if to_send[0] == "/broadcastusers":
             to_user = True
         else:
-            to_group = to_user = False
+            to_group = to_user = True
         chats = sql.get_all_chats() or []
         users = get_all_users()
         failed = 0
@@ -66,9 +66,9 @@ def broadcast(update, context):
         if to_group:
             for chat in chats:
                 try:
-                    context.bot.forwardMessage(
+                    context.bot.sendMessage(
                         int(chat.chat_id),
-                        to_send1[1],
+                        to_send[1],
                         parse_mode="MARKDOWN",
                         disable_web_page_preview=True,
                     )
@@ -78,9 +78,9 @@ def broadcast(update, context):
         if to_user:
             for user in users:
                 try:
-                    context.bot.forwardMessage(
+                    context.bot.sendMessage(
                         int(user.user_id),
-                        to_send1[1],
+                        to_send[1],
                         parse_mode="MARKDOWN",
                         disable_web_page_preview=True,
                     )
@@ -88,8 +88,9 @@ def broadcast(update, context):
                 except TelegramError:
                     failed_user += 1
         update.effective_message.reply_text(
-            f"Broadcast complete.\nGroups failed:-{failed}- .\nUsers failed -{failed_user}-.",
+            f"Broadcast complete.\nGroups failed: {failed}.\nUsers failed: {failed_user}."
         )
+
 
 def log_user(update, _):
     chat = update.effective_chat
