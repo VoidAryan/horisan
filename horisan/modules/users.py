@@ -47,7 +47,7 @@ def get_user_id(username):
     return None
 
 @dispatcher.run_async
-def broadcast(update: Update, context: CallbackContext):
+def broadcast(update, context):
     to_send = update.effective_message.text.split(None, 1)
 
     if len(to_send) >= 2:
