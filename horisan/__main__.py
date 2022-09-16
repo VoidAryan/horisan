@@ -83,20 +83,20 @@ def get_readable_time(seconds: int) -> str:
 START_IMG = "https://telegra.ph/file/293cd9de0eb984b2089ca.jpg"
 
 PM_START_TEXT = """
-*ᴋᴏɴɪᴄʜɪᴡᴀ* {} *!* [👋](https://telegra.ph/file/c9042d005c41ff7753a60.jpg)
+*Hey* {} *!* [👋](https://telegra.ph/file/c9042d005c41ff7753a60.jpg)
 
-۞ ɪᴍ ᴋʏᴏᴜᴋᴏ ʜᴏʀɪ ᴀɴ ᴀɴɪᴍᴇ ʙᴀꜱᴇᴅ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ.
+♡ wassup army I'm JungKook here to manage your group chats.
 ───────────────────────
-× Aʟɪᴠᴇ Sɪɴᴄᴇ: `{}`
-× `{}` Wᴇᴇʙꜱ | `{}` Cʜᴀᴛꜱ
+× Performing since : `{}`
+× `{}` Fans | `{}` Chats
 ───────────────────────
-۞ ɪᴍ ʜᴇʀᴇ ᴛᴏ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ɢᴄ ᴍᴏʀᴇ ᴇꜰꜰɪᴄɪᴇɴᴛʟʏ!
+• Bang /help to know about my skills bae.
 """
 
 buttons = [
     [
         InlineKeyboardButton(
-            text="【Aᴅᴅ Kʏᴏᴜᴋᴏ Tᴏ Yᴏᴜʀ GC】",
+            text="【Aᴅᴅ JK Tᴏ Yᴏᴜʀ GC】",
             url="https://t.me/HoriXProbot?startgroup=new",
         ),
     ],
@@ -108,27 +108,15 @@ buttons = [
 
 
 HELP_STRINGS = """
-ᴍʏ ᴀʙɪʟɪᴛɪᴇꜱ ᴀɴᴅ ɢᴜɪᴅᴇ 💫 :
-
-۞ Kyouko Hori ɪꜱ ᴀɴ ᴀᴅᴠᴀɴᴄᴇᴅ ᴀɴᴅ ʜɪɢʜʟʏ ᴜᴘᴅᴀᴛᴇᴅ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ. 
-۞ ʏᴏᴜ ᴄᴀɴ ꜱᴜᴘᴘᴏʀᴛ ᴏᴜʀ ᴡᴏʀᴋ ʙʏ ᴜꜱɪɴɢ /ᴅᴏɴᴀᴛɪᴏɴ 
-۞ ᴄʟɪᴄᴋ ᴏɴ ʙᴜᴛᴛᴏɴꜱ ɢɪᴠᴇɴ ʙᴇʟᴏᴡ ᴛᴏ ꜱᴇᴇ ɢᴜɪᴅᴇ ꜰᴏʀ ᴜꜱɪɴɢ ᴛʜᴇᴍ. 
-۞ ᴛʜɪꜱ ʙᴏᴛ ɪꜱ ᴅᴇᴠᴇʟᴏᴘᴇᴅ ᴜɴᴅᴇʀ【V๏ɪ፝֟𝔡】"""
+Given below are my skills tap on them to know more!"""
 
 
-DONATE_STRING = """Heya, glad to hear you want to donate!\nKyouko Hori is [VOID](t.me/voidxnetwork) specially created to manage group chats morr efficiently and effectively.\n
+DONATE_STRING = """Heya, glad to hear you want to donate!\JK is [VOID](t.me/voidxnetwork) specially created to manage group chats more efficiently and effectively.\n
 
  You can support the project by contacting My Owner [VOID ARYAN](t.me/Voidaryan) \n
  
- If you can't donate us financially support us by helping in growth of hori san. We are always open to take help as well as help you in your project ♡. \
+ If you can't donate us financially support us by helping in growth of JK. We are always open to take help as well as help you in your project ♡. \
  """
-
-buttons = [
-        InlineKeyboardButton(
-            text="Void Network",
-            url="t.me/voidxnetwork",
-            ),
-          ]
 
 IMPORTED = {}
 MIGRATEABLE = []
