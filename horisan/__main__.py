@@ -97,7 +97,7 @@ buttons = [
     [
         InlineKeyboardButton(
             text="【Aᴅᴅ Kʏᴏᴜᴋᴏ Tᴏ Yᴏᴜʀ GC】",
-            url="https://t.me/HoriXProbot?startgroup=new",
+            url="https://t.me/Kyouko_Robot?startgroup=new",
         ),
     ],
     [
@@ -251,7 +251,7 @@ def start(update: Update, context: CallbackContext):
                 [
                     [
                         InlineKeyboardButton(
-                            text="【Support】", url="https://t.me/kyoukoxsupport"
+                            text="【Support】", url="https://t.me/kyoukosupport"
                         ),
                     ],
                 ]
