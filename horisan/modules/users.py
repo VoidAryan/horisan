@@ -55,59 +55,34 @@ def broadcast(update, context):
         if to_send[0] == "/broadcastgroups":
             to_group = True
         if to_send[0] == "/broadcastusers":
-            to_user = True
-        else:
-            to_group = to_user = True
-        chats = sql.get_all_chats() or []
-        users = get_all_users()
-        failed = 0
-        failed_user = 0
-        if to_group:
-            for chat in chats:
-                try:
-                    context.bot.forwardMessage(
-                        int(chat.chat_id),
-                        to_send[1],
-                        parse_mode="MARKDOWN",
-                        disable_web_page_preview=True,
-                    )
-                    sleep(0.1)
-                except TelegramError:
-                    failed += 1
-        if to_user:
-            for user in users:
-                try:
-                    context.bot.forwardMessage(
-                        int(user.user_id),
-                        to_send[1],
-                        parse_mode="MARKDOWN",
-                        disable_web_page_preview=True,
-                    )
-                    sleep(0.1)
-                except TelegramError:
-                    failed_user += 1
-        update.effective_message.reply_text(
-            f"Broadcast complete.\nGroups failed: {failed}.\nUsers failed: {failed_user}."
-        )
+          @run_async
+def broadcast(update, context):
+    if update.effective_message.reply_to_message:
+      to_send=update.effective_message.reply_to_message.message_id
+    if not update.effective_message.reply_to_message:
+      return update.effective_message.reply_text("Reply To Some Shit To Broadcast")
+    chats = sql.get_all_chats() or []
+    users = sql.get_all_users() or []
+    failed = 0
+    for chat in chats:
+      try:
+        context.bot.forwardMessage(chat_id=int(chat.chat_id), from_chat_id=update.effective_chat.id, message_id=to_send)
+        sleep(0.1)
+      except TelegramError:
+        failed += 1
+        LOGGER.warning("Couldn't send broadcast to %s, group name %s", str(chat.chat_id), str(chat.chat_name),)
+    
+    failed_user = 0
+    for user in users:
+      try:
+        context.bot.forwardMessage(chat_id=int(user.user_id), from_chat_id=update.effective_chat.id, message_id=to_send)
+        sleep(0.1)
+      except TelegramError:
+        failed_user += 1
+        LOGGER.warning("Couldn't send broadcast to %s, group name %s", str(user.user_id), str(user.username),)
 
 
-def log_user(update, _):
-    chat = update.effective_chat
-    msg = update.effective_message
-
-    sql.update_user(msg.from_user.id, msg.from_user.username, chat.id, chat.title)
-
-    if msg.reply_to_message:
-        sql.update_user(
-            msg.reply_to_message.from_user.id,
-            msg.reply_to_message.from_user.username,
-            chat.id,
-            chat.title,
-        )
-
-    if msg.forward_from:
-        sql.update_user(msg.forward_from.id, msg.forward_from.username)
-        
+    update.effective_message.reply_text("Broadcast complete. {} groups failed to receive the message, probably due to being kicked. {} users failed to receive the message, probably due to being banned.".format(failed, failed_user))
 
 def log_user(update, _):
     chat = update.effective_chat
@@ -170,7 +145,7 @@ __help__ = ""  # no help string
 __mod_name__ = "Users"
 
 BROADCAST_HANDLER = CommandHandler(
-    ["Broadcastall", "Broadcastusers", "Broadcastgroups"], broadcast, filters=Filters.user(DEV_USERS), run_async=True
+  "broadcastall", broadcast, filters=Filters.user(DEV_USERS), run_async=True
 )
 USER_HANDLER = MessageHandler(Filters.all & Filters.chat_type.groups, log_user)
 CHATLIST_HANDLER = CommandHandler(
