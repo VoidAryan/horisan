@@ -17,6 +17,11 @@
          "required": true,
          "value": "5359727080:AAErmRBp9QbUEg77r16yzG-tc7O3cCrRqOY"
       },
+         "REDIS_URL": {
+         "description": "Paste your redis url in format redis://<username of admin role>:<password of admin role>@<endoint url>/<database name>",
+         "required": true,
+         "value": "redis://flame:Rick_2005@redis-16362.c299.asia-northeast1-1.gce.cloud.redislabs.com:16362"
+      }, 
       "API_ID": {
          "description": "Get API_ID from my.telegram.org, used for telethon based modules.",
          "required": true,
