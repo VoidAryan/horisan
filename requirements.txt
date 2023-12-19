@@ -11,7 +11,7 @@ beautifulsoup4
 dispatcher
 zerochan
 requests
-python-telegram-bot==13.9.0
+python-telegram-bot==13.15
 SQLAlchemy==1.4.35
 psycopg2-binary
 aiofiles
